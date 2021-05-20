@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BTL
+namespace BTL.InterfaceQuanly
 {
-    public partial class formQuanLyPhong : Form
+    public partial class formQuanLyLoaiPhong : Form
     {
-        public formQuanLyPhong()
+        public formQuanLyLoaiPhong()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
