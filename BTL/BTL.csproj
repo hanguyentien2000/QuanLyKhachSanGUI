@@ -73,51 +73,51 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.dbml</DependentUpon>
     </Compile>
-    <Compile Include="formDatPhong.cs">
+    <Compile Include="InterfaceQuanly\formDatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formDatPhong.Designer.cs">
+    <Compile Include="InterfaceQuanly\formDatPhong.Designer.cs">
       <DependentUpon>formDatPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="formLogin.cs">
+    <Compile Include="InterfaceMain\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formLogin.Designer.cs">
+    <Compile Include="InterfaceMain\formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="formMain.cs">
+    <Compile Include="InterfaceMain\formMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formMain.Designer.cs">
+    <Compile Include="InterfaceMain\formMain.Designer.cs">
       <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMainNhanVien.cs">
+    <Compile Include="InterfaceMain\FormMainNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMainNhanVien.Designer.cs">
+    <Compile Include="InterfaceMain\FormMainNhanVien.Designer.cs">
       <DependentUpon>FormMainNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="formQuanLyPhong.cs">
+    <Compile Include="InterfaceQuanly\formQuanLyPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formQuanLyPhong.Designer.cs">
+    <Compile Include="InterfaceQuanly\formQuanLyPhong.Designer.cs">
       <DependentUpon>formQuanLyPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formDatPhong.resx">
+    <EmbeddedResource Include="InterfaceQuanly\formDatPhong.resx">
       <DependentUpon>formDatPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formLogin.resx">
+    <EmbeddedResource Include="InterfaceMain\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formMain.resx">
+    <EmbeddedResource Include="InterfaceMain\formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMainNhanVien.resx">
+    <EmbeddedResource Include="InterfaceMain\FormMainNhanVien.resx">
       <DependentUpon>FormMainNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formQuanLyPhong.resx">
+    <EmbeddedResource Include="InterfaceQuanly\formQuanLyPhong.resx">
       <DependentUpon>formQuanLyPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

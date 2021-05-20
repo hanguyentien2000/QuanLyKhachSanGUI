@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -191,6 +192,27 @@ namespace BTL
 
         private void panelHidden_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void ShowFormLogin()
+        {
+            var formLogin = new formLogin();
+            formLogin.ShowDialog();
+        }
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Bạn có thật sự muốn đăng xuất khỏi ứng dụng???", "Thông báo", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                Thread thread = new Thread(new ThreadStart(ShowFormLogin));
+                thread.Start();
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
 
         }
     }
