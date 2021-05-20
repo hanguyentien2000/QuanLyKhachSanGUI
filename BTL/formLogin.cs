@@ -16,9 +16,54 @@ namespace BTL
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+    
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            using(dbDataContext db  = new dbDataContext())
+            {
+                Taikhoan account = (from ac in db.Taikhoans where String.Compare(ac.Username , txtUsername.Text, false) == 0
+                                    && String.Compare(ac.Password, txtPassword.Text, false) == 0 select ac).SingleOrDefault();
+                if(account == null)
+                {
+                    MessageBox.Show("Password incorrect! Please Try Again!","Thông báo!");
+                    return;
+                }
+                else
+                {
+                    if(account.Quantri == true)
+                    {
+                        formMain form = new formMain();
+                        form.Tag = account;
+                        this.Hide();
+                        form.ShowDialog();
+                        txtUsername.ResetText();
+                        txtPassword.ResetText();
+                    }
+                    else
+                    {
+                        FormMainNhanVien frm = new FormMainNhanVien();
+                        frm.Tag = account;
+                        frm.Tag = account;
+                        this.Hide();
+                        frm.ShowDialog();
+                        txtUsername.ResetText();
+                        txtPassword.ResetText();
+                    }
+                }
+            }
+        }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Bạn có thật sự muốn thoát khỏi ứng dụng???", "Thông báo", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.DialogResult = DialogResult.No;
+            }
         }
     }
 }

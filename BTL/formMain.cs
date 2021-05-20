@@ -149,6 +149,8 @@ namespace BTL
             IconCurrentForm.IconColor = Color.MediumPurple;
             
         }
+
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -161,7 +163,15 @@ namespace BTL
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Bạn có thật sự muốn thoát khỏi ứng dụng???", "Thông báo",  MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.DialogResult = DialogResult.No;
+            }
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
