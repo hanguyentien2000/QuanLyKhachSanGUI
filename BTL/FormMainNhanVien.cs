@@ -17,5 +17,9 @@ namespace BTL
             InitializeComponent();
         }
 
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

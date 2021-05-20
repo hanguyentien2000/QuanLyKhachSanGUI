@@ -184,6 +184,7 @@ namespace BTL
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1293, 724);
             this.panelDesktop.TabIndex = 7;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // pictureBox3
             // 
