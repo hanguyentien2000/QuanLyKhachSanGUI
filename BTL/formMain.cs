@@ -189,6 +189,9 @@ namespace BTL
             WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void panelHidden_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace BTL
 {
-    public partial class formDatPhong : Form
+    public partial class formQuanLyNhanVien : Form
     {
-        public formDatPhong()
+        public formQuanLyNhanVien()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

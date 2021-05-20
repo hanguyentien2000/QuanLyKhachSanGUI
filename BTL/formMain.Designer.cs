@@ -318,8 +318,9 @@ namespace BTL
             this.panelHidden.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHidden.Location = new System.Drawing.Point(200, 0);
             this.panelHidden.Name = "panelHidden";
-            this.panelHidden.Size = new System.Drawing.Size(1360, 70);
+            this.panelHidden.Size = new System.Drawing.Size(1360, 133);
             this.panelHidden.TabIndex = 2;
+            this.panelHidden.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHidden_Paint);
             // 
             // btnMinimize
             // 
@@ -374,18 +375,19 @@ namespace BTL
             // 
             // panelDesktop
             // 
+            this.panelDesktop.BackColor = System.Drawing.Color.White;
             this.panelDesktop.Controls.Add(this.pictureBox3);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 70);
+            this.panelDesktop.Location = new System.Drawing.Point(200, 133);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1360, 646);
+            this.panelDesktop.Size = new System.Drawing.Size(1360, 583);
             this.panelDesktop.TabIndex = 3;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(573, 164);
+            this.pictureBox3.Location = new System.Drawing.Point(573, 132);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(125, 131);
             this.pictureBox3.TabIndex = 1;
@@ -402,6 +404,7 @@ namespace BTL
             this.Controls.Add(this.panelMenu);
             this.Name = "formMain";
             this.Text = "formMain";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelLogo.ResumeLayout(false);
@@ -438,9 +441,9 @@ namespace BTL
         private System.Windows.Forms.Panel panelHidden;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private FontAwesome.Sharp.IconPictureBox btnClose;
         private FontAwesome.Sharp.IconPictureBox btnMinimize;
         private FontAwesome.Sharp.IconPictureBox btnMaximize;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
