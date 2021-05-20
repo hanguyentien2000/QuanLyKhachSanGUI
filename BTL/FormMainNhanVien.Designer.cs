@@ -42,11 +42,11 @@ namespace BTL
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnDoiMatKhau = new FontAwesome.Sharp.IconButton();
             this.btnChamCong = new FontAwesome.Sharp.IconButton();
             this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.btnDoiMatKhau = new FontAwesome.Sharp.IconButton();
             this.panelHidden.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconCurrentForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
@@ -211,6 +211,28 @@ namespace BTL
             this.panelMenu.Size = new System.Drawing.Size(200, 724);
             this.panelMenu.TabIndex = 4;
             // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDoiMatKhau.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
+            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoiMatKhau.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDoiMatKhau.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
+            this.btnDoiMatKhau.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnDoiMatKhau.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDoiMatKhau.IconSize = 32;
+            this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(0, 373);
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(200, 60);
+            this.btnDoiMatKhau.TabIndex = 9;
+            this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
+            this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            // 
             // btnChamCong
             // 
             this.btnChamCong.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -298,28 +320,6 @@ namespace BTL
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDoiMatKhau.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
-            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDoiMatKhau.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.btnDoiMatKhau.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnDoiMatKhau.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDoiMatKhau.IconSize = 32;
-            this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(0, 373);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(200, 60);
-            this.btnDoiMatKhau.TabIndex = 9;
-            this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
-            this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
             // 
             // FormMainNhanVien
             // 

@@ -170,7 +170,7 @@ namespace BTL
             }
             else
             {
-                this.DialogResult = DialogResult.No;
+                return;
             }
         }
 
