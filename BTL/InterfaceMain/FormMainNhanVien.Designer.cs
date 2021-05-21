@@ -32,7 +32,6 @@ namespace BTL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainNhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.panelHidden = new System.Windows.Forms.Panel();
-            this.IconCurrentForm = new FontAwesome.Sharp.IconPictureBox();
             this.btnMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximize = new FontAwesome.Sharp.IconPictureBox();
             this.btnClose = new FontAwesome.Sharp.IconPictureBox();
@@ -47,8 +46,8 @@ namespace BTL
             this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.panelHidden.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IconCurrentForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -75,29 +74,15 @@ namespace BTL
             // panelHidden
             // 
             this.panelHidden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.panelHidden.Controls.Add(this.IconCurrentForm);
+            this.panelHidden.Controls.Add(this.btnDangXuat);
             this.panelHidden.Controls.Add(this.btnMinimize);
             this.panelHidden.Controls.Add(this.btnMaximize);
             this.panelHidden.Controls.Add(this.btnClose);
             this.panelHidden.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHidden.Location = new System.Drawing.Point(200, 0);
             this.panelHidden.Name = "panelHidden";
-            this.panelHidden.Size = new System.Drawing.Size(1293, 70);
+            this.panelHidden.Size = new System.Drawing.Size(1293, 100);
             this.panelHidden.TabIndex = 6;
-            // 
-            // IconCurrentForm
-            // 
-            this.IconCurrentForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.IconCurrentForm.ForeColor = System.Drawing.Color.MediumPurple;
-            this.IconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.IconCurrentForm.IconColor = System.Drawing.Color.MediumPurple;
-            this.IconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IconCurrentForm.IconSize = 34;
-            this.IconCurrentForm.Location = new System.Drawing.Point(41, 24);
-            this.IconCurrentForm.Name = "IconCurrentForm";
-            this.IconCurrentForm.Size = new System.Drawing.Size(45, 34);
-            this.IconCurrentForm.TabIndex = 0;
-            this.IconCurrentForm.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -114,6 +99,7 @@ namespace BTL
             this.btnMinimize.Size = new System.Drawing.Size(31, 28);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnMaximize
             // 
@@ -130,6 +116,7 @@ namespace BTL
             this.btnMaximize.Size = new System.Drawing.Size(31, 28);
             this.btnMaximize.TabIndex = 1;
             this.btnMaximize.TabStop = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnClose
             // 
@@ -146,6 +133,7 @@ namespace BTL
             this.btnClose.Size = new System.Drawing.Size(31, 28);
             this.btnClose.TabIndex = 0;
             this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panelLogo
             // 
@@ -184,7 +172,6 @@ namespace BTL
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1293, 724);
             this.panelDesktop.TabIndex = 7;
-            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // pictureBox3
             // 
@@ -233,6 +220,7 @@ namespace BTL
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // btnChamCong
             // 
@@ -255,6 +243,7 @@ namespace BTL
             this.btnChamCong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChamCong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChamCong.UseVisualStyleBackColor = true;
+            this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
             // 
             // btnThongKe
             // 
@@ -277,6 +266,7 @@ namespace BTL
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnDatPhong
             // 
@@ -299,6 +289,7 @@ namespace BTL
             this.btnDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatPhong.UseVisualStyleBackColor = true;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // btnHome
             // 
@@ -321,6 +312,28 @@ namespace BTL
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangXuat.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDangXuat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnDangXuat.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDangXuat.IconSize = 32;
+            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.Location = new System.Drawing.Point(1187, 60);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(106, 37);
+            this.btnDangXuat.TabIndex = 4;
+            this.btnDangXuat.Text = "Đăng Xuất";
+            this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // FormMainNhanVien
             // 
@@ -333,7 +346,6 @@ namespace BTL
             this.Name = "FormMainNhanVien";
             this.Text = "FormMainNhanVien";
             this.panelHidden.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IconCurrentForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -359,7 +371,6 @@ namespace BTL
         private FontAwesome.Sharp.IconPictureBox btnMinimize;
         private FontAwesome.Sharp.IconPictureBox btnMaximize;
         private System.Windows.Forms.Panel panelHidden;
-        private FontAwesome.Sharp.IconPictureBox IconCurrentForm;
         private FontAwesome.Sharp.IconButton btnHome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelLogo;
@@ -367,5 +378,6 @@ namespace BTL
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnDoiMatKhau;
+        private FontAwesome.Sharp.IconButton btnDangXuat;
     }
 }

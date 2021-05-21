@@ -31,13 +31,18 @@ namespace BTL
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelSubmenu2 = new System.Windows.Forms.Panel();
+            this.btnThongKeLuong = new FontAwesome.Sharp.IconButton();
+            this.btnThongKeHoaDon = new FontAwesome.Sharp.IconButton();
             this.btnThongKe = new FontAwesome.Sharp.IconButton();
-            this.btnQuanLyTaiKhoan = new FontAwesome.Sharp.IconButton();
-            this.btnQuanLyKhachHang = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panelSubmenu = new System.Windows.Forms.Panel();
             this.btnQuanLyNhanVien = new FontAwesome.Sharp.IconButton();
+            this.btnQuanLyKhachHang = new FontAwesome.Sharp.IconButton();
+            this.btnQuanLyTaiKhoan = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyLoaiPhong = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyPhong = new FontAwesome.Sharp.IconButton();
+            this.btnQuanLyMain = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCheckout = new FontAwesome.Sharp.IconButton();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
@@ -53,7 +58,10 @@ namespace BTL
             this.btnClose = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            this.panelSubmenu2.SuspendLayout();
+            this.panelSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,14 +77,13 @@ namespace BTL
             // 
             // panelMenu
             // 
+            this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.panelSubmenu2);
             this.panelMenu.Controls.Add(this.btnThongKe);
-            this.panelMenu.Controls.Add(this.btnQuanLyTaiKhoan);
-            this.panelMenu.Controls.Add(this.btnQuanLyKhachHang);
+            this.panelMenu.Controls.Add(this.panelSubmenu);
+            this.panelMenu.Controls.Add(this.btnQuanLyMain);
             this.panelMenu.Controls.Add(this.label1);
-            this.panelMenu.Controls.Add(this.btnQuanLyNhanVien);
-            this.panelMenu.Controls.Add(this.btnQuanLyLoaiPhong);
-            this.panelMenu.Controls.Add(this.btnQuanLyPhong);
             this.panelMenu.Controls.Add(this.btnCheckout);
             this.panelMenu.Controls.Add(this.btnDatPhong);
             this.panelMenu.Controls.Add(this.btnHome);
@@ -84,8 +91,68 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 716);
+            this.panelMenu.Size = new System.Drawing.Size(204, 919);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panelSubmenu2
+            // 
+            this.panelSubmenu2.Controls.Add(this.btnThongKeLuong);
+            this.panelSubmenu2.Controls.Add(this.btnThongKeHoaDon);
+            this.panelSubmenu2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubmenu2.Location = new System.Drawing.Point(0, 689);
+            this.panelSubmenu2.Name = "panelSubmenu2";
+            this.panelSubmenu2.Size = new System.Drawing.Size(204, 100);
+            this.panelSubmenu2.TabIndex = 14;
+            // 
+            // btnThongKeLuong
+            // 
+            this.btnThongKeLuong.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnThongKeLuong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThongKeLuong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKeLuong.FlatAppearance.BorderSize = 0;
+            this.btnThongKeLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKeLuong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKeLuong.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKeLuong.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnThongKeLuong.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKeLuong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThongKeLuong.IconSize = 32;
+            this.btnThongKeLuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKeLuong.Location = new System.Drawing.Point(0, 51);
+            this.btnThongKeLuong.Name = "btnThongKeLuong";
+            this.btnThongKeLuong.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnThongKeLuong.Size = new System.Drawing.Size(204, 46);
+            this.btnThongKeLuong.TabIndex = 8;
+            this.btnThongKeLuong.Text = "Thống kê lương";
+            this.btnThongKeLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKeLuong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKeLuong.UseVisualStyleBackColor = false;
+            this.btnThongKeLuong.Click += new System.EventHandler(this.btnThongKeLuong_Click);
+            // 
+            // btnThongKeHoaDon
+            // 
+            this.btnThongKeHoaDon.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnThongKeHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThongKeHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKeHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnThongKeHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKeHoaDon.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKeHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKeHoaDon.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnThongKeHoaDon.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKeHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThongKeHoaDon.IconSize = 32;
+            this.btnThongKeHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKeHoaDon.Location = new System.Drawing.Point(0, 0);
+            this.btnThongKeHoaDon.Name = "btnThongKeHoaDon";
+            this.btnThongKeHoaDon.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnThongKeHoaDon.Size = new System.Drawing.Size(204, 51);
+            this.btnThongKeHoaDon.TabIndex = 7;
+            this.btnThongKeHoaDon.Text = "Thống kê hoá đơn";
+            this.btnThongKeHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKeHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKeHoaDon.UseVisualStyleBackColor = false;
+            this.btnThongKeHoaDon.Click += new System.EventHandler(this.btnThongKeHoaDon_Click);
             // 
             // btnThongKe
             // 
@@ -100,71 +167,29 @@ namespace BTL
             this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThongKe.IconSize = 32;
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 613);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 629);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(200, 60);
+            this.btnThongKe.Size = new System.Drawing.Size(204, 60);
             this.btnThongKe.TabIndex = 10;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // btnQuanLyTaiKhoan
+            // panelSubmenu
             // 
-            this.btnQuanLyTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyTaiKhoan.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyTaiKhoan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnQuanLyTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.Child;
-            this.btnQuanLyTaiKhoan.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnQuanLyTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQuanLyTaiKhoan.IconSize = 32;
-            this.btnQuanLyTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 553);
-            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
-            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(200, 60);
-            this.btnQuanLyTaiKhoan.TabIndex = 9;
-            this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
-            this.btnQuanLyTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = true;
-            // 
-            // btnQuanLyKhachHang
-            // 
-            this.btnQuanLyKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuanLyKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyKhachHang.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyKhachHang.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnQuanLyKhachHang.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.btnQuanLyKhachHang.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnQuanLyKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQuanLyKhachHang.IconSize = 32;
-            this.btnQuanLyKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyKhachHang.Location = new System.Drawing.Point(0, 493);
-            this.btnQuanLyKhachHang.Name = "btnQuanLyKhachHang";
-            this.btnQuanLyKhachHang.Size = new System.Drawing.Size(200, 60);
-            this.btnQuanLyKhachHang.TabIndex = 8;
-            this.btnQuanLyKhachHang.Text = "Quản lý khách hàng";
-            this.btnQuanLyKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyKhachHang.UseVisualStyleBackColor = true;
-            this.btnQuanLyKhachHang.Click += new System.EventHandler(this.btnQLTK_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 697);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 19);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Copyright by HAUI 2021, VN";
+            this.panelSubmenu.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panelSubmenu.Controls.Add(this.btnQuanLyNhanVien);
+            this.panelSubmenu.Controls.Add(this.btnQuanLyKhachHang);
+            this.panelSubmenu.Controls.Add(this.btnQuanLyTaiKhoan);
+            this.panelSubmenu.Controls.Add(this.btnQuanLyLoaiPhong);
+            this.panelSubmenu.Controls.Add(this.btnQuanLyPhong);
+            this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubmenu.Location = new System.Drawing.Point(0, 373);
+            this.panelSubmenu.Name = "panelSubmenu";
+            this.panelSubmenu.Size = new System.Drawing.Size(204, 256);
+            this.panelSubmenu.TabIndex = 13;
             // 
             // btnQuanLyNhanVien
             // 
@@ -172,22 +197,71 @@ namespace BTL
             this.btnQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyNhanVien.FlatAppearance.BorderSize = 0;
             this.btnQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyNhanVien.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyNhanVien.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLyNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnQuanLyNhanVien.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnQuanLyNhanVien.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
             this.btnQuanLyNhanVien.IconColor = System.Drawing.Color.Gainsboro;
             this.btnQuanLyNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQuanLyNhanVien.IconSize = 32;
             this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 433);
+            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 204);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
-            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(200, 60);
-            this.btnQuanLyNhanVien.TabIndex = 6;
+            this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(204, 52);
+            this.btnQuanLyNhanVien.TabIndex = 4;
             this.btnQuanLyNhanVien.Text = "Quản lý nhân viên";
             this.btnQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyNhanVien.UseVisualStyleBackColor = true;
-            this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnThongKe_Click);
+            this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
+            // 
+            // btnQuanLyKhachHang
+            // 
+            this.btnQuanLyKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuanLyKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuanLyKhachHang.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyKhachHang.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnQuanLyKhachHang.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
+            this.btnQuanLyKhachHang.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnQuanLyKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnQuanLyKhachHang.IconSize = 32;
+            this.btnQuanLyKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyKhachHang.Location = new System.Drawing.Point(0, 153);
+            this.btnQuanLyKhachHang.Name = "btnQuanLyKhachHang";
+            this.btnQuanLyKhachHang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnQuanLyKhachHang.Size = new System.Drawing.Size(204, 51);
+            this.btnQuanLyKhachHang.TabIndex = 8;
+            this.btnQuanLyKhachHang.Text = "Quản lý khách hàng";
+            this.btnQuanLyKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuanLyKhachHang.UseVisualStyleBackColor = true;
+            this.btnQuanLyKhachHang.Click += new System.EventHandler(this.btnQuanLyKhachHang_Click);
+            // 
+            // btnQuanLyTaiKhoan
+            // 
+            this.btnQuanLyTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyTaiKhoan.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyTaiKhoan.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnQuanLyTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.Child;
+            this.btnQuanLyTaiKhoan.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnQuanLyTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnQuanLyTaiKhoan.IconSize = 32;
+            this.btnQuanLyTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 102);
+            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
+            this.btnQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(204, 51);
+            this.btnQuanLyTaiKhoan.TabIndex = 9;
+            this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
+            this.btnQuanLyTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
             // 
             // btnQuanLyLoaiPhong
             // 
@@ -195,45 +269,83 @@ namespace BTL
             this.btnQuanLyLoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyLoaiPhong.FlatAppearance.BorderSize = 0;
             this.btnQuanLyLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyLoaiPhong.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyLoaiPhong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLyLoaiPhong.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnQuanLyLoaiPhong.IconChar = FontAwesome.Sharp.IconChar.SolarPanel;
             this.btnQuanLyLoaiPhong.IconColor = System.Drawing.Color.Gainsboro;
             this.btnQuanLyLoaiPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQuanLyLoaiPhong.IconSize = 32;
             this.btnQuanLyLoaiPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyLoaiPhong.Location = new System.Drawing.Point(0, 373);
+            this.btnQuanLyLoaiPhong.Location = new System.Drawing.Point(0, 51);
             this.btnQuanLyLoaiPhong.Name = "btnQuanLyLoaiPhong";
-            this.btnQuanLyLoaiPhong.Size = new System.Drawing.Size(200, 60);
+            this.btnQuanLyLoaiPhong.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnQuanLyLoaiPhong.Size = new System.Drawing.Size(204, 51);
             this.btnQuanLyLoaiPhong.TabIndex = 5;
             this.btnQuanLyLoaiPhong.Text = "Quản lý loại phòng";
             this.btnQuanLyLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyLoaiPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyLoaiPhong.UseVisualStyleBackColor = true;
-            this.btnQuanLyLoaiPhong.Click += new System.EventHandler(this.btnQLKH_Click);
+            this.btnQuanLyLoaiPhong.Click += new System.EventHandler(this.btnQuanLyLoaiPhong_Click);
             // 
             // btnQuanLyPhong
             // 
+            this.btnQuanLyPhong.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnQuanLyPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyPhong.FlatAppearance.BorderSize = 0;
             this.btnQuanLyPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyPhong.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyPhong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLyPhong.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnQuanLyPhong.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.btnQuanLyPhong.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.btnQuanLyPhong.IconColor = System.Drawing.Color.Gainsboro;
             this.btnQuanLyPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQuanLyPhong.IconSize = 32;
             this.btnQuanLyPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyPhong.Location = new System.Drawing.Point(0, 313);
+            this.btnQuanLyPhong.Location = new System.Drawing.Point(0, 0);
             this.btnQuanLyPhong.Name = "btnQuanLyPhong";
-            this.btnQuanLyPhong.Size = new System.Drawing.Size(200, 60);
-            this.btnQuanLyPhong.TabIndex = 4;
+            this.btnQuanLyPhong.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnQuanLyPhong.Size = new System.Drawing.Size(204, 51);
+            this.btnQuanLyPhong.TabIndex = 6;
             this.btnQuanLyPhong.Text = "Quản lý phòng";
             this.btnQuanLyPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyPhong.UseVisualStyleBackColor = true;
-            this.btnQuanLyPhong.Click += new System.EventHandler(this.btnQLPhong_Click);
+            this.btnQuanLyPhong.UseVisualStyleBackColor = false;
+            this.btnQuanLyPhong.Click += new System.EventHandler(this.btnQuanLyPhong_Click);
+            // 
+            // btnQuanLyMain
+            // 
+            this.btnQuanLyMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuanLyMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuanLyMain.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyMain.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyMain.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnQuanLyMain.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.btnQuanLyMain.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnQuanLyMain.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnQuanLyMain.IconSize = 32;
+            this.btnQuanLyMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyMain.Location = new System.Drawing.Point(0, 313);
+            this.btnQuanLyMain.Name = "btnQuanLyMain";
+            this.btnQuanLyMain.Size = new System.Drawing.Size(204, 60);
+            this.btnQuanLyMain.TabIndex = 12;
+            this.btnQuanLyMain.Text = "Quản lý ";
+            this.btnQuanLyMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyMain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuanLyMain.UseVisualStyleBackColor = true;
+            this.btnQuanLyMain.Click += new System.EventHandler(this.btnQuanLyMain_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 900);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Copyright by HAUI 2021, VN";
             // 
             // btnCheckout
             // 
@@ -250,13 +362,13 @@ namespace BTL
             this.btnCheckout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckout.Location = new System.Drawing.Point(0, 253);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(200, 60);
+            this.btnCheckout.Size = new System.Drawing.Size(204, 60);
             this.btnCheckout.TabIndex = 3;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCheckout.UseVisualStyleBackColor = true;
-            this.btnCheckout.Click += new System.EventHandler(this.btnQuanLyPhong_Click);
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // btnDatPhong
             // 
@@ -273,7 +385,7 @@ namespace BTL
             this.btnDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatPhong.Location = new System.Drawing.Point(0, 193);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(200, 60);
+            this.btnDatPhong.Size = new System.Drawing.Size(204, 60);
             this.btnDatPhong.TabIndex = 2;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,7 +408,7 @@ namespace BTL
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 133);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(200, 60);
+            this.btnHome.Size = new System.Drawing.Size(204, 60);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,7 +423,7 @@ namespace BTL
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 133);
+            this.panelLogo.Size = new System.Drawing.Size(204, 133);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox2
@@ -339,9 +451,9 @@ namespace BTL
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.panelTitleBar.Controls.Add(this.IconCurrentForm);
-            this.panelTitleBar.Location = new System.Drawing.Point(200, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(204, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1360, 70);
+            this.panelTitleBar.Size = new System.Drawing.Size(1356, 70);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -366,9 +478,9 @@ namespace BTL
             this.panelHidden.Controls.Add(this.btnMaximize);
             this.panelHidden.Controls.Add(this.btnClose);
             this.panelHidden.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHidden.Location = new System.Drawing.Point(200, 0);
+            this.panelHidden.Location = new System.Drawing.Point(204, 0);
             this.panelHidden.Name = "panelHidden";
-            this.panelHidden.Size = new System.Drawing.Size(1360, 133);
+            this.panelHidden.Size = new System.Drawing.Size(1356, 133);
             this.panelHidden.TabIndex = 2;
             this.panelHidden.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHidden_Paint);
             // 
@@ -384,7 +496,7 @@ namespace BTL
             this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDangXuat.IconSize = 32;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1254, 96);
+            this.btnDangXuat.Location = new System.Drawing.Point(1250, 96);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(106, 37);
             this.btnDangXuat.TabIndex = 3;
@@ -403,7 +515,7 @@ namespace BTL
             this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 28;
-            this.btnMinimize.Location = new System.Drawing.Point(1274, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1270, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(31, 28);
             this.btnMinimize.TabIndex = 2;
@@ -420,7 +532,7 @@ namespace BTL
             this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximize.IconSize = 28;
-            this.btnMaximize.Location = new System.Drawing.Point(1302, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1298, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(31, 28);
             this.btnMaximize.TabIndex = 1;
@@ -437,7 +549,7 @@ namespace BTL
             this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 28;
-            this.btnClose.Location = new System.Drawing.Point(1329, 0);
+            this.btnClose.Location = new System.Drawing.Point(1325, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(31, 28);
             this.btnClose.TabIndex = 0;
@@ -446,29 +558,43 @@ namespace BTL
             // 
             // panelDesktop
             // 
+            this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.White;
+            this.panelDesktop.Controls.Add(this.label2);
             this.panelDesktop.Controls.Add(this.pictureBox3);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 133);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDesktop.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelDesktop.Location = new System.Drawing.Point(204, 133);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1360, 583);
+            this.panelDesktop.Size = new System.Drawing.Size(1356, 786);
             this.panelDesktop.TabIndex = 3;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(583, 60);
+            this.pictureBox3.Location = new System.Drawing.Point(615, 95);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(130, 128);
+            this.pictureBox3.Size = new System.Drawing.Size(129, 125);
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label2.Location = new System.Drawing.Point(300, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(794, 45);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Chào mừng quý khách đến với khách sạn 5*  Nhổn";
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 716);
+            this.ClientSize = new System.Drawing.Size(1560, 919);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelTitleBar);
@@ -478,6 +604,8 @@ namespace BTL
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            this.panelSubmenu2.ResumeLayout(false);
+            this.panelSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -488,6 +616,7 @@ namespace BTL
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.panelDesktop.ResumeLayout(false);
+            this.panelDesktop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
@@ -497,9 +626,9 @@ namespace BTL
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
-        private FontAwesome.Sharp.IconButton btnQuanLyNhanVien;
-        private FontAwesome.Sharp.IconButton btnQuanLyLoaiPhong;
         private FontAwesome.Sharp.IconButton btnQuanLyPhong;
+        private FontAwesome.Sharp.IconButton btnQuanLyLoaiPhong;
+        private FontAwesome.Sharp.IconButton btnQuanLyNhanVien;
         private FontAwesome.Sharp.IconButton btnCheckout;
         private FontAwesome.Sharp.IconButton btnDatPhong;
         private FontAwesome.Sharp.IconButton btnHome;
@@ -515,9 +644,15 @@ namespace BTL
         private FontAwesome.Sharp.IconPictureBox btnClose;
         private FontAwesome.Sharp.IconPictureBox btnMinimize;
         private FontAwesome.Sharp.IconPictureBox btnMaximize;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private FontAwesome.Sharp.IconButton btnThongKe;
         private FontAwesome.Sharp.IconButton btnQuanLyTaiKhoan;
         private FontAwesome.Sharp.IconButton btnDangXuat;
+        private System.Windows.Forms.Panel panelSubmenu;
+        private FontAwesome.Sharp.IconButton btnQuanLyMain;
+        private System.Windows.Forms.Panel panelSubmenu2;
+        private FontAwesome.Sharp.IconButton btnThongKeLuong;
+        private FontAwesome.Sharp.IconButton btnThongKeHoaDon;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label2;
     }
 }

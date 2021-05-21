@@ -26,7 +26,7 @@ namespace BTL
             leftBorderbtn = new Panel();
             leftBorderbtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderbtn);
-
+            CustomizeDesign();
             //FormTilerBar
             this.Text = String.Empty;
             this.ControlBox = false;
@@ -102,39 +102,6 @@ namespace BTL
             ActiveButton(sender, RGBColors.color1);
         }
 
-        private void btnDatPhong_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color2);
-            OpenCurrentForm(new formDatPhong());
-        }
-
-        private void btnQuanLyPhong_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color3);
-            OpenCurrentForm(new formQuanLyPhong());
-        }
-
-        private void btnQLNV_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color4);
-            OpenCurrentForm(new formQuanLyNhanVien());
-        }
-
-        private void btnQLKH_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color5);
-        }
-
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color6);
-            OpenCurrentForm(new formQuanLyNhanVien());
-        }
-
-        private void btnQLTK_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color7);
-        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
@@ -148,10 +115,8 @@ namespace BTL
         {
             DisabledButton();
             leftBorderbtn.Visible = false;
-
             IconCurrentForm.IconChar = IconChar.Home;
             IconCurrentForm.IconColor = Color.MediumPurple;
-            
         }
 
 
@@ -163,6 +128,34 @@ namespace BTL
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void CustomizeDesign()
+        {
+            panelSubmenu.Visible = false;
+            panelSubmenu2.Visible = false;
+        }
+
+        private void HideSubmenu()
+        {
+            if(panelSubmenu.Visible == true)
+            {
+                panelSubmenu.Visible = false;
+            }
+            if (panelSubmenu2.Visible == true)
+            {
+                panelSubmenu2.Visible = false;
+            }
+        }
+
+        private void ShowSubmenu(Panel Submenu)
+        {
+            if (Submenu.Visible == false)
+            {
+                HideSubmenu();
+                Submenu.Visible = true;
+            }
+            else
+                Submenu.Visible = false;
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)
@@ -219,9 +212,79 @@ namespace BTL
 
         }
 
-        private void btnQLPhong_Click(object sender, EventArgs e)
+        private void btnDatPhong_Click(object sender, EventArgs e)
         {
-         
+            ActiveButton(sender, RGBColors.color2);
+            OpenCurrentForm(new formDatPhong());
         }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color3);
+            OpenCurrentForm(new formQuanLyPhong());
+        }
+
+        private void btnQuanLyMain_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color4);
+            OpenCurrentForm(new formQuanLyPhong());
+            ShowSubmenu(panelSubmenu);
+        }
+
+        private void btnQuanLyPhong_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color5);
+            OpenCurrentForm(new formQuanLyPhong());
+            HideSubmenu();
+        }
+
+        private void btnQuanLyLoaiPhong_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color6);
+            OpenCurrentForm(new formQuanLyLoaiPhong());
+            HideSubmenu();
+        }
+
+        private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color3);
+            //OpenCurrentForm(new formQua());
+            HideSubmenu();
+        }
+
+        private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formQuanLyKhachHang());
+            HideSubmenu();
+        }
+
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color2);
+            OpenCurrentForm(new formQuanLyNhanVien());
+            HideSubmenu();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color3);
+            //OpenCurrentForm(new formQuanLyNhanVien());
+            ShowSubmenu(panelSubmenu2);
+        }
+
+        private void btnThongKeHoaDon_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color4);
+            HideSubmenu();
+        }
+
+        private void btnThongKeLuong_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color5);
+            HideSubmenu();
+        }
+
+      
     }
 }
