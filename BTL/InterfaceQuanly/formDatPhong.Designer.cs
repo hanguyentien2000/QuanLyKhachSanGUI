@@ -62,7 +62,7 @@ namespace BTL
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(134, 37);
+            this.label2.Location = new System.Drawing.Point(33, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 20);
             this.label2.TabIndex = 1;
@@ -72,7 +72,7 @@ namespace BTL
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 142);
+            this.label1.Location = new System.Drawing.Point(33, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 3;
@@ -82,7 +82,7 @@ namespace BTL
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(134, 232);
+            this.label3.Location = new System.Drawing.Point(33, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 4;
@@ -92,7 +92,7 @@ namespace BTL
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(134, 340);
+            this.label4.Location = new System.Drawing.Point(33, 340);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 5;
@@ -102,7 +102,7 @@ namespace BTL
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(134, 439);
+            this.label5.Location = new System.Drawing.Point(33, 439);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 6;
@@ -122,7 +122,7 @@ namespace BTL
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKH.HoverState.Parent = this.txtTenKH;
-            this.txtTenKH.Location = new System.Drawing.Point(138, 77);
+            this.txtTenKH.Location = new System.Drawing.Point(37, 77);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
             this.txtTenKH.PlaceholderText = "";
@@ -146,7 +146,7 @@ namespace BTL
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.HoverState.Parent = this.txtSDT;
-            this.txtSDT.Location = new System.Drawing.Point(138, 178);
+            this.txtSDT.Location = new System.Drawing.Point(37, 178);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.PlaceholderText = "";
@@ -170,7 +170,7 @@ namespace BTL
             this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCMND.HoverState.Parent = this.txtCMND;
-            this.txtCMND.Location = new System.Drawing.Point(138, 270);
+            this.txtCMND.Location = new System.Drawing.Point(37, 270);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.PasswordChar = '\0';
             this.txtCMND.PlaceholderText = "";
@@ -193,7 +193,7 @@ namespace BTL
             this.cbxGioitinh.HoverState.Parent = this.cbxGioitinh;
             this.cbxGioitinh.ItemHeight = 30;
             this.cbxGioitinh.ItemsAppearance.Parent = this.cbxGioitinh;
-            this.cbxGioitinh.Location = new System.Drawing.Point(138, 472);
+            this.cbxGioitinh.Location = new System.Drawing.Point(37, 472);
             this.cbxGioitinh.Name = "cbxGioitinh";
             this.cbxGioitinh.ShadowDecoration.Parent = this.cbxGioitinh;
             this.cbxGioitinh.Size = new System.Drawing.Size(274, 36);
@@ -206,7 +206,7 @@ namespace BTL
             this.dateNS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateNS.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dateNS.HoverState.Parent = this.dateNS;
-            this.dateNS.Location = new System.Drawing.Point(622, 178);
+            this.dateNS.Location = new System.Drawing.Point(397, 178);
             this.dateNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateNS.Name = "dateNS";
@@ -214,6 +214,7 @@ namespace BTL
             this.dateNS.Size = new System.Drawing.Size(200, 36);
             this.dateNS.TabIndex = 15;
             this.dateNS.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
+            this.dateNS.ValueChanged += new System.EventHandler(this.dateNS_ValueChanged);
             // 
             // txtEmail
             // 
@@ -229,7 +230,7 @@ namespace BTL
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(138, 386);
+            this.txtEmail.Location = new System.Drawing.Point(37, 386);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
@@ -243,11 +244,12 @@ namespace BTL
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(618, 142);
+            this.label7.Location = new System.Drawing.Point(393, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "Ngày sinh";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtDiaChi
             // 
@@ -263,7 +265,7 @@ namespace BTL
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.HoverState.Parent = this.txtDiaChi;
-            this.txtDiaChi.Location = new System.Drawing.Point(622, 77);
+            this.txtDiaChi.Location = new System.Drawing.Point(397, 77);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "";
@@ -272,16 +274,18 @@ namespace BTL
             this.txtDiaChi.Size = new System.Drawing.Size(274, 36);
             this.txtDiaChi.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtDiaChi.TabIndex = 18;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(618, 37);
+            this.label6.Location = new System.Drawing.Point(393, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Địa chỉ";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dateCheckIn
             // 
@@ -289,7 +293,7 @@ namespace BTL
             this.dateCheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dateCheckIn.HoverState.Parent = this.dateCheckIn;
-            this.dateCheckIn.Location = new System.Drawing.Point(622, 270);
+            this.dateCheckIn.Location = new System.Drawing.Point(397, 270);
             this.dateCheckIn.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateCheckIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateCheckIn.Name = "dateCheckIn";
@@ -297,36 +301,40 @@ namespace BTL
             this.dateCheckIn.Size = new System.Drawing.Size(200, 36);
             this.dateCheckIn.TabIndex = 20;
             this.dateCheckIn.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
+            this.dateCheckIn.ValueChanged += new System.EventHandler(this.dateCheckIn_ValueChanged);
             // 
             // CheckIn
             // 
             this.CheckIn.AutoSize = true;
             this.CheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckIn.Location = new System.Drawing.Point(618, 232);
+            this.CheckIn.Location = new System.Drawing.Point(393, 232);
             this.CheckIn.Name = "CheckIn";
             this.CheckIn.Size = new System.Drawing.Size(70, 20);
             this.CheckIn.TabIndex = 19;
             this.CheckIn.Text = "Check in";
+            this.CheckIn.Click += new System.EventHandler(this.CheckIn_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(618, 336);
+            this.label8.Location = new System.Drawing.Point(393, 334);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 24);
             this.label8.TabIndex = 21;
             this.label8.Text = "Tiền cọc :";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(618, 386);
+            this.label9.Location = new System.Drawing.Point(393, 398);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 24);
             this.label9.TabIndex = 22;
             this.label9.Text = "Tổng bill :";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // cbxLoaiPhong
             // 
@@ -341,22 +349,24 @@ namespace BTL
             this.cbxLoaiPhong.HoverState.Parent = this.cbxLoaiPhong;
             this.cbxLoaiPhong.ItemHeight = 30;
             this.cbxLoaiPhong.ItemsAppearance.Parent = this.cbxLoaiPhong;
-            this.cbxLoaiPhong.Location = new System.Drawing.Point(1133, 77);
+            this.cbxLoaiPhong.Location = new System.Drawing.Point(781, 77);
             this.cbxLoaiPhong.Name = "cbxLoaiPhong";
             this.cbxLoaiPhong.ShadowDecoration.Parent = this.cbxLoaiPhong;
             this.cbxLoaiPhong.Size = new System.Drawing.Size(274, 36);
             this.cbxLoaiPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbxLoaiPhong.TabIndex = 24;
+            this.cbxLoaiPhong.SelectedIndexChanged += new System.EventHandler(this.cbxLoaiPhong_SelectedIndexChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1124, 37);
+            this.label10.Location = new System.Drawing.Point(772, 37);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 20);
             this.label10.TabIndex = 23;
             this.label10.Text = "Loại phòng";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // cbxPhong
             // 
@@ -371,32 +381,35 @@ namespace BTL
             this.cbxPhong.HoverState.Parent = this.cbxPhong;
             this.cbxPhong.ItemHeight = 30;
             this.cbxPhong.ItemsAppearance.Parent = this.cbxPhong;
-            this.cbxPhong.Location = new System.Drawing.Point(1133, 178);
+            this.cbxPhong.Location = new System.Drawing.Point(781, 178);
             this.cbxPhong.Name = "cbxPhong";
             this.cbxPhong.ShadowDecoration.Parent = this.cbxPhong;
             this.cbxPhong.Size = new System.Drawing.Size(274, 36);
             this.cbxPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbxPhong.TabIndex = 26;
+            this.cbxPhong.SelectedIndexChanged += new System.EventHandler(this.cbxPhong_SelectedIndexChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1129, 142);
+            this.label11.Location = new System.Drawing.Point(777, 142);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 20);
             this.label11.TabIndex = 25;
             this.label11.Text = "Phòng";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1129, 247);
+            this.label12.Location = new System.Drawing.Point(777, 247);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 20);
             this.label12.TabIndex = 27;
             this.label12.Text = "Giá phòng";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // txtPrice
             // 
@@ -412,7 +425,7 @@ namespace BTL
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.HoverState.Parent = this.txtPrice;
-            this.txtPrice.Location = new System.Drawing.Point(1133, 270);
+            this.txtPrice.Location = new System.Drawing.Point(781, 270);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
@@ -421,6 +434,7 @@ namespace BTL
             this.txtPrice.Size = new System.Drawing.Size(274, 36);
             this.txtPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPrice.TabIndex = 28;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // btnDatPhong
             // 
@@ -430,21 +444,23 @@ namespace BTL
             this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnDatPhong.HoverState.Parent = this.btnDatPhong;
-            this.btnDatPhong.Location = new System.Drawing.Point(622, 463);
+            this.btnDatPhong.Location = new System.Drawing.Point(397, 463);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.ShadowDecoration.Parent = this.btnDatPhong;
             this.btnDatPhong.Size = new System.Drawing.Size(180, 45);
             this.btnDatPhong.TabIndex = 29;
             this.btnDatPhong.Text = "Đặt phòng";
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // lstRoom
             // 
             this.lstRoom.HideSelection = false;
-            this.lstRoom.Location = new System.Drawing.Point(1133, 411);
+            this.lstRoom.Location = new System.Drawing.Point(781, 411);
             this.lstRoom.Name = "lstRoom";
             this.lstRoom.Size = new System.Drawing.Size(275, 97);
             this.lstRoom.TabIndex = 30;
             this.lstRoom.UseCompatibleStateImageBehavior = false;
+            this.lstRoom.SelectedIndexChanged += new System.EventHandler(this.lstRoom_SelectedIndexChanged);
             // 
             // btnAddPhong
             // 
@@ -454,19 +470,20 @@ namespace BTL
             this.btnAddPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPhong.ForeColor = System.Drawing.Color.White;
             this.btnAddPhong.HoverState.Parent = this.btnAddPhong;
-            this.btnAddPhong.Location = new System.Drawing.Point(1133, 334);
+            this.btnAddPhong.Location = new System.Drawing.Point(781, 334);
             this.btnAddPhong.Name = "btnAddPhong";
             this.btnAddPhong.ShadowDecoration.Parent = this.btnAddPhong;
             this.btnAddPhong.Size = new System.Drawing.Size(180, 45);
             this.btnAddPhong.TabIndex = 31;
             this.btnAddPhong.Text = "Thêm phòng";
+            this.btnAddPhong.Click += new System.EventHandler(this.btnAddPhong_Click);
             // 
             // formDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1476, 672);
+            this.ClientSize = new System.Drawing.Size(1095, 672);
             this.Controls.Add(this.btnAddPhong);
             this.Controls.Add(this.lstRoom);
             this.Controls.Add(this.btnDatPhong);
@@ -498,6 +515,7 @@ namespace BTL
             this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "formDatPhong";
             this.Text = "formDatPhong";
+            this.Load += new System.EventHandler(this.formDatPhong_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

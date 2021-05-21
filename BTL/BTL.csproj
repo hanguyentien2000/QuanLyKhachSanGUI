@@ -97,6 +97,24 @@
     <Compile Include="InterfaceMain\FormMainNhanVien.Designer.cs">
       <DependentUpon>FormMainNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceQuanly\formQuanLyKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceQuanly\formQuanLyKhachHang.Designer.cs">
+      <DependentUpon>formQuanLyKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceQuanly\formQuanLyLoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceQuanly\formQuanLyLoaiPhong.Designer.cs">
+      <DependentUpon>formQuanLyLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceQuanly\formQuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceQuanly\formQuanLyNhanVien.Designer.cs">
+      <DependentUpon>formQuanLyNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceQuanly\formQuanLyPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceMain\FormMainNhanVien.resx">
       <DependentUpon>FormMainNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceQuanly\formQuanLyLoaiPhong.resx">
+      <DependentUpon>formQuanLyLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceQuanly\formQuanLyNhanVien.resx">
+      <DependentUpon>formQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceQuanly\formQuanLyPhong.resx">
       <DependentUpon>formQuanLyPhong.cs</DependentUpon>

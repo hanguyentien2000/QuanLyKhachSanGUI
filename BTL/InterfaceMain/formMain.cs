@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using BTL.InterfaceQuanly;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,6 +117,7 @@ namespace BTL
         private void btnQLNV_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color4);
+            OpenCurrentForm(new formQuanLyNhanVien());
         }
 
         private void btnQLKH_Click(object sender, EventArgs e)
@@ -126,6 +128,7 @@ namespace BTL
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color6);
+            OpenCurrentForm(new formQuanLyNhanVien());
         }
 
         private void btnQLTK_Click(object sender, EventArgs e)
