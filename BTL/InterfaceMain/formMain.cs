@@ -215,5 +215,10 @@ namespace BTL
             }
 
         }
+
+        private void btnQLPhong_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }

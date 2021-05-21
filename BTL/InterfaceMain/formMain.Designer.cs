@@ -233,7 +233,7 @@ namespace BTL
             this.btnQuanLyPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyPhong.UseVisualStyleBackColor = true;
-            this.btnQuanLyPhong.Click += new System.EventHandler(this.btnQLNV_Click);
+            this.btnQuanLyPhong.Click += new System.EventHandler(this.btnQLPhong_Click);
             // 
             // btnCheckout
             // 
@@ -458,7 +458,7 @@ namespace BTL
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(563, 180);
+            this.pictureBox3.Location = new System.Drawing.Point(583, 60);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(130, 128);
             this.pictureBox3.TabIndex = 1;
