@@ -31,6 +31,13 @@ create table NhanVien(
 
 go
 
+create table ChamCong(
+	MaNhanVien int not null ,
+	Ngay date not null,
+	TrangThai bit,	constraint PK_Chamcong primary key (MaNhanVien, Ngay),
+	constraint Fk_Chamcong foreign key (MaNhanVien) references NhanVien(MaNhanVien)
+)
+
 create table Taikhoan(
 	Username nvarchar(50) primary key not null,
 	Password nvarchar(50) ,
@@ -63,7 +70,8 @@ create table KhachHang(
     Tuoi int,
 	Email varchar(30),
 	Gioitinh nvarchar(10),
-	DiaChi nvarchar(50)
+	DiaChi nvarchar(50),
+	TrangThai bit
 )
 go
 
@@ -104,3 +112,14 @@ create table HoaDon(
 
 go
 
+insert into ChucVu values(N'Quản trị')
+insert into ChucVu values(N'Nhân Viên')
+go
+
+insert into NhanVien values(1, N'Nguyễn Tiến Hà', 0912391238,'04/03/2000', N'Hà Nội',0921892181,N'Nam')
+insert into NhanVien values(2, N'Đỗ Bá Hoàn', 09123121,'09/28/2000', N'Hà Nội',0921892181,N'Nam')
+go
+
+insert into Taikhoan values('admin', 'admin', 1, 1)
+insert into Taikhoan values('nhanvien', 'nhanvien', 0, 2)
+go
