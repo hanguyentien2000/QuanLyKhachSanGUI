@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using BTL.InterfaceNhanVien;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,8 @@ namespace BTL
     {
         //Fields
         private IconButton currentBtn;
-        private Panel leftBorderbtn;
         private Form currentChildForm;
+        
         public FormMainNhanVien()
         {
             InitializeComponent();
@@ -151,27 +152,28 @@ namespace BTL
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color2);
-            
+            OpenCurrentForm(new formMain());
+
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
+            OpenCurrentForm(new formDatPhong());
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color4);
-        }
+     
 
         private void btnChamCong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color5);
+            OpenCurrentForm(new formDatPhong());
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color6);
+            OpenCurrentForm(new formDoiMatKhau());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BTL.InterfaceQuanly;
+﻿using BTL.GUI;
+using BTL.InterfaceQuanly;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -221,7 +222,7 @@ namespace BTL
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            OpenCurrentForm(new formQuanLyPhong());
+            OpenCurrentForm(new formCheckOut());
         }
 
         private void btnQuanLyMain_Click(object sender, EventArgs e)
@@ -235,35 +236,35 @@ namespace BTL
         {
             ActiveButton(sender, RGBColors.color5);
             OpenCurrentForm(new formQuanLyPhong());
-            HideSubmenu();
+            //HideSubmenu();
         }
 
         private void btnQuanLyLoaiPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color6);
             OpenCurrentForm(new formQuanLyLoaiPhong());
-            HideSubmenu();
+            //HideSubmenu();
         }
 
         private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            //OpenCurrentForm(new formQua());
-            HideSubmenu();
+            OpenCurrentForm(new formQuanLyTaiKhoan());
+            //HideSubmenu();
         }
 
         private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
             OpenCurrentForm(new formQuanLyKhachHang());
-            HideSubmenu();
+            //HideSubmenu();
         }
 
         private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color2);
             OpenCurrentForm(new formQuanLyNhanVien());
-            HideSubmenu();
+            //HideSubmenu();
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -276,13 +277,15 @@ namespace BTL
         private void btnThongKeHoaDon_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color4);
-            HideSubmenu();
+            OpenCurrentForm(new formThongKeHoaDon());
+            //HideSubmenu();
         }
 
         private void btnThongKeLuong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color5);
-            HideSubmenu();
+            OpenCurrentForm(new formThongKeLuong());
+            //HideSubmenu();
         }
 
       

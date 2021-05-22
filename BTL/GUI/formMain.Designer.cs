@@ -47,7 +47,6 @@ namespace BTL
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.IconCurrentForm = new FontAwesome.Sharp.IconPictureBox();
@@ -57,13 +56,12 @@ namespace BTL
             this.btnMaximize = new FontAwesome.Sharp.IconPictureBox();
             this.btnClose = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelSubmenu2.SuspendLayout();
             this.panelSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconCurrentForm)).BeginInit();
@@ -106,7 +104,7 @@ namespace BTL
             // 
             // btnThongKeLuong
             // 
-            this.btnThongKeLuong.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnThongKeLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnThongKeLuong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThongKeLuong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThongKeLuong.FlatAppearance.BorderSize = 0;
@@ -131,7 +129,7 @@ namespace BTL
             // 
             // btnThongKeHoaDon
             // 
-            this.btnThongKeHoaDon.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnThongKeHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnThongKeHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThongKeHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThongKeHoaDon.FlatAppearance.BorderSize = 0;
@@ -193,6 +191,7 @@ namespace BTL
             // 
             // btnQuanLyNhanVien
             // 
+            this.btnQuanLyNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnQuanLyNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyNhanVien.FlatAppearance.BorderSize = 0;
@@ -212,11 +211,12 @@ namespace BTL
             this.btnQuanLyNhanVien.Text = "Quản lý nhân viên";
             this.btnQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyNhanVien.UseVisualStyleBackColor = true;
+            this.btnQuanLyNhanVien.UseVisualStyleBackColor = false;
             this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
             // 
             // btnQuanLyKhachHang
             // 
+            this.btnQuanLyKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnQuanLyKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyKhachHang.FlatAppearance.BorderSize = 0;
@@ -236,11 +236,12 @@ namespace BTL
             this.btnQuanLyKhachHang.Text = "Quản lý khách hàng";
             this.btnQuanLyKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyKhachHang.UseVisualStyleBackColor = true;
+            this.btnQuanLyKhachHang.UseVisualStyleBackColor = false;
             this.btnQuanLyKhachHang.Click += new System.EventHandler(this.btnQuanLyKhachHang_Click);
             // 
             // btnQuanLyTaiKhoan
             // 
+            this.btnQuanLyTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnQuanLyTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
@@ -260,11 +261,12 @@ namespace BTL
             this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
             this.btnQuanLyTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = false;
             this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
             // 
             // btnQuanLyLoaiPhong
             // 
+            this.btnQuanLyLoaiPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnQuanLyLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyLoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyLoaiPhong.FlatAppearance.BorderSize = 0;
@@ -284,12 +286,12 @@ namespace BTL
             this.btnQuanLyLoaiPhong.Text = "Quản lý loại phòng";
             this.btnQuanLyLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyLoaiPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyLoaiPhong.UseVisualStyleBackColor = true;
+            this.btnQuanLyLoaiPhong.UseVisualStyleBackColor = false;
             this.btnQuanLyLoaiPhong.Click += new System.EventHandler(this.btnQuanLyLoaiPhong_Click);
             // 
             // btnQuanLyPhong
             // 
-            this.btnQuanLyPhong.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnQuanLyPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnQuanLyPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLyPhong.FlatAppearance.BorderSize = 0;
@@ -418,24 +420,12 @@ namespace BTL
             // 
             // panelLogo
             // 
-            this.panelLogo.Controls.Add(this.pictureBox2);
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(204, 133);
             this.panelLogo.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(35, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 121);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -569,16 +559,6 @@ namespace BTL
             this.panelDesktop.Size = new System.Drawing.Size(1356, 786);
             this.panelDesktop.TabIndex = 3;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(615, 95);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(129, 125);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -589,6 +569,16 @@ namespace BTL
             this.label2.Size = new System.Drawing.Size(794, 45);
             this.label2.TabIndex = 2;
             this.label2.Text = "Chào mừng quý khách đến với khách sạn 5*  Nhổn";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(615, 95);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(129, 125);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // formMain
             // 
@@ -607,7 +597,6 @@ namespace BTL
             this.panelSubmenu2.ResumeLayout(false);
             this.panelSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IconCurrentForm)).EndInit();
@@ -640,7 +629,6 @@ namespace BTL
         private FontAwesome.Sharp.IconPictureBox IconCurrentForm;
         private System.Windows.Forms.Panel panelHidden;
         private System.Windows.Forms.Panel panelDesktop;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private FontAwesome.Sharp.IconPictureBox btnClose;
         private FontAwesome.Sharp.IconPictureBox btnMinimize;
         private FontAwesome.Sharp.IconPictureBox btnMaximize;

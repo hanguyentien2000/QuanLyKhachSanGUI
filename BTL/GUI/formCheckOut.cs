@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BTL.InterfaceQuanly
+namespace BTL.GUI
 {
-    public partial class formCheckout : Form
+    public partial class formCheckOut : Form
     {
-        public formCheckout()
+        public formCheckOut()
         {
             InitializeComponent();
         }

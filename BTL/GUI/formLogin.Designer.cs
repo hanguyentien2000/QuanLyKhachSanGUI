@@ -137,7 +137,7 @@ namespace BTL
             this.pictureBox1.BackgroundImage = global::BTL.Properties.Resources.user_50px;
             this.pictureBox1.Location = new System.Drawing.Point(35, 113);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox1.Size = new System.Drawing.Size(53, 54);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 

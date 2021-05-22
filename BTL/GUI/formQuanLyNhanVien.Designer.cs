@@ -54,9 +54,9 @@ namespace BTL.InterfaceQuanly
             this.label4 = new System.Windows.Forms.Label();
             this.txtCMND = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnThemNV = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.guna2RadioButton1 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton2 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -100,7 +100,7 @@ namespace BTL.InterfaceQuanly
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(42, 272);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(39, 299);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -389,52 +389,52 @@ namespace BTL.InterfaceQuanly
             this.label6.TabIndex = 25;
             this.label6.Text = "CMND";
             // 
-            // btnThemNV
+            // btnThem
             // 
-            this.btnThemNV.BorderRadius = 20;
-            this.btnThemNV.CheckedState.Parent = this.btnThemNV;
-            this.btnThemNV.CustomImages.Parent = this.btnThemNV;
-            this.btnThemNV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNV.ForeColor = System.Drawing.Color.White;
-            this.btnThemNV.HoverState.Parent = this.btnThemNV;
-            this.btnThemNV.Location = new System.Drawing.Point(956, 31);
-            this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.ShadowDecoration.Parent = this.btnThemNV;
-            this.btnThemNV.Size = new System.Drawing.Size(117, 46);
-            this.btnThemNV.TabIndex = 28;
-            this.btnThemNV.Text = "Thêm";
+            this.btnThem.BorderRadius = 20;
+            this.btnThem.CheckedState.Parent = this.btnThem;
+            this.btnThem.CustomImages.Parent = this.btnThem;
+            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.HoverState.Parent = this.btnThem;
+            this.btnThem.Location = new System.Drawing.Point(956, 31);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.ShadowDecoration.Parent = this.btnThem;
+            this.btnThem.Size = new System.Drawing.Size(117, 46);
+            this.btnThem.TabIndex = 28;
+            this.btnThem.Text = "Thêm";
             // 
-            // guna2Button2
+            // btnSua
             // 
-            this.guna2Button2.BorderRadius = 20;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(956, 122);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(117, 46);
-            this.guna2Button2.TabIndex = 29;
-            this.guna2Button2.Text = "Sửa";
+            this.btnSua.BorderRadius = 20;
+            this.btnSua.CheckedState.Parent = this.btnSua;
+            this.btnSua.CustomImages.Parent = this.btnSua;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.HoverState.Parent = this.btnSua;
+            this.btnSua.Location = new System.Drawing.Point(956, 133);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.ShadowDecoration.Parent = this.btnSua;
+            this.btnSua.Size = new System.Drawing.Size(117, 46);
+            this.btnSua.TabIndex = 29;
+            this.btnSua.Text = "Sửa";
             // 
-            // guna2Button3
+            // btnXoa
             // 
-            this.guna2Button3.BorderRadius = 20;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.Red;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(956, 207);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(117, 46);
-            this.guna2Button3.TabIndex = 30;
-            this.guna2Button3.Text = "Xóa";
+            this.btnXoa.BorderRadius = 20;
+            this.btnXoa.CheckedState.Parent = this.btnXoa;
+            this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.FillColor = System.Drawing.Color.Red;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.HoverState.Parent = this.btnXoa;
+            this.btnXoa.Location = new System.Drawing.Point(956, 227);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
+            this.btnXoa.Size = new System.Drawing.Size(117, 46);
+            this.btnXoa.TabIndex = 30;
+            this.btnXoa.Text = "Xóa";
             // 
             // guna2RadioButton1
             // 
@@ -491,9 +491,9 @@ namespace BTL.InterfaceQuanly
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1095, 548);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.btnThemNV);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDiaChi);
@@ -536,9 +536,9 @@ namespace BTL.InterfaceQuanly
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtCMND;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2Button btnThemNV;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnThem;
+        private Guna.UI2.WinForms.Guna2Button btnSua;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton1;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton2;
         private System.Windows.Forms.GroupBox groupBox1;

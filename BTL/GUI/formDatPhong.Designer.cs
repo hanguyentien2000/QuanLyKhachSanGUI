@@ -56,6 +56,8 @@ namespace BTL
             this.btnDatPhong = new Guna.UI2.WinForms.Guna2Button();
             this.lstRoom = new System.Windows.Forms.ListView();
             this.btnAddPhong = new Guna.UI2.WinForms.Guna2Button();
+            this.lbTienCoc = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbTongBill = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SuspendLayout();
             // 
             // label2
@@ -318,7 +320,7 @@ namespace BTL
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(393, 334);
+            this.label8.Location = new System.Drawing.Point(393, 340);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 24);
             this.label8.TabIndex = 21;
@@ -329,7 +331,7 @@ namespace BTL
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(393, 398);
+            this.label9.Location = new System.Drawing.Point(393, 411);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 24);
             this.label9.TabIndex = 22;
@@ -444,7 +446,7 @@ namespace BTL
             this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnDatPhong.HoverState.Parent = this.btnDatPhong;
-            this.btnDatPhong.Location = new System.Drawing.Point(397, 463);
+            this.btnDatPhong.Location = new System.Drawing.Point(397, 482);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.ShadowDecoration.Parent = this.btnDatPhong;
             this.btnDatPhong.Size = new System.Drawing.Size(180, 45);
@@ -457,7 +459,7 @@ namespace BTL
             this.lstRoom.HideSelection = false;
             this.lstRoom.Location = new System.Drawing.Point(781, 411);
             this.lstRoom.Name = "lstRoom";
-            this.lstRoom.Size = new System.Drawing.Size(275, 97);
+            this.lstRoom.Size = new System.Drawing.Size(275, 169);
             this.lstRoom.TabIndex = 30;
             this.lstRoom.UseCompatibleStateImageBehavior = false;
             this.lstRoom.SelectedIndexChanged += new System.EventHandler(this.lstRoom_SelectedIndexChanged);
@@ -478,12 +480,34 @@ namespace BTL
             this.btnAddPhong.Text = "Thêm phòng";
             this.btnAddPhong.Click += new System.EventHandler(this.btnAddPhong_Click);
             // 
+            // lbTienCoc
+            // 
+            this.lbTienCoc.BackColor = System.Drawing.Color.Transparent;
+            this.lbTienCoc.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTienCoc.Location = new System.Drawing.Point(493, 340);
+            this.lbTienCoc.Name = "lbTienCoc";
+            this.lbTienCoc.Size = new System.Drawing.Size(18, 26);
+            this.lbTienCoc.TabIndex = 32;
+            this.lbTienCoc.Text = "...";
+            // 
+            // lbTongBill
+            // 
+            this.lbTongBill.BackColor = System.Drawing.Color.Transparent;
+            this.lbTongBill.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongBill.Location = new System.Drawing.Point(493, 409);
+            this.lbTongBill.Name = "lbTongBill";
+            this.lbTongBill.Size = new System.Drawing.Size(18, 26);
+            this.lbTongBill.TabIndex = 33;
+            this.lbTongBill.Text = "...";
+            // 
             // formDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1095, 672);
+            this.Controls.Add(this.lbTongBill);
+            this.Controls.Add(this.lbTienCoc);
             this.Controls.Add(this.btnAddPhong);
             this.Controls.Add(this.lstRoom);
             this.Controls.Add(this.btnDatPhong);
@@ -549,5 +573,7 @@ namespace BTL
         private Guna.UI2.WinForms.Guna2Button btnDatPhong;
         private System.Windows.Forms.ListView lstRoom;
         private Guna.UI2.WinForms.Guna2Button btnAddPhong;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbTienCoc;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbTongBill;
     }
 }
