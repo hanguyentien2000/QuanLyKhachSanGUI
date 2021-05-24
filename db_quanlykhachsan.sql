@@ -1,125 +1,173 @@
-use master
+USE MASTER
+GO
 
-go
+IF(EXISTS(SELECT * FROM SYSDATABASES WHERE NAME='QLKS'))
+	DROP DATABASE QLKS
+GO
 
-create database QLKS
-go
+CREATE DATABASE QLKS
+GO
 
-use QLKS
-go
+USE QLKS
+GO
 
-
-create table ChucVu(
-	MaCV int identity primary key not null,
-	TenCV nvarchar(50)
-)
-
-go
-
-
+--bảng nhân viên
 create table NhanVien(
-	MaNhanVien int identity primary key not null,
-	MaCV int,
-	Hoten nvarchar(50) ,
-	Sdt char(12),
-	Ngaysinh date,
-	Diachi nvarchar(50),
-	CMND nchar(20),
-	GioiTinh nvarchar(50)
-	constraint fk_nhanvien foreign key (MaCV) references ChucVu(MaCV)
-)
-
-go
-
-create table ChamCong(
-	MaNhanVien int not null ,
-	Ngay date not null,
-	TrangThai bit,	constraint PK_Chamcong primary key (MaNhanVien, Ngay),
-	constraint Fk_Chamcong foreign key (MaNhanVien) references NhanVien(MaNhanVien)
-)
-
-create table Taikhoan(
-	Username nvarchar(50) primary key not null,
-	Password nvarchar(50) ,
-	Quantri bit,
-	MaNhanVien int,
-	constraint Fk_TaiKhoan foreign key (MaNhanVien) references NhanVien(MaNhanVien)
-)
-go
-
-create table LoaiPhong(
-	TenLoaiPhong nchar(20) primary key not null,
-	Soluong int,
-	GiaPhong int
-)
-go
-
-create table Phong(
-	MaPhong int identity not null,
-	TenLoaiPhong nchar(20),
-	TrangThai int,
-	constraint PK_Phong primary key (MaPhong),
-	constraint FK_Phong foreign key (TenLoaiPhong) references LoaiPhong(TenLoaiPhong),
-)
-go
-
-create table KhachHang(
-	MaKH int identity primary key not null,
-	Hoten nvarchar(50),
-	SDT int,
-    Tuoi int,
-	Email varchar(30),
-	Gioitinh nvarchar(10),
+	MaNhanVien INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	Hoten nvarchar(50) not null,
+	SDT char(10),
+	NgaySinh date not null,
 	DiaChi nvarchar(50),
-	TrangThai bit
+	CMND char(12),
+	GioiTinh bit not null, --0: NAM, 1: NỮ
+	ChucVu nvarchar(50) not null
 )
 go
 
+--bảng chấm công
+create table ChamCong(
+	MaNhanVien int not null,
+	NgayChamCong date default(getdate()) not null,
+	TrangThai bit not null,	
+	constraint PK_Chamcong primary key (MaNhanVien, NgayChamCong),
+	foreign key (MaNhanVien) references NhanVien(MaNhanVien) 
+)
+
+--bảng tài khoản
+create table Taikhoan(
+	ID nvarchar(50) primary key not null,
+	PASS nvarchar(50) not null,
+	LoaiTaiKhoan bit not null, --0: quản lý, 1:admin
+	MaNhanVien INT NOT NULL,
+	FOREIGN KEY (MaNhanVien) references NhanVien(MaNhanVien) 
+)
+go
+
+--bảng loại phòng
+create table LoaiPhong(
+	MaLoaiPhong INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	TenLoaiPhong nvarchar(50) not null,
+	SoluongNguoi int not null,
+	GiaPhong int not null
+)
+go
+
+--bảng phòng
+create table Phong(
+	MaPhong INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	MaLoaiPhong int not null,
+	TrangThaiPhong int not null, --0: đầy, 1: còn
+	foreign key (MaLoaiPhong) references LoaiPhong(MaLoaiPhong) 
+)
+go
+
+--bảng khách hàng
+create table KhachHang(
+	MaKhachHang INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	Hoten nvarchar(50) not null,
+	SDT int,
+    Tuoi int not null,
+	Email varchar(30),
+	Gioitinh nvarchar(10) not null, --0: Nam, 1: Nữ
+	DiaChi nvarchar(50),
+	CMND char(12) not null,
+	TrangThai bit not null --0: người xấu, 1: người tốt
+)
+go
+
+--bảng đặt phòng
 create table DatPhong(
-	MaDatPhong int identity not null,
-	MaNhanVien int,
-	MaKH int,
-	NgayDat date,
-	NgayDen date,
-	NgayDi date,
-	TienDatCoc int,
-	SoLuong int,
-	TrangThai int
-	constraint pk_Datphong primary key (MaDatPhong),
-	constraint fk_datphong foreign key (MaNhanVien) references NhanVien(MaNhanVien),
-	constraint fk_datphong1 foreign key (MaKH) references KhachHang(MaKH),
+	MaDatPhong INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	MaNhanVien int not null,
+	MaKhachHang int not null,
+	MaLoaiPhong int not null,
+	NgayDat date not null,
+	NgayDen date not null,
+	NgayDi date not null,
+	TienDatCoc int not null,
+	SoLuongPhong int not null,
+	TrangThaiDatPhong int not null,
+	foreign key (MaLoaiPhong) references LoaiPhong(MaLoaiPhong),
+	foreign key (MaNhanVien) references NhanVien(MaNhanVien),
+	foreign key (MaKhachHang) references KhachHang(MaKhachHang)
 )
 go
 
+--bảng chi tiết phòng đặt
 create table ChiTietPhongDat(
 	MaDatPhong int,
 	MaPhong int,
 	constraint PK_CTPD primary key (MaDatPhong, MaPhong),
-	constraint FK_CTPD foreign key (MaDatPhong) references DatPhong(MaDatPhong),
-	constraint FK_CTPD1 foreign key (MaPhong) references Phong(MaPhong),
+	foreign key (MaPhong) references Phong(MaPhong),
+	foreign key (MaDatPhong) references DatPhong(MaDatPhong)
 )
 go
 
-
+--bảng hóa đơn
 create table HoaDon(
-	MaHD int identity not null,
+	MaHoaDon INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	MaDatPhong int,
-	Ngaylap date default(getdate()),
-	TongTien int,
-	constraint pk_HoaDon primary key (MaHD),
-	constraint fk_Hoadon foreign key (MaDatPhong) references DatPhong(MaDatPhong),
+	NgayLap date default(getdate()),
+	TongTien int not null,
+	foreign key (MaDatPhong) references DatPhong(MaDatPhong) 
 )	
-
 go
 
-insert into ChucVu values(N'Quản trị')
-insert into ChucVu values(N'Nhân Viên')
-go
+--thêm dữ liệu nhân viên
+INSERT INTO NhanVien(Hoten, SDT, Ngaysinh, Diachi, CMND, GioiTinh, ChucVu) VALUES
+(N'Quách Ngọc Hà', '0389149961', '04/05/2000', N'Hà Nội', '001278911111', 0, N'Admin'),
+(N'Phạm Anh Dương', '0969055609', '05/06/2000', N'Hà Nội', '001278912131', 0, N'Quản lý'),
+(N'Nguyễn Tiến Hà', '0936890916', '04/03/2000', N'Hà Nội', '001267812651', 0, N'Quản lý')
+GO
 
-insert into NhanVien values(1, N'Nguyễn Tiến Hà', 0912391238,'04/03/2000', N'Hà Nội',0921892181,N'Nam')
-insert into NhanVien values(2, N'Đỗ Bá Hoàn', 09123121,'09/28/2000', N'Hà Nội',0921892181,N'Nam')
-go
+INSERT INTO ChamCong(MaNhanVien, TrangThai) VALUES
+(2, 1),
+(3, 0)
+GO
 
-insert into Taikhoan values('admin', 'admin', 1, 1)
-insert into Taikhoan values('nhanvien', 'nhanvien', 0, 2)
-go
+INSERT INTO Taikhoan(ID, PASS, LoaiTaiKhoan, MaNhanVien) VALUES
+('admin', 1, 0, 1),
+('nv1', 1, 1, 2),
+('nv2', 1, 1, 3)
+GO
+
+INSERT INTO LoaiPhong(TenLoaiPhong, SoLuongNguoi, GiaPhong) VALUES
+(N'Hạng nhất', 15, 7000000),
+(N'Hạng thương gia', 10, 5000000),
+(N'Hạng phổ thông đặc biệt', 6, 3000000),
+(N'Hạng phổ thông', 4, 2500000)
+GO
+
+INSERT INTO Phong(MaLoaiPhong, TrangThaiPhong) VALUES
+(1, 0),
+(2, 1),
+(3, 1),
+(4, 0),
+(3, 0),
+(2, 0),
+(4, 1),
+(1, 1)
+GO
+
+INSERT INTO KhachHang(Hoten, SDT, Tuoi, Email, Gioitinh, DiaChi, CMND, TrangThai) VALUES --0: người xấu, 1: người tốt
+(N'Phạm Duy Hưng', '0327106865', 20, 'phamhung@gmail.com', 0, N'Hà Nội', '001278910103', 1),
+(N'Đỗ Bá Hoàn', '0354732260', 21, 'bahoan@gmail.com', 0, N'Hà Nội', '001356711103', 1),
+(N'Lê Vũ Long', '0328026493', 21, 'vulong@gmail.com', 0, N'Phú Thọ', '001456712103', 0),
+(N'Ngô Ngọc Ánh', '0347658636', 21, 'ngocanh@gmail.com', 1, N'Đà Nẵng', '001374910103', 0),
+(N'Đào Thu Phương', '0583509498', 20, 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103', 0)
+GO
+
+INSERT INTO DatPhong(MaNhanVien, MaKhachHang, MaLoaiPhong, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
+(1, 1, 2,'02/03/2021', '04/03/2021', '10/03/2021', 700000, 3, 1),
+(2, 3, 1,'06/05/2021', '08/05/2021', '11/05/2021', 1500000, 2, 1)
+GO
+
+INSERT INTO ChiTietPhongDat(MaDatPhong, MaPhong) VALUES
+(1, 2),
+(2, 3)
+GO
+
+INSERT INTO HoaDon(MaDatPhong, TongTien) VALUES
+(1, 104300000),
+(2, 54500000)
+GO
