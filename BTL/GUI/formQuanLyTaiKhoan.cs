@@ -16,5 +16,10 @@ namespace BTL.GUI
         {
             InitializeComponent();
         }
+
+        private void formQuanLyTaiKhoan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
