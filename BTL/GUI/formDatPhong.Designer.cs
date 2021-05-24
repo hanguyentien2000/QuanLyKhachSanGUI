@@ -33,11 +33,9 @@ namespace BTL
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtTenKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCMND = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbxGioitinh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dateNS = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,6 +56,12 @@ namespace BTL
             this.btnAddPhong = new Guna.UI2.WinForms.Guna2Button();
             this.lbTienCoc = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbTongBill = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rdDangSuDung = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdTrong = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -99,16 +103,6 @@ namespace BTL
             this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Email(*)";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 439);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Giới tính(*)";
             // 
             // txtTenKH
             // 
@@ -182,26 +176,6 @@ namespace BTL
             this.txtCMND.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtCMND.TabIndex = 11;
             // 
-            // cbxGioitinh
-            // 
-            this.cbxGioitinh.BackColor = System.Drawing.Color.Transparent;
-            this.cbxGioitinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxGioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxGioitinh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxGioitinh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxGioitinh.FocusedState.Parent = this.cbxGioitinh;
-            this.cbxGioitinh.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbxGioitinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbxGioitinh.HoverState.Parent = this.cbxGioitinh;
-            this.cbxGioitinh.ItemHeight = 30;
-            this.cbxGioitinh.ItemsAppearance.Parent = this.cbxGioitinh;
-            this.cbxGioitinh.Location = new System.Drawing.Point(37, 472);
-            this.cbxGioitinh.Name = "cbxGioitinh";
-            this.cbxGioitinh.ShadowDecoration.Parent = this.cbxGioitinh;
-            this.cbxGioitinh.Size = new System.Drawing.Size(274, 36);
-            this.cbxGioitinh.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.cbxGioitinh.TabIndex = 13;
-            // 
             // dateNS
             // 
             this.dateNS.CheckedState.Parent = this.dateNS;
@@ -213,7 +187,7 @@ namespace BTL
             this.dateNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateNS.Name = "dateNS";
             this.dateNS.ShadowDecoration.Parent = this.dateNS;
-            this.dateNS.Size = new System.Drawing.Size(200, 36);
+            this.dateNS.Size = new System.Drawing.Size(274, 36);
             this.dateNS.TabIndex = 15;
             this.dateNS.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
             this.dateNS.ValueChanged += new System.EventHandler(this.dateNS_ValueChanged);
@@ -300,7 +274,7 @@ namespace BTL
             this.dateCheckIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateCheckIn.Name = "dateCheckIn";
             this.dateCheckIn.ShadowDecoration.Parent = this.dateCheckIn;
-            this.dateCheckIn.Size = new System.Drawing.Size(200, 36);
+            this.dateCheckIn.Size = new System.Drawing.Size(274, 36);
             this.dateCheckIn.TabIndex = 20;
             this.dateCheckIn.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
             this.dateCheckIn.ValueChanged += new System.EventHandler(this.dateCheckIn_ValueChanged);
@@ -320,7 +294,7 @@ namespace BTL
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(393, 340);
+            this.label8.Location = new System.Drawing.Point(393, 423);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 24);
             this.label8.TabIndex = 21;
@@ -331,7 +305,7 @@ namespace BTL
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(393, 411);
+            this.label9.Location = new System.Drawing.Point(393, 494);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 24);
             this.label9.TabIndex = 22;
@@ -446,7 +420,7 @@ namespace BTL
             this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnDatPhong.HoverState.Parent = this.btnDatPhong;
-            this.btnDatPhong.Location = new System.Drawing.Point(397, 482);
+            this.btnDatPhong.Location = new System.Drawing.Point(459, 564);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.ShadowDecoration.Parent = this.btnDatPhong;
             this.btnDatPhong.Size = new System.Drawing.Size(180, 45);
@@ -484,7 +458,7 @@ namespace BTL
             // 
             this.lbTienCoc.BackColor = System.Drawing.Color.Transparent;
             this.lbTienCoc.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTienCoc.Location = new System.Drawing.Point(493, 340);
+            this.lbTienCoc.Location = new System.Drawing.Point(493, 423);
             this.lbTienCoc.Name = "lbTienCoc";
             this.lbTienCoc.Size = new System.Drawing.Size(18, 26);
             this.lbTienCoc.TabIndex = 32;
@@ -494,18 +468,96 @@ namespace BTL
             // 
             this.lbTongBill.BackColor = System.Drawing.Color.Transparent;
             this.lbTongBill.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongBill.Location = new System.Drawing.Point(493, 409);
+            this.lbTongBill.Location = new System.Drawing.Point(493, 492);
             this.lbTongBill.Name = "lbTongBill";
             this.lbTongBill.Size = new System.Drawing.Size(18, 26);
             this.lbTongBill.TabIndex = 33;
             this.lbTongBill.Text = "...";
+            // 
+            // guna2DateTimePicker1
+            // 
+            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(397, 365);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(274, 36);
+            this.guna2DateTimePicker1.TabIndex = 35;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(393, 327);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 20);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Check out";
+            // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.Controls.Add(this.rdDangSuDung);
+            this.guna2GroupBox1.Controls.Add(this.rdTrong);
+            this.guna2GroupBox1.Enabled = false;
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2GroupBox1.Location = new System.Drawing.Point(37, 446);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
+            this.guna2GroupBox1.Size = new System.Drawing.Size(300, 98);
+            this.guna2GroupBox1.TabIndex = 36;
+            this.guna2GroupBox1.Text = "Giới tính";
+            // 
+            // rdDangSuDung
+            // 
+            this.rdDangSuDung.AutoSize = true;
+            this.rdDangSuDung.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdDangSuDung.CheckedState.BorderThickness = 0;
+            this.rdDangSuDung.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdDangSuDung.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdDangSuDung.CheckedState.InnerOffset = -4;
+            this.rdDangSuDung.Location = new System.Drawing.Point(157, 60);
+            this.rdDangSuDung.Name = "rdDangSuDung";
+            this.rdDangSuDung.Size = new System.Drawing.Size(41, 19);
+            this.rdDangSuDung.TabIndex = 1;
+            this.rdDangSuDung.Text = "Nữ";
+            this.rdDangSuDung.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdDangSuDung.UncheckedState.BorderThickness = 2;
+            this.rdDangSuDung.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdDangSuDung.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rdTrong
+            // 
+            this.rdTrong.AutoSize = true;
+            this.rdTrong.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdTrong.CheckedState.BorderThickness = 0;
+            this.rdTrong.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdTrong.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdTrong.CheckedState.InnerOffset = -4;
+            this.rdTrong.Location = new System.Drawing.Point(34, 60);
+            this.rdTrong.Name = "rdTrong";
+            this.rdTrong.Size = new System.Drawing.Size(51, 19);
+            this.rdTrong.TabIndex = 0;
+            this.rdTrong.Text = "Nam";
+            this.rdTrong.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdTrong.UncheckedState.BorderThickness = 2;
+            this.rdTrong.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdTrong.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // formDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1095, 672);
+            this.ClientSize = new System.Drawing.Size(1169, 672);
+            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.lbTongBill);
             this.Controls.Add(this.lbTienCoc);
             this.Controls.Add(this.btnAddPhong);
@@ -525,12 +577,10 @@ namespace BTL
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.dateNS);
-            this.Controls.Add(this.cbxGioitinh);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -540,6 +590,8 @@ namespace BTL
             this.Name = "formDatPhong";
             this.Text = "formDatPhong";
             this.Load += new System.EventHandler(this.formDatPhong_Load);
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.guna2GroupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,11 +602,9 @@ namespace BTL
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtTenKH;
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
         private Guna.UI2.WinForms.Guna2TextBox txtCMND;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxGioitinh;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateNS;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label label7;
@@ -575,5 +625,10 @@ namespace BTL
         private Guna.UI2.WinForms.Guna2Button btnAddPhong;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTienCoc;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTongBill;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2RadioButton rdDangSuDung;
+        private Guna.UI2.WinForms.Guna2RadioButton rdTrong;
     }
 }
