@@ -171,6 +171,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\formCheckOut.resx">
+      <DependentUpon>formCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\formDoiMatKhau.resx">
       <DependentUpon>formDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
