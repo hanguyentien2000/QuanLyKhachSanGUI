@@ -16,5 +16,10 @@ namespace BTL.InterfaceQuanly
         {
             InitializeComponent();
         }
+
+        private void formQuanLyNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
