@@ -31,10 +31,10 @@ namespace BTL.BLL
             }
             return results;
         }
-        public bool UpdatePassword(string password,string username)
-        {
-            String sql = "Update TaiKhoan set Password = @'"+ password +"'";
-            return da.ExecuteQuery(sql, password);
-        }
+        //public bool UpdatePassword(string password,string username)
+        //{
+        //    String sql = "Update TaiKhoan set Password = @'"+ password +"'";
+        //    return da.ExecuteQuery(sql, password);
+        //}
     }
 }

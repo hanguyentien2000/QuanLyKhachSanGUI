@@ -10,14 +10,15 @@ namespace BTL.DAL
 {
     class Dal
     {
-        private SqlConnection GetDBConnection()
+        public SqlConnection GetDBConnection()
         {
-            string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True"; //Hưng
+            //string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connString);
             return conn;
         }
 
-        private void setParameters(SqlCommand cmd, params dynamic[] parameters)
+        public void setParameters(SqlCommand cmd, params dynamic[] parameters)
         {
             try
             {
@@ -34,7 +35,33 @@ namespace BTL.DAL
             }
         }
 
-        public DataTable Query(string sql, params dynamic[] parameters)
+        public DataTable ExecuteQuery(String query, object[] parameters = null)
+        {
+            DataTable table = new DataTable();
+            using (GetDBConnection())
+            {
+                GetDBConnection().Open();
+                SqlCommand command = new SqlCommand(query, GetDBConnection());
+                if (query != null)
+                {
+                    Int32 i = 0;
+                    String[] queries = query.Split(' ');
+                    foreach (String str in queries)
+                    {
+                        if (str.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(str, parameters[i]);
+                            i++;
+                        }
+                    }
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(table);
+                }
+            }
+            return table;
+        }
+
+        public DataTable GetTable(string sql, params dynamic[] parameters)
         {
             SqlConnection conn = GetDBConnection();
             try
@@ -59,8 +86,7 @@ namespace BTL.DAL
             }
         }
 
-
-        public bool ExecuteQuery(string sql, params dynamic[] parameters)
+        public bool ExecuteNonQuery(string sql, params dynamic[] parameters)
         {
             SqlConnection conn = GetDBConnection();
             try
@@ -82,5 +108,28 @@ namespace BTL.DAL
                     conn.Close();
             }
         }
+
+        //public bool ExecuteNonQuery(string sql)
+        //{
+        //    SqlConnection conn = GetDBConnection();
+        //    conn.Open();
+        //    try
+        //    {
+        //        SqlCommand cmd = new SqlCommand(sql, conn);
+        //        cmd.ExecuteNonQuery();
+        //        cmd.Dispose();
+        //        cmd.Clone();
+        //        return true;
+        //    }
+        //    catch (SqlException)
+        //    {
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //        if (conn.State == ConnectionState.Open)
+        //            conn.Close();
+        //    }
+        //}
     }
 }
