@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="BUS\LoaiPhongBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
@@ -89,6 +90,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="GUI\formChamCong.cs">
@@ -162,7 +164,6 @@
     <Compile Include="DTO\ChucVuDTO.cs" />
     <Compile Include="DTO\DatPhongDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
-    <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiPhongDTO.cs" />
     <Compile Include="DTO\PhongDTO.cs" />
     <Compile Include="GUI\formQuanLyTaiKhoan.cs">

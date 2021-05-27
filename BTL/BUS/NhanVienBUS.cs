@@ -75,16 +75,16 @@ namespace BTL.BUS
             return data.GetTable(sql);
         }
 
-        public DataTable kiemTraNhanVienDatPhong(int maNV)
+        public int kiemTraNhanVienDatPhong(int maNV)
         {
-            string sql = "SELECT * FROM NhanVien INNER JOIN DatPhong ON NhanVien.MaNhanVien=DatPhong.MaNhanVien WHERE NhanVien.MaNhanVien = " + maNV;
-            return data.GetTable(sql);
+            string sql = "SELECT dbo.kiemTraNhanVienDP(" + maNV + ") AS 'checkNV'";
+            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkNV"].ToString());
         }
 
         public int layMaxMaNhanVien()
         {
-            string sql = "SELECT MAX(MaNhanVien) AS N'maMax' FROM NhanVien ";
-            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["maMax"].ToString());
+            string sql = "SELECT MAX(MaNhanVien) AS N'maMaxNV' FROM NhanVien ";
+            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["maMaxNV"].ToString());
         }
     }
 }

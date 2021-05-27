@@ -21,7 +21,7 @@ namespace BTL.GUI
 
         private void formQuanLyTaiKhoan_Load(object sender, EventArgs e)
         {
-            dgvTaiKhoan.DataSource = dsTaiKhoan.GetTaiKhoan();
+            //dgvTaiKhoan.DataSource = dsTaiKhoan.GetTaiKhoan();
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)

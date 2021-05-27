@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BTL.Models
+namespace BTL.DTO
 {
     class KhachHangDTO
     {
-        public int MaKH { get; set; }
-        public String Hoten { get; set; }
-        public int SDT { get; set; }
-        public int NgaySinh { get; set; }
-        public String Email { get; set; }
-        public String GioiTinh { get; set; }
-        public String DiaChi { get; set; }
-        public Boolean TrangThai { get; set; }
+        int maKH, gioiTinh, trangThai;
+        string hoTen, soDT, ngaySinh, email, diaChi, cmnd;
+
+        public int MaKH { get => maKH; set => maKH = value; }
+        public int GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string HoTen { get => hoTen; set => hoTen = value; }
+        public string SoDT { get => soDT; set => soDT = value; }
+        public string NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public string Email { get => email; set => email = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string Cmnd { get => cmnd; set => cmnd = value; }
+        public int TrangThai { get => trangThai; set => trangThai = value; }
     }
 }
