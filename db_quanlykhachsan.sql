@@ -64,7 +64,7 @@ go
 create table KhachHang(
 	MaKhachHang INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	TenKhachHang nvarchar(50) not null,
-	SDT int,
+	SDT nchar(10),
     NgaySinhKH date not null,
 	Email varchar(30),
 	GioiTinhKH bit not null, --0: Nam, 1: Nữ
@@ -79,7 +79,6 @@ create table DatPhong(
 	MaDatPhong INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	MaNhanVien int not null,
 	MaKhachHang int not null,
-
 	NgayDat date not null,
 	NgayDen date not null,
 	NgayDi date not null,
@@ -87,8 +86,7 @@ create table DatPhong(
 	SoLuongPhong int not null,
 	TrangThaiDatPhong int not null,
 	foreign key (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE,
-	foreign key (MaKhachHang) references KhachHang(MaKhachHang) ON UPDATE CASCADE ON DELETE CASCADE,
-
+	foreign key (MaKhachHang) references KhachHang(MaKhachHang) ON UPDATE CASCADE ON DELETE CASCADE
 )
 go
 
@@ -182,12 +180,36 @@ SELECT * FROM DatPhong
 SELECT * FROM ChiTietPhongDat
 SELECT * FROM HoaDon
 
---SELECT MaNhanVien, TenNhanVien, SoDienThoai, NgaySinhNV, DiaChiNhanVien, 
---CASE  
---	WHEN GioiTinhNV = 0 THEN N'Nam'
---	ELSE N'Nữ'
---END AS GioiTinhNV, ChucVu
---FROM NhanVien
+--kiểm tra nhân viên đang đặt phòng
+CREATE FUNCTION kiemTraNhanVienDP(@manv INT)
+RETURNS INT
+AS
+BEGIN
+	DECLARE @check INT
+	IF(EXISTS (SELECT * FROM NhanVien 
+		INNER JOIN DatPhong ON NhanVien.MaNhanVien=DatPhong.MaNhanVien 
+		WHERE NhanVien.MaNhanVien = @manv))
+			SET @check = 0 --đã tồn tại nhân viên
+	ELSE 
+		SET @check = 1
+	RETURN @check
+END
+GO
+----SELECT dbo.kiemTraNhanVienDP(1) AS 'check'
 
---SELECT MAX(MaNhanVien) AS N'maMax' FROM NhanVien 
---SELECT * FROM NhanVien INNER JOIN DatPhong ON NhanVien.MaNhanVien=DatPhong.MaNhanVien WHERE NhanVien.MaNhanVien = 1
+--kiểm tra khách hàng đang đặt phòng
+CREATE FUNCTION kiemTraKhachHangDP(@makh INT)
+RETURNS INT
+AS
+BEGIN
+	DECLARE @check INT
+	IF(EXISTS (SELECT * FROM KhachHang 
+		INNER JOIN DatPhong ON KhachHang.MaKhachHang=DatPhong.MaKhachHang 
+		WHERE KhachHang.MaKhachHang = @makh))
+			SET @check = 0 --đã tồn tại nhân viên
+	ELSE 
+		SET @check = 1
+	RETURN @check
+END
+GO
+----SELECT dbo.kiemTraKhachHangDP(1) AS 'check'

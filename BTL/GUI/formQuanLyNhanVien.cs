@@ -68,11 +68,7 @@ namespace BTL.InterfaceQuanly
         {
             try
             {
-                string reg = "/(84|0[3|5|7|8|9])+([0-9]{8})\b/";
-                //if(txtMaNV.Text.Trim().Equals(""))
-                //{
-                //    throw new Exception("Mã nhân viên không được để trống");
-                //}
+                string reg = "/(84|0[3|5|7|8|9])+([0-9]{8})\\b/g";
                 if (txtTenNV.Text.Trim().Equals(""))
                 {
                     throw new Exception("Tên nhân viên không được để trống");
@@ -225,10 +221,8 @@ namespace BTL.InterfaceQuanly
         {
             txtMaNV.Visible = true;
             lblMaNV.Visible = true;
-            nhanVienDTO.MaNV = Int32.Parse(txtMaNV.Text);
             try
             {
-                layThongTinNhanVien();
                 if (dgvNhanVien.Rows.Count < 1)
                 {
                     throw new Exception("Vui lòng thêm nhân viên trước khi xóa");
@@ -236,11 +230,12 @@ namespace BTL.InterfaceQuanly
                 if (txtMaNV.TextLength == 0)
                 {
                     throw new Exception("Vui lòng chọn nhân viên trước khi xóa");
-                } else if (nhanVienBLL.kiemTraNhanVienDatPhong(nhanVienDTO.MaNV) != null)
+                } 
+                if (nhanVienBLL.kiemTraNhanVienDatPhong(Int32.Parse(txtMaNV.Text)) == 0)
                 {
                     throw new Exception("Nhân viên đang đặt phòng");
                 }
-                if (nhanVienBLL.xoaTTNhanVien(nhanVienDTO.MaNV))
+                if (nhanVienBLL.xoaTTNhanVien(Int32.Parse(txtMaNV.Text)))
                 {
                     MessageBox.Show("Xóa thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
