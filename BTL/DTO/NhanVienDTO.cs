@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace BTL.Models
 {
-    class NhanVienDTO
+    public class NhanVienDTO
     {
-        public int MaNV { get; set; }
-        public int MaCV { get; set; }
-        public String Hoten { get; set; }
-        public int SDT { get; set; }
-        public DateTime NgaySinh { get; set; }
-        public String Diachi { get; set; }
-        public String CMND { get; set; }
-        public String Gioitinh { get; set; }
+        int maNV;
+        string hoTen, soDT, diaChi, gioiTinh, chucVu, ngaySinh;
+
+        public int MaNV { get => maNV; set => maNV = value; }
+        public string HoTen { get => hoTen; set => hoTen = value; }
+        public string SoDT { get => soDT; set => soDT = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string ChucVu { get => chucVu; set => chucVu = value; }
+        public string NgaySinh { get => ngaySinh; set => ngaySinh = value; }
     }
 }

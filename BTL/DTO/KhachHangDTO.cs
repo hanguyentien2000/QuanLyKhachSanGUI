@@ -11,7 +11,7 @@ namespace BTL.Models
         public int MaKH { get; set; }
         public String Hoten { get; set; }
         public int SDT { get; set; }
-        public int Tuoi { get; set; }
+        public int NgaySinh { get; set; }
         public String Email { get; set; }
         public String GioiTinh { get; set; }
         public String DiaChi { get; set; }

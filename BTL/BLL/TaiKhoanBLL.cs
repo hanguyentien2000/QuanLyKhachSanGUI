@@ -10,7 +10,7 @@ namespace BTL.BLL
 {
     class TaiKhoanBLL
     {
-        Dal da = new Dal();
+        DataProvider da = new DataProvider();
         private List<TaiKhoanDTO> ToList(DataTable dt)
         {
           
@@ -34,7 +34,7 @@ namespace BTL.BLL
         public bool UpdatePassword(string password,string username)
         {
             String sql = "Update TaiKhoan set Password = @'"+ password +"'";
-            return da.ExecuteQuery(sql, password);
+            return da.ExecuteNonQuery(sql, password);
         }
     }
 }
