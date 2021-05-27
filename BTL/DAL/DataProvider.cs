@@ -5,14 +5,15 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 namespace BTL.DAL
 {
-    class Dal
+    class DataProvider
     {
         private SqlConnection GetDBConnection()
         {
-            string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";//Hưng
+            //string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connString);
             return conn;
         }
@@ -59,8 +60,7 @@ namespace BTL.DAL
             }
         }
 
-
-        public bool ExecuteQuery(string sql, params dynamic[] parameters)
+        public bool ExecuteNonQuery(string sql, params dynamic[] parameters)
         {
             SqlConnection conn = GetDBConnection();
             try
@@ -81,6 +81,49 @@ namespace BTL.DAL
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
+        }
+
+        public DataTable GetTable(string sql)
+        {
+            try
+            {
+                SqlConnection conn = GetDBConnection();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message,"Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        public DataTable ExecuteQuery(String query, object[] parameters = null)
+        {
+            DataTable table = new DataTable();
+            using (GetDBConnection())
+            {
+                GetDBConnection().Open();
+                SqlCommand command = new SqlCommand(query, GetDBConnection());
+                if (query != null)
+                {
+                    Int32 i = 0;
+                    String[] queries = query.Split(' ');
+                    foreach (String str in queries)
+                    {
+                        if (str.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(str, parameters[i]);
+                            i++;
+                        }
+                    }
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(table);
+                }
+            }
+            return table;
         }
     }
 }

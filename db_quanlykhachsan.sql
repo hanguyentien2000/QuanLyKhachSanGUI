@@ -1,25 +1,24 @@
 USE MASTER
 GO
 
-IF(EXISTS(SELECT * FROM SYSDATABASES WHERE NAME='QLKS'))
-	DROP DATABASE QLKS
+IF(EXISTS(SELECT * FROM SYSDATABASES WHERE NAME='QuanLyKhachSan'))
+	DROP DATABASE QuanLyKhachSan
 GO
 
-CREATE DATABASE QLKS
+CREATE DATABASE QuanLyKhachSan
 GO
 
-USE QLKS
+USE QuanLyKhachSan
 GO
 
 --bảng nhân viên
 create table NhanVien(
 	MaNhanVien INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	Hoten nvarchar(50) not null,
-	SDT char(10),
-	NgaySinh date not null,
-	DiaChi nvarchar(50),
-	CMND char(12),
-	GioiTinh bit not null, --0: NAM, 1: NỮ
+	TenNhanVien nvarchar(50) not null,
+	SoDienThoai char(10),
+	NgaySinhNV date not null,
+	DiaChiNhanVien nvarchar(50),
+	GioiTinhNV bit not null, --0: NAM, 1: NỮ
 	ChucVu nvarchar(50) not null
 )
 go
@@ -30,7 +29,7 @@ create table ChamCong(
 	NgayChamCong date default(getdate()) not null,
 	TrangThai bit not null,	
 	constraint PK_Chamcong primary key (MaNhanVien, NgayChamCong),
-	foreign key (MaNhanVien) references NhanVien(MaNhanVien) 
+	foreign key (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
 --bảng tài khoản
@@ -39,7 +38,7 @@ create table Taikhoan(
 	PASS nvarchar(50) not null,
 	LoaiTaiKhoan bit not null, --0: quản lý, 1:admin
 	MaNhanVien INT NOT NULL,
-	FOREIGN KEY (MaNhanVien) references NhanVien(MaNhanVien) 
+	FOREIGN KEY (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE
 )
 go
 
@@ -57,19 +56,19 @@ create table Phong(
 	MaPhong INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	MaLoaiPhong int not null,
 	TrangThaiPhong int not null, --0: đầy, 1: còn
-	foreign key (MaLoaiPhong) references LoaiPhong(MaLoaiPhong) 
+	foreign key (MaLoaiPhong) references LoaiPhong(MaLoaiPhong) ON UPDATE CASCADE ON DELETE CASCADE
 )
 go
 
 --bảng khách hàng
 create table KhachHang(
 	MaKhachHang INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	Hoten nvarchar(50) not null,
+	TenKhachHang nvarchar(50) not null,
 	SDT int,
-    Tuoi int not null,
+    NgaySinhKH date not null,
 	Email varchar(30),
-	Gioitinh nvarchar(10) not null, --0: Nam, 1: Nữ
-	DiaChi nvarchar(50),
+	GioiTinhKH bit not null, --0: Nam, 1: Nữ
+	DiaChiKhachHang nvarchar(50),
 	CMND char(12) not null,
 	TrangThai bit not null --0: người xấu, 1: người tốt
 )
@@ -87,9 +86,9 @@ create table DatPhong(
 	TienDatCoc int not null,
 	SoLuongPhong int not null,
 	TrangThaiDatPhong int not null,
-	foreign key (MaLoaiPhong) references LoaiPhong(MaLoaiPhong),
-	foreign key (MaNhanVien) references NhanVien(MaNhanVien),
-	foreign key (MaKhachHang) references KhachHang(MaKhachHang)
+	foreign key (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE,
+	foreign key (MaKhachHang) references KhachHang(MaKhachHang) ON UPDATE CASCADE ON DELETE CASCADE,
+	foreign key (MaLoaiPhong) references LoaiPhong(MaLoaiPhong)
 )
 go
 
@@ -98,8 +97,8 @@ create table ChiTietPhongDat(
 	MaDatPhong int,
 	MaPhong int,
 	constraint PK_CTPD primary key (MaDatPhong, MaPhong),
-	foreign key (MaPhong) references Phong(MaPhong),
-	foreign key (MaDatPhong) references DatPhong(MaDatPhong)
+	foreign key (MaPhong) references Phong(MaPhong) ON UPDATE CASCADE ON DELETE CASCADE,
+	foreign key (MaDatPhong) references DatPhong(MaDatPhong) ON UPDATE CASCADE ON DELETE CASCADE
 )
 go
 
@@ -109,15 +108,15 @@ create table HoaDon(
 	MaDatPhong int,
 	NgayLap date default(getdate()),
 	TongTien int not null,
-	foreign key (MaDatPhong) references DatPhong(MaDatPhong) 
+	foreign key (MaDatPhong) references DatPhong(MaDatPhong) ON UPDATE CASCADE ON DELETE CASCADE
 )	
 go
 
 --thêm dữ liệu nhân viên
-INSERT INTO NhanVien(Hoten, SDT, Ngaysinh, Diachi, CMND, GioiTinh, ChucVu) VALUES
-(N'Quách Ngọc Hà', '0389149961', '04/05/2000', N'Hà Nội', '001278911111', 0, N'Admin'),
-(N'Phạm Anh Dương', '0969055609', '05/06/2000', N'Hà Nội', '001278912131', 0, N'Quản lý'),
-(N'Nguyễn Tiến Hà', '0936890916', '04/03/2000', N'Hà Nội', '001267812651', 0, N'Quản lý')
+INSERT INTO NhanVien(TenNhanVien, SoDienThoai, NgaysinhNV, DiaChiNhanVien, GioiTinhNV, ChucVu) VALUES
+(N'Quách Ngọc Hà', '0389149961', '04/05/2000', N'Hà Nội', 0, N'Admin'),
+(N'Phạm Anh Dương', '0969055609', '05/06/2000', N'Hà Nội', 0, N'Quản lý'),
+(N'Nguyễn Tiến Hà', '0936890916', '04/03/2000', N'Hà Nội', 0, N'Quản lý')
 GO
 
 INSERT INTO ChamCong(MaNhanVien, TrangThai) VALUES
@@ -149,12 +148,12 @@ INSERT INTO Phong(MaLoaiPhong, TrangThaiPhong) VALUES
 (1, 1)
 GO
 
-INSERT INTO KhachHang(Hoten, SDT, Tuoi, Email, Gioitinh, DiaChi, CMND, TrangThai) VALUES --0: người xấu, 1: người tốt
-(N'Phạm Duy Hưng', '0327106865', 20, 'phamhung@gmail.com', 0, N'Hà Nội', '001278910103', 1),
-(N'Đỗ Bá Hoàn', '0354732260', 21, 'bahoan@gmail.com', 0, N'Hà Nội', '001356711103', 1),
-(N'Lê Vũ Long', '0328026493', 21, 'vulong@gmail.com', 0, N'Phú Thọ', '001456712103', 0),
-(N'Ngô Ngọc Ánh', '0347658636', 21, 'ngocanh@gmail.com', 1, N'Đà Nẵng', '001374910103', 0),
-(N'Đào Thu Phương', '0583509498', 20, 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103', 0)
+INSERT INTO KhachHang(TenKhachHang, SDT, NgaySinhKH, Email, GioiTinhKH, DiaChiKhachHang, CMND, TrangThai) VALUES 
+(N'Phạm Duy Hưng', '0327106865', '10/06/2000', 'phamhung@gmail.com', 0, N'Hà Nội', '001278910103', 1),
+(N'Đỗ Bá Hoàn', '0354732260', '09/27/2000', 'bahoan@gmail.com', 0, N'Hà Nội', '001356711103', 1),
+(N'Lê Vũ Long', '0328026493', '11/20/2000', 'vulong@gmail.com', 0, N'Phú Thọ', '001456712103', 0),
+(N'Ngô Ngọc Ánh', '0347658636', '05/05/1994', 'ngocanh@gmail.com', 1, N'Đà Nẵng', '001374910103', 0),
+(N'Đào Thu Phương', '0583509498', '12/21/2000', 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103', 0)
 GO
 
 INSERT INTO DatPhong(MaNhanVien, MaKhachHang, MaLoaiPhong, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
@@ -171,3 +170,38 @@ INSERT INTO HoaDon(MaDatPhong, TongTien) VALUES
 (1, 104300000),
 (2, 54500000)
 GO
+
+--LẤY RA THÔNG TIN CÁC BẢNG
+SELECT * FROM NhanVien
+SELECT * FROM ChamCong
+SELECT * FROM Taikhoan
+SELECT * FROM LoaiPhong
+SELECT * FROM Phong
+SELECT * FROM KhachHang
+SELECT * FROM DatPhong
+SELECT * FROM ChiTietPhongDat
+SELECT * FROM HoaDon
+
+--kiểm tra nhân viên đang đặt phòng
+CREATE FUNCTION kiemTraNhanVienDP(@manv INT)
+RETURNS INT
+AS
+BEGIN
+	DECLARE @check INT
+	IF(EXISTS (SELECT * FROM NhanVien 
+		INNER JOIN DatPhong ON NhanVien.MaNhanVien=DatPhong.MaNhanVien 
+		WHERE NhanVien.MaNhanVien = @manv))
+			SET @check = 0 --đã tồn tại nhân viên
+	ELSE 
+		SET @check = 1
+	RETURN @check
+END
+GO
+--SELECT dbo.kiemTraNhanVienDP(1) AS 'check'
+
+SELECT MaNhanVien, TenNhanVien, SoDienThoai, NgaySinhNV, DiaChiNhanVien, 
+CASE  
+	WHEN GioiTinhNV = 0 THEN N'Nam'
+	ELSE N'Nữ'
+END AS GioiTinhNV, ChucVu
+FROM NhanVien
