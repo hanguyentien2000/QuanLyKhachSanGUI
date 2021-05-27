@@ -102,13 +102,12 @@ namespace BTL.InterfaceQuanly
             this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvNhanVien.EnableHeadersVisualStyles = false;
             this.dgvNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNhanVien.Location = new System.Drawing.Point(58, 582);
-            this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvNhanVien.Location = new System.Drawing.Point(39, 378);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersVisible = false;
             this.dgvNhanVien.RowHeadersWidth = 62;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1546, 412);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1031, 268);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -183,6 +182,55 @@ namespace BTL.InterfaceQuanly
             this.ChucVu.MinimumWidth = 8;
             this.ChucVu.Name = "ChucVu";
             // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã nhân viên";
+            this.MaNhanVien.MinimumWidth = 8;
+            this.MaNhanVien.Name = "MaNhanVien";
+            // 
+            // TenNhanVien
+            // 
+            this.TenNhanVien.DataPropertyName = "TenNhanVien";
+            this.TenNhanVien.HeaderText = "Họ tên";
+            this.TenNhanVien.MinimumWidth = 8;
+            this.TenNhanVien.Name = "TenNhanVien";
+            // 
+            // SoDienThoai
+            // 
+            this.SoDienThoai.DataPropertyName = "SoDienThoai";
+            this.SoDienThoai.HeaderText = "Số điện thoại";
+            this.SoDienThoai.MinimumWidth = 8;
+            this.SoDienThoai.Name = "SoDienThoai";
+            // 
+            // NgaySinhNV
+            // 
+            this.NgaySinhNV.DataPropertyName = "NgaySinhNV";
+            this.NgaySinhNV.HeaderText = "Ngày sinh";
+            this.NgaySinhNV.MinimumWidth = 8;
+            this.NgaySinhNV.Name = "NgaySinhNV";
+            // 
+            // DiaChiNhanVien
+            // 
+            this.DiaChiNhanVien.DataPropertyName = "DiaChiNhanVien";
+            this.DiaChiNhanVien.HeaderText = "Địa chỉ";
+            this.DiaChiNhanVien.MinimumWidth = 8;
+            this.DiaChiNhanVien.Name = "DiaChiNhanVien";
+            // 
+            // GioiTinhNV
+            // 
+            this.GioiTinhNV.DataPropertyName = "GioiTinhNV";
+            this.GioiTinhNV.HeaderText = "Giới tính";
+            this.GioiTinhNV.MinimumWidth = 8;
+            this.GioiTinhNV.Name = "GioiTinhNV";
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.DataPropertyName = "ChucVu";
+            this.ChucVu.HeaderText = "Chức vụ";
+            this.ChucVu.MinimumWidth = 8;
+            this.ChucVu.Name = "ChucVu";
+            // 
             // txtTenNV
             // 
             this.txtTenNV.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -197,14 +245,13 @@ namespace BTL.InterfaceQuanly
             this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenNV.HoverState.Parent = this.txtTenNV;
-            this.txtTenNV.Location = new System.Drawing.Point(514, 83);
-            this.txtTenNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenNV.Location = new System.Drawing.Point(343, 54);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.PasswordChar = '\0';
             this.txtTenNV.PlaceholderText = "";
             this.txtTenNV.SelectedText = "";
             this.txtTenNV.ShadowDecoration.Parent = this.txtTenNV;
-            this.txtTenNV.Size = new System.Drawing.Size(411, 55);
+            this.txtTenNV.Size = new System.Drawing.Size(274, 36);
             this.txtTenNV.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTenNV.TabIndex = 11;
             // 
@@ -212,10 +259,9 @@ namespace BTL.InterfaceQuanly
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(508, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(339, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 29);
+            this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Tên nhân viên";
             // 
@@ -233,14 +279,13 @@ namespace BTL.InterfaceQuanly
             this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaNV.HoverState.Parent = this.txtMaNV;
-            this.txtMaNV.Location = new System.Drawing.Point(58, 83);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaNV.Location = new System.Drawing.Point(39, 54);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.PasswordChar = '\0';
             this.txtMaNV.PlaceholderText = "";
             this.txtMaNV.SelectedText = "";
             this.txtMaNV.ShadowDecoration.Parent = this.txtMaNV;
-            this.txtMaNV.Size = new System.Drawing.Size(411, 55);
+            this.txtMaNV.Size = new System.Drawing.Size(274, 36);
             this.txtMaNV.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtMaNV.TabIndex = 13;
             // 
@@ -268,11 +313,10 @@ namespace BTL.InterfaceQuanly
             this.cbbChucVu.HoverState.Parent = this.cbbChucVu;
             this.cbbChucVu.ItemHeight = 30;
             this.cbbChucVu.ItemsAppearance.Parent = this.cbbChucVu;
-            this.cbbChucVu.Location = new System.Drawing.Point(58, 220);
-            this.cbbChucVu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbbChucVu.Location = new System.Drawing.Point(39, 143);
             this.cbbChucVu.Name = "cbbChucVu";
             this.cbbChucVu.ShadowDecoration.Parent = this.cbbChucVu;
-            this.cbbChucVu.Size = new System.Drawing.Size(409, 36);
+            this.cbbChucVu.Size = new System.Drawing.Size(274, 36);
             this.cbbChucVu.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbChucVu.TabIndex = 17;
             // 
@@ -280,10 +324,9 @@ namespace BTL.InterfaceQuanly
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 169);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(35, 110);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 29);
+            this.label5.Size = new System.Drawing.Size(66, 20);
             this.label5.TabIndex = 15;
             this.label5.Text = "Chức vụ";
             // 
@@ -301,14 +344,13 @@ namespace BTL.InterfaceQuanly
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.HoverState.Parent = this.txtSDT;
-            this.txtSDT.Location = new System.Drawing.Point(984, 83);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSDT.Location = new System.Drawing.Point(656, 54);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.PlaceholderText = "";
             this.txtSDT.SelectedText = "";
             this.txtSDT.ShadowDecoration.Parent = this.txtSDT;
-            this.txtSDT.Size = new System.Drawing.Size(411, 55);
+            this.txtSDT.Size = new System.Drawing.Size(274, 36);
             this.txtSDT.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSDT.TabIndex = 19;
             // 
@@ -316,10 +358,9 @@ namespace BTL.InterfaceQuanly
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(978, 48);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(652, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 29);
+            this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 18;
             this.label3.Text = "Số điện thoại";
             // 
@@ -329,13 +370,12 @@ namespace BTL.InterfaceQuanly
             this.dtpNS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNS.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNS.HoverState.Parent = this.dtpNS;
-            this.dtpNS.Location = new System.Drawing.Point(514, 220);
-            this.dtpNS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpNS.Location = new System.Drawing.Point(343, 143);
             this.dtpNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNS.Name = "dtpNS";
             this.dtpNS.ShadowDecoration.Parent = this.dtpNS;
-            this.dtpNS.Size = new System.Drawing.Size(411, 55);
+            this.dtpNS.Size = new System.Drawing.Size(274, 36);
             this.dtpNS.TabIndex = 22;
             this.dtpNS.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
             // 
@@ -343,10 +383,9 @@ namespace BTL.InterfaceQuanly
             // 
             this.CheckIn.AutoSize = true;
             this.CheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckIn.Location = new System.Drawing.Point(508, 162);
-            this.CheckIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CheckIn.Location = new System.Drawing.Point(339, 105);
             this.CheckIn.Name = "CheckIn";
-            this.CheckIn.Size = new System.Drawing.Size(119, 29);
+            this.CheckIn.Size = new System.Drawing.Size(78, 20);
             this.CheckIn.TabIndex = 21;
             this.CheckIn.Text = "Ngày sinh";
             // 
@@ -364,14 +403,13 @@ namespace BTL.InterfaceQuanly
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.HoverState.Parent = this.txtDiaChi;
-            this.txtDiaChi.Location = new System.Drawing.Point(984, 220);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDiaChi.Location = new System.Drawing.Point(656, 143);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "";
             this.txtDiaChi.SelectedText = "";
             this.txtDiaChi.ShadowDecoration.Parent = this.txtDiaChi;
-            this.txtDiaChi.Size = new System.Drawing.Size(411, 55);
+            this.txtDiaChi.Size = new System.Drawing.Size(274, 36);
             this.txtDiaChi.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtDiaChi.TabIndex = 24;
             // 
@@ -379,10 +417,9 @@ namespace BTL.InterfaceQuanly
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(978, 162);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(652, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 29);
+            this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Địa chỉ";
             // 
@@ -395,11 +432,10 @@ namespace BTL.InterfaceQuanly
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(1434, 48);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThem.Location = new System.Drawing.Point(956, 31);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(176, 71);
+            this.btnThem.Size = new System.Drawing.Size(117, 46);
             this.btnThem.TabIndex = 28;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -412,11 +448,10 @@ namespace BTL.InterfaceQuanly
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(1434, 162);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSua.Location = new System.Drawing.Point(956, 105);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
-            this.btnSua.Size = new System.Drawing.Size(176, 71);
+            this.btnSua.Size = new System.Drawing.Size(117, 46);
             this.btnSua.TabIndex = 29;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -430,11 +465,10 @@ namespace BTL.InterfaceQuanly
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(1434, 278);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoa.Location = new System.Drawing.Point(956, 181);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(176, 71);
+            this.btnXoa.Size = new System.Drawing.Size(117, 46);
             this.btnXoa.TabIndex = 30;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -447,10 +481,9 @@ namespace BTL.InterfaceQuanly
             this.rdbNam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rdbNam.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdbNam.CheckedState.InnerOffset = -4;
-            this.rdbNam.Location = new System.Drawing.Point(66, 43);
-            this.rdbNam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rdbNam.Location = new System.Drawing.Point(44, 28);
             this.rdbNam.Name = "rdbNam";
-            this.rdbNam.Size = new System.Drawing.Size(89, 33);
+            this.rdbNam.Size = new System.Drawing.Size(60, 24);
             this.rdbNam.TabIndex = 31;
             this.rdbNam.Text = "Nam";
             this.rdbNam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -466,10 +499,9 @@ namespace BTL.InterfaceQuanly
             this.rdbNu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rdbNu.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdbNu.CheckedState.InnerOffset = -4;
-            this.rdbNu.Location = new System.Drawing.Point(232, 43);
-            this.rdbNu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rdbNu.Location = new System.Drawing.Point(155, 28);
             this.rdbNu.Name = "rdbNu";
-            this.rdbNu.Size = new System.Drawing.Size(69, 33);
+            this.rdbNu.Size = new System.Drawing.Size(47, 24);
             this.rdbNu.TabIndex = 32;
             this.rdbNu.Text = "Nữ";
             this.rdbNu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -482,11 +514,9 @@ namespace BTL.InterfaceQuanly
             this.groupBox1.Controls.Add(this.rdbNam);
             this.groupBox1.Controls.Add(this.rdbNu);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(514, 306);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(343, 199);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(411, 103);
+            this.groupBox1.Size = new System.Drawing.Size(274, 67);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Giới tính";
@@ -500,11 +530,10 @@ namespace BTL.InterfaceQuanly
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.Parent = this.btnTimKiem;
-            this.btnTimKiem.Location = new System.Drawing.Point(747, 478);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTimKiem.Location = new System.Drawing.Point(498, 311);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.ShadowDecoration.Parent = this.btnTimKiem;
-            this.btnTimKiem.Size = new System.Drawing.Size(176, 71);
+            this.btnTimKiem.Size = new System.Drawing.Size(117, 46);
             this.btnTimKiem.TabIndex = 58;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
@@ -513,10 +542,9 @@ namespace BTL.InterfaceQuanly
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(628, 518);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(419, 337);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 29);
+            this.label7.Size = new System.Drawing.Size(0, 20);
             this.label7.TabIndex = 57;
             // 
             // txtTimKiem
@@ -533,14 +561,13 @@ namespace BTL.InterfaceQuanly
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.HoverState.Parent = this.txtTimKiem;
-            this.txtTimKiem.Location = new System.Drawing.Point(56, 494);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTimKiem.Location = new System.Drawing.Point(37, 321);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "Tìm kiếm";
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.ShadowDecoration.Parent = this.txtTimKiem;
-            this.txtTimKiem.Size = new System.Drawing.Size(648, 55);
+            this.txtTimKiem.Size = new System.Drawing.Size(432, 36);
             this.txtTimKiem.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTimKiem.TabIndex = 56;
             // 
@@ -553,21 +580,20 @@ namespace BTL.InterfaceQuanly
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.HoverState.Parent = this.btnLamMoi;
-            this.btnLamMoi.Location = new System.Drawing.Point(1434, 396);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLamMoi.Location = new System.Drawing.Point(956, 257);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.ShadowDecoration.Parent = this.btnLamMoi;
-            this.btnLamMoi.Size = new System.Drawing.Size(176, 71);
+            this.btnLamMoi.Size = new System.Drawing.Size(117, 46);
             this.btnLamMoi.TabIndex = 58;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // formQuanLyNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1642, 1034);
+            this.ClientSize = new System.Drawing.Size(1095, 672);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.label7);
@@ -589,7 +615,6 @@ namespace BTL.InterfaceQuanly
             this.Controls.Add(this.txtTenNV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvNhanVien);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formQuanLyNhanVien";
             this.Text = "formQuanLyNhanVien";
             this.Load += new System.EventHandler(this.formQuanLyNhanVien_Load);

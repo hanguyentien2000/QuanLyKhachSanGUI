@@ -12,8 +12,8 @@ namespace BTL.DAL
     {
         private SqlConnection GetDBConnection()
         {
-            string connString = @"Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";//Hưng
-            //string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+            //string connString = @"Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";///Hưng phạm
+            string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connString);
             return conn;
         }

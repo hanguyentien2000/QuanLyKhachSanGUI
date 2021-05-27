@@ -61,10 +61,9 @@ namespace BTL
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 1085);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(0, 705);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 29);
+            this.label1.Size = new System.Drawing.Size(199, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "Copyright by HAUI 2021, VN";
             // 
@@ -76,10 +75,9 @@ namespace BTL
             this.panelHidden.Controls.Add(this.btnMaximize);
             this.panelHidden.Controls.Add(this.btnClose);
             this.panelHidden.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHidden.Location = new System.Drawing.Point(300, 0);
-            this.panelHidden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelHidden.Location = new System.Drawing.Point(200, 0);
             this.panelHidden.Name = "panelHidden";
-            this.panelHidden.Size = new System.Drawing.Size(1940, 154);
+            this.panelHidden.Size = new System.Drawing.Size(1293, 100);
             this.panelHidden.TabIndex = 6;
             // 
             // btnDangXuat
@@ -94,10 +92,9 @@ namespace BTL
             this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDangXuat.IconSize = 32;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1780, 92);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDangXuat.Location = new System.Drawing.Point(1187, 60);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(159, 57);
+            this.btnDangXuat.Size = new System.Drawing.Size(106, 37);
             this.btnDangXuat.TabIndex = 4;
             this.btnDangXuat.Text = "Đăng Xuất";
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -113,11 +110,10 @@ namespace BTL
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 43;
-            this.btnMinimize.Location = new System.Drawing.Point(1810, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnMinimize.IconSize = 28;
+            this.btnMinimize.Location = new System.Drawing.Point(1207, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(46, 43);
+            this.btnMinimize.Size = new System.Drawing.Size(31, 28);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
@@ -131,11 +127,10 @@ namespace BTL
             this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximize.IconSize = 43;
-            this.btnMaximize.Location = new System.Drawing.Point(1852, 0);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnMaximize.IconSize = 28;
+            this.btnMaximize.Location = new System.Drawing.Point(1235, 0);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(46, 43);
+            this.btnMaximize.Size = new System.Drawing.Size(31, 28);
             this.btnMaximize.TabIndex = 1;
             this.btnMaximize.TabStop = false;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
@@ -149,11 +144,10 @@ namespace BTL
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 43;
-            this.btnClose.Location = new System.Drawing.Point(1893, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.IconSize = 28;
+            this.btnClose.Location = new System.Drawing.Point(1262, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 43);
+            this.btnClose.Size = new System.Drawing.Size(31, 28);
             this.btnClose.TabIndex = 0;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -163,29 +157,26 @@ namespace BTL
             this.panelLogo.Controls.Add(this.pictureBox3);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(300, 205);
+            this.panelLogo.Size = new System.Drawing.Size(200, 133);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(45, 5);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(30, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(188, 197);
+            this.pictureBox3.Size = new System.Drawing.Size(125, 128);
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
             // panelDesktop
             // 
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(300, 0);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelDesktop.Location = new System.Drawing.Point(200, 0);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1940, 1114);
+            this.panelDesktop.Size = new System.Drawing.Size(1293, 724);
             this.panelDesktop.TabIndex = 7;
             // 
             // panelMenu
@@ -201,9 +192,8 @@ namespace BTL
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(300, 1114);
+            this.panelMenu.Size = new System.Drawing.Size(200, 724);
             this.panelMenu.TabIndex = 4;
             // 
             // iconButton2
@@ -219,10 +209,9 @@ namespace BTL
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 32;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 714);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton2.Location = new System.Drawing.Point(0, 464);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(300, 111);
+            this.iconButton2.Size = new System.Drawing.Size(200, 72);
             this.iconButton2.TabIndex = 11;
             this.iconButton2.Text = "Check out";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,10 +231,9 @@ namespace BTL
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 32;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 612);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton1.Location = new System.Drawing.Point(0, 398);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(300, 102);
+            this.iconButton1.Size = new System.Drawing.Size(200, 66);
             this.iconButton1.TabIndex = 10;
             this.iconButton1.Text = "Check In";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,10 +253,9 @@ namespace BTL
             this.btnDoiMatKhau.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoiMatKhau.IconSize = 32;
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(0, 507);
-            this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(0, 330);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(300, 105);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(200, 68);
             this.btnDoiMatKhau.TabIndex = 9;
             this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,10 +276,9 @@ namespace BTL
             this.btnChamCong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChamCong.IconSize = 32;
             this.btnChamCong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChamCong.Location = new System.Drawing.Point(0, 395);
-            this.btnChamCong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnChamCong.Location = new System.Drawing.Point(0, 257);
             this.btnChamCong.Name = "btnChamCong";
-            this.btnChamCong.Size = new System.Drawing.Size(300, 112);
+            this.btnChamCong.Size = new System.Drawing.Size(200, 73);
             this.btnChamCong.TabIndex = 8;
             this.btnChamCong.Text = "Chấm Công";
             this.btnChamCong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,10 +299,9 @@ namespace BTL
             this.btnDatPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDatPhong.IconSize = 32;
             this.btnDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatPhong.Location = new System.Drawing.Point(0, 303);
-            this.btnDatPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDatPhong.Location = new System.Drawing.Point(0, 197);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(300, 92);
+            this.btnDatPhong.Size = new System.Drawing.Size(200, 60);
             this.btnDatPhong.TabIndex = 2;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -337,10 +322,9 @@ namespace BTL
             this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHome.IconSize = 32;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(0, 205);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHome.Location = new System.Drawing.Point(0, 133);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(300, 98);
+            this.btnHome.Size = new System.Drawing.Size(200, 64);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,13 +334,12 @@ namespace BTL
             // 
             // FormMainNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2240, 1114);
+            this.ClientSize = new System.Drawing.Size(1493, 724);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMainNhanVien";
             this.Text = "FormMainNhanVien";
             this.panelHidden.ResumeLayout(false);

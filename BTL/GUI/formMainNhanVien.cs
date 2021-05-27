@@ -151,9 +151,7 @@ namespace BTL
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color2);
-            OpenCurrentForm(new formMain());
-
+            ActiveButton(sender, RGBColors.color1);
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
@@ -161,8 +159,6 @@ namespace BTL
             ActiveButton(sender, RGBColors.color3);
             OpenCurrentForm(new formDatPhong());
         }
-
-     
 
         private void btnChamCong_Click(object sender, EventArgs e)
         {

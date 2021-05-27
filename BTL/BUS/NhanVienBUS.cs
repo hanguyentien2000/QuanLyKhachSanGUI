@@ -7,9 +7,9 @@ using BTL.DAL;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace BTL.BLL
+namespace BTL.BUS
 {
-    class NhanVienBLL
+    class NhanVienBUS
     {
         DataProvider data = new DataProvider();
         public DataTable layTTNhanVien()

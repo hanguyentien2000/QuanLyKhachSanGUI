@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BTL.BLL;
+using BTL.BUS;
 using BTL.DTO;
 using System.Text.RegularExpressions;
 
@@ -15,7 +15,7 @@ namespace BTL.InterfaceQuanly
 {
     public partial class formQuanLyNhanVien : Form
     {
-        NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        NhanVienBUS nhanVienBLL = new NhanVienBUS();
         NhanVienDTO nhanVienDTO = new NhanVienDTO();
         public formQuanLyNhanVien()
         {
@@ -256,5 +256,7 @@ namespace BTL.InterfaceQuanly
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }

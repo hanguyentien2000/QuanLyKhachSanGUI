@@ -1,14 +1,14 @@
 USE MASTER
 GO
 
-IF(EXISTS(SELECT * FROM SYSDATABASES WHERE NAME='QuanLyKhachSan'))
-	DROP DATABASE QuanLyKhachSan
+IF(EXISTS(SELECT * FROM SYSDATABASES WHERE NAME='QLKS'))
+	DROP DATABASE QLKS
 GO
 
-CREATE DATABASE QuanLyKhachSan
+CREATE DATABASE QLKS
 GO
 
-USE QuanLyKhachSan
+USE QLKS
 GO
 
 --bảng nhân viên
@@ -34,10 +34,10 @@ create table ChamCong(
 
 --bảng tài khoản
 create table Taikhoan(
-	ID nvarchar(50) primary key not null,
-	PASS nvarchar(50) not null,
+	Username nvarchar(50) primary key not null,
+	Password nvarchar(50) not null,
 	LoaiTaiKhoan bit not null, --0: quản lý, 1:admin
-	MaNhanVien INT NOT NULL,
+	MaNhanVien int NOT NULL,
 	FOREIGN KEY (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE
 )
 go
@@ -79,7 +79,7 @@ create table DatPhong(
 	MaDatPhong INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	MaNhanVien int not null,
 	MaKhachHang int not null,
-	MaLoaiPhong int not null,
+
 	NgayDat date not null,
 	NgayDen date not null,
 	NgayDi date not null,
@@ -88,7 +88,7 @@ create table DatPhong(
 	TrangThaiDatPhong int not null,
 	foreign key (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE,
 	foreign key (MaKhachHang) references KhachHang(MaKhachHang) ON UPDATE CASCADE ON DELETE CASCADE,
-	foreign key (MaLoaiPhong) references LoaiPhong(MaLoaiPhong)
+
 )
 go
 
@@ -124,7 +124,7 @@ INSERT INTO ChamCong(MaNhanVien, TrangThai) VALUES
 (3, 0)
 GO
 
-INSERT INTO Taikhoan(ID, PASS, LoaiTaiKhoan, MaNhanVien) VALUES
+INSERT INTO Taikhoan(Username, Password, LoaiTaiKhoan, MaNhanVien) VALUES
 ('admin', 1, 0, 1),
 ('nv1', 1, 1, 2),
 ('nv2', 1, 1, 3)
@@ -156,9 +156,9 @@ INSERT INTO KhachHang(TenKhachHang, SDT, NgaySinhKH, Email, GioiTinhKH, DiaChiKh
 (N'Đào Thu Phương', '0583509498', '12/21/2000', 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103', 0)
 GO
 
-INSERT INTO DatPhong(MaNhanVien, MaKhachHang, MaLoaiPhong, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
-(1, 1, 2,'02/03/2021', '04/03/2021', '10/03/2021', 700000, 3, 1),
-(2, 3, 1,'06/05/2021', '08/05/2021', '11/05/2021', 1500000, 2, 1)
+INSERT INTO DatPhong(MaNhanVien, MaKhachHang, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
+(1, 1,'02/03/2021', '04/03/2021', '10/03/2021', 700000, 3, 1),
+(2, 3,'06/05/2021', '08/05/2021', '11/05/2021', 1500000, 2, 1)
 GO
 
 INSERT INTO ChiTietPhongDat(MaDatPhong, MaPhong) VALUES
