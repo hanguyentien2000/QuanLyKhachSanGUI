@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BTL.InterfaceQuanly
+namespace BTL.GUI
 {
     public partial class formQuanLyKhachHang : Form
     {
         public formQuanLyKhachHang()
         {
             InitializeComponent();
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void guna2RadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -98,11 +98,6 @@ namespace BTL
          
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color1);
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();

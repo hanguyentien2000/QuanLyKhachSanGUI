@@ -30,7 +30,7 @@ namespace BTL
                 }
                 else
                 {
-                    if(account.Quantri == true)
+                    if(account.LoaiTaiKhoan == false)
                     {
                         formMain form = new formMain();
                         form.Tag = account;
@@ -57,13 +57,9 @@ namespace BTL
         {
             DialogResult res = MessageBox.Show("Bạn có thật sự muốn thoát khỏi ứng dụng???", "Thông báo", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
-            {
                 Application.Exit();
-            }
             else
-            {
                 return;
-            }
         }
     }
 }

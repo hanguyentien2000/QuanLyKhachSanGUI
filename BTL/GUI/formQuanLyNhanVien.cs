@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BTL.BLL;
+using BTL.BUS;
 using BTL.DTO;
-using System.Data;
+
 namespace BTL.InterfaceQuanly
 {
     public partial class formQuanLyNhanVien : Form
     {
-        NhanVienBLL dsNhanVien = new NhanVienBLL();
+        NhanVienBUS dsNhanVien = new NhanVienBUS();
         
         public formQuanLyNhanVien()
         {
@@ -45,6 +45,11 @@ namespace BTL.InterfaceQuanly
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             dgvNhanVien.DataSource = dsNhanVien.layTTNhanVien();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

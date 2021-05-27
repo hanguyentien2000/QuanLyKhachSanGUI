@@ -8,6 +8,7 @@ namespace BTL.Models
 {
     class LoaiPhongDTO
     {
+        public int MaLoaiPhong { get; set; }
         public String TenLoaiPhong { get; set; }
         public int SoLuong { get; set; }
        
