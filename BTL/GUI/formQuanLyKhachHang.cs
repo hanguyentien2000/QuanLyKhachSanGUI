@@ -17,11 +17,6 @@ namespace BTL.InterfaceQuanly
             InitializeComponent();
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void guna2RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
 

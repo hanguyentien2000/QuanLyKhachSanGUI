@@ -33,6 +33,15 @@ namespace BTL.InterfaceQuanly
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.guna2RadioButton1 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton2 = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -58,15 +67,6 @@ namespace BTL.InterfaceQuanly
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,7 +140,69 @@ namespace BTL.InterfaceQuanly
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+            // 
+            // MaKhachHang
+            // 
+            this.MaKhachHang.DataPropertyName = "MaKhachHang";
+            this.MaKhachHang.HeaderText = "Mã khách hàng";
+            this.MaKhachHang.MinimumWidth = 8;
+            this.MaKhachHang.Name = "MaKhachHang";
+            // 
+            // TenKhachHang
+            // 
+            this.TenKhachHang.DataPropertyName = "TenKhachHang";
+            this.TenKhachHang.HeaderText = "Họ tên";
+            this.TenKhachHang.MinimumWidth = 8;
+            this.TenKhachHang.Name = "TenKhachHang";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 8;
+            this.SDT.Name = "SDT";
+            // 
+            // NgaySinhKH
+            // 
+            this.NgaySinhKH.DataPropertyName = "NgaySinhKH";
+            this.NgaySinhKH.HeaderText = "Ngày sinh";
+            this.NgaySinhKH.MinimumWidth = 8;
+            this.NgaySinhKH.Name = "NgaySinhKH";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 8;
+            this.Email.Name = "Email";
+            // 
+            // GioiTinhKH
+            // 
+            this.GioiTinhKH.DataPropertyName = "GioiTinhKH";
+            this.GioiTinhKH.HeaderText = "Giới tính";
+            this.GioiTinhKH.MinimumWidth = 8;
+            this.GioiTinhKH.Name = "GioiTinhKH";
+            // 
+            // DiaChiKhachHang
+            // 
+            this.DiaChiKhachHang.DataPropertyName = "DiaChiKhachHang";
+            this.DiaChiKhachHang.HeaderText = "Địa Chỉ";
+            this.DiaChiKhachHang.MinimumWidth = 8;
+            this.DiaChiKhachHang.Name = "DiaChiKhachHang";
+            // 
+            // CMND
+            // 
+            this.CMND.DataPropertyName = "CMND";
+            this.CMND.HeaderText = "CMND";
+            this.CMND.MinimumWidth = 8;
+            this.CMND.Name = "CMND";
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Tình trạng";
+            this.TrangThai.MinimumWidth = 8;
+            this.TrangThai.Name = "TrangThai";
             // 
             // groupBox1
             // 
@@ -570,69 +632,6 @@ namespace BTL.InterfaceQuanly
             this.guna2Button1.Size = new System.Drawing.Size(176, 71);
             this.guna2Button1.TabIndex = 55;
             this.guna2Button1.Text = "Tìm kiếm";
-            // 
-            // MaKhachHang
-            // 
-            this.MaKhachHang.DataPropertyName = "MaKhachHang";
-            this.MaKhachHang.HeaderText = "Mã khách hàng";
-            this.MaKhachHang.MinimumWidth = 8;
-            this.MaKhachHang.Name = "MaKhachHang";
-            // 
-            // TenKhachHang
-            // 
-            this.TenKhachHang.DataPropertyName = "TenKhachHang";
-            this.TenKhachHang.HeaderText = "Họ tên";
-            this.TenKhachHang.MinimumWidth = 8;
-            this.TenKhachHang.Name = "TenKhachHang";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.MinimumWidth = 8;
-            this.SDT.Name = "SDT";
-            // 
-            // NgaySinhKH
-            // 
-            this.NgaySinhKH.DataPropertyName = "NgaySinhKH";
-            this.NgaySinhKH.HeaderText = "Ngày sinh";
-            this.NgaySinhKH.MinimumWidth = 8;
-            this.NgaySinhKH.Name = "NgaySinhKH";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 8;
-            this.Email.Name = "Email";
-            // 
-            // GioiTinhKH
-            // 
-            this.GioiTinhKH.DataPropertyName = "GioiTinhKH";
-            this.GioiTinhKH.HeaderText = "Giới tính";
-            this.GioiTinhKH.MinimumWidth = 8;
-            this.GioiTinhKH.Name = "GioiTinhKH";
-            // 
-            // DiaChiKhachHang
-            // 
-            this.DiaChiKhachHang.DataPropertyName = "DiaChiKhachHang";
-            this.DiaChiKhachHang.HeaderText = "Địa Chỉ";
-            this.DiaChiKhachHang.MinimumWidth = 8;
-            this.DiaChiKhachHang.Name = "DiaChiKhachHang";
-            // 
-            // CMND
-            // 
-            this.CMND.DataPropertyName = "CMND";
-            this.CMND.HeaderText = "CMND";
-            this.CMND.MinimumWidth = 8;
-            this.CMND.Name = "CMND";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Tình trạng";
-            this.TrangThai.MinimumWidth = 8;
-            this.TrangThai.Name = "TrangThai";
             // 
             // formQuanLyKhachHang
             // 
