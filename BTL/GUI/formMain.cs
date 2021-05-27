@@ -212,7 +212,6 @@ namespace BTL
             }
 
         }
-
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color2);
@@ -228,7 +227,7 @@ namespace BTL
         private void btnQuanLyMain_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color4);
-            OpenCurrentForm(new formQuanLyPhong());
+            //OpenCurrentForm(new formQuanLyPhong());
             ShowSubmenu(panelSubmenu);
         }
 
@@ -270,7 +269,7 @@ namespace BTL
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            //OpenCurrentForm(new formQuanLyNhanVien());
+            //OpenCurrentForm(new formThongKeHoaDon());
             ShowSubmenu(panelSubmenu2);
         }
 
