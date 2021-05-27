@@ -182,26 +182,12 @@ SELECT * FROM DatPhong
 SELECT * FROM ChiTietPhongDat
 SELECT * FROM HoaDon
 
---kiểm tra nhân viên đang đặt phòng
---CREATE FUNCTION kiemTraNhanVienDP(@manv INT)
---RETURNS INT
---AS
---BEGIN
---	DECLARE @check INT
---	IF(EXISTS (SELECT * FROM NhanVien 
---		INNER JOIN DatPhong ON NhanVien.MaNhanVien=DatPhong.MaNhanVien 
---		WHERE NhanVien.MaNhanVien = @manv))
---			SET @check = 0 --đã tồn tại nhân viên
---	ELSE 
---		SET @check = 1
---	RETURN @check
---END
---GO
-----SELECT dbo.kiemTraNhanVienDP(1) AS 'check'
-
 --SELECT MaNhanVien, TenNhanVien, SoDienThoai, NgaySinhNV, DiaChiNhanVien, 
 --CASE  
 --	WHEN GioiTinhNV = 0 THEN N'Nam'
 --	ELSE N'Nữ'
 --END AS GioiTinhNV, ChucVu
 --FROM NhanVien
+
+--SELECT MAX(MaNhanVien) AS N'maMax' FROM NhanVien 
+--SELECT * FROM NhanVien INNER JOIN DatPhong ON NhanVien.MaNhanVien=DatPhong.MaNhanVien WHERE NhanVien.MaNhanVien = 1

@@ -89,6 +89,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="GUI\formChamCong.cs">
       <SubType>Form</SubType>
@@ -163,7 +164,6 @@
     <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiPhongDTO.cs" />
-    <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\PhongDTO.cs" />
     <Compile Include="GUI\formQuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
