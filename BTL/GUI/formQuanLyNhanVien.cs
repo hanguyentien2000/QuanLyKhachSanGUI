@@ -76,7 +76,8 @@ namespace BTL.InterfaceQuanly
                 if (txtSDT.Text.Trim().Equals(""))
                 {
                     throw new Exception("Số điện thoại không được để trống");
-                } else if (!Regex.IsMatch(txtSDT.Text, reg))
+                }
+                else if (!Regex.IsMatch(txtSDT.Text, reg))
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }

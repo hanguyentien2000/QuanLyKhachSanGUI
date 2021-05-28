@@ -32,7 +32,6 @@ namespace BTL.InterfaceQuanly
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvQLPhong = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtMaLoaiPhong = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenLoaiPhong = new Guna.UI2.WinForms.Guna2TextBox();
@@ -46,65 +45,14 @@ namespace BTL.InterfaceQuanly
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLPhong)).BeginInit();
+            this.dgvQLLP = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaLoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongNguoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLLP)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvQLPhong
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvQLPhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvQLPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvQLPhong.BackgroundColor = System.Drawing.Color.White;
-            this.dgvQLPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvQLPhong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvQLPhong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvQLPhong.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLPhong.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvQLPhong.EnableHeadersVisualStyles = false;
-            this.dgvQLPhong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvQLPhong.Location = new System.Drawing.Point(502, 95);
-            this.dgvQLPhong.Name = "dgvQLPhong";
-            this.dgvQLPhong.RowHeadersVisible = false;
-            this.dgvQLPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQLPhong.Size = new System.Drawing.Size(547, 489);
-            this.dgvQLPhong.TabIndex = 0;
-            this.dgvQLPhong.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgvQLPhong.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvQLPhong.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvQLPhong.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvQLPhong.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvQLPhong.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvQLPhong.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvQLPhong.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvQLPhong.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvQLPhong.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvQLPhong.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvQLPhong.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvQLPhong.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvQLPhong.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvQLPhong.ThemeStyle.ReadOnly = false;
-            this.dgvQLPhong.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvQLPhong.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvQLPhong.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvQLPhong.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvQLPhong.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvQLPhong.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvQLPhong.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // txtMaLoaiPhong
             // 
@@ -257,6 +205,7 @@ namespace BTL.InterfaceQuanly
             this.btnThem.Size = new System.Drawing.Size(117, 46);
             this.btnThem.TabIndex = 29;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -272,6 +221,7 @@ namespace BTL.InterfaceQuanly
             this.btnSua.Size = new System.Drawing.Size(117, 46);
             this.btnSua.TabIndex = 30;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -288,6 +238,7 @@ namespace BTL.InterfaceQuanly
             this.btnXoa.Size = new System.Drawing.Size(117, 46);
             this.btnXoa.TabIndex = 31;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtTimKiem
             // 
@@ -323,16 +274,122 @@ namespace BTL.InterfaceQuanly
             this.btnTim.Location = new System.Drawing.Point(932, 39);
             this.btnTim.Name = "btnTim";
             this.btnTim.ShadowDecoration.Parent = this.btnTim;
-            this.btnTim.Size = new System.Drawing.Size(117, 36);
+            this.btnTim.Size = new System.Drawing.Size(99, 36);
             this.btnTim.TabIndex = 34;
             this.btnTim.Text = "Tìm kiếm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // dgvQLLP
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvQLLP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvQLLP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvQLLP.BackgroundColor = System.Drawing.Color.White;
+            this.dgvQLLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvQLLP.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvQLLP.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLLP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvQLLP.ColumnHeadersHeight = 21;
+            this.dgvQLLP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLoaiPhong,
+            this.TenLoaiPhong,
+            this.SoLuongNguoi,
+            this.GiaPhong});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLLP.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvQLLP.EnableHeadersVisualStyles = false;
+            this.dgvQLLP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvQLLP.Location = new System.Drawing.Point(502, 146);
+            this.dgvQLLP.Name = "dgvQLLP";
+            this.dgvQLLP.RowHeadersVisible = false;
+            this.dgvQLLP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvQLLP.Size = new System.Drawing.Size(629, 381);
+            this.dgvQLLP.TabIndex = 61;
+            this.dgvQLLP.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvQLLP.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvQLLP.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvQLLP.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvQLLP.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvQLLP.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvQLLP.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvQLLP.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvQLLP.ThemeStyle.HeaderStyle.Height = 21;
+            this.dgvQLLP.ThemeStyle.ReadOnly = false;
+            this.dgvQLLP.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvQLLP.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvQLLP.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvQLLP.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvQLLP.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvQLLP.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvQLLP.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvQLLP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLLP_CellClick);
+            // 
+            // MaLoaiPhong
+            // 
+            this.MaLoaiPhong.DataPropertyName = "MaLoaiPhong";
+            this.MaLoaiPhong.HeaderText = "Mã loại phòng";
+            this.MaLoaiPhong.Name = "MaLoaiPhong";
+            // 
+            // TenLoaiPhong
+            // 
+            this.TenLoaiPhong.DataPropertyName = "TenLoaiPhong";
+            this.TenLoaiPhong.HeaderText = "Tên loại phòng";
+            this.TenLoaiPhong.Name = "TenLoaiPhong";
+            // 
+            // SoLuongNguoi
+            // 
+            this.SoLuongNguoi.DataPropertyName = "SoLuongNguoi";
+            this.SoLuongNguoi.HeaderText = "Số lượng người";
+            this.SoLuongNguoi.Name = "SoLuongNguoi";
+            // 
+            // GiaPhong
+            // 
+            this.GiaPhong.DataPropertyName = "GiaPhong";
+            this.GiaPhong.HeaderText = "Giá phòng";
+            this.GiaPhong.Name = "GiaPhong";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.CheckedState.Parent = this.btnRefresh;
+            this.btnRefresh.CustomImages.Parent = this.btnRefresh;
+            this.btnRefresh.FillColor = System.Drawing.Color.Green;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.HoverState.Parent = this.btnRefresh;
+            this.btnRefresh.Location = new System.Drawing.Point(1037, 39);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
+            this.btnRefresh.Size = new System.Drawing.Size(94, 36);
+            this.btnRefresh.TabIndex = 62;
+            this.btnRefresh.Text = "Tải lại";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // formQuanLyLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1095, 672);
+            this.ClientSize = new System.Drawing.Size(1237, 672);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.dgvQLLP);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnXoa);
@@ -346,18 +403,16 @@ namespace BTL.InterfaceQuanly
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMaLoaiPhong);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvQLPhong);
             this.Name = "formQuanLyLoaiPhong";
             this.Text = "formQuanLyLoaiPhong";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLPhong)).EndInit();
+            this.Load += new System.EventHandler(this.formQuanLyLoaiPhong_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLLP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2DataGridView dgvQLPhong;
         private Guna.UI2.WinForms.Guna2TextBox txtMaLoaiPhong;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtTenLoaiPhong;
@@ -371,5 +426,11 @@ namespace BTL.InterfaceQuanly
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2Button btnTim;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvQLLP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongNguoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaPhong;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }

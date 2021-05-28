@@ -8,7 +8,7 @@ using BTL.DAL;
 using BTL.DTO;
 
 
-namespace BTL.BLL
+namespace BTL.BUS
 {
     class TaiKhoanBUS
     {
@@ -33,15 +33,27 @@ namespace BTL.BLL
             TaiKhoanDTO tk = new TaiKhoanDTO();
             tk.Username = dt.Rows[0].ItemArray[0].ToString();
             tk.Password = dt.Rows[0].ItemArray[1].ToString();
-            //tk.LoaiTaiKhoan = dt.Rows[0].ItemArray[2].ToString();
-            tk.MaNhanVien = int.Parse(dt.Rows[0].ItemArray[3].ToString());
+            tk.MaNhanVien = int.Parse(dt.Rows[0].ItemArray[2].ToString());
+            tk.LoaiTaiKhoan = (bool)dt.Rows[0].ItemArray[3];
             return tk;
         }
 
-        public void AddTaiKhoan(string TenDangNhap, string MatKhau, int LoaiTaiKhoan, int MaNV)
+        public void AddTaiKhoan(string TenDangNhap, string MatKhau, bool LoaiTaiKhoan, int MaNV)
         {
-            string sql = "Insert into dbo.TAIKHOAN values('" + TenDangNhap + "','" + MatKhau + "','" + LoaiTaiKhoan + "','" + MaNV + "')";
-            data.ExecuteNonQuery(sql);
+            string sql = "Insert into TAIKHOAN values('" + TenDangNhap + "','" + MatKhau + "'," + LoaiTaiKhoan + "," + MaNV + ")";
+            data.ExecuteQuery(sql);
+        }
+
+        public void UpdateTaiKhoan(string TenDangNhap, string MatKhau, bool LoaiTaiKhoan)
+        {
+            string sql = "Update TAIKHOAN SET MatKhau='" + MatKhau + "',  LoaiTaiKhoan =" + LoaiTaiKhoan + " where Username = '" + TenDangNhap + "'";
+            data.ExecuteQuery(sql);
+        }
+
+        public void DeleteTaiKhoan(string TenTK)
+        {
+            string sql = "Delete from TAIKHOAN where Username='" + TenTK + "'";
+            data.ExecuteQuery(sql);
         }
     }
 }
