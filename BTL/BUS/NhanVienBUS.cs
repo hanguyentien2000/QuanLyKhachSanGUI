@@ -70,7 +70,7 @@ namespace BTL.BUS
                 "ELSE N'Nữ' END AS GioiTinhNV, ChucVu " +
                 "FROM NhanVien WHERE ( MaNhanVien LIKE '%" + tuKhoa + "%') OR ( TenNhanVien LIKE N'%" + tuKhoa + "%') OR " +
                 "( SoDienThoai LIKE '%" + tuKhoa + "%') OR ( NgaySinhNV LIKE '%" + tuKhoa + "%') OR " +
-                "( DiaChiNhanVien LIKE N'%" + tuKhoa + "%') OR ( GioiTinhNV LIKE N'%" + tuKhoa + "%') OR ( ChucVu LIKE N'%" + tuKhoa + "%')";
+                "( DiaChiNhanVien LIKE N'%" + tuKhoa + "%') OR ( ChucVu LIKE N'%" + tuKhoa + "%')";
             }
             return data.GetTable(sql);
         }

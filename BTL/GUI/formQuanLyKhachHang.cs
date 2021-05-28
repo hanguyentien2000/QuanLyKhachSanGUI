@@ -34,6 +34,8 @@ namespace BTL.GUI
             txtCMND.Text = "";
             rdbNam.Checked = true;
             dtpNS.Value = DateTime.Now;
+            lblTrangThai.Visible = false;
+            cbbTrangThai.Visible = false;
         }
 
         private void layThongTinKhachHang()
@@ -53,6 +55,8 @@ namespace BTL.GUI
         }
         private void formQuanLyKhachHang_Load(object sender, EventArgs e)
         {
+            cbbTrangThai.Items.Add("BAD");
+            cbbTrangThai.Items.Add("GOOD");
             xoaTrang();
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
         }
@@ -64,9 +68,9 @@ namespace BTL.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string regEmail = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/";
-            string regPhone = "/(84|0[3|5|7|8|9])+([0-9]{8})\b/";
-            string regCMND = "/^\\d{12}$/";
+            string regEmail = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+            string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+            string regCMND = "^\\d{12}$";
             try
             {
                 if(txtMaKH.TextLength == 0)
@@ -106,6 +110,10 @@ namespace BTL.GUI
                 {
                     throw new Exception("CMND không đúng định dạng");
                 }
+                if(khachHangBUS.layTrangThaiKhachHang(txtCMND.Text) == 0)
+                {
+                    throw new Exception("Khách hàng này không được phép đặt phòng");
+                }
                 layThongTinKhachHang();
                 if (khachHangBUS.themTTKhachHang(khachHangDTO.HoTen, khachHangDTO.SoDT, khachHangDTO.NgaySinh, khachHangDTO.Email, khachHangDTO.GioiTinh, khachHangDTO.DiaChi, khachHangDTO.Cmnd, khachHangDTO.TrangThai))
                 {
@@ -127,9 +135,11 @@ namespace BTL.GUI
         {
             txtMaKH.Visible = true;
             lblMaKH.Visible = true;
-            string regEmail = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/";
-            string regPhone = "/(84|0[3|5|7|8|9])+([0-9]{8})\b/";
-            string regCMND = "/^\\d{12}$/";
+            lblTrangThai.Visible = true;
+            cbbTrangThai.Visible = true;
+            string regEmail = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+            string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+            string regCMND = "^\\d{12}$";
             try
             {
                 if (dgvKhachHang.Rows.Count < 1)
@@ -177,8 +187,7 @@ namespace BTL.GUI
                     throw new Exception("CMND không đúng định dạng");
                 }
                 layThongTinKhachHang();
-                khachHangDTO.MaKH = Int32.Parse(txtMaKH.Text);
-                if (khachHangBUS.thayDoiTTKhachHang(khachHangDTO.MaKH, khachHangDTO.HoTen, khachHangDTO.SoDT, khachHangDTO.NgaySinh, khachHangDTO.Email, khachHangDTO.GioiTinh, khachHangDTO.DiaChi, khachHangDTO.Cmnd, khachHangDTO.TrangThai))
+                if (khachHangBUS.thayDoiTTKhachHang(Int32.Parse(txtMaKH.Text), khachHangDTO.HoTen, khachHangDTO.SoDT, khachHangDTO.NgaySinh, khachHangDTO.Email, khachHangDTO.GioiTinh, khachHangDTO.DiaChi, khachHangDTO.Cmnd, khachHangDTO.TrangThai))
                 {
                     MessageBox.Show("Thay đổi thông tin khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
@@ -265,6 +274,8 @@ namespace BTL.GUI
                 txtMaKH.Visible = true;
                 lblMaKH.Visible = true;
                 txtMaKH.Enabled = false;
+                lblTrangThai.Visible = true;
+                cbbTrangThai.Visible = true;
                 txtMaKH.Text = dgvKhachHang.Rows[dong].Cells[0].Value.ToString();
                 txtTenKH.Text = dgvKhachHang.Rows[dong].Cells[1].Value.ToString();
                 txtSdt.Text = dgvKhachHang.Rows[dong].Cells[2].Value.ToString();
@@ -278,6 +289,7 @@ namespace BTL.GUI
                     rdbNu.Checked = true;
                 txtDiachi.Text = dgvKhachHang.Rows[dong].Cells[6].Value.ToString();
                 txtCMND.Text = dgvKhachHang.Rows[dong].Cells[7].Value.ToString();
+                cbbTrangThai.Text = dgvKhachHang.Rows[dong].Cells[8].Value.ToString();
             }
             catch (Exception ex)
             {

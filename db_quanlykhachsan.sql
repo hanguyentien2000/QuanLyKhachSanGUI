@@ -213,3 +213,20 @@ BEGIN
 END
 GO
 ----SELECT dbo.kiemTraKhachHangDP(1) AS 'check'
+
+--kiểm tra phòng đã được đặt 
+CREATE FUNCTION kiemTraPhongDat(@map INT)
+RETURNS INT
+AS
+BEGIN
+	DECLARE @check INT
+	IF(EXISTS (SELECT * FROM Phong 
+	INNER JOIN ChiTietPhongDat ON Phong.MaPhong=ChiTietPhongDat.MaPhong 
+	WHERE Phong.MaPhong = @map))
+			SET @check = 0 --PHÒNG ĐÃ ĐƯỢC ĐẶT
+	ELSE 
+		SET @check = 1
+	RETURN @check
+END
+GO
+----SELECT dbo.kiemTraPhongDat(1) AS 'check'

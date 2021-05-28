@@ -32,7 +32,7 @@ namespace BTL.BUS
         }
         public bool thayDoiTTKhachHang(int maKH, string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd, int trangThai)
         {
-            string sql = "UPDATE KhachHang SET TenKhachHang=N'" + hoTen + "',SDT='" + soDT + "',NgaySinhKH='" + ngaySinh + "',Email=N'" + email + "',GioiTinhKH=" + gioiTinh + ",DiaChiKhachHang=N'" + diaChi + "',CMND='" + cmnd + ",TrangThai=" + trangThai + " WHERE MaKhachHang=" + maKH + "";
+            string sql = "UPDATE KhachHang SET TenKhachHang=N'" + hoTen + "',SDT='" + soDT + "',NgaySinhKH='" + ngaySinh + "',Email=N'" + email + "',GioiTinhKH=" + gioiTinh + ",DiaChiKhachHang=N'" + diaChi + "',CMND='" + cmnd + "',TrangThai=" + trangThai + " WHERE MaKhachHang=" + maKH;
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
@@ -96,7 +96,7 @@ namespace BTL.BUS
                 "FROM KhachHang WHERE ( MaKhachHang LIKE '%" + tuKhoa + "%') OR ( TenKhachHang LIKE N'%" + tuKhoa + "%') OR " +
                 "( SDT LIKE '%" + tuKhoa + "%') OR ( NgaySinhKH LIKE '%" + tuKhoa + "%') OR " +
                 "( Email LIKE N'%" + tuKhoa + "%') OR ( GioiTinhKH LIKE N'%" + tuKhoa + "%') OR ( DiaChiKhachHang LIKE N'%" + tuKhoa + "%') OR " +
-                "( CMND LIKE '%" + tuKhoa + "%') OR ( TrangThai LIKE '%" + tuKhoa + "%')";
+                "( CMND LIKE '%" + tuKhoa + "%')";
             }
             return data.GetTable(sql);
         }
@@ -111,6 +111,12 @@ namespace BTL.BUS
         {
             string sql = "SELECT MAX(MaKhachHang) AS N'maMaxKH' FROM KhachHang ";
             return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["maMaxKH"].ToString());
+        }
+
+        public int layTrangThaiKhachHang(string cmnd)
+        {
+            string sql = "SELECT TrangThai FROM KhachHang WHERE CMND='" + cmnd + "'";
+            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["TrangThai"].ToString());
         }
     }
 }

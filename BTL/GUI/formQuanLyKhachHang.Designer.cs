@@ -65,6 +65,8 @@ namespace BTL.GUI
             this.label7 = new System.Windows.Forms.Label();
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
+            this.cbbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -588,6 +590,38 @@ namespace BTL.GUI
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
+            // cbbTrangThai
+            // 
+            this.cbbTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTrangThai.FocusedState.Parent = this.cbbTrangThai;
+            this.cbbTrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbTrangThai.HoverState.Parent = this.cbbTrangThai;
+            this.cbbTrangThai.ItemHeight = 30;
+            this.cbbTrangThai.ItemsAppearance.Parent = this.cbbTrangThai;
+            this.cbbTrangThai.Location = new System.Drawing.Point(1239, 403);
+            this.cbbTrangThai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbbTrangThai.Name = "cbbTrangThai";
+            this.cbbTrangThai.ShadowDecoration.Parent = this.cbbTrangThai;
+            this.cbbTrangThai.Size = new System.Drawing.Size(409, 36);
+            this.cbbTrangThai.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbbTrangThai.TabIndex = 61;
+            // 
+            // lblTrangThai
+            // 
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrangThai.Location = new System.Drawing.Point(1233, 352);
+            this.lblTrangThai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(182, 44);
+            this.lblTrangThai.TabIndex = 60;
+            this.lblTrangThai.Text = "Trạng thái";
+            // 
             // formQuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,5 +694,7 @@ namespace BTL.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private Guna.UI2.WinForms.Guna2Button btnLamMoi;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbTrangThai;
+        private System.Windows.Forms.Label lblTrangThai;
     }
 }
