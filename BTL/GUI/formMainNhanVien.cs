@@ -157,13 +157,13 @@ namespace BTL
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            OpenCurrentForm(new formDatPhong());
+            OpenCurrentForm(new formDatPhongKC());
         }
 
         private void btnChamCong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color5);
-            OpenCurrentForm(new formDatPhong());
+            OpenCurrentForm(new formDatPhongKC());
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)

@@ -32,11 +32,10 @@ namespace BTL.GUI
 
         private void loadCombo()
         {
-            dbDataContext data = new dbDataContext();
-            var nv = from x in data.Taikhoans select x;
-            cbxMaNV.DataSource = nv;
+            cbxMaNV.DataSource = dsTaiKhoan.GetTableTaiKhoan();
 
             cbxMaNV.ValueMember = "MaNhanVien";
+            cbxMaNV.DisplayMember = "MaNhanVien";
         }
 
         public void loadData(DataTable dt)

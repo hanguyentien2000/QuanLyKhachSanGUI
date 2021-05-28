@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DatPhongBUS.cs" />
     <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="BUS\LoaiPhongBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
@@ -108,17 +109,29 @@
     <Compile Include="GUI\formCheckOut.Designer.cs">
       <DependentUpon>formCheckOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\formChonKhachDat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\formChonKhachDat.Designer.cs">
+      <DependentUpon>formChonKhachDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\formDatPhongKM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\formDatPhongKM.Designer.cs">
+      <DependentUpon>formDatPhongKM.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\formDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\formDoiMatKhau.Designer.cs">
       <DependentUpon>formDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\formDatPhong.cs">
+    <Compile Include="GUI\formDatPhongKC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\formDatPhong.Designer.cs">
-      <DependentUpon>formDatPhong.cs</DependentUpon>
+    <Compile Include="GUI\formDatPhongKC.Designer.cs">
+      <DependentUpon>formDatPhongKC.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\formLogin.cs">
       <SubType>Form</SubType>
@@ -190,11 +203,17 @@
     <EmbeddedResource Include="GUI\formCheckOut.resx">
       <DependentUpon>formCheckOut.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\formChonKhachDat.resx">
+      <DependentUpon>formChonKhachDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\formDatPhongKM.resx">
+      <DependentUpon>formDatPhongKM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\formDoiMatKhau.resx">
       <DependentUpon>formDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\formDatPhong.resx">
-      <DependentUpon>formDatPhong.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\formDatPhongKC.resx">
+      <DependentUpon>formDatPhongKC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>

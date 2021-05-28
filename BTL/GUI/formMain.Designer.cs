@@ -89,7 +89,7 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(204, 919);
+            this.panelMenu.Size = new System.Drawing.Size(204, 749);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubmenu2
@@ -99,7 +99,7 @@ namespace BTL
             this.panelSubmenu2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenu2.Location = new System.Drawing.Point(0, 689);
             this.panelSubmenu2.Name = "panelSubmenu2";
-            this.panelSubmenu2.Size = new System.Drawing.Size(204, 100);
+            this.panelSubmenu2.Size = new System.Drawing.Size(187, 100);
             this.panelSubmenu2.TabIndex = 14;
             // 
             // btnThongKeLuong
@@ -119,7 +119,7 @@ namespace BTL
             this.btnThongKeLuong.Location = new System.Drawing.Point(0, 51);
             this.btnThongKeLuong.Name = "btnThongKeLuong";
             this.btnThongKeLuong.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnThongKeLuong.Size = new System.Drawing.Size(204, 46);
+            this.btnThongKeLuong.Size = new System.Drawing.Size(187, 46);
             this.btnThongKeLuong.TabIndex = 8;
             this.btnThongKeLuong.Text = "Thống kê lương";
             this.btnThongKeLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,7 +144,7 @@ namespace BTL
             this.btnThongKeHoaDon.Location = new System.Drawing.Point(0, 0);
             this.btnThongKeHoaDon.Name = "btnThongKeHoaDon";
             this.btnThongKeHoaDon.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnThongKeHoaDon.Size = new System.Drawing.Size(204, 51);
+            this.btnThongKeHoaDon.Size = new System.Drawing.Size(187, 51);
             this.btnThongKeHoaDon.TabIndex = 7;
             this.btnThongKeHoaDon.Text = "Thống kê hoá đơn";
             this.btnThongKeHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,7 +167,7 @@ namespace BTL
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.Location = new System.Drawing.Point(0, 629);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(204, 60);
+            this.btnThongKe.Size = new System.Drawing.Size(187, 60);
             this.btnThongKe.TabIndex = 10;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +186,7 @@ namespace BTL
             this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenu.Location = new System.Drawing.Point(0, 373);
             this.panelSubmenu.Name = "panelSubmenu";
-            this.panelSubmenu.Size = new System.Drawing.Size(204, 256);
+            this.panelSubmenu.Size = new System.Drawing.Size(187, 256);
             this.panelSubmenu.TabIndex = 13;
             // 
             // btnQuanLyNhanVien
@@ -206,7 +206,7 @@ namespace BTL
             this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 204);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
             this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(204, 52);
+            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(187, 52);
             this.btnQuanLyNhanVien.TabIndex = 4;
             this.btnQuanLyNhanVien.Text = "Quản lý nhân viên";
             this.btnQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,7 +231,7 @@ namespace BTL
             this.btnQuanLyKhachHang.Location = new System.Drawing.Point(0, 153);
             this.btnQuanLyKhachHang.Name = "btnQuanLyKhachHang";
             this.btnQuanLyKhachHang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnQuanLyKhachHang.Size = new System.Drawing.Size(204, 51);
+            this.btnQuanLyKhachHang.Size = new System.Drawing.Size(187, 51);
             this.btnQuanLyKhachHang.TabIndex = 8;
             this.btnQuanLyKhachHang.Text = "Quản lý khách hàng";
             this.btnQuanLyKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,7 +256,7 @@ namespace BTL
             this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 102);
             this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
             this.btnQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(204, 51);
+            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(187, 51);
             this.btnQuanLyTaiKhoan.TabIndex = 9;
             this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
             this.btnQuanLyTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,7 +281,7 @@ namespace BTL
             this.btnQuanLyLoaiPhong.Location = new System.Drawing.Point(0, 51);
             this.btnQuanLyLoaiPhong.Name = "btnQuanLyLoaiPhong";
             this.btnQuanLyLoaiPhong.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnQuanLyLoaiPhong.Size = new System.Drawing.Size(204, 51);
+            this.btnQuanLyLoaiPhong.Size = new System.Drawing.Size(187, 51);
             this.btnQuanLyLoaiPhong.TabIndex = 5;
             this.btnQuanLyLoaiPhong.Text = "Quản lý loại phòng";
             this.btnQuanLyLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,7 +306,7 @@ namespace BTL
             this.btnQuanLyPhong.Location = new System.Drawing.Point(0, 0);
             this.btnQuanLyPhong.Name = "btnQuanLyPhong";
             this.btnQuanLyPhong.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnQuanLyPhong.Size = new System.Drawing.Size(204, 51);
+            this.btnQuanLyPhong.Size = new System.Drawing.Size(187, 51);
             this.btnQuanLyPhong.TabIndex = 6;
             this.btnQuanLyPhong.Text = "Quản lý phòng";
             this.btnQuanLyPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -329,7 +329,7 @@ namespace BTL
             this.btnQuanLyMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyMain.Location = new System.Drawing.Point(0, 313);
             this.btnQuanLyMain.Name = "btnQuanLyMain";
-            this.btnQuanLyMain.Size = new System.Drawing.Size(204, 60);
+            this.btnQuanLyMain.Size = new System.Drawing.Size(187, 60);
             this.btnQuanLyMain.TabIndex = 12;
             this.btnQuanLyMain.Text = "Quản lý ";
             this.btnQuanLyMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,7 +343,7 @@ namespace BTL
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 900);
+            this.label1.Location = new System.Drawing.Point(0, 770);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 19);
             this.label1.TabIndex = 7;
@@ -364,7 +364,7 @@ namespace BTL
             this.btnCheckout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckout.Location = new System.Drawing.Point(0, 253);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(204, 60);
+            this.btnCheckout.Size = new System.Drawing.Size(187, 60);
             this.btnCheckout.TabIndex = 3;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,7 +387,7 @@ namespace BTL
             this.btnDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatPhong.Location = new System.Drawing.Point(0, 193);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(204, 60);
+            this.btnDatPhong.Size = new System.Drawing.Size(187, 60);
             this.btnDatPhong.TabIndex = 2;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -410,7 +410,7 @@ namespace BTL
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 133);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(204, 60);
+            this.btnHome.Size = new System.Drawing.Size(187, 60);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -423,7 +423,7 @@ namespace BTL
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(204, 133);
+            this.panelLogo.Size = new System.Drawing.Size(187, 133);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
@@ -583,7 +583,7 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 919);
+            this.ClientSize = new System.Drawing.Size(1560, 749);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelTitleBar);

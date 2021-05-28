@@ -210,7 +210,7 @@ namespace BTL
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color2);
-            OpenCurrentForm(new formDatPhong());
+            OpenCurrentForm(new formDatPhongKC());
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)

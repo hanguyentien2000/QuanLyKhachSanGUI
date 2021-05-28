@@ -42,7 +42,7 @@ namespace BTL
             dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
             cbbLoaiPhong.ValueMember = "MaLoaiPhong";
             cbbLoaiPhong.DisplayMember = "TenLoaiPhong";
-            cbbLoaiPhong.DataSource = loaiPhongBUS.layTTLoaiPhong();
+            cbbLoaiPhong.DataSource = loaiPhongBUS.GetTableLoaiPhong();
             xoaTrang();
         }
 
