@@ -83,6 +83,7 @@
     <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="BUS\LoaiPhongBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="BUS\PhongBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="db.designer.cs">
@@ -91,7 +92,9 @@
       <DependentUpon>db.dbml</DependentUpon>
     </Compile>
     <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\LoaiPhongDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\PhongDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="GUI\formChamCong.cs">
       <SubType>Form</SubType>
@@ -164,8 +167,6 @@
     <Compile Include="DTO\ChucVuDTO.cs" />
     <Compile Include="DTO\DatPhongDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
-    <Compile Include="DTO\LoaiPhongDTO.cs" />
-    <Compile Include="DTO\PhongDTO.cs" />
     <Compile Include="GUI\formQuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BTL.Models
+namespace BTL.DTO
 {
     class PhongDTO
     {
-        public int MaPhong { get; set; }
-        public String TenLoaiPhong { get; set; }
-        public int TrangThai { get; set; }
+        int maPhong, maLoaiPhong, trangThai;
+
+        public int MaPhong { get => maPhong; set => maPhong = value; }
+        public int MaLoaiPhong { get => maLoaiPhong; set => maLoaiPhong = value; }
+        public int TrangThai { get => trangThai; set => trangThai = value; }
     }
 }

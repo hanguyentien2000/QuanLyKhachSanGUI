@@ -68,7 +68,7 @@ namespace BTL.InterfaceQuanly
         {
             try
             {
-                string reg = "/(84|0[3|5|7|8|9])+([0-9]{8})\\b/g";
+                string reg = "(84|0[3|5|7|8|9])+([0-9]{8})";
                 if (txtTenNV.Text.Trim().Equals(""))
                 {
                     throw new Exception("Tên nhân viên không được để trống");
@@ -76,7 +76,8 @@ namespace BTL.InterfaceQuanly
                 if (txtSDT.Text.Trim().Equals(""))
                 {
                     throw new Exception("Số điện thoại không được để trống");
-                } else if (!Regex.IsMatch(txtSDT.Text, reg))
+                }
+                else if (!Regex.IsMatch(txtSDT.Text, reg))
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
@@ -98,11 +99,13 @@ namespace BTL.InterfaceQuanly
                     MessageBox.Show("Thêm mới nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
                     xoaTrang();
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Thêm mới nhân viên thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -114,7 +117,7 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = true;
             try
             {
-                string reg = "/(84|0[3|5|7|8|9])+([0-9]{8})\b/g";
+                string reg = "(84|0[3|5|7|8|9])+([0-9]{8})";
                 if (dgvNhanVien.Rows.Count < 1)
                 {
                     throw new Exception("Vui lòng thêm nhân viên trước khi sửa");
