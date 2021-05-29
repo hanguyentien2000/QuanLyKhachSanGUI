@@ -206,7 +206,7 @@ BEGIN
 	IF(EXISTS (SELECT * FROM KhachHang 
 		INNER JOIN DatPhong ON KhachHang.MaKhachHang=DatPhong.MaKhachHang 
 		WHERE KhachHang.MaKhachHang = @makh))
-			SET @check = 0 --đã tồn tại nhân viên
+			SET @check = 0 --đã tồn tại khách hàng
 	ELSE 
 		SET @check = 1
 	RETURN @check
