@@ -104,40 +104,7 @@ namespace BTL.BUS
             }
             return data.GetTable(sql);
         }
-        public KhachHangDTO getKhachHang(string tuKhoa)
-        {
-            KhachHangDTO kh = new KhachHangDTO();
-            string sql = "";
-                sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email,GioiTinhKH " +
-               ",DiaChiKhachHang, CMND,TrangThai " +
-                "FROM KhachHang WHERE ( MaKhachHang = '" + tuKhoa + "') OR ( CMND = N'" + tuKhoa +"') ";
-           
-           SqlConnection conn = data.GetDBConnection();
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sql,conn);
-           
-            using (var reader = cmd.ExecuteReader())
-            {
-                if (reader.HasRows)
-                {
-                    if(reader.Read())
-                    {
-                        kh.MaKH = Convert.ToInt32(reader.GetValue(0));
-                        kh.HoTen = reader.GetString(1);
-                        kh.SoDT = reader.GetString(2);
-                        kh.NgaySinh = Convert.ToString(reader.GetDateTime(3));
-                        kh.Email = reader.GetString(4);
-                        kh.GioiTinh = Convert.ToInt32(reader.GetValue(5));
-                        kh.DiaChi = reader.GetString(6);
-                        kh.Cmnd = reader.GetString(7);
-                        kh.TrangThai = Convert.ToInt32(reader.GetValue(8));
-
-                    }
-
-                }    
-             }
-                    return kh;
-        }
+        
         public int kiemTraKhachHangDatPhong(int maKH)
         {
             string sql = "SELECT dbo.kiemTraKhachHangDP(" + maKH + ") AS 'checkKH'";
