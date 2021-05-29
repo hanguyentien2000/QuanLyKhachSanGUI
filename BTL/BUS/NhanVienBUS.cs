@@ -16,21 +16,21 @@ namespace BTL.BUS
         {
             string sql = "SELECT MaNhanVien, TenNhanVien, SoDienThoai, NgaySinhNV, DiaChiNhanVien, " +
                 "CASE WHEN GioiTinhNV = 0 THEN N'Nam' " +
-                "ELSE N'Nữ' END AS GioiTinhNV, ChucVu " +
+                "ELSE N'Nữ' END AS GioiTinhNV, ChucVu, CMND " +
                 "FROM NhanVien";
             return data.GetTable(sql);
         }
-        public bool themTTNhanVien(string hoTen, string soDT, string ngaySinh, string diaChi, int gioiTinh, string chucVu)
+        public bool themTTNhanVien(string hoTen, string soDT, string ngaySinh, string diaChi, int gioiTinh, string cmnd, string chucVu)
         {
-            string sql = "INSERT INTO NhanVien VALUES (N'" + hoTen + "','" + soDT + "','" + ngaySinh + "',N'" + diaChi + "'," + gioiTinh + ",N'" + chucVu + "')";
+            string sql = "INSERT INTO NhanVien VALUES (N'" + hoTen + "','" + soDT + "','" + ngaySinh + "',N'" + diaChi + "'," + gioiTinh + ",'" + cmnd + "',N'" + chucVu + "')";
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
                 return false;
         }
-        public bool thayDoiTTNhanVien(int maNV, string hoTen, string soDT, string ngaySinh, string diaChi, int gioiTinh, string chucVu)
+        public bool thayDoiTTNhanVien(int maNV, string hoTen, string soDT, string ngaySinh, string diaChi, int gioiTinh, string cmnd, string chucVu)
         {
-            string sql = "UPDATE NhanVien SET TenNhanVien=N'" + hoTen + "',SoDienThoai='" + soDT + "',NgaySinhNV='" + ngaySinh + "',DiaChiNhanVien=N'" + diaChi + "',GioiTinhNV=" + gioiTinh + ",ChucVu=N'" + chucVu + "' WHERE MaNhanVien=" + maNV + "";
+            string sql = "UPDATE NhanVien SET TenNhanVien=N'" + hoTen + "',SoDienThoai='" + soDT + "',NgaySinhNV='" + ngaySinh + "',DiaChiNhanVien=N'" + diaChi + "',GioiTinhNV=" + gioiTinh + ",CMND='" + cmnd + "',ChucVu=N'" + chucVu + "' WHERE MaNhanVien=" + maNV + "";
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
@@ -70,7 +70,7 @@ namespace BTL.BUS
                 "ELSE N'Nữ' END AS GioiTinhNV, ChucVu " +
                 "FROM NhanVien WHERE ( MaNhanVien LIKE '%" + tuKhoa + "%') OR ( TenNhanVien LIKE N'%" + tuKhoa + "%') OR " +
                 "( SoDienThoai LIKE '%" + tuKhoa + "%') OR ( NgaySinhNV LIKE '%" + tuKhoa + "%') OR " +
-                "( DiaChiNhanVien LIKE N'%" + tuKhoa + "%') OR ( ChucVu LIKE N'%" + tuKhoa + "%')";
+                "( DiaChiNhanVien LIKE N'%" + tuKhoa + "%') OR ( ChucVu LIKE N'%" + tuKhoa + "%') OR ( CMND LIKE N'%" + tuKhoa + "%')";
             }
             return data.GetTable(sql);
         }
@@ -81,10 +81,10 @@ namespace BTL.BUS
             return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkNV"].ToString());
         }
 
-        public int layMaxMaNhanVien()
+        public int kiemTraCMND(string cmnd)
         {
-            string sql = "SELECT MAX(MaNhanVien) AS N'maMaxNV' FROM NhanVien ";
-            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["maMaxNV"].ToString());
+            string sql = "SELECT dbo.kiemTraCMNDNV('" + cmnd + "') AS 'checkCMNDNV'";
+            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkCMNDNV"].ToString());
         }
     }
 }

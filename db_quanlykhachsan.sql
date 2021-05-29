@@ -19,6 +19,7 @@ create table NhanVien(
 	NgaySinhNV date not null,
 	DiaChiNhanVien nvarchar(50),
 	GioiTinhNV bit not null, --0: NAM, 1: NỮ
+	CMND char(12) not null,
 	ChucVu nvarchar(50) not null
 )
 go
@@ -69,10 +70,9 @@ create table KhachHang(
 	Email varchar(30),
 	GioiTinhKH bit not null, --0: Nam, 1: Nữ
 	DiaChiKhachHang nvarchar(50),
-	CMND char(12) not null,
-	TrangThai bit not null --0: người xấu, 1: người tốt
+	CMND char(12) not null
 )
-go
+GO
 
 --bảng đặt phòng
 create table DatPhong(
@@ -111,10 +111,10 @@ create table HoaDon(
 go
 
 --thêm dữ liệu nhân viên
-INSERT INTO NhanVien(TenNhanVien, SoDienThoai, NgaysinhNV, DiaChiNhanVien, GioiTinhNV, ChucVu) VALUES
-(N'Quách Ngọc Hà', '0389149961', '04/05/2000', N'Hà Nội', 0, N'Admin'),
-(N'Phạm Anh Dương', '0969055609', '05/06/2000', N'Hà Nội', 0, N'Quản lý'),
-(N'Nguyễn Tiến Hà', '0936890916', '04/03/2000', N'Hà Nội', 0, N'Quản lý')
+INSERT INTO NhanVien(TenNhanVien, SoDienThoai, NgaysinhNV, DiaChiNhanVien, GioiTinhNV, CMND, ChucVu) VALUES
+(N'Quách Ngọc Hà', '0389149961', '04/05/2000', N'Hà Nội', 0, '001478910103', N'Admin'),
+(N'Phạm Anh Dương', '0969055609', '05/06/2000', N'Hà Nội', 0,'001382912103', N'Quản lý'),
+(N'Nguyễn Tiến Hà', '0936890916', '04/03/2000', N'Hà Nội', 0,'001578911103', N'Quản lý')
 GO
 
 INSERT INTO ChamCong(MaNhanVien, TrangThai) VALUES
@@ -146,12 +146,12 @@ INSERT INTO Phong(MaLoaiPhong, TrangThaiPhong) VALUES
 (1, 1)
 GO
 
-INSERT INTO KhachHang(TenKhachHang, SDT, NgaySinhKH, Email, GioiTinhKH, DiaChiKhachHang, CMND, TrangThai) VALUES 
-(N'Phạm Duy Hưng', '0327106865', '10/06/2000', 'phamhung@gmail.com', 0, N'Hà Nội', '001278910103', 1),
-(N'Đỗ Bá Hoàn', '0354732260', '09/27/2000', 'bahoan@gmail.com', 0, N'Hà Nội', '001356711103', 1),
-(N'Lê Vũ Long', '0328026493', '11/20/2000', 'vulong@gmail.com', 0, N'Phú Thọ', '001456712103', 0),
-(N'Ngô Ngọc Ánh', '0347658636', '05/05/1994', 'ngocanh@gmail.com', 1, N'Đà Nẵng', '001374910103', 0),
-(N'Đào Thu Phương', '0583509498', '12/21/2000', 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103', 0)
+INSERT INTO KhachHang(TenKhachHang, SDT, NgaySinhKH, Email, GioiTinhKH, DiaChiKhachHang, CMND) VALUES 
+(N'Phạm Duy Hưng', '0327106865', '10/06/2000', 'phamhung@gmail.com', 0, N'Hà Nội', '001278910103'),
+(N'Đỗ Bá Hoàn', '0354732260', '09/27/2000', 'bahoan@gmail.com', 0, N'Hà Nội', '001356711103'),
+(N'Lê Vũ Long', '0328026493', '11/20/2000', 'vulong@gmail.com', 0, N'Phú Thọ', '001456712103'),
+(N'Ngô Ngọc Ánh', '0347658636', '05/05/1994', 'ngocanh@gmail.com', 1, N'Đà Nẵng', '001374910103'),
+(N'Đào Thu Phương', '0583509498', '12/21/2000', 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103')
 GO
 
 INSERT INTO DatPhong(MaNhanVien, MaKhachHang, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
@@ -179,7 +179,7 @@ SELECT * FROM KhachHang
 SELECT * FROM DatPhong
 SELECT * FROM ChiTietPhongDat
 SELECT * FROM HoaDon
-
+GO
 --kiểm tra nhân viên đang đặt phòng
 CREATE FUNCTION kiemTraNhanVienDP(@manv INT)
 RETURNS INT
@@ -229,4 +229,32 @@ BEGIN
 	RETURN @check
 END
 GO
-----SELECT dbo.kiemTraPhongDat(1) AS 'check'
+--SELECT dbo.kiemTraPhongDat(1) AS 'check'
+
+--kiểm tra chứng minh nhân dân của khách hàng đã tồn tại
+CREATE FUNCTION kiemTraCMNDKH(@cmnd CHAR(12))
+RETURNS INT
+AS
+BEGIN
+	DECLARE @check INT
+	IF(EXISTS (SELECT * FROM KhachHang WHERE CMND= @cmnd))
+		SET @check = 0 --đã tồn tại
+	ELSE 
+		SET @check = 1
+	RETURN @check
+END
+GO
+
+--kiểm tra chứng minh nhân dân của nhân viên đã tồn tại
+CREATE FUNCTION kiemTraCMNDNV(@cmnd CHAR(12))
+RETURNS INT
+AS
+BEGIN
+	DECLARE @check INT
+	IF(EXISTS (SELECT * FROM NhanVien WHERE CMND= @cmnd))
+		SET @check = 0 --đã tồn tại
+	ELSE 
+		SET @check = 1
+	RETURN @check
+END
+GO

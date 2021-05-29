@@ -32,7 +32,6 @@ namespace BTL
 
         private void layThongTinPhong()
         {
-            phongDTO.MaPhong = phongBUS.layMaxMaPhong();
             phongDTO.MaLoaiPhong = Int32.Parse(cbbLoaiPhong.SelectedValue.ToString());
             phongDTO.TrangThai = rbdDangSuDung.Checked ? 0 : rbdTrong.Checked ? 1 : 0;
         }

@@ -19,24 +19,21 @@ namespace BTL.BUS
         {
             string sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
                 "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +
-                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND, " +
-                "CASE WHEN TrangThai = 0 THEN 'BAD' " +
-                "ELSE 'GOOD' END AS TrangThai " +
-                "FROM KhachHang";
+                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND FROM KhachHang"; 
             return data.GetTable(sql);
         }
 
-        public bool themTTKhachHang(string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd , int trangThai)
+        public bool themTTKhachHang(string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd)
         {
-            string sql = "INSERT INTO KhachHang VALUES (N'" + hoTen + "','" + soDT + "','" + ngaySinh + "',N'" + email + "'," + gioiTinh + ",N'" + diaChi + "','" + cmnd + "'," + trangThai + ")";
+            string sql = "INSERT INTO KhachHang VALUES (N'" + hoTen + "','" + soDT + "','" + ngaySinh + "','" + email + "'," + gioiTinh + ",N'" + diaChi + "','" + cmnd + "')";
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
                 return false;
         }
-        public bool thayDoiTTKhachHang(int maKH, string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd, int trangThai)
+        public bool thayDoiTTKhachHang(int maKH, string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd)
         {
-            string sql = "UPDATE KhachHang SET TenKhachHang=N'" + hoTen + "',SDT='" + soDT + "',NgaySinhKH='" + ngaySinh + "',Email=N'" + email + "',GioiTinhKH=" + gioiTinh + ",DiaChiKhachHang=N'" + diaChi + "',CMND='" + cmnd + "',TrangThai=" + trangThai + " WHERE MaKhachHang=" + maKH;
+            string sql = "UPDATE KhachHang SET TenKhachHang=N'" + hoTen + "',SDT='" + soDT + "',NgaySinhKH='" + ngaySinh + "',Email=N'" + email + "',GioiTinhKH=" + gioiTinh + ",DiaChiKhachHang=N'" + diaChi + "',CMND='" + cmnd + "' WHERE MaKhachHang=" + maKH;
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
@@ -72,24 +69,6 @@ namespace BTL.BUS
                 "CASE WHEN TrangThai = 0 THEN 'BAD' " +
                 "ELSE 'GOOD' END AS TrangThai " +
                 "FROM KhachHang WHERE ( GioiTinhKH LIKE N'%" + tuKhoa + "%') ";
-            } else if (tuKhoa == "BAD")
-            {
-                tuKhoa = "0";
-                sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
-                "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +
-                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND, " +
-                "CASE WHEN TrangThai = 0 THEN 'BAD' " +
-                "ELSE 'GOOD' END AS TrangThai " +
-                "FROM KhachHang WHERE ( TrangThai LIKE N'%" + tuKhoa + "%') ";
-            } else if (tuKhoa == "GOOD")
-            {
-                tuKhoa = "1";
-                sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
-                "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +
-                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND, " +
-                "CASE WHEN TrangThai = 0 THEN 'BAD' " +
-                "ELSE 'GOOD' END AS TrangThai " +
-                "FROM KhachHang WHERE ( TrangThai LIKE N'%" + tuKhoa + "%') ";
             } else
             {
                 sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
@@ -109,7 +88,7 @@ namespace BTL.BUS
             KhachHangDTO kh = new KhachHangDTO();
             string sql = "";
                 sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email,GioiTinhKH " +
-               ",DiaChiKhachHang, CMND,TrangThai " +
+               ",DiaChiKhachHang, CMND " +
                 "FROM KhachHang WHERE ( MaKhachHang = '" + tuKhoa + "') OR ( CMND = N'" + tuKhoa +"') ";
            
            SqlConnection conn = data.GetDBConnection();
@@ -130,8 +109,6 @@ namespace BTL.BUS
                         kh.GioiTinh = Convert.ToInt32(reader.GetValue(5));
                         kh.DiaChi = reader.GetString(6);
                         kh.Cmnd = reader.GetString(7);
-                        kh.TrangThai = Convert.ToInt32(reader.GetValue(8));
-
                     }
 
                 }    
@@ -144,16 +121,10 @@ namespace BTL.BUS
             return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkKH"].ToString());
         }
 
-        public int layMaxMaKhachHang()
+        public int kiemTraCMND(string cmnd)
         {
-            string sql = "SELECT MAX(MaKhachHang) AS N'maMaxKH' FROM KhachHang ";
-            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["maMaxKH"].ToString());
-        }
-
-        public int layTrangThaiKhachHang(string cmnd)
-        {
-            string sql = "SELECT TrangThai FROM KhachHang WHERE CMND='" + cmnd + "'";
-            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["TrangThai"].ToString());
+            string sql = "SELECT dbo.kiemTraCMNDKH('" + cmnd + "') AS 'checkCMNDKH'";
+            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkCMNDKH"].ToString());
         }
     }
 }
