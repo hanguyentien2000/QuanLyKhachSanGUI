@@ -123,25 +123,7 @@ namespace BTL
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                if (txtTimKiem.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng nhập từ khóa tìm kiếm");
-                }
-                DataTable dt = new DataTable();
-                dt = phongBUS.timKiemTTPhong(txtTimKiem.Text);
-                if (dt.Rows.Count < 1)
-                {
-                    throw new Exception("Không tìm thấy dữ liệu với từ khóa: " + txtTimKiem.Text);
-                }
-                dgvQuanLyPhong.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void dgvQuanLyPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -167,6 +149,34 @@ namespace BTL
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTimKiem.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng nhập từ khóa tìm kiếm");
+                }
+                DataTable dt = new DataTable();
+                dt = phongBUS.timKiemTTPhong(txtTimKiem.Text);
+                if (dt.Rows.Count < 1)
+                {
+                    throw new Exception("Không tìm thấy dữ liệu với từ khóa: " + txtTimKiem.Text);
+                }
+                dgvQuanLyPhong.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            xoaTrang();
+            dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
         }
     }
 }

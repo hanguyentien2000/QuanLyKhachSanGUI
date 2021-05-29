@@ -129,6 +129,7 @@ namespace BTL
         {
             panelSubmenu.Visible = false;
             panelSubmenu2.Visible = false;
+            panelSubmenu3.Visible = false;
         }
 
         private void HideSubmenu()
@@ -140,6 +141,10 @@ namespace BTL
             if (panelSubmenu2.Visible == true)
             {
                 panelSubmenu2.Visible = false;
+            }
+            if (panelSubmenu3.Visible == true)
+            {
+                panelSubmenu3.Visible = false;
             }
         }
 
@@ -210,7 +215,8 @@ namespace BTL
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color2);
-            OpenCurrentForm(new formDatPhongKC());
+            OpenCurrentForm(new formChonKhachDat());
+            ShowSubmenu(panelSubmenu3);
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
@@ -282,6 +288,16 @@ namespace BTL
             //HideSubmenu();
         }
 
-      
+        private void btnKhachCu_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formDatPhongKC());
+        }
+
+        private void btnKhachMoi_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color2);
+            OpenCurrentForm(new formDatPhongKM());
+        }
     }
 }

@@ -46,8 +46,9 @@ namespace BTL
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.rbdDangSuDung = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbdTrong = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnTim = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanLyPhong)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,7 @@ namespace BTL
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 128);
+            this.label2.Location = new System.Drawing.Point(65, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 24;
@@ -76,7 +77,7 @@ namespace BTL
             this.txtMaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaPhong.HoverState.Parent = this.txtMaPhong;
-            this.txtMaPhong.Location = new System.Drawing.Point(69, 60);
+            this.txtMaPhong.Location = new System.Drawing.Point(69, 76);
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.PasswordChar = '\0';
             this.txtMaPhong.PlaceholderText = "";
@@ -109,7 +110,7 @@ namespace BTL
             this.cbbLoaiPhong.HoverState.Parent = this.cbbLoaiPhong;
             this.cbbLoaiPhong.ItemHeight = 30;
             this.cbbLoaiPhong.ItemsAppearance.Parent = this.cbbLoaiPhong;
-            this.cbbLoaiPhong.Location = new System.Drawing.Point(69, 164);
+            this.cbbLoaiPhong.Location = new System.Drawing.Point(69, 178);
             this.cbbLoaiPhong.Name = "cbbLoaiPhong";
             this.cbbLoaiPhong.ShadowDecoration.Parent = this.cbbLoaiPhong;
             this.cbbLoaiPhong.Size = new System.Drawing.Size(274, 36);
@@ -148,12 +149,12 @@ namespace BTL
             this.dgvQuanLyPhong.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvQuanLyPhong.EnableHeadersVisualStyles = false;
             this.dgvQuanLyPhong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvQuanLyPhong.Location = new System.Drawing.Point(518, 128);
+            this.dgvQuanLyPhong.Location = new System.Drawing.Point(543, 91);
             this.dgvQuanLyPhong.Name = "dgvQuanLyPhong";
             this.dgvQuanLyPhong.RowHeadersVisible = false;
             this.dgvQuanLyPhong.RowHeadersWidth = 62;
             this.dgvQuanLyPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQuanLyPhong.Size = new System.Drawing.Size(547, 500);
+            this.dgvQuanLyPhong.Size = new System.Drawing.Size(593, 500);
             this.dgvQuanLyPhong.TabIndex = 26;
             this.dgvQuanLyPhong.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvQuanLyPhong.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -209,7 +210,7 @@ namespace BTL
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(395, 401);
+            this.btnXoa.Location = new System.Drawing.Point(369, 408);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
             this.btnXoa.Size = new System.Drawing.Size(117, 46);
@@ -225,7 +226,7 @@ namespace BTL
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(226, 401);
+            this.btnSua.Location = new System.Drawing.Point(212, 408);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
             this.btnSua.Size = new System.Drawing.Size(117, 46);
@@ -242,7 +243,7 @@ namespace BTL
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(59, 401);
+            this.btnThem.Location = new System.Drawing.Point(59, 408);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
             this.btnThem.Size = new System.Drawing.Size(117, 46);
@@ -257,7 +258,7 @@ namespace BTL
             this.guna2GroupBox1.Enabled = false;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(59, 223);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(69, 254);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(300, 98);
@@ -300,22 +301,6 @@ namespace BTL
             this.rbdTrong.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rbdTrong.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BorderRadius = 20;
-            this.btnTimKiem.CheckedState.Parent = this.btnTimKiem;
-            this.btnTimKiem.CustomImages.Parent = this.btnTimKiem;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.HoverState.Parent = this.btnTimKiem;
-            this.btnTimKiem.Location = new System.Drawing.Point(948, 57);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.ShadowDecoration.Parent = this.btnTimKiem;
-            this.btnTimKiem.Size = new System.Drawing.Size(117, 36);
-            this.btnTimKiem.TabIndex = 38;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
             // txtTimKiem
             // 
             this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -330,7 +315,7 @@ namespace BTL
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.HoverState.Parent = this.txtTimKiem;
-            this.txtTimKiem.Location = new System.Drawing.Point(668, 57);
+            this.txtTimKiem.Location = new System.Drawing.Point(641, 37);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "";
@@ -340,13 +325,45 @@ namespace BTL
             this.txtTimKiem.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTimKiem.TabIndex = 37;
             // 
+            // btnTim
+            // 
+            this.btnTim.CheckedState.Parent = this.btnTim;
+            this.btnTim.CustomImages.Parent = this.btnTim;
+            this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.HoverState.Parent = this.btnTim;
+            this.btnTim.Location = new System.Drawing.Point(945, 37);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.ShadowDecoration.Parent = this.btnTim;
+            this.btnTim.Size = new System.Drawing.Size(89, 36);
+            this.btnTim.TabIndex = 40;
+            this.btnTim.Text = "Tìm kiếm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.CheckedState.Parent = this.btnRefresh;
+            this.btnRefresh.CustomImages.Parent = this.btnRefresh;
+            this.btnRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.HoverState.Parent = this.btnRefresh;
+            this.btnRefresh.Location = new System.Drawing.Point(1047, 37);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
+            this.btnRefresh.Size = new System.Drawing.Size(89, 36);
+            this.btnRefresh.TabIndex = 45;
+            this.btnRefresh.Text = "Tải lại";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // formQuanLyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1095, 487);
-            this.Controls.Add(this.btnTimKiem);
+            this.ClientSize = new System.Drawing.Size(1207, 643);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btnXoa);
@@ -381,10 +398,11 @@ namespace BTL
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2RadioButton rbdDangSuDung;
         private Guna.UI2.WinForms.Guna2RadioButton rbdTrong;
-        private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiPhong;
+        private Guna.UI2.WinForms.Guna2Button btnTim;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }
