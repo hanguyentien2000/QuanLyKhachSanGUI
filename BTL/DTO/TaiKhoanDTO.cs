@@ -10,7 +10,7 @@ namespace BTL.DTO
     {
         public String Username { get; set; }
         public String Password { get; set; }
-        public bool LoaiTaiKhoan { get; set; }
+        public int LoaiTaiKhoan { get; set; }
         public int MaNhanVien { get; set; }
     }
 }

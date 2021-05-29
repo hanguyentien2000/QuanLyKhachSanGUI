@@ -68,7 +68,7 @@ namespace BTL.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string regEmail = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+            string regEmail = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
             string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
             string regCMND = "^\\d{12}$";
             try
@@ -137,7 +137,7 @@ namespace BTL.GUI
             lblMaKH.Visible = true;
             lblTrangThai.Visible = true;
             cbbTrangThai.Visible = true;
-            string regEmail = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+            string regEmail = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
             string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
             string regCMND = "^\\d{12}$";
             try

@@ -34,19 +34,19 @@ namespace BTL.BUS
             tk.Username = dt.Rows[0].ItemArray[0].ToString();
             tk.Password = dt.Rows[0].ItemArray[1].ToString();
             tk.MaNhanVien = int.Parse(dt.Rows[0].ItemArray[2].ToString());
-            tk.LoaiTaiKhoan = (bool)dt.Rows[0].ItemArray[3];
+            tk.LoaiTaiKhoan = (int)dt.Rows[0].ItemArray[3];
             return tk;
         }
 
-        public void AddTaiKhoan(string TenDangNhap, string MatKhau, bool LoaiTaiKhoan, int MaNV)
+        public void AddTaiKhoan(string TenDangNhap, string MatKhau, int LoaiTaiKhoan, int MaNV)
         {
             string sql = "Insert into TAIKHOAN values('" + TenDangNhap + "','" + MatKhau + "'," + LoaiTaiKhoan + "," + MaNV + ")";
             data.ExecuteQuery(sql);
         }
 
-        public void UpdateTaiKhoan(string TenDangNhap, string MatKhau, bool LoaiTaiKhoan)
+        public void UpdateTaiKhoan(string TenDangNhap, string MatKhau, int LoaiTaiKhoan)
         {
-            string sql = "Update TAIKHOAN SET MatKhau='" + MatKhau + "',  LoaiTaiKhoan =" + LoaiTaiKhoan + " where Username = '" + TenDangNhap + "'";
+            string sql = "Update TAIKHOAN SET Password='" + MatKhau + "',  LoaiTaiKhoan =" + LoaiTaiKhoan + " where Username = '" + TenDangNhap + "'";
             data.ExecuteQuery(sql);
         }
 
