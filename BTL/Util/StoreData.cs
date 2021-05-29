@@ -10,5 +10,6 @@ namespace BTL.Util
     class StoreData
     {
         public static NhanVienDTO nv;
+       
     }
 }

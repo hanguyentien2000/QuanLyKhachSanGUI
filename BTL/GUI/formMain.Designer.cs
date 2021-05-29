@@ -55,6 +55,7 @@ namespace BTL
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.IconCurrentForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelHidden = new System.Windows.Forms.Panel();
+            this.TenNV = new System.Windows.Forms.Label();
             this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximize = new FontAwesome.Sharp.IconPictureBox();
@@ -62,7 +63,6 @@ namespace BTL
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.TenNV = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelSubmenu2.SuspendLayout();
             this.panelSubmenu.SuspendLayout();
@@ -549,6 +549,16 @@ namespace BTL
             this.panelHidden.TabIndex = 2;
             this.panelHidden.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHidden_Paint);
             // 
+            // TenNV
+            // 
+            this.TenNV.AutoSize = true;
+            this.TenNV.ForeColor = System.Drawing.Color.Coral;
+            this.TenNV.Location = new System.Drawing.Point(77, 57);
+            this.TenNV.Name = "TenNV";
+            this.TenNV.Size = new System.Drawing.Size(19, 13);
+            this.TenNV.TabIndex = 4;
+            this.TenNV.Text = "....";
+            // 
             // btnDangXuat
             // 
             this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -654,16 +664,6 @@ namespace BTL
             this.pictureBox3.Size = new System.Drawing.Size(129, 125);
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
-            // 
-            // TenNV
-            // 
-            this.TenNV.AutoSize = true;
-            this.TenNV.ForeColor = System.Drawing.Color.Coral;
-            this.TenNV.Location = new System.Drawing.Point(106, 31);
-            this.TenNV.Name = "TenNV";
-            this.TenNV.Size = new System.Drawing.Size(35, 13);
-            this.TenNV.TabIndex = 4;
-            this.TenNV.Text = "label3";
             // 
             // formMain
             // 

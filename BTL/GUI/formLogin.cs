@@ -12,6 +12,7 @@ namespace BTL
 {
     public partial class formLogin : Form
     {
+        public Taikhoan account;
         public formLogin()
         {
             InitializeComponent();
@@ -21,8 +22,8 @@ namespace BTL
         {
             using(dbDataContext db  = new dbDataContext())
             {
-                Taikhoan account = (from ac in db.Taikhoans where String.Compare(ac.Username , txtUsername.Text, false) == 0
-                                    && String.Compare(ac.Password, txtPassword.Text, false) == 0 select ac).SingleOrDefault();
+                account = (from ac in db.Taikhoans where String.Compare(ac.Username , txtUsername.Text, false) == 0
+                                    && String.Compare(ac.Password, txtPassword.Text, false) == 0  select ac ).SingleOrDefault();
                 if(account == null)
                 {
                     MessageBox.Show("Password incorrect! Please Try Again!","Thông báo!");
@@ -32,7 +33,7 @@ namespace BTL
                 {
                     if(account.LoaiTaiKhoan == false)
                     {
-                        formMain form = new formMain();
+                        formMain form = new formMain(this);
                         form.Tag = account;
                         this.Hide();
                         form.ShowDialog();
@@ -41,8 +42,7 @@ namespace BTL
                     }
                     else
                     {
-                        FormMainNhanVien frm = new FormMainNhanVien();
-                        frm.Tag = account;
+                        FormMainNhanVien frm = new FormMainNhanVien(this);
                         frm.Tag = account;
                         this.Hide();
                         frm.ShowDialog();
