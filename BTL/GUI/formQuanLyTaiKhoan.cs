@@ -15,6 +15,7 @@ namespace BTL.GUI
     public partial class formQuanLyTaiKhoan : Form
     {
         TaiKhoanBUS dsTaiKhoan = new TaiKhoanBUS();
+        TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
         public formQuanLyTaiKhoan()
         {
             InitializeComponent();
@@ -30,12 +31,20 @@ namespace BTL.GUI
             loadData(dsTaiKhoan.GetTableTaiKhoan());
         }
 
+        private void layThongTinTaiKhoan()
+        {
+            taiKhoanDTO.Username = txtTenTK.Text;
+            taiKhoanDTO.Password = txtMatKhau.Text;
+            taiKhoanDTO.LoaiTaiKhoan = rdAdmin.Checked ? 1 : rdNhanVien.Checked ? 0 : 1;
+            taiKhoanDTO.MaNhanVien = Convert.ToInt32(cbxMaNV.SelectedValue.ToString());
+        }
+
         private void loadCombo()
         {
             cbxMaNV.DataSource = dsTaiKhoan.GetTableTaiKhoan();
 
             cbxMaNV.ValueMember = "MaNhanVien";
-            cbxMaNV.DisplayMember = "MaNhanVien";
+            cbxMaNV.DisplayMember = "TenNhanVien";
         }
 
         public void loadData(DataTable dt)
@@ -77,9 +86,8 @@ namespace BTL.GUI
                 }
                 else
                 {
-                    dsTaiKhoan.AddTaiKhoan(txtTenTK.Text, txtMatKhau.Text, rdNhanVien.Checked ? true : false, Convert.ToInt32(cbxMaNV.SelectedValue.ToString()));
-                    //MessageBox.Show("Thêm mới Tài Khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    layThongTinTaiKhoan();
+                    dsTaiKhoan.AddTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.MaNhanVien);
                     loadData(dsTaiKhoan.GetTableTaiKhoan());
                 }
             }
@@ -92,7 +100,7 @@ namespace BTL.GUI
 
         private void btnRefresh_Click_1(object sender, EventArgs e)
         {
-            xoaTrang();
+            loadData(dsTaiKhoan.GetTableTaiKhoan());
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -102,7 +110,7 @@ namespace BTL.GUI
                 dbDataContext db = new dbDataContext();
                 if (txtTimKiem.Text.Equals(""))
                 {
-                    return;
+                    throw new Exception("Vui lòng nhập từ khóa tìm kiếm");
                 }
                 else
                     loadData(dsTaiKhoan.SearchTenDangNhap(txtTimKiem.Text));
@@ -194,8 +202,8 @@ namespace BTL.GUI
                 }
                 else
                 {
-                    dsTaiKhoan.UpdateTaiKhoan(txtTenTK.Text, txtMatKhau.Text, rdNhanVien.Checked ? true : false);
-                    //MessageBox.Show("Sửa tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    layThongTinTaiKhoan();
+                    dsTaiKhoan.UpdateTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan);
                     loadData(dsTaiKhoan.GetTableTaiKhoan());
                 }
             }
