@@ -93,11 +93,5 @@ namespace BTL.BUS
             string sql = "SELECT dbo.kiemTraPhongDat(" + maPhong + ") AS 'checkPhong'";
             return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkPhong"].ToString());
         }
-
-        public int layMaxMaPhong()
-        {
-            string sql = "SELECT MAX(MaPhong) AS N'maMaxPhong' FROM Phong ";
-            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["maMaxPhong"].ToString());
-        }
     }
 }

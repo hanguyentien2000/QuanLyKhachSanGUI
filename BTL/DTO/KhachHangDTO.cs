@@ -8,7 +8,7 @@ namespace BTL.DTO
 {
     class KhachHangDTO
     {
-        int maKH, gioiTinh, trangThai;
+        int maKH, gioiTinh;
         string hoTen, soDT, ngaySinh, email, diaChi, cmnd;
 
         public int MaKH { get => maKH; set => maKH = value; }
@@ -19,6 +19,5 @@ namespace BTL.DTO
         public string Email { get => email; set => email = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public string Cmnd { get => cmnd; set => cmnd = value; }
-        public int TrangThai { get => trangThai; set => trangThai = value; }
     }
 }

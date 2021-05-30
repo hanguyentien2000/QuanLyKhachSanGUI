@@ -32,13 +32,13 @@ namespace BTL.InterfaceQuanly
             txtDiaChi.Text = "";
             txtTimKiem.Text = "";
             cbbChucVu.SelectedIndex = 0;
+            txtCMND.Text = "";
             rdbNam.Checked = true;
             dtpNS.Value = DateTime.Now;
         }
 
         private void layThongTinNhanVien()
         {
-            nhanVienDTO.MaNV = (nhanVienBLL.layMaxMaNhanVien() + 1);
             nhanVienDTO.HoTen = txtTenNV.Text;
             nhanVienDTO.SoDT = txtSDT.Text;
             nhanVienDTO.GioiTinh = rdbNam.Checked ? 0 : rdbNu.Checked ? 1 : 0;
@@ -48,6 +48,7 @@ namespace BTL.InterfaceQuanly
             string[] ngaySinh = date.ToShortDateString().Split('/');
             string nam = ngaySinh[2].Substring(0, 4);
             nhanVienDTO.NgaySinh = ngaySinh[1] + "/" + ngaySinh[0] + "/" + nam;
+            nhanVienDTO.Cmnd = txtCMND.Text;
         }
 
         private void formQuanLyNhanVien_Load(object sender, EventArgs e)
@@ -66,9 +67,12 @@ namespace BTL.InterfaceQuanly
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            txtMaNV.Visible = false;
+            lblMaNV.Visible = false;
             try
             {
-                string reg = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regCMND = "^\\d{12}$";
                 if (txtTenNV.Text.Trim().Equals(""))
                 {
                     throw new Exception("Tên nhân viên không được để trống");
@@ -77,13 +81,25 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Số điện thoại không được để trống");
                 }
-                else if (!Regex.IsMatch(txtSDT.Text, reg))
+                else if (!Regex.IsMatch(txtSDT.Text, regPhone))
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
                 if (cbbChucVu.SelectedIndex < 1)
                 {
                     throw new Exception("Vui lòng chọn chức vụ cho nhân viên");
+                }
+                if (txtCMND.TextLength == 0)
+                {
+                    throw new Exception("Chứng minh nhân dân không được để trống");
+                }
+                else if (!Regex.IsMatch(txtCMND.Text, regCMND))
+                {
+                    throw new Exception("Chứng minh nhân dân không đúng định dạng");
+                }
+                else if (nhanVienBLL.kiemTraCMND(txtCMND.Text) == 0)
+                {
+                    throw new Exception("Nhân viên đã tồn tại");
                 }
                 if (dtpNS.Value > DateTime.Now.AddYears(-18))
                 {
@@ -94,7 +110,7 @@ namespace BTL.InterfaceQuanly
                     throw new Exception("Địa chỉ không được để trống");
                 }
                 layThongTinNhanVien();
-                if (nhanVienBLL.themTTNhanVien(nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.ChucVu))
+                if (nhanVienBLL.themTTNhanVien(nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.Cmnd, nhanVienDTO.ChucVu))
                 {
                     MessageBox.Show("Thêm mới nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
@@ -117,7 +133,8 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = true;
             try
             {
-                string reg = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regCMND = "^\\d{12}$";
                 if (dgvNhanVien.Rows.Count < 1)
                 {
                     throw new Exception("Vui lòng thêm nhân viên trước khi sửa");
@@ -133,13 +150,21 @@ namespace BTL.InterfaceQuanly
                 if (txtSDT.Text.Trim().Equals(""))
                 {
                     throw new Exception("Số điện thoại không được để trống");
-                } else if (!Regex.IsMatch(txtSDT.Text, reg))
+                } else if (!Regex.IsMatch(txtSDT.Text, regPhone))
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
                 if (cbbChucVu.SelectedIndex < 1)
                 {
                     throw new Exception("Vui lòng chọn chức vụ cho nhân viên");
+                }
+                if (txtCMND.TextLength == 0)
+                {
+                    throw new Exception("Chứng minh nhân dân không được để trống");
+                }
+                else if (!Regex.IsMatch(txtCMND.Text, regCMND))
+                {
+                    throw new Exception("Chứng minh nhân dân không đúng định dạng");
                 }
                 if (dtpNS.Value > DateTime.Now.AddYears(-18))
                 {
@@ -151,7 +176,7 @@ namespace BTL.InterfaceQuanly
                 }
                 layThongTinNhanVien();
                 nhanVienDTO.MaNV = Int32.Parse(txtMaNV.Text);
-                if (nhanVienBLL.thayDoiTTNhanVien(nhanVienDTO.MaNV, nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.ChucVu))
+                if (nhanVienBLL.thayDoiTTNhanVien(nhanVienDTO.MaNV, nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.Cmnd, nhanVienDTO.ChucVu))
                 {
                     MessageBox.Show("Thay đổi thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
@@ -191,6 +216,7 @@ namespace BTL.InterfaceQuanly
                     rdbNam.Checked = true;
                 else
                     rdbNu.Checked = true;
+                txtCMND.Text = dgvNhanVien.Rows[dong].Cells[7].Value.ToString();
                 cbbChucVu.Text = dgvNhanVien.Rows[dong].Cells[6].Value.ToString();
             } catch (Exception ex)
             {

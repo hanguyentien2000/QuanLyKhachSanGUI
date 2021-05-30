@@ -9,7 +9,7 @@ namespace BTL.DTO
     class NhanVienDTO
     {
         int maNV, gioiTinh;
-        string hoTen, soDT, diaChi, chucVu, ngaySinh;
+        string hoTen, soDT, diaChi, chucVu, ngaySinh, cmnd;
 
         public int MaNV { get => maNV; set => maNV = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
@@ -18,5 +18,6 @@ namespace BTL.DTO
         public int GioiTinh { get => gioiTinh; set => gioiTinh = value; }
         public string ChucVu { get => chucVu; set => chucVu = value; }
         public string NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public string Cmnd { get => cmnd; set => cmnd = value; }
     }
 }
