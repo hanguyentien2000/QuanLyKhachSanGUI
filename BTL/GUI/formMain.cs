@@ -35,6 +35,7 @@ namespace BTL
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.f = fs;
+            TenNV.Text = f.account.MaNhanVien.ToString();
         }
         private struct RGBColors
         {
@@ -68,7 +69,7 @@ namespace BTL
             IconCurrentForm.IconChar = currentBtn.IconChar;
             IconCurrentForm.IconColor = color;
             //
-            f.account.MaNhanVien = Convert.ToInt32(TenNV.Text);
+           
         }
         private void DisabledButton()
         {
