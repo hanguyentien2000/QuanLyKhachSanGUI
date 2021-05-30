@@ -20,10 +20,12 @@ namespace BTL
         //Fields
         private IconButton currentBtn;
         private Form currentChildForm;
-        
-        public FormMainNhanVien()
+        public formLogin f;
+        public FormMainNhanVien(formLogin fs)
         {
             InitializeComponent();
+
+            this.f = fs;
         }
         private struct RGBColors
         {

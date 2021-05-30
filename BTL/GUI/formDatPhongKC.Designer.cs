@@ -36,12 +36,10 @@ namespace BTL
             this.txtTenKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCMND = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dateNS = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateCheckIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.CheckIn = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,17 +50,20 @@ namespace BTL
             this.label12 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDatPhong = new Guna.UI2.WinForms.Guna2Button();
-            this.lstRoom = new System.Windows.Forms.ListView();
             this.btnAddPhong = new Guna.UI2.WinForms.Guna2Button();
             this.lbTienCoc = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbTongBill = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.dateCheckOut = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.rdoGT = new Guna.UI2.WinForms.Guna2GroupBox();
             this.rdoNu = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rdNam = new Guna.UI2.WinForms.Guna2RadioButton();
             this.txtTuKhoa = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
+            this.dateCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.dateNS = new System.Windows.Forms.DateTimePicker();
+            this.dateCheckout = new System.Windows.Forms.DateTimePicker();
+            this.lstRoom = new System.Windows.Forms.ListView();
+            this.Phòng = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rdoGT.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,23 +182,6 @@ namespace BTL
             this.txtCMND.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtCMND.TabIndex = 11;
             // 
-            // dateNS
-            // 
-            this.dateNS.CheckedState.Parent = this.dateNS;
-            this.dateNS.Enabled = false;
-            this.dateNS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateNS.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateNS.HoverState.Parent = this.dateNS;
-            this.dateNS.Location = new System.Drawing.Point(388, 249);
-            this.dateNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateNS.Name = "dateNS";
-            this.dateNS.ShadowDecoration.Parent = this.dateNS;
-            this.dateNS.Size = new System.Drawing.Size(274, 36);
-            this.dateNS.TabIndex = 15;
-            this.dateNS.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
-            this.dateNS.ValueChanged += new System.EventHandler(this.dateNS_ValueChanged);
-            // 
             // txtEmail
             // 
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -269,21 +253,6 @@ namespace BTL
             this.label6.TabIndex = 17;
             this.label6.Text = "Địa chỉ";
             // 
-            // dateCheckIn
-            // 
-            this.dateCheckIn.CheckedState.Parent = this.dateCheckIn;
-            this.dateCheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateCheckIn.HoverState.Parent = this.dateCheckIn;
-            this.dateCheckIn.Location = new System.Drawing.Point(397, 336);
-            this.dateCheckIn.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateCheckIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateCheckIn.Name = "dateCheckIn";
-            this.dateCheckIn.ShadowDecoration.Parent = this.dateCheckIn;
-            this.dateCheckIn.Size = new System.Drawing.Size(274, 36);
-            this.dateCheckIn.TabIndex = 20;
-            this.dateCheckIn.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
-            // 
             // CheckIn
             // 
             this.CheckIn.AutoSize = true;
@@ -293,7 +262,6 @@ namespace BTL
             this.CheckIn.Size = new System.Drawing.Size(70, 20);
             this.CheckIn.TabIndex = 19;
             this.CheckIn.Text = "Check in";
-            this.CheckIn.Click += new System.EventHandler(this.CheckIn_Click);
             // 
             // label8
             // 
@@ -351,7 +319,6 @@ namespace BTL
             this.cbxPhong.BackColor = System.Drawing.Color.Transparent;
             this.cbxPhong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPhong.Enabled = false;
             this.cbxPhong.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbxPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbxPhong.FocusedState.Parent = this.cbxPhong;
@@ -429,16 +396,6 @@ namespace BTL
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
-            // lstRoom
-            // 
-            this.lstRoom.HideSelection = false;
-            this.lstRoom.Location = new System.Drawing.Point(781, 411);
-            this.lstRoom.Name = "lstRoom";
-            this.lstRoom.Size = new System.Drawing.Size(275, 169);
-            this.lstRoom.TabIndex = 30;
-            this.lstRoom.UseCompatibleStateImageBehavior = false;
-            this.lstRoom.SelectedIndexChanged += new System.EventHandler(this.lstRoom_SelectedIndexChanged);
-            // 
             // btnAddPhong
             // 
             this.btnAddPhong.BorderRadius = 20;
@@ -474,21 +431,6 @@ namespace BTL
             this.lbTongBill.Size = new System.Drawing.Size(18, 26);
             this.lbTongBill.TabIndex = 33;
             this.lbTongBill.Text = "...";
-            // 
-            // dateCheckOut
-            // 
-            this.dateCheckOut.CheckedState.Parent = this.dateCheckOut;
-            this.dateCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateCheckOut.HoverState.Parent = this.dateCheckOut;
-            this.dateCheckOut.Location = new System.Drawing.Point(397, 431);
-            this.dateCheckOut.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateCheckOut.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateCheckOut.Name = "dateCheckOut";
-            this.dateCheckOut.ShadowDecoration.Parent = this.dateCheckOut;
-            this.dateCheckOut.Size = new System.Drawing.Size(274, 36);
-            this.dateCheckOut.TabIndex = 35;
-            this.dateCheckOut.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
             // 
             // label13
             // 
@@ -589,21 +531,71 @@ namespace BTL
             this.btnTim.Text = "Tìm khách";
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
+            // dateCheckIn
+            // 
+            this.dateCheckIn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateCheckIn.Location = new System.Drawing.Point(388, 334);
+            this.dateCheckIn.Name = "dateCheckIn";
+            this.dateCheckIn.Size = new System.Drawing.Size(274, 33);
+            this.dateCheckIn.TabIndex = 40;
+            this.dateCheckIn.ValueChanged += new System.EventHandler(this.dateCheckIn_ValueChanged);
+            // 
+            // dateNS
+            // 
+            this.dateNS.Enabled = false;
+            this.dateNS.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNS.Location = new System.Drawing.Point(388, 247);
+            this.dateNS.Name = "dateNS";
+            this.dateNS.Size = new System.Drawing.Size(274, 33);
+            this.dateNS.TabIndex = 41;
+            // 
+            // dateCheckout
+            // 
+            this.dateCheckout.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateCheckout.Location = new System.Drawing.Point(388, 429);
+            this.dateCheckout.Name = "dateCheckout";
+            this.dateCheckout.Size = new System.Drawing.Size(274, 33);
+            this.dateCheckout.TabIndex = 42;
+            this.dateCheckout.ValueChanged += new System.EventHandler(this.dateCheckout_ValueChanged);
+            // 
+            // lstRoom
+            // 
+            this.lstRoom.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Phòng});
+            this.lstRoom.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstRoom.FullRowSelect = true;
+            this.lstRoom.GridLines = true;
+            this.lstRoom.HideSelection = false;
+            this.lstRoom.Location = new System.Drawing.Point(781, 412);
+            this.lstRoom.MultiSelect = false;
+            this.lstRoom.Name = "lstRoom";
+            this.lstRoom.Size = new System.Drawing.Size(274, 129);
+            this.lstRoom.TabIndex = 43;
+            this.lstRoom.UseCompatibleStateImageBehavior = false;
+            this.lstRoom.View = System.Windows.Forms.View.Details;
+            // 
+            // Phòng
+            // 
+            this.Phòng.Text = "Phòng";
+            this.Phòng.Width = 300;
+            // 
             // formDatPhongKC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1169, 672);
+            this.Controls.Add(this.lstRoom);
+            this.Controls.Add(this.dateCheckout);
+            this.Controls.Add(this.dateNS);
+            this.Controls.Add(this.dateCheckIn);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.txtTuKhoa);
             this.Controls.Add(this.rdoGT);
-            this.Controls.Add(this.dateCheckOut);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lbTongBill);
             this.Controls.Add(this.lbTienCoc);
             this.Controls.Add(this.btnAddPhong);
-            this.Controls.Add(this.lstRoom);
             this.Controls.Add(this.btnDatPhong);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label12);
@@ -613,12 +605,10 @@ namespace BTL
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateCheckIn);
             this.Controls.Add(this.CheckIn);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.dateNS);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtTenKH);
@@ -647,12 +637,10 @@ namespace BTL
         private Guna.UI2.WinForms.Guna2TextBox txtTenKH;
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
         private Guna.UI2.WinForms.Guna2TextBox txtCMND;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dateNS;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dateCheckIn;
         private System.Windows.Forms.Label CheckIn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -663,16 +651,19 @@ namespace BTL
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2Button btnDatPhong;
-        private System.Windows.Forms.ListView lstRoom;
         private Guna.UI2.WinForms.Guna2Button btnAddPhong;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTienCoc;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTongBill;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dateCheckOut;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2GroupBox rdoGT;
         private Guna.UI2.WinForms.Guna2RadioButton rdoNu;
         private Guna.UI2.WinForms.Guna2RadioButton rdNam;
         private Guna.UI2.WinForms.Guna2TextBox txtTuKhoa;
         private Guna.UI2.WinForms.Guna2Button btnTim;
+        private System.Windows.Forms.DateTimePicker dateCheckIn;
+        private System.Windows.Forms.DateTimePicker dateNS;
+        private System.Windows.Forms.DateTimePicker dateCheckout;
+        private System.Windows.Forms.ListView lstRoom;
+        private System.Windows.Forms.ColumnHeader Phòng;
     }
 }

@@ -21,7 +21,8 @@ namespace BTL
         private IconButton currentBtn;
         private Panel leftBorderbtn;
         private Form currentChildForm;
-        public formMain()
+        public formLogin f;
+        public formMain(formLogin fs)
         {
             InitializeComponent();
             leftBorderbtn = new Panel();
@@ -33,6 +34,8 @@ namespace BTL
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.f = fs;
+            TenNV.Text = f.account.MaNhanVien.ToString();
         }
         private struct RGBColors
         {
@@ -65,6 +68,8 @@ namespace BTL
             //IconCurrent
             IconCurrentForm.IconChar = currentBtn.IconChar;
             IconCurrentForm.IconColor = color;
+            //
+           
         }
         private void DisabledButton()
         {
