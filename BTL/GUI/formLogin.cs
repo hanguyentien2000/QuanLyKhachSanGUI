@@ -42,7 +42,7 @@ namespace BTL
                     }
                     else
                     {
-                        FormMainNhanVien frm = new FormMainNhanVien(this);
+                        FormMainNhanVien frm = new FormMainNhanVien(this, account.Username);
                         frm.Tag = account;
                         this.Hide();
                         frm.ShowDialog();

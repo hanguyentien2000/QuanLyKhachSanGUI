@@ -19,21 +19,23 @@ namespace BTL.BUS
         {
             string sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
                 "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +
-                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND FROM KhachHang"; 
+                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND, " +
+                "CASE WHEN TrangThai = 0 THEN N'BAD' " +
+                "ELSE 'GOOD' END AS TrangThai FROM KhachHang"; 
             return data.GetTable(sql);
         }
 
-        public bool themTTKhachHang(string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd)
+        public bool themTTKhachHang(string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd, int trangThai)
         {
-            string sql = "INSERT INTO KhachHang VALUES (N'" + hoTen + "','" + soDT + "','" + ngaySinh + "','" + email + "'," + gioiTinh + ",N'" + diaChi + "','" + cmnd + "')";
+            string sql = "INSERT INTO KhachHang VALUES (N'" + hoTen + "','" + soDT + "','" + ngaySinh + "','" + email + "'," + gioiTinh + ",N'" + diaChi + "','" + cmnd + "'," + trangThai + ")";
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
                 return false;
         }
-        public bool thayDoiTTKhachHang(int maKH, string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd)
+        public bool thayDoiTTKhachHang(int maKH, string hoTen, string soDT, string ngaySinh, string email, int gioiTinh, string diaChi, string cmnd, int trangThai)
         {
-            string sql = "UPDATE KhachHang SET TenKhachHang=N'" + hoTen + "',SDT='" + soDT + "',NgaySinhKH='" + ngaySinh + "',Email=N'" + email + "',GioiTinhKH=" + gioiTinh + ",DiaChiKhachHang=N'" + diaChi + "',CMND='" + cmnd + "' WHERE MaKhachHang=" + maKH;
+            string sql = "UPDATE KhachHang SET TenKhachHang=N'" + hoTen + "',SDT='" + soDT + "',NgaySinhKH='" + ngaySinh + "',Email=N'" + email + "',GioiTinhKH=" + gioiTinh + ",DiaChiKhachHang=N'" + diaChi + "',CMND='" + cmnd + "', TrangThai=" + trangThai + " WHERE MaKhachHang=" + maKH;
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
@@ -69,7 +71,28 @@ namespace BTL.BUS
                 "CASE WHEN TrangThai = 0 THEN 'BAD' " +
                 "ELSE 'GOOD' END AS TrangThai " +
                 "FROM KhachHang WHERE ( GioiTinhKH LIKE N'%" + tuKhoa + "%') ";
-            } else
+            }
+            else if (tuKhoa == "BAD")
+            {
+                tuKhoa = "0";
+                sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
+                "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +
+                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND, " +
+                "CASE WHEN TrangThai = 0 THEN 'BAD' " +
+                "ELSE 'GOOD' END AS TrangThai " +
+                "FROM KhachHang WHERE ( TrangThai LIKE N'%" + tuKhoa + "%') ";
+            }
+            else if (tuKhoa == "GOOD")
+            {
+                tuKhoa = "1";
+                sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
+                "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +
+                "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND, " +
+                "CASE WHEN TrangThai = 0 THEN 'BAD' " +
+                "ELSE 'GOOD' END AS TrangThai " +
+                "FROM KhachHang WHERE ( TrangThai LIKE N'%" + tuKhoa + "%') ";
+            }
+            else
             {
                 sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
                 "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +

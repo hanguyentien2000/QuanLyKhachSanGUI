@@ -66,6 +66,11 @@ namespace BTL.GUI
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.cbbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTrangThai = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+            this.cbxTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbTrangThai = new System.Windows.Forms.Label();
+>>>>>>> 74599bddeffab427ab45ec9193d6012454090a4f
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +104,7 @@ namespace BTL.GUI
             this.btnXoa.BorderRadius = 20;
             this.btnXoa.CheckedState.Parent = this.btnXoa;
             this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.DisabledState.Parent = this.btnXoa;
             this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
@@ -116,6 +122,7 @@ namespace BTL.GUI
             this.btnSua.BorderRadius = 20;
             this.btnSua.CheckedState.Parent = this.btnSua;
             this.btnSua.CustomImages.Parent = this.btnSua;
+            this.btnSua.DisabledState.Parent = this.btnSua;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
@@ -132,6 +139,7 @@ namespace BTL.GUI
             this.btnThem.BorderRadius = 20;
             this.btnThem.CheckedState.Parent = this.btnThem;
             this.btnThem.CustomImages.Parent = this.btnThem;
+            this.btnThem.DisabledState.Parent = this.btnThem;
             this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
@@ -300,7 +308,6 @@ namespace BTL.GUI
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachHang.Size = new System.Drawing.Size(869, 325);
             this.dgvKhachHang.TabIndex = 35;
-            this.dgvKhachHang.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -433,7 +440,6 @@ namespace BTL.GUI
             // 
             this.guna2GroupBox1.Controls.Add(this.rdbNu);
             this.guna2GroupBox1.Controls.Add(this.rdbNam);
-            this.guna2GroupBox1.Enabled = false;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(477, 241);
@@ -552,6 +558,7 @@ namespace BTL.GUI
             this.btnTim.BorderRadius = 20;
             this.btnTim.CheckedState.Parent = this.btnTim;
             this.btnTim.CustomImages.Parent = this.btnTim;
+            this.btnTim.DisabledState.Parent = this.btnTim;
             this.btnTim.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.White;
@@ -569,6 +576,7 @@ namespace BTL.GUI
             this.btnLamMoi.BorderRadius = 20;
             this.btnLamMoi.CheckedState.Parent = this.btnLamMoi;
             this.btnLamMoi.CustomImages.Parent = this.btnLamMoi;
+            this.btnLamMoi.DisabledState.Parent = this.btnLamMoi;
             this.btnLamMoi.FillColor = System.Drawing.Color.Violet;
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
@@ -613,11 +621,52 @@ namespace BTL.GUI
             this.lblTrangThai.TabIndex = 60;
             this.lblTrangThai.Text = "Trạng thái";
             // 
+<<<<<<< HEAD
+=======
+            // cbxTrangThai
+            // 
+            this.cbxTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cbxTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTrangThai.FocusedState.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxTrangThai.HoverState.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.ItemHeight = 30;
+            this.cbxTrangThai.ItemsAppearance.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.Location = new System.Drawing.Point(1239, 403);
+            this.cbxTrangThai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxTrangThai.Name = "cbxTrangThai";
+            this.cbxTrangThai.ShadowDecoration.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.Size = new System.Drawing.Size(409, 36);
+            this.cbxTrangThai.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbxTrangThai.TabIndex = 61;
+            // 
+            // lbTrangThai
+            // 
+            this.lbTrangThai.AutoSize = true;
+            this.lbTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrangThai.Location = new System.Drawing.Point(1233, 352);
+            this.lbTrangThai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTrangThai.Name = "lbTrangThai";
+            this.lbTrangThai.Size = new System.Drawing.Size(121, 29);
+            this.lbTrangThai.TabIndex = 60;
+            this.lbTrangThai.Text = "Trạng thái";
+            // 
+>>>>>>> 74599bddeffab427ab45ec9193d6012454090a4f
             // formQuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1181, 487);
+=======
+            this.ClientSize = new System.Drawing.Size(1772, 1050);
+            this.Controls.Add(this.cbxTrangThai);
+            this.Controls.Add(this.lbTrangThai);
+>>>>>>> 74599bddeffab427ab45ec9193d6012454090a4f
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCMND);
@@ -686,5 +735,7 @@ namespace BTL.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinhKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiKhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxTrangThai;
+        private System.Windows.Forms.Label lbTrangThai;
     }
 }
