@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace BTL
 {
  
@@ -21,12 +20,21 @@ namespace BTL
         private IconButton currentBtn;
         private Form currentChildForm;
         public formLogin f;
-        public FormMainNhanVien(formLogin fs)
+        public formDoiMatKhau fmk;
+        public String username;
+        
+        public FormMainNhanVien(formLogin fs, String username)
         {
             InitializeComponent();
-
             this.f = fs;
+            this.username = username;
         }
+
+        public String getUsername()
+        {
+            return username;
+        }
+
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -171,7 +179,7 @@ namespace BTL
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color6);
-            OpenCurrentForm(new formDoiMatKhau());
+            OpenCurrentForm(new formDoiMatKhau(username));
         }
     }
 }

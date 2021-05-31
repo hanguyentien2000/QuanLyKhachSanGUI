@@ -12,5 +12,6 @@ namespace BTL.DTO
         public String Password { get; set; }
         public int LoaiTaiKhoan { get; set; }
         public int MaNhanVien { get; set; }
+        public int TrangThai { get; set; }
     }
 }

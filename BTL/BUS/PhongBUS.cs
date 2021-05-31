@@ -88,10 +88,5 @@ namespace BTL.BUS
             }
             return data.GetTable(sql);
         }
-        public int kiemTraPhongDat(int maPhong)
-        {
-            string sql = "SELECT dbo.kiemTraPhongDat(" + maPhong + ") AS 'checkPhong'";
-            return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkPhong"].ToString());
-        }
     }
 }

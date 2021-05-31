@@ -7,49 +7,76 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BTL.BUS;
 
 namespace BTL.InterfaceNhanVien
 {
     public partial class formDoiMatKhau : Form
     {
-        public formDoiMatKhau()
+        string TenDangNhap;
+        TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
+        public formDoiMatKhau(String username)
         {
+            TenDangNhap = username;
             InitializeComponent();
+        }
+
+        private void xoaTrang()
+        {
+            txtOldPassword.Text = "";
+            txtNewPassword.Text = "";
+            txtConfirmPassword.Text = "";
+            cbHienThi.Checked = false;
         }
 
         private void formDoiMatKhau_Load(object sender, EventArgs e)
         {
-            using(dbDataContext db = new dbDataContext())
-            {
-                Taikhoan taikhoan = this.Tag as Taikhoan;
-                //lbUsername.Text = taikhoan.Username.ToString();
-            }
+            xoaTrang();
+            txtOldPassword.UseSystemPasswordChar = true;
+            txtNewPassword.UseSystemPasswordChar = true;
+            txtConfirmPassword.UseSystemPasswordChar = true;
+            labelUsername.Text = TenDangNhap;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            using(dbDataContext db = new dbDataContext())
+            try
             {
-                Taikhoan acc = db.Taikhoans.Where(x => x.Username == lbUsername.Text).SingleOrDefault();
-                if(db.Taikhoans.Where(x => x.Password.Equals(txtOldPassword.Text) && x.Username.Equals(lbUsername.Text)).SingleOrDefault() == null)
+                if(!txtOldPassword.Text.Equals(taiKhoanBUS.kiemTraMatKhau(TenDangNhap)))
                 {
-                    MessageBox.Show("Sai mật khẩu cũ! ");
-                    return;
+                    throw new Exception("Mật khẩu cũ không chính xác");
                 }
-                if(txtNewPassword.Text.Trim() == "")
+                if(txtNewPassword.Text.Equals(txtOldPassword.Text))
                 {
-                    MessageBox.Show("Mật khẩu không được để trống! ");
-                    return;
+                    throw new Exception("Mật khẩu mới không được trùng với mật khẩu cũ");
                 }
-                if(txtNewPassword.Text.ToUpper() != txtNewPassword.Text.ToUpper())
+                if(!txtConfirmPassword.Text.Equals(txtNewPassword.Text))
                 {
-                    MessageBox.Show("Mật khẩu cũ không trùng với mật khẩu mới!");
-                    return;
+                    throw new Exception("Mật khẩu nhập lại không chính xác");
                 }
-                acc.Password = txtNewPassword.Text;
-                db.SubmitChanges();
-                MessageBox.Show("Lưu thông tin thành công !");
-                this.Close();
+                if (taiKhoanBUS.UpdateMatKhau(TenDangNhap, txtNewPassword.Text))
+                {
+                    MessageBox.Show("Thay đổi mật khẩu thành công thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    xoaTrang();
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cbHienThi_CheckedChanged(object sender, EventArgs e)
+        {
+            if(!cbHienThi.Checked)
+            {
+                txtOldPassword.UseSystemPasswordChar = true;
+                txtNewPassword.UseSystemPasswordChar = true;
+                txtConfirmPassword.UseSystemPasswordChar = true;
+            } else
+            {
+                txtOldPassword.UseSystemPasswordChar = false;
+                txtNewPassword.UseSystemPasswordChar = false;
+                txtConfirmPassword.UseSystemPasswordChar = false;
             }
         }
     }

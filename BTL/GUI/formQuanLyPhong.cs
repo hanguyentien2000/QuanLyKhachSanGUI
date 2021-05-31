@@ -98,11 +98,11 @@ namespace BTL
             try { 
                 if (dgvQuanLyPhong.Rows.Count < 1)
                 {
-                    throw new Exception("Vui lòng thêm dữ liệu phòng trước khi sửa");
+                    throw new Exception("Vui lòng thêm dữ liệu phòng trước khi xóa");
                 }
                 if (txtMaPhong.TextLength == 0)
                 {
-                    throw new Exception("Vui lòng chọn mã phòng trước khi sửa");
+                    throw new Exception("Vui lòng chọn mã phòng trước khi xóa");
                 }
                 if (phongBUS.xoaTTPhong(Int32.Parse(txtMaPhong.Text)))
                 {
