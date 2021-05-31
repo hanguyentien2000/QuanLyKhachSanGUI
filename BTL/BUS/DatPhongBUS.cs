@@ -44,7 +44,6 @@ namespace BTL.BUS
                         kh.GioiTinh = Convert.ToInt32(reader.GetValue(5));
                         kh.DiaChi = reader.GetString(6);
                         kh.Cmnd = reader.GetString(7);
-                        kh.TrangThai = Convert.ToInt32(reader.GetValue(8));
 
                     }
 

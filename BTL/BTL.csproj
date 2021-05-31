@@ -200,7 +200,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\StoreData.cs" />
     <EmbeddedResource Include="GUI\formCheckOut.resx">
       <DependentUpon>formCheckOut.cs</DependentUpon>
     </EmbeddedResource>
