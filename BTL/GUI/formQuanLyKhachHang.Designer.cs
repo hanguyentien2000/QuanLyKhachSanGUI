@@ -44,6 +44,14 @@ namespace BTL.GUI
             this.txtMaKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblMaKH = new System.Windows.Forms.Label();
             this.dgvKhachHang = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpNS = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,14 +66,8 @@ namespace BTL.GUI
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.cbbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTrangThai = new System.Windows.Forms.Label();
-            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbxTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbTrangThai = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +102,7 @@ namespace BTL.GUI
             this.btnXoa.BorderRadius = 20;
             this.btnXoa.CheckedState.Parent = this.btnXoa;
             this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.DisabledState.Parent = this.btnXoa;
             this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
@@ -118,6 +121,7 @@ namespace BTL.GUI
             this.btnSua.BorderRadius = 20;
             this.btnSua.CheckedState.Parent = this.btnSua;
             this.btnSua.CustomImages.Parent = this.btnSua;
+            this.btnSua.DisabledState.Parent = this.btnSua;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
@@ -135,6 +139,7 @@ namespace BTL.GUI
             this.btnThem.BorderRadius = 20;
             this.btnThem.CheckedState.Parent = this.btnThem;
             this.btnThem.CustomImages.Parent = this.btnThem;
+            this.btnThem.DisabledState.Parent = this.btnThem;
             this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
@@ -312,7 +317,6 @@ namespace BTL.GUI
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachHang.Size = new System.Drawing.Size(1304, 483);
             this.dgvKhachHang.TabIndex = 35;
-            this.dgvKhachHang.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -335,6 +339,62 @@ namespace BTL.GUI
             this.dgvKhachHang.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvKhachHang.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
+            // 
+            // MaKhachHang
+            // 
+            this.MaKhachHang.DataPropertyName = "MaKhachHang";
+            this.MaKhachHang.HeaderText = "Mã khách hàng";
+            this.MaKhachHang.MinimumWidth = 8;
+            this.MaKhachHang.Name = "MaKhachHang";
+            // 
+            // TenKhachHang
+            // 
+            this.TenKhachHang.DataPropertyName = "TenKhachHang";
+            this.TenKhachHang.HeaderText = "Tên Khách Hàng";
+            this.TenKhachHang.MinimumWidth = 8;
+            this.TenKhachHang.Name = "TenKhachHang";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 8;
+            this.SDT.Name = "SDT";
+            // 
+            // NgaySinhKH
+            // 
+            this.NgaySinhKH.DataPropertyName = "NgaySinhKH";
+            this.NgaySinhKH.HeaderText = "Ngày sinh";
+            this.NgaySinhKH.MinimumWidth = 8;
+            this.NgaySinhKH.Name = "NgaySinhKH";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 8;
+            this.Email.Name = "Email";
+            // 
+            // GioiTinhKH
+            // 
+            this.GioiTinhKH.DataPropertyName = "GioiTinhKH";
+            this.GioiTinhKH.HeaderText = "Giới tính";
+            this.GioiTinhKH.MinimumWidth = 8;
+            this.GioiTinhKH.Name = "GioiTinhKH";
+            // 
+            // DiaChiKhachHang
+            // 
+            this.DiaChiKhachHang.DataPropertyName = "DiaChiKhachHang";
+            this.DiaChiKhachHang.HeaderText = "Địa chỉ";
+            this.DiaChiKhachHang.MinimumWidth = 8;
+            this.DiaChiKhachHang.Name = "DiaChiKhachHang";
+            // 
+            // CMND
+            // 
+            this.CMND.DataPropertyName = "CMND";
+            this.CMND.HeaderText = "CMND";
+            this.CMND.MinimumWidth = 8;
+            this.CMND.Name = "CMND";
             // 
             // dtpNS
             // 
@@ -392,7 +452,6 @@ namespace BTL.GUI
             // 
             this.guna2GroupBox1.Controls.Add(this.rdbNu);
             this.guna2GroupBox1.Controls.Add(this.rdbNam);
-            this.guna2GroupBox1.Enabled = false;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(716, 371);
@@ -518,6 +577,7 @@ namespace BTL.GUI
             this.btnTim.BorderRadius = 20;
             this.btnTim.CheckedState.Parent = this.btnTim;
             this.btnTim.CustomImages.Parent = this.btnTim;
+            this.btnTim.DisabledState.Parent = this.btnTim;
             this.btnTim.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.White;
@@ -536,6 +596,7 @@ namespace BTL.GUI
             this.btnLamMoi.BorderRadius = 20;
             this.btnLamMoi.CheckedState.Parent = this.btnLamMoi;
             this.btnLamMoi.CustomImages.Parent = this.btnLamMoi;
+            this.btnLamMoi.DisabledState.Parent = this.btnLamMoi;
             this.btnLamMoi.FillColor = System.Drawing.Color.Violet;
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
@@ -581,67 +642,45 @@ namespace BTL.GUI
             this.lblTrangThai.TabIndex = 60;
             this.lblTrangThai.Text = "Trạng thái";
             // 
-            // MaKhachHang
+            // cbxTrangThai
             // 
-            this.MaKhachHang.DataPropertyName = "MaKhachHang";
-            this.MaKhachHang.HeaderText = "Mã khách hàng";
-            this.MaKhachHang.MinimumWidth = 8;
-            this.MaKhachHang.Name = "MaKhachHang";
+            this.cbxTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cbxTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTrangThai.FocusedState.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxTrangThai.HoverState.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.ItemHeight = 30;
+            this.cbxTrangThai.ItemsAppearance.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.Location = new System.Drawing.Point(1239, 403);
+            this.cbxTrangThai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxTrangThai.Name = "cbxTrangThai";
+            this.cbxTrangThai.ShadowDecoration.Parent = this.cbxTrangThai;
+            this.cbxTrangThai.Size = new System.Drawing.Size(409, 36);
+            this.cbxTrangThai.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbxTrangThai.TabIndex = 61;
             // 
-            // TenKhachHang
+            // lbTrangThai
             // 
-            this.TenKhachHang.DataPropertyName = "TenKhachHang";
-            this.TenKhachHang.HeaderText = "Tên Khách Hàng";
-            this.TenKhachHang.MinimumWidth = 8;
-            this.TenKhachHang.Name = "TenKhachHang";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.MinimumWidth = 8;
-            this.SDT.Name = "SDT";
-            // 
-            // NgaySinhKH
-            // 
-            this.NgaySinhKH.DataPropertyName = "NgaySinhKH";
-            this.NgaySinhKH.HeaderText = "Ngày sinh";
-            this.NgaySinhKH.MinimumWidth = 8;
-            this.NgaySinhKH.Name = "NgaySinhKH";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 8;
-            this.Email.Name = "Email";
-            // 
-            // GioiTinhKH
-            // 
-            this.GioiTinhKH.DataPropertyName = "GioiTinhKH";
-            this.GioiTinhKH.HeaderText = "Giới tính";
-            this.GioiTinhKH.MinimumWidth = 8;
-            this.GioiTinhKH.Name = "GioiTinhKH";
-            // 
-            // DiaChiKhachHang
-            // 
-            this.DiaChiKhachHang.DataPropertyName = "DiaChiKhachHang";
-            this.DiaChiKhachHang.HeaderText = "Địa chỉ";
-            this.DiaChiKhachHang.MinimumWidth = 8;
-            this.DiaChiKhachHang.Name = "DiaChiKhachHang";
-            // 
-            // CMND
-            // 
-            this.CMND.DataPropertyName = "CMND";
-            this.CMND.HeaderText = "CMND";
-            this.CMND.MinimumWidth = 8;
-            this.CMND.Name = "CMND";
+            this.lbTrangThai.AutoSize = true;
+            this.lbTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrangThai.Location = new System.Drawing.Point(1233, 352);
+            this.lbTrangThai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTrangThai.Name = "lbTrangThai";
+            this.lbTrangThai.Size = new System.Drawing.Size(121, 29);
+            this.lbTrangThai.TabIndex = 60;
+            this.lbTrangThai.Text = "Trạng thái";
             // 
             // formQuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1772, 1050);
+            this.Controls.Add(this.cbxTrangThai);
+            this.Controls.Add(this.lbTrangThai);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCMND);
@@ -711,5 +750,7 @@ namespace BTL.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinhKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiKhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxTrangThai;
+        private System.Windows.Forms.Label lbTrangThai;
     }
 }

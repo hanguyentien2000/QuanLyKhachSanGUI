@@ -34,6 +34,8 @@ namespace BTL.GUI
             txtCMND.Text = "";
             rdbNam.Checked = true;
             dtpNS.Value = DateTime.Now;
+            cbbTrangThai.Visible = false;
+            lbTrangThai.Visible = false;
         }
 
         private void layThongTinKhachHang()
@@ -48,9 +50,12 @@ namespace BTL.GUI
             khachHangDTO.GioiTinh = rdbNam.Checked ? 0 : rdbNu.Checked ? 1 : 0;
             khachHangDTO.DiaChi = txtDiachi.Text;
             khachHangDTO.Cmnd = txtCMND.Text;
+            khachHangDTO.TrangThai = 1;
         }
         private void formQuanLyKhachHang_Load(object sender, EventArgs e)
         {
+            cbxTrangThai.Items.Add("BAD");
+            cbxTrangThai.Items.Add("GOOD");
             xoaTrang();
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
         }
@@ -106,7 +111,7 @@ namespace BTL.GUI
                     throw new Exception("Đã có thông tin của khách hàng này");
                 }
                 layThongTinKhachHang();
-                if (khachHangBUS.themTTKhachHang(khachHangDTO.HoTen, khachHangDTO.SoDT, khachHangDTO.NgaySinh, khachHangDTO.Email, khachHangDTO.GioiTinh, khachHangDTO.DiaChi, khachHangDTO.Cmnd))
+                if (khachHangBUS.themTTKhachHang(khachHangDTO.HoTen, khachHangDTO.SoDT, khachHangDTO.NgaySinh, khachHangDTO.Email, khachHangDTO.GioiTinh, khachHangDTO.DiaChi, khachHangDTO.Cmnd, khachHangDTO.TrangThai))
                 {
                     MessageBox.Show("Thêm mới khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
@@ -176,7 +181,8 @@ namespace BTL.GUI
                     throw new Exception("Chứng minh nhân dân không đúng định dạng");
                 }
                 layThongTinKhachHang();
-                if (khachHangBUS.thayDoiTTKhachHang(Int32.Parse(txtMaKH.Text), khachHangDTO.HoTen, khachHangDTO.SoDT, khachHangDTO.NgaySinh, khachHangDTO.Email, khachHangDTO.GioiTinh, khachHangDTO.DiaChi, khachHangDTO.Cmnd))
+                khachHangDTO.TrangThai = cbxTrangThai.SelectedIndex == 1 ? 1 : 0;
+                if (khachHangBUS.thayDoiTTKhachHang(Int32.Parse(txtMaKH.Text), khachHangDTO.HoTen, khachHangDTO.SoDT, khachHangDTO.NgaySinh, khachHangDTO.Email, khachHangDTO.GioiTinh, khachHangDTO.DiaChi, khachHangDTO.Cmnd, khachHangDTO.TrangThai))
                 {
                     MessageBox.Show("Thay đổi thông tin khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
@@ -211,15 +217,19 @@ namespace BTL.GUI
                 {
                     throw new Exception("Nhân viên đang đặt phòng");
                 }
-                if (khachHangBUS.xoaTTKhachHang(Int32.Parse(txtMaKH.Text)))
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng " + txtTenKH.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa thông tin khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
-                    xoaTrang();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thông tin khách hàng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (khachHangBUS.xoaTTKhachHang(Int32.Parse(txtMaKH.Text)))
+                    {
+                        MessageBox.Show("Xóa thông tin khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
+                        xoaTrang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thông tin khách hàng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -275,6 +285,7 @@ namespace BTL.GUI
                     rdbNu.Checked = true;
                 txtDiachi.Text = dgvKhachHang.Rows[dong].Cells[6].Value.ToString();
                 txtCMND.Text = dgvKhachHang.Rows[dong].Cells[7].Value.ToString();
+                cbxTrangThai.Text = dgvKhachHang.Rows[dong].Cells[8].Value.ToString();
             }
             catch (Exception ex)
             {

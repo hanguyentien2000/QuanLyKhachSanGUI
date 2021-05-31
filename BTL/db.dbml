@@ -1,19 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKS" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True" SettingsObjectName="BTL.Properties.Settings" SettingsPropertyName="QLKSConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True" SettingsObjectName="BTL.Properties.Settings" SettingsPropertyName="QLKSConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChamCong" Member="ChamCongs">
     <Type Name="ChamCong">
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NgayChamCong" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TrangThai" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="NhanVien_ChamCong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ChiTietPhongDat" Member="ChiTietPhongDats">
-    <Type Name="ChiTietPhongDat">
-      <Column Name="MaDatPhong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaPhong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="DatPhong_ChiTietPhongDat" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Phong_ChiTietPhongDat" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DatPhong" Member="DatPhongs">
@@ -27,10 +19,18 @@
       <Column Name="TienDatCoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="SoLuongPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TrangThaiDatPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="DatPhong_ChiTietPhongDat" Member="ChiTietPhongDats" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="ChiTietPhongDat" />
       <Association Name="DatPhong_HoaDon" Member="HoaDons" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="HoaDon" />
       <Association Name="KhachHang_DatPhong" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_DatPhong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaDatPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayLap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DatPhong_HoaDon" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -47,22 +47,13 @@
       <Association Name="KhachHang_DatPhong" Member="DatPhongs" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DatPhong" />
     </Type>
   </Table>
-  <Table Name="dbo.Phong" Member="Phongs">
-    <Type Name="Phong">
-      <Column Name="MaPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TrangThaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Phong_ChiTietPhongDat" Member="ChiTietPhongDats" ThisKey="MaPhong" OtherKey="MaPhong" Type="ChiTietPhongDat" />
-      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="LoaiPhong" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Taikhoan" Member="Taikhoans">
-    <Type Name="Taikhoan">
-      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="LoaiTaiKhoan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="NhanVien_Taikhoan" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+  <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
+    <Type Name="LoaiPhong">
+      <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenLoaiPhong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SoluongNguoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="Phong" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
@@ -73,28 +64,29 @@
       <Column Name="NgaySinhNV" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="DiaChiNhanVien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GioiTinhNV" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
       <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="NhanVien_ChamCong" Member="ChamCongs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="ChamCong" />
       <Association Name="NhanVien_DatPhong" Member="DatPhongs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="DatPhong" />
       <Association Name="NhanVien_Taikhoan" Member="Taikhoans" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="Taikhoan" />
     </Type>
   </Table>
-  <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
-    <Type Name="LoaiPhong">
-      <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenLoaiPhong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SoluongNguoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="GiaPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="Phong" />
+  <Table Name="dbo.Phong" Member="Phongs">
+    <Type Name="Phong">
+      <Column Name="MaPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="LoaiPhong" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.HoaDon" Member="HoaDons">
-    <Type Name="HoaDon">
-      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaDatPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayLap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="TongTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="DatPhong_HoaDon" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" DeleteRule="CASCADE" />
+  <Table Name="dbo.Taikhoan" Member="Taikhoans">
+    <Type Name="Taikhoan">
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiTaiKhoan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_Taikhoan" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

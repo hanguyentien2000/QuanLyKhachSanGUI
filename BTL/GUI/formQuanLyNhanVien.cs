@@ -264,15 +264,19 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Nhân viên đang đặt phòng");
                 }
-                if (nhanVienBLL.xoaTTNhanVien(Int32.Parse(txtMaNV.Text)))
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên " + txtTenNV.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
-                    xoaTrang();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thông tin nhân viên thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (nhanVienBLL.xoaTTNhanVien(Int32.Parse(txtMaNV.Text)))
+                    {
+                        MessageBox.Show("Xóa thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
+                        xoaTrang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thông tin nhân viên thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
