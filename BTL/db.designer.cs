@@ -314,6 +314,8 @@ namespace BTL
 		
 		private int _MaKhachHang;
 		
+		private int _MaPhong;
+		
 		private System.DateTime _NgayDat;
 		
 		private System.DateTime _NgayDen;
@@ -328,9 +330,9 @@ namespace BTL
 		
 		private EntitySet<HoaDon> _HoaDons;
 		
-		private EntityRef<KhachHang> _KhachHang;
-		
 		private EntityRef<NhanVien> _NhanVien;
+		
+		private EntityRef<Phong> _Phong;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -342,6 +344,8 @@ namespace BTL
     partial void OnMaNhanVienChanged();
     partial void OnMaKhachHangChanging(int value);
     partial void OnMaKhachHangChanged();
+    partial void OnMaPhongChanging(int value);
+    partial void OnMaPhongChanged();
     partial void OnNgayDatChanging(System.DateTime value);
     partial void OnNgayDatChanged();
     partial void OnNgayDenChanging(System.DateTime value);
@@ -359,8 +363,8 @@ namespace BTL
 		public DatPhong()
 		{
 			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
-			this._KhachHang = default(EntityRef<KhachHang>);
 			this._NhanVien = default(EntityRef<NhanVien>);
+			this._Phong = default(EntityRef<Phong>);
 			OnCreated();
 		}
 		
@@ -419,15 +423,35 @@ namespace BTL
 			{
 				if ((this._MaKhachHang != value))
 				{
-					if (this._KhachHang.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaKhachHangChanging(value);
 					this.SendPropertyChanging();
 					this._MaKhachHang = value;
 					this.SendPropertyChanged("MaKhachHang");
 					this.OnMaKhachHangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhong", DbType="Int NOT NULL")]
+		public int MaPhong
+		{
+			get
+			{
+				return this._MaPhong;
+			}
+			set
+			{
+				if ((this._MaPhong != value))
+				{
+					if (this._Phong.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaPhongChanging(value);
+					this.SendPropertyChanging();
+					this._MaPhong = value;
+					this.SendPropertyChanged("MaPhong");
+					this.OnMaPhongChanged();
 				}
 			}
 		}
@@ -565,30 +589,30 @@ namespace BTL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_DatPhong", Storage="_KhachHang", ThisKey="MaKhachHang", OtherKey="MaKhachHang", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public KhachHang KhachHang
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_DatPhong", Storage="_NhanVien", ThisKey="MaNhanVien", OtherKey="MaNhanVien", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public NhanVien NhanVien
 		{
 			get
 			{
-				return this._KhachHang.Entity;
+				return this._NhanVien.Entity;
 			}
 			set
 			{
-				KhachHang previousValue = this._KhachHang.Entity;
+				NhanVien previousValue = this._NhanVien.Entity;
 				if (((previousValue != value) 
-							|| (this._KhachHang.HasLoadedOrAssignedValue == false)))
+							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._KhachHang.Entity = null;
+						this._NhanVien.Entity = null;
 						previousValue.DatPhongs.Remove(this);
 					}
-					this._KhachHang.Entity = value;
+					this._NhanVien.Entity = value;
 					if ((value != null))
 					{
 						value.DatPhongs.Add(this);
-						this._MaKhachHang = value.MaKhachHang;
+						this._MaNhanVien = value.MaNhanVien;
 					}
 					else
 					{
@@ -1483,6 +1507,26 @@ namespace BTL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND", DbType="Char(12) NOT NULL", CanBeNull=false)]
+		public string CMND
+		{
+			get
+			{
+				return this._CMND;
+			}
+			set
+			{
+				if ((this._CMND != value))
+				{
+					this.OnCMNDChanging(value);
+					this.SendPropertyChanging();
+					this._CMND = value;
+					this.SendPropertyChanged("CMND");
+					this.OnCMNDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChucVu", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string ChucVu
 		{
@@ -1946,6 +1990,18 @@ namespace BTL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_DatPhongs(DatPhong entity)
+		{
+			this.SendPropertyChanging();
+			entity.Phong = this;
+		}
+		
+		private void detach_DatPhongs(DatPhong entity)
+		{
+			this.SendPropertyChanging();
+			entity.Phong = null;
 		}
 	}
 }

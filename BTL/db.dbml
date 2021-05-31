@@ -13,6 +13,7 @@
       <Column Name="MaDatPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MaKhachHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NgayDat" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="NgayDen" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="NgayDi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
@@ -20,8 +21,8 @@
       <Column Name="SoLuongPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TrangThaiDatPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="DatPhong_HoaDon" Member="HoaDons" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="HoaDon" />
-      <Association Name="KhachHang_DatPhong" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_DatPhong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Phong_DatPhong" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDon" Member="HoaDons">

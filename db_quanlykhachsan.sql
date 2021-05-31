@@ -81,6 +81,7 @@ create table DatPhong(
 	MaDatPhong INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	MaNhanVien int not null,
 	MaKhachHang int not null,
+	MaPhong int not null,
 	NgayDat date not null,
 	NgayDen date not null,
 	NgayDi date not null,
@@ -88,7 +89,8 @@ create table DatPhong(
 	SoLuongPhong int not null,
 	TrangThaiDatPhong int not null,
 	foreign key (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE,
-	foreign key (MaKhachHang) references KhachHang(MaKhachHang) ON UPDATE CASCADE ON DELETE CASCADE
+	foreign key (MaKhachHang) references KhachHang(MaKhachHang) ON UPDATE CASCADE ON DELETE CASCADE,
+	foreign key (MaPhong) references Phong(MaPhong) ON UPDATE CASCADE
 )
 go
 
@@ -146,9 +148,9 @@ INSERT INTO KhachHang(TenKhachHang, SDT, NgaySinhKH, Email, GioiTinhKH, DiaChiKh
 (N'Đào Thu Phương', '0583509498', '12/21/2000', 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103', 0)
 GO
 
-INSERT INTO DatPhong(MaNhanVien, MaKhachHang, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
-(1, 1,'02/03/2021', '04/03/2021', '10/03/2021', 700000, 3, 1),
-(2, 3,'06/05/2021', '08/05/2021', '11/05/2021', 1500000, 2, 1)
+INSERT INTO DatPhong(MaNhanVien, MaKhachHang, MaPhong, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
+(1, 1, 1, '02/03/2021', '04/03/2021', '10/03/2021', 700000, 3, 1),
+(2, 3, 2, '06/05/2021', '08/05/2021', '11/05/2021', 1500000, 2, 1)
 GO
 
 INSERT INTO HoaDon(MaDatPhong, TongTien) VALUES
