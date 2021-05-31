@@ -14,9 +14,14 @@ namespace BTL.BUS
     class DatPhongBUS
     {
         DataProvider data = new DataProvider();
+        public DataTable getTTDatPhong()
+        {
+            string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0";
+            return data.GetTable(sql);
+        }
         public DataTable getPhong(DateTime checkIn,DateTime checkOut,String maLoaiPhong)
         {
-            String sql = "select * from Phong where MaLoaiPhong = "+ Convert.ToInt32(maLoaiPhong) + " AND MaPhong not in (Select MaPhong from ChiTietPhongDat inner join DatPhong on ChiTietPhongDat.MaDatPhong = DatPhong.MaDatPhong where (NgayDat<'" + checkIn.ToString("yyyy/MM/dd") +"' AND NgayDi>'" + checkIn.ToString("yyyy/MM/dd") + "') OR " + "(NgayDat < '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi> '" + checkOut.ToString("yyyy/MM/dd") + "'))";
+            String sql = "select * from Phong where MaLoaiPhong = "+ Convert.ToInt32(maLoaiPhong) + " AND MaPhong not in (Select MaPhong from DatPhong where (NgayDat<='" + checkIn.ToString("yyyy/MM/dd") +"' AND NgayDi>='" + checkIn.ToString("yyyy/MM/dd") + "') OR " + "(NgayDat <= '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi>= '" + checkOut.ToString("yyyy/MM/dd") + "'))";
             return data.ExecuteQuery(sql);
         }
         public KhachHangDTO getKhachHang(string tuKhoa)
@@ -24,7 +29,7 @@ namespace BTL.BUS
             KhachHangDTO kh = new KhachHangDTO();
             string sql = "";
             sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email,GioiTinhKH " +
-           ",DiaChiKhachHang, CMND,TrangThai " +
+           ",DiaChiKhachHang, CMND " +
             "FROM KhachHang WHERE ( MaKhachHang = '" + tuKhoa + "') OR ( CMND = N'" + tuKhoa + "') ";
             SqlConnection conn = data.GetDBConnection();
             conn.Open();
@@ -46,7 +51,10 @@ namespace BTL.BUS
                         kh.Cmnd = reader.GetString(7);
 
                     }
-
+                }
+                else
+                {
+                    MessageBox.Show("Không có khách hàng này");
                 }
             }
             return kh;
@@ -97,9 +105,14 @@ namespace BTL.BUS
             }
             return gia;
         }
-        public bool datPhong(KhachHangDTO khachHang,string checkIn,string checkOut)
+        public bool datPhong(int maNV,int maKH,int maPhong,string checkIn,string checkOut,int tienCoc)
         {
-            return false;
+            string sql = "INSERT INTO DatPhong(MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc,TrangThaiDatPhong) values(" + 
+                maNV +"," + maKH + "," + maPhong + ",'" + checkIn + "','" + checkOut + "'," + tienCoc + ", 0)";
+            if (data.ExecuteNonQuery(sql))
+                return true;
+            else
+                return false;
         }
     }
 }

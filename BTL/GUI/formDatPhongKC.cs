@@ -23,6 +23,10 @@ namespace BTL
         KhachHangDTO khachHangDTO = new KhachHangDTO();
         LoaiPhongBUS loaiPhongBUS = new LoaiPhongBUS();
         DatPhongBUS datPhongBus = new DatPhongBUS();
+        KhachHangDTO kh = new KhachHangDTO();
+        int tienCoc = 0;
+        int tongTien = 0;
+        string maNV;
         private void formDatPhong_Load(object sender, EventArgs e)
         {
             DataTable dt = loaiPhongBUS.GetTableLoaiPhong();
@@ -30,7 +34,7 @@ namespace BTL
             cbxLoaiPhong.DisplayMember = "TenLoaiPhong";
             cbxLoaiPhong.ValueMember = "MaLoaiPhong";
             dateCheckIn.MinDate = DateTime.Now;
-            dateCheckout.MinDate = DateTime.Now;
+            dateCheckout.MinDate = DateTime.Now.AddDays(1);
         }
 
 
@@ -47,54 +51,40 @@ namespace BTL
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-
-        }
-        private Boolean SoSanhPhong(PhongDTO p)
-        {
-            for (int i = 0; i < lstRoom.Items.Count; i++)
+            if(kh.MaKH == 0)
             {
-                PhongDTO ph = (PhongDTO)lstRoom.Items[i].Tag;
-                if (ph.Equals(p))
+                MessageBox.Show("Phải tìm khách hàng trước");
+            }
+            else if(cbxPhong.SelectedValue == null)
+            {
+                MessageBox.Show("Phòng không hợp lệ");
+            }
+            else
+            {
+                string checkIn = dateCheckIn.Value.ToString("yyyy/MM/dd");
+                string checkOut = dateCheckout.Value.ToString("yyyy/MM/dd");
+                int maNV = 1;
+                int maKH = kh.MaKH;
+                int maPhong = Convert.ToInt32(cbxPhong.SelectedValue.ToString());
+                if(datPhongBus.datPhong(maNV, maKH, maPhong, checkIn, checkOut, tienCoc))
                 {
-                    return false;
+                    MessageBox.Show("Đặt phòng thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Đặt phòng thất bại");
                 }
             }
-            return true;
         }
+       
         private void tienPhaiTra()
         {
-            int tienCoc = 0;
-            int tongTien = 0;
-            for (int i = 0; i < lstRoom.Items.Count; i++)
-            {
-                PhongDTO ph = (PhongDTO)lstRoom.Items[i].Tag;
-                tienCoc += datPhongBus.getGia(ph.MaLoaiPhong.ToString());
             
-            }
-            tongTien = tienCoc * ((dateCheckout.Value - dateCheckIn.Value).Days + 1);
+            tienCoc = Convert.ToInt32(txtPrice.Text);
+            tongTien = tienCoc * ((dateCheckout.Value - dateCheckIn.Value).Days);
             lbTienCoc.Text = tienCoc.ToString();
             lbTongBill.Text = tongTien.ToString();
-        }
-        private void btnAddPhong_Click(object sender, EventArgs e)
-        {
-            ListViewItem item = new ListViewItem();
-            PhongDTO p = datPhongBus.getPhong(cbxPhong.SelectedValue.ToString());
-            if(SoSanhPhong(p))
-            {   
-                item.Text = "Phòng" + p.MaPhong.ToString();
-                item.Tag = p;
-                lstRoom.Items.Add(item);
-                tienPhaiTra();
-            }    
-        }
-
-        private void lstRoom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-       
+        }   
         private void cbxPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -121,51 +111,40 @@ namespace BTL
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            KhachHangDTO kh = datPhongBus.getKhachHang(txtTuKhoa.Text);
-            txtTenKH.Text = kh.HoTen;
-            txtSDT.Text = kh.SoDT;
-            txtCMND.Text = kh.Cmnd;
-            txtEmail.Text = kh.Email;
-            txtDiaChi.Text = kh.DiaChi;
-            if(kh.GioiTinh == 0)
+             kh = datPhongBus.getKhachHang(txtTuKhoa.Text);
+            if(kh.MaKH != 0)
             {
-                rdNam.Checked = true;
+                txtTenKH.Text = kh.HoTen;
+                txtSDT.Text = kh.SoDT;
+                txtCMND.Text = kh.Cmnd;
+                txtEmail.Text = kh.Email;
+                txtDiaChi.Text = kh.DiaChi;
+                if (kh.GioiTinh == 0)
+                {
+                    rdNam.Checked = true;
+                }
+                else
+                {
+                    rdoNu.Checked = true;
+                }
+                txtCMND.Text = kh.Cmnd;
+                DateTime date = DateTime.Parse(kh.NgaySinh);
+                dateNS.Value = date;
             }
-            else
-            {
-                rdoNu.Checked = true;
-            }
-            txtCMND.Text = kh.Cmnd;
-            DateTime date = DateTime.Parse(kh.NgaySinh);
-            dateNS.Value = date;
             //dateNS.
         }
 
-        //private void dateCheckIn_ValueChanged(object sender, EventArgs e)
-        //{
-        //    if (dateCheckIn.Value.Date > dateCheckout.Value.Date)
-        //    {
-        //        MessageBox.Show("Ngày check in phải nhỏ hơn ngày check out");
-        //        dateCheckIn.Value = dateCheckout.Value;
-        //    }
-        //}
-
-        //private void dateCheckOut_ValueChanged(object sender, EventArgs e)
-        //{
-        //    if (dateCheckIn.Value.Date > dateCheckout.Value.Date)
-        //    {
-        //        MessageBox.Show("Ngày check out phải lớn hơn ngày check in");
-        //        dateCheckIn.Value = dateCheckout.Value;
-        //    }
-
-        //}
 
         private void dateCheckIn_ValueChanged(object sender, EventArgs e)
         {
             if (dateCheckIn.Value.Date > dateCheckout.Value.Date)
             {
                 dateCheckout.Value = dateCheckIn.Value;
-                dateCheckout.MinDate = dateCheckIn.Value;
+                dateCheckout.MinDate = dateCheckIn.Value.AddDays(1);
+            }
+            else
+            {
+                dateCheckout.MinDate = dateCheckIn.Value.AddDays(1);
             }
             int n = 0;
             if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
@@ -179,6 +158,12 @@ namespace BTL
                     txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
                     tienPhaiTra();
                 }
+                else
+                {
+                    cbxPhong.DataSource = null;
+                    txtPrice.Text = "0";
+                    tienPhaiTra();
+                }
                 
             }
         }
@@ -188,7 +173,7 @@ namespace BTL
             if (dateCheckIn.Value.Date > dateCheckout.Value.Date)
             {
                 MessageBox.Show("Ngày check out phải lớn hơn ngày check in");
-                dateCheckIn.Value = dateCheckout.Value;
+                dateCheckIn.Value = dateCheckout.Value.AddDays(-1);
             }
             int n = 0;
             if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
