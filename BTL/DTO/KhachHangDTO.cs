@@ -19,5 +19,6 @@ namespace BTL.DTO
         public string Email { get => email; set => email = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public string Cmnd { get => cmnd; set => cmnd = value; }
+        public int TrangThai { get;  set; }
     }
 }
