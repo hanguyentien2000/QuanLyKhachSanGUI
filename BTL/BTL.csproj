@@ -204,6 +204,12 @@
     <Compile Include="GUI\formThongKeLuong.Designer.cs">
       <DependentUpon>formThongKeLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\formTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\formTrangChu.Designer.cs">
+      <DependentUpon>formTrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\formCheckIn.resx">
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formThongKeLuong.resx">
       <DependentUpon>formThongKeLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\formTrangChu.resx">
+      <DependentUpon>formTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
