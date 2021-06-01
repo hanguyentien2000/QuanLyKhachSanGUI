@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BTL.DAL;
+using BTL.DTO;
 using System.Data;
 
 namespace BTL.BUS
@@ -15,16 +16,16 @@ namespace BTL.BUS
         public DataTable layTTPhong()
         {
             string sql = "SELECT MaPhong, TenLoaiPhong, " +
-                "CASE WHEN TrangThaiPhong = 0 THEN N'Đang sử dụng' " +
+                "CASE WHEN TrangThaiPhong = 0 THEN N'Đang sử dụng'" +
                 "ELSE N'Trống' END AS TrangThaiPhong " +
-                "FROM Phong INNER JOIN LoaiPhong ON Phong.MaLoaiPhong = LoaiPhong.MaLoaiPhong";
+                "FROM Phong INNER JOIN LoaiPhong ON Phong.MaLoaiPhong=LoaiPhong.MaLoaiPhong";
             return data.GetTable(sql);
         }
 
-        public bool themTTPhong(int maLoaiPhong, int trangThai)
+        public bool themTTPhong(int maLoaiPhong, int trangThai, byte[] anhPhong)
         {
-            string sql = "INSERT INTO Phong VALUES(" + maLoaiPhong + "," + trangThai + ")";
-            if(data.ExecuteNonQuery(sql))
+            string sql = "INSERT INTO Phong VALUES(" + maLoaiPhong + "," + trangThai + ",@image)";
+            if(data.ExecuteNonQueryWithImage(sql, anhPhong))
             {
                 return true;
             } else
@@ -33,10 +34,10 @@ namespace BTL.BUS
             }
         }
 
-        public bool thayDoiTTPhong(int maPhong, int maLoaiPhong, int trangThai)
+        public bool thayDoiTTPhong(int maPhong, int maLoaiPhong, int trangThai, byte[] anhPhong)
         {
-            string sql = "UPDATE Phong SET MaLoaiPhong=" + maLoaiPhong + ",TrangThaiPhong=" + trangThai + " WHERE MaPhong=" + maPhong;
-            if (data.ExecuteNonQuery(sql))
+            string sql = "UPDATE Phong SET MaLoaiPhong=" + maLoaiPhong + ",TrangThaiPhong=" + trangThai + ", anhPhong=@image WHERE MaPhong=" + maPhong;
+            if (data.ExecuteNonQueryWithImage(sql, anhPhong))
             {
                 return true;
             }
@@ -87,6 +88,14 @@ namespace BTL.BUS
                 "WHERE ( MaPhong LIKE '%" + tuKhoa + "%') OR ( TenLoaiPhong LIKE N'%" + tuKhoa + "%')";
             }
             return data.GetTable(sql);
+        }
+
+        public PhongDTO layAnhPhong(int maPhong)
+        {
+            string sql = "SELECT anhPhong FROM Phong WHERE MaPhong=" + maPhong;
+            PhongDTO phong = new PhongDTO();
+            phong.AnhPhong = (byte[])data.GetTable(sql).Rows[0].ItemArray[0];
+            return phong;
         }
     }
 }

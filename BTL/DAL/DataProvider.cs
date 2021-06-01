@@ -12,9 +12,9 @@ namespace BTL.DAL
     {
         public SqlConnection GetDBConnection()
         {
-            //string connString = @"Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";//Hưng phạm
+            string connString = @"Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";//Hưng phạm
             //string connString = @"Data Source=DESKTOP-QHPIJ3U\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
-            string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+            //string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
 
             SqlConnection conn = new SqlConnection(connString);
             return conn;
@@ -126,6 +126,23 @@ namespace BTL.DAL
                 }
             }
             return table;
+        }
+        public bool ExecuteNonQueryWithImage(String sql, byte[] image)
+        {
+            try
+            {
+                SqlConnection connect = GetDBConnection();
+                connect.Open();
+                SqlCommand cmd = new SqlCommand(sql, connect);
+                cmd.Parameters.Add(new SqlParameter("@image", image));
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return false;
+            }
         }
     }
 }

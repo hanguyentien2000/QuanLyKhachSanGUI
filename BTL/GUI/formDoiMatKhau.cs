@@ -42,13 +42,25 @@ namespace BTL.InterfaceNhanVien
         {
             try
             {
+                if(txtOldPassword.Text.Trim().Equals(""))
+                {
+                    throw new Exception("Mật khẩu cũ không được để trống");
+                }
                 if(!txtOldPassword.Text.Equals(taiKhoanBUS.kiemTraMatKhau(TenDangNhap)))
                 {
                     throw new Exception("Mật khẩu cũ không chính xác");
                 }
+                if(txtNewPassword.Text.Trim().Equals(""))
+                {
+                    throw new Exception("Mật khẩu mới không được để trống");
+                }
                 if(txtNewPassword.Text.Equals(txtOldPassword.Text))
                 {
                     throw new Exception("Mật khẩu mới không được trùng với mật khẩu cũ");
+                }
+                if(txtConfirmPassword.Text.Trim().Equals(""))
+                {
+                    throw new Exception("Xác nhận mật khẩu không được để trống");
                 }
                 if(!txtConfirmPassword.Text.Equals(txtNewPassword.Text))
                 {

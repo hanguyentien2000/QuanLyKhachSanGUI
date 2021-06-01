@@ -54,8 +54,8 @@ namespace BTL.GUI
         }
         private void formQuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            cbxTrangThai.Items.Add("Đã từng đặt");
-            cbxTrangThai.Items.Add("Chưa từng đặt");
+            cbxTrangThai.Items.Add("Đã từng đặt phòng");
+            cbxTrangThai.Items.Add("Chưa từng đặt phòng");
             xoaTrang();
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
         }
