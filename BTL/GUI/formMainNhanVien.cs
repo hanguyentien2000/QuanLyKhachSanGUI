@@ -1,4 +1,5 @@
-﻿using BTL.InterfaceNhanVien;
+﻿using BTL.GUI;
+using BTL.InterfaceNhanVien;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -173,7 +174,7 @@ namespace BTL
         private void btnChamCong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color5);
-            OpenCurrentForm(new formDatPhongKC());
+            OpenCurrentForm(new formChamCong());
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)

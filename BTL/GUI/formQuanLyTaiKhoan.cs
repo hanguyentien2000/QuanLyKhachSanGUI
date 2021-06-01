@@ -45,7 +45,6 @@ namespace BTL.GUI
         private void loadCombo()
         {
             cbxMaNV.ValueMember = "MaNhanVien";
-            cbxMaNV.DisplayMember = "TenNhanVien";
             cbxMaNV.DataSource = nhanVienBUS.layTTNhanVien();
         }
 

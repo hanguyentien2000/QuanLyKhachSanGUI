@@ -34,8 +34,8 @@ namespace BTL.GUI
             txtCMND.Text = "";
             rdbNam.Checked = true;
             dtpNS.Value = DateTime.Now;
-            cbbTrangThai.Visible = false;
-            lbTrangThai.Visible = false;
+            cbxTrangThai.Visible = false;
+            lblTrangThai.Visible = false;
         }
 
         private void layThongTinKhachHang()
@@ -54,8 +54,8 @@ namespace BTL.GUI
         }
         private void formQuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            cbxTrangThai.Items.Add("BAD");
-            cbxTrangThai.Items.Add("GOOD");
+            cbxTrangThai.Items.Add("Đã từng đặt");
+            cbxTrangThai.Items.Add("Chưa từng đặt");
             xoaTrang();
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
         }
