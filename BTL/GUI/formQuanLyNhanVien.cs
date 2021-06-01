@@ -198,6 +198,10 @@ namespace BTL.InterfaceQuanly
             int dong = e.RowIndex;
             try
             {
+                if (dong < 0)
+                {
+                    throw new Exception("Ô này không có dữ liệu");
+                }
                 if (dgvNhanVien.Rows.Count == dong + 1)
                 {
                     throw new Exception("Dữ liệu trống");
@@ -228,7 +232,6 @@ namespace BTL.InterfaceQuanly
         {
             try
             {
-                
                 if (txtTimKiem.TextLength == 0)
                 {
                     throw new Exception("Vui lòng nhập từ khóa tìm kiếm");
