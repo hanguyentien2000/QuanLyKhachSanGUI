@@ -33,9 +33,10 @@ namespace BTL.BUS
             TaiKhoanDTO tk = new TaiKhoanDTO();
             tk.Username = dt.Rows[0].ItemArray[1].ToString();
             tk.Password = dt.Rows[0].ItemArray[2].ToString();
-            tk.MaNhanVien = Int32.Parse(dt.Rows[0].ItemArray[5].ToString());
             tk.LoaiTaiKhoan = Int32.Parse(dt.Rows[0].ItemArray[3].ToString());
             tk.TrangThai = Int32.Parse(dt.Rows[0].ItemArray[4].ToString());
+            tk.MaNhanVien = Int32.Parse(dt.Rows[0].ItemArray[5].ToString());
+   
             return tk;
         }
 
@@ -65,7 +66,7 @@ namespace BTL.BUS
 
         public int kiemTraNhanVienCoTK(int maNV)
         {
-            string sql = "SELECT dbo.kiemTraPhongDat(" + maNV + ") AS 'checkTK'";
+            string sql = "SELECT dbo.kiemTraNhanVienCoTaiKhoan(" + maNV + ") AS 'checkTK'";
             return Int32.Parse(data.ExecuteQuery(sql).Rows[0]["checkTK"].ToString());
         }
 

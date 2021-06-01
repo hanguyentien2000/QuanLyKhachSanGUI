@@ -32,8 +32,6 @@ namespace BTL.InterfaceQuanly
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtMaLoaiPhong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtTenLoaiPhong = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,42 +49,10 @@ namespace BTL.InterfaceQuanly
             this.SoLuongNguoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.txtMaLoaiPhong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbLoaiPhong = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLLP)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtMaLoaiPhong
-            // 
-            this.txtMaLoaiPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaLoaiPhong.DefaultText = "";
-            this.txtMaLoaiPhong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaLoaiPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaLoaiPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaLoaiPhong.DisabledState.Parent = this.txtMaLoaiPhong;
-            this.txtMaLoaiPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaLoaiPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaLoaiPhong.FocusedState.Parent = this.txtMaLoaiPhong;
-            this.txtMaLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaLoaiPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaLoaiPhong.HoverState.Parent = this.txtMaLoaiPhong;
-            this.txtMaLoaiPhong.Location = new System.Drawing.Point(54, 72);
-            this.txtMaLoaiPhong.Name = "txtMaLoaiPhong";
-            this.txtMaLoaiPhong.PasswordChar = '\0';
-            this.txtMaLoaiPhong.PlaceholderText = "";
-            this.txtMaLoaiPhong.SelectedText = "";
-            this.txtMaLoaiPhong.ShadowDecoration.Parent = this.txtMaLoaiPhong;
-            this.txtMaLoaiPhong.Size = new System.Drawing.Size(274, 36);
-            this.txtMaLoaiPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtMaLoaiPhong.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Mã loại phòng";
             // 
             // txtTenLoaiPhong
             // 
@@ -195,6 +161,7 @@ namespace BTL.InterfaceQuanly
             this.btnThem.BorderRadius = 20;
             this.btnThem.CheckedState.Parent = this.btnThem;
             this.btnThem.CustomImages.Parent = this.btnThem;
+            this.btnThem.DisabledState.Parent = this.btnThem;
             this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
@@ -212,6 +179,7 @@ namespace BTL.InterfaceQuanly
             this.btnSua.BorderRadius = 20;
             this.btnSua.CheckedState.Parent = this.btnSua;
             this.btnSua.CustomImages.Parent = this.btnSua;
+            this.btnSua.DisabledState.Parent = this.btnSua;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
@@ -228,6 +196,7 @@ namespace BTL.InterfaceQuanly
             this.btnXoa.BorderRadius = 20;
             this.btnXoa.CheckedState.Parent = this.btnXoa;
             this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.DisabledState.Parent = this.btnXoa;
             this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
@@ -268,6 +237,7 @@ namespace BTL.InterfaceQuanly
             // 
             this.btnTim.CheckedState.Parent = this.btnTim;
             this.btnTim.CustomImages.Parent = this.btnTim;
+            this.btnTim.DisabledState.Parent = this.btnTim;
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTim.ForeColor = System.Drawing.Color.White;
             this.btnTim.HoverState.Parent = this.btnTim;
@@ -318,7 +288,6 @@ namespace BTL.InterfaceQuanly
             this.dgvQLLP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQLLP.Size = new System.Drawing.Size(629, 381);
             this.dgvQLLP.TabIndex = 61;
-            this.dgvQLLP.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -370,6 +339,7 @@ namespace BTL.InterfaceQuanly
             // 
             this.btnRefresh.CheckedState.Parent = this.btnRefresh;
             this.btnRefresh.CustomImages.Parent = this.btnRefresh;
+            this.btnRefresh.DisabledState.Parent = this.btnRefresh;
             this.btnRefresh.FillColor = System.Drawing.Color.Green;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
@@ -381,6 +351,40 @@ namespace BTL.InterfaceQuanly
             this.btnRefresh.TabIndex = 62;
             this.btnRefresh.Text = "Tải lại";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // txtMaLoaiPhong
+            // 
+            this.txtMaLoaiPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaLoaiPhong.DefaultText = "";
+            this.txtMaLoaiPhong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaLoaiPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaLoaiPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaLoaiPhong.DisabledState.Parent = this.txtMaLoaiPhong;
+            this.txtMaLoaiPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaLoaiPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaLoaiPhong.FocusedState.Parent = this.txtMaLoaiPhong;
+            this.txtMaLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaLoaiPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaLoaiPhong.HoverState.Parent = this.txtMaLoaiPhong;
+            this.txtMaLoaiPhong.Location = new System.Drawing.Point(54, 72);
+            this.txtMaLoaiPhong.Name = "txtMaLoaiPhong";
+            this.txtMaLoaiPhong.PasswordChar = '\0';
+            this.txtMaLoaiPhong.PlaceholderText = "";
+            this.txtMaLoaiPhong.SelectedText = "";
+            this.txtMaLoaiPhong.ShadowDecoration.Parent = this.txtMaLoaiPhong;
+            this.txtMaLoaiPhong.Size = new System.Drawing.Size(274, 36);
+            this.txtMaLoaiPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtMaLoaiPhong.TabIndex = 15;
+            // 
+            // lbLoaiPhong
+            // 
+            this.lbLoaiPhong.AutoSize = true;
+            this.lbLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoaiPhong.Location = new System.Drawing.Point(50, 39);
+            this.lbLoaiPhong.Name = "lbLoaiPhong";
+            this.lbLoaiPhong.Size = new System.Drawing.Size(108, 20);
+            this.lbLoaiPhong.TabIndex = 14;
+            this.lbLoaiPhong.Text = "Mã loại phòng";
             // 
             // formQuanLyLoaiPhong
             // 
@@ -402,7 +406,7 @@ namespace BTL.InterfaceQuanly
             this.Controls.Add(this.txtTenLoaiPhong);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMaLoaiPhong);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbLoaiPhong);
             this.Name = "formQuanLyLoaiPhong";
             this.Text = "formQuanLyLoaiPhong";
             this.Load += new System.EventHandler(this.formQuanLyLoaiPhong_Load);
@@ -413,8 +417,6 @@ namespace BTL.InterfaceQuanly
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2TextBox txtMaLoaiPhong;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtTenLoaiPhong;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuong;
@@ -432,5 +434,7 @@ namespace BTL.InterfaceQuanly
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongNguoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaPhong;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaLoaiPhong;
+        private System.Windows.Forms.Label lbLoaiPhong;
     }
 }

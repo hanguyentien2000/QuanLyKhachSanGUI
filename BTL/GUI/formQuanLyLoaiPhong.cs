@@ -21,6 +21,8 @@ namespace BTL.InterfaceQuanly
 
         private void formQuanLyLoaiPhong_Load(object sender, EventArgs e)
         {
+            lbLoaiPhong.Visible = false;
+            txtMaLoaiPhong.Visible = false;
             loadData(dsLoaiPhong.GetTableLoaiPhong());
         }
 
@@ -38,7 +40,7 @@ namespace BTL.InterfaceQuanly
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtMaLoaiPhong.Enabled = false;
+          
             try
             {
               
@@ -170,6 +172,7 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Dữ liệu trống");
                 }
+                lbLoaiPhong.Visible = true;
                 txtMaLoaiPhong.Visible = true;
                 txtMaLoaiPhong.Enabled = false;
                 txtMaLoaiPhong.Text = dgvQLLP.Rows[dong].Cells[0].Value.ToString();
