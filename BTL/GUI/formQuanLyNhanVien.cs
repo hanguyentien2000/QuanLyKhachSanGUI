@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BTL.BUS;
 using BTL.DTO;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace BTL.InterfaceQuanly
 {
@@ -17,6 +18,8 @@ namespace BTL.InterfaceQuanly
     {
         NhanVienBUS nhanVienBLL = new NhanVienBUS();
         NhanVienDTO nhanVienDTO = new NhanVienDTO();
+        ImageConvert imageConvert = new ImageConvert();
+        bool hasPicture = false;
         public formQuanLyNhanVien()
         {
             InitializeComponent();
@@ -31,7 +34,6 @@ namespace BTL.InterfaceQuanly
             txtSDT.Text = "";
             txtDiaChi.Text = "";
             txtTimKiem.Text = "";
-            cbbChucVu.SelectedIndex = 0;
             txtCMND.Text = "";
             rdbNam.Checked = true;
             dtpNS.Value = DateTime.Now;
@@ -49,20 +51,32 @@ namespace BTL.InterfaceQuanly
             string nam = ngaySinh[2].Substring(0, 4);
             nhanVienDTO.NgaySinh = ngaySinh[1] + "/" + ngaySinh[0] + "/" + nam;
             nhanVienDTO.Cmnd = txtCMND.Text;
+            nhanVienDTO.anhNV = imageConvert.ConvertImageToBytes(imgNV.Image);
+        }
+
+        private void loadCombobox()
+        {
+            cbbChucVu.ValueMember = "ChucVu";
+            cbbChucVu.DisplayMember = "ChucVu";
+            cbbChucVu.DataSource = nhanVienBLL.layChucVuNhanVien();
         }
 
         private void formQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            cbbChucVu.Items.Add("--Chọn chức vụ--");
-            cbbChucVu.Items.Add("Admin");
-            cbbChucVu.Items.Add("Quản lý");
             xoaTrang();
+            loadCombobox();
             dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
+            dgvNhanVien.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvNhanVien.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
+            xoaTrang();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -85,10 +99,6 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
-                if (cbbChucVu.SelectedIndex < 1)
-                {
-                    throw new Exception("Vui lòng chọn chức vụ cho nhân viên");
-                }
                 if (txtCMND.TextLength == 0)
                 {
                     throw new Exception("Chứng minh nhân dân không được để trống");
@@ -99,6 +109,7 @@ namespace BTL.InterfaceQuanly
                 }
                 else if (nhanVienBLL.kiemTraCMND(txtCMND.Text) == 0)
                 {
+                    xoaTrang();
                     throw new Exception("Nhân viên đã tồn tại");
                 }
                 if (dtpNS.Value > DateTime.Now.AddYears(-18))
@@ -109,8 +120,12 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Địa chỉ không được để trống");
                 }
+                if(!hasPicture)
+                {
+                    throw new Exception("Vui lòng thêm ảnh nhân viên");
+                }
                 layThongTinNhanVien();
-                if (nhanVienBLL.themTTNhanVien(nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.Cmnd, nhanVienDTO.ChucVu))
+                if (nhanVienBLL.themTTNhanVien(nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.Cmnd, nhanVienDTO.ChucVu, nhanVienDTO.anhNV))
                 {
                     MessageBox.Show("Thêm mới nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
@@ -154,10 +169,6 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
-                if (cbbChucVu.SelectedIndex < 1)
-                {
-                    throw new Exception("Vui lòng chọn chức vụ cho nhân viên");
-                }
                 if (txtCMND.TextLength == 0)
                 {
                     throw new Exception("Chứng minh nhân dân không được để trống");
@@ -176,7 +187,7 @@ namespace BTL.InterfaceQuanly
                 }
                 layThongTinNhanVien();
                 nhanVienDTO.MaNV = Int32.Parse(txtMaNV.Text);
-                if (nhanVienBLL.thayDoiTTNhanVien(nhanVienDTO.MaNV, nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.Cmnd, nhanVienDTO.ChucVu))
+                if (nhanVienBLL.thayDoiTTNhanVien(nhanVienDTO.MaNV, nhanVienDTO.HoTen, nhanVienDTO.SoDT, nhanVienDTO.NgaySinh, nhanVienDTO.DiaChi, nhanVienDTO.GioiTinh, nhanVienDTO.Cmnd, nhanVienDTO.ChucVu, nhanVienDTO.anhNV))
                 {
                     MessageBox.Show("Thay đổi thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvNhanVien.DataSource = nhanVienBLL.layTTNhanVien();
@@ -202,10 +213,6 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Ô này không có dữ liệu");
                 }
-                if (dgvNhanVien.Rows.Count == dong + 1)
-                {
-                    throw new Exception("Dữ liệu trống");
-                }
                 txtMaNV.Visible = true;
                 lblMaNV.Visible = true;
                 txtMaNV.Enabled = false;
@@ -220,8 +227,9 @@ namespace BTL.InterfaceQuanly
                     rdbNam.Checked = true;
                 else
                     rdbNu.Checked = true;
-                txtCMND.Text = dgvNhanVien.Rows[dong].Cells[7].Value.ToString();
-                cbbChucVu.Text = dgvNhanVien.Rows[dong].Cells[6].Value.ToString();
+                txtCMND.Text = dgvNhanVien.Rows[dong].Cells[6].Value.ToString();
+                cbbChucVu.Text = dgvNhanVien.Rows[dong].Cells[7].Value.ToString();
+                imgNV.Image = imageConvert.ConvertByteArrayToImage(nhanVienBLL.layAnhNV(Int32.Parse(dgvNhanVien.Rows[dong].Cells[0].Value.ToString())).anhNV);
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -288,6 +296,23 @@ namespace BTL.InterfaceQuanly
             }
         }
 
-       
+        private void btn_changeImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png", Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        imgNV.Image = Image.FromFile(ofd.FileName);
+                        hasPicture = true;
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

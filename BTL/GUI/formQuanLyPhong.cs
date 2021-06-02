@@ -47,6 +47,11 @@ namespace BTL
             cbbLoaiPhong.DisplayMember = "TenLoaiPhong";
             cbbLoaiPhong.DataSource = loaiPhongBUS.GetTableLoaiPhong();
             xoaTrang();
+            dgvQuanLyPhong.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvQuanLyPhong.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -55,7 +60,7 @@ namespace BTL
             {
                 if(!hasPicture)
                 {
-                    throw new Exception("Chưa có ảnh phòng");
+                    throw new Exception("Vui lòng thêm ảnh phòng");
                 }
                 layThongTinPhong();
                 if (phongBUS.themTTPhong(phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
@@ -164,9 +169,9 @@ namespace BTL
             int dong = e.RowIndex;
             try
             {
-                if (dgvQuanLyPhong.Rows.Count == dong + 1)
+                if(dong < 0)
                 {
-                    throw new Exception("Dữ liệu trống");
+                    throw new Exception("Ô này không có dữ liệu");
                 }
                 txtMaPhong.Text = dgvQuanLyPhong.Rows[dong].Cells[0].Value.ToString();
                 cbbLoaiPhong.Text = dgvQuanLyPhong.Rows[dong].Cells[1].Value.ToString();
