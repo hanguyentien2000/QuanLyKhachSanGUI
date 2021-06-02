@@ -14,10 +14,9 @@ namespace BTL.GUI
 {
     public partial class formQuanLyTaiKhoan : Form
     {
-        string trangThai, tenDangNhap;
+        string trangThai, tenDangNhap, loaiTK;
         TaiKhoanBUS dsTaiKhoan = new TaiKhoanBUS();
         TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
-        NhanVienBUS nhanVienBUS = new NhanVienBUS();
         public formQuanLyTaiKhoan()
         {
             InitializeComponent();
@@ -45,7 +44,8 @@ namespace BTL.GUI
         private void loadCombo()
         {
             cbxMaNV.ValueMember = "MaNhanVien";
-            cbxMaNV.DataSource = nhanVienBUS.layTTNhanVien();
+            cbxMaNV.DisplayMember = "MaNhanVien";
+            cbxMaNV.DataSource = dsTaiKhoan.GetTableTaiKhoan();
         }
 
         public void loadData(DataTable dt)
@@ -57,7 +57,7 @@ namespace BTL.GUI
                     (string)a.ItemArray[1],
                     (bool)a.ItemArray[2] ? "Nhân Viên" : "Admin",
                     (bool)a.ItemArray[3] ? "Hoạt động" : "Vô hiệu hóa",
-                    (string)a.ItemArray[4]
+                    (int)a.ItemArray[4]
                     );
             }
         }
@@ -66,6 +66,11 @@ namespace BTL.GUI
         {
             loadData(new TaiKhoanBUS().GetTableTaiKhoan());
             loadCombo();
+            dgvTaiKhoan.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvTaiKhoan.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -177,6 +182,10 @@ namespace BTL.GUI
             int dong = e.RowIndex;
             try
             {
+                if (dong < 0)
+                {
+                    throw new Exception("Ô này không có dữ liệu");
+                }
                 if (dgvTaiKhoan.Rows.Count == dong + 1)
                 {
                     throw new Exception("Dữ liệu trống");
@@ -187,9 +196,15 @@ namespace BTL.GUI
                 tenDangNhap = dgvTaiKhoan.Rows[dong].Cells[0].Value.ToString();
                 txtMatKhau.Text = dgvTaiKhoan.Rows[dong].Cells[1].Value.ToString();
                 if (dgvTaiKhoan.Rows[dong].Cells[2].Value.ToString() == "Admin")
+                {
                     rdAdmin.Checked = true;
+                    loaiTK = "Admin";
+                }
                 else
+                {
                     rdNhanVien.Checked = true;
+                    loaiTK = "Nhân viên";
+                }
                 cbxMaNV.Text = dgvTaiKhoan.Rows[dong].Cells[4].Value.ToString();
                 trangThai = dgvTaiKhoan.Rows[dong].Cells[3].Value.ToString();
             }
@@ -198,6 +213,45 @@ namespace BTL.GUI
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnThayDoi_Click(object sender, EventArgs e)
+        {
+            txtTenTK.Visible = true;
+            try
+            {
+                if (dgvTaiKhoan.Rows.Count < 1)
+                {
+                    throw new Exception("Vui lòng thêm tài khoản trước khi đổi loại tài khoản");
+                }
+                if (txtTenTK.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng chọn tài khoản trước khi đổi loại tài khoản");
+                }
+                DialogResult result = MessageBox.Show("Bạn có muốn đổi loại tài khoản " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    layThongTinTaiKhoan();
+                    if (loaiTK.Equals("Admin"))
+                    {
+                        taiKhoanDTO.LoaiTaiKhoan = 0;
+                    }
+                    else if (loaiTK.Equals("Quản lý"))
+                    {
+                        taiKhoanDTO.LoaiTaiKhoan = 1;
+                    }
+                    if (dsTaiKhoan.UpdateTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai))
+                    {
+                        MessageBox.Show("Thay đổi loại tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData(dsTaiKhoan.GetTableTaiKhoan());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             try

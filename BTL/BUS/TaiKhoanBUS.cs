@@ -15,7 +15,7 @@ namespace BTL.BUS
         DataProvider data = new DataProvider();
         public DataTable GetTableTaiKhoan()
         {
-            string sql = "SELECT Username, Password, LoaiTaiKhoan, TrangThai, TenNhanVien FROM Taikhoan INNER JOIN NhanVien ON Taikhoan.MaNhanVien=NhanVien.MaNhanVien";
+            string sql = "SELECT * FROM Taikhoan";
             return data.GetTable(sql);
         }
 

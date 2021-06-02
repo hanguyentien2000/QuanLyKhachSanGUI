@@ -33,6 +33,14 @@ namespace BTL.InterfaceQuanly
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvNhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNV = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,16 +65,11 @@ namespace BTL.InterfaceQuanly
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.txtCMND = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imgNV = new System.Windows.Forms.PictureBox();
+            this.btn_changeImage = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNV)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvNhanVien
@@ -106,7 +109,7 @@ namespace BTL.InterfaceQuanly
             this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhanVien.EnableHeadersVisualStyles = false;
             this.dgvNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNhanVien.Location = new System.Drawing.Point(58, 582);
+            this.dgvNhanVien.Location = new System.Drawing.Point(55, 624);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersVisible = false;
@@ -114,7 +117,6 @@ namespace BTL.InterfaceQuanly
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNhanVien.Size = new System.Drawing.Size(1546, 412);
             this.dgvNhanVien.TabIndex = 0;
-            this.dgvNhanVien.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -137,6 +139,62 @@ namespace BTL.InterfaceQuanly
             this.dgvNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã nhân viên";
+            this.MaNhanVien.MinimumWidth = 8;
+            this.MaNhanVien.Name = "MaNhanVien";
+            // 
+            // TenNhanVien
+            // 
+            this.TenNhanVien.DataPropertyName = "TenNhanVien";
+            this.TenNhanVien.HeaderText = "Họ tên";
+            this.TenNhanVien.MinimumWidth = 8;
+            this.TenNhanVien.Name = "TenNhanVien";
+            // 
+            // SoDienThoai
+            // 
+            this.SoDienThoai.DataPropertyName = "SoDienThoai";
+            this.SoDienThoai.HeaderText = "Số điện thoại";
+            this.SoDienThoai.MinimumWidth = 8;
+            this.SoDienThoai.Name = "SoDienThoai";
+            // 
+            // NgaySinhNV
+            // 
+            this.NgaySinhNV.DataPropertyName = "NgaySinhNV";
+            this.NgaySinhNV.HeaderText = "Ngày sinh";
+            this.NgaySinhNV.MinimumWidth = 8;
+            this.NgaySinhNV.Name = "NgaySinhNV";
+            // 
+            // DiaChiNhanVien
+            // 
+            this.DiaChiNhanVien.DataPropertyName = "DiaChiNhanVien";
+            this.DiaChiNhanVien.HeaderText = "Địa chỉ";
+            this.DiaChiNhanVien.MinimumWidth = 8;
+            this.DiaChiNhanVien.Name = "DiaChiNhanVien";
+            // 
+            // GioiTinhNV
+            // 
+            this.GioiTinhNV.DataPropertyName = "GioiTinhNV";
+            this.GioiTinhNV.HeaderText = "Giới tính";
+            this.GioiTinhNV.MinimumWidth = 8;
+            this.GioiTinhNV.Name = "GioiTinhNV";
+            // 
+            // CMND
+            // 
+            this.CMND.DataPropertyName = "CMND";
+            this.CMND.HeaderText = "CMND";
+            this.CMND.MinimumWidth = 8;
+            this.CMND.Name = "CMND";
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.DataPropertyName = "ChucVu";
+            this.ChucVu.HeaderText = "Chức vụ";
+            this.ChucVu.MinimumWidth = 8;
+            this.ChucVu.Name = "ChucVu";
             // 
             // txtTenNV
             // 
@@ -346,11 +404,12 @@ namespace BTL.InterfaceQuanly
             this.btnThem.BorderRadius = 20;
             this.btnThem.CheckedState.Parent = this.btnThem;
             this.btnThem.CustomImages.Parent = this.btnThem;
+            this.btnThem.DisabledState.Parent = this.btnThem;
             this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(1434, 48);
+            this.btnThem.Location = new System.Drawing.Point(1699, 48);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
@@ -364,10 +423,11 @@ namespace BTL.InterfaceQuanly
             this.btnSua.BorderRadius = 20;
             this.btnSua.CheckedState.Parent = this.btnSua;
             this.btnSua.CustomImages.Parent = this.btnSua;
+            this.btnSua.DisabledState.Parent = this.btnSua;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(1434, 162);
+            this.btnSua.Location = new System.Drawing.Point(1699, 162);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
@@ -381,11 +441,12 @@ namespace BTL.InterfaceQuanly
             this.btnXoa.BorderRadius = 20;
             this.btnXoa.CheckedState.Parent = this.btnXoa;
             this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.DisabledState.Parent = this.btnXoa;
             this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(1434, 278);
+            this.btnXoa.Location = new System.Drawing.Point(1699, 272);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
@@ -451,6 +512,7 @@ namespace BTL.InterfaceQuanly
             this.btnTimKiem.BorderRadius = 20;
             this.btnTimKiem.CheckedState.Parent = this.btnTimKiem;
             this.btnTimKiem.CustomImages.Parent = this.btnTimKiem;
+            this.btnTimKiem.DisabledState.Parent = this.btnTimKiem;
             this.btnTimKiem.FillColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
@@ -504,11 +566,12 @@ namespace BTL.InterfaceQuanly
             this.btnLamMoi.BorderRadius = 20;
             this.btnLamMoi.CheckedState.Parent = this.btnLamMoi;
             this.btnLamMoi.CustomImages.Parent = this.btnLamMoi;
+            this.btnLamMoi.DisabledState.Parent = this.btnLamMoi;
             this.btnLamMoi.FillColor = System.Drawing.Color.Violet;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.HoverState.Parent = this.btnLamMoi;
-            this.btnLamMoi.Location = new System.Drawing.Point(1434, 395);
+            this.btnLamMoi.Location = new System.Drawing.Point(1699, 394);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.ShadowDecoration.Parent = this.btnLamMoi;
@@ -553,68 +616,44 @@ namespace BTL.InterfaceQuanly
             this.label1.TabIndex = 59;
             this.label1.Text = "CMND";
             // 
-            // MaNhanVien
+            // imgNV
             // 
-            this.MaNhanVien.DataPropertyName = "MaNhanVien";
-            this.MaNhanVien.HeaderText = "Mã nhân viên";
-            this.MaNhanVien.MinimumWidth = 8;
-            this.MaNhanVien.Name = "MaNhanVien";
+            this.imgNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgNV.Location = new System.Drawing.Point(971, 294);
+            this.imgNV.Name = "imgNV";
+            this.imgNV.Size = new System.Drawing.Size(362, 229);
+            this.imgNV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgNV.TabIndex = 62;
+            this.imgNV.TabStop = false;
             // 
-            // TenNhanVien
+            // btn_changeImage
             // 
-            this.TenNhanVien.DataPropertyName = "TenNhanVien";
-            this.TenNhanVien.HeaderText = "Họ tên";
-            this.TenNhanVien.MinimumWidth = 8;
-            this.TenNhanVien.Name = "TenNhanVien";
-            // 
-            // SoDienThoai
-            // 
-            this.SoDienThoai.DataPropertyName = "SoDienThoai";
-            this.SoDienThoai.HeaderText = "Số điện thoại";
-            this.SoDienThoai.MinimumWidth = 8;
-            this.SoDienThoai.Name = "SoDienThoai";
-            // 
-            // NgaySinhNV
-            // 
-            this.NgaySinhNV.DataPropertyName = "NgaySinhNV";
-            this.NgaySinhNV.HeaderText = "Ngày sinh";
-            this.NgaySinhNV.MinimumWidth = 8;
-            this.NgaySinhNV.Name = "NgaySinhNV";
-            // 
-            // DiaChiNhanVien
-            // 
-            this.DiaChiNhanVien.DataPropertyName = "DiaChiNhanVien";
-            this.DiaChiNhanVien.HeaderText = "Địa chỉ";
-            this.DiaChiNhanVien.MinimumWidth = 8;
-            this.DiaChiNhanVien.Name = "DiaChiNhanVien";
-            // 
-            // GioiTinhNV
-            // 
-            this.GioiTinhNV.DataPropertyName = "GioiTinhNV";
-            this.GioiTinhNV.HeaderText = "Giới tính";
-            this.GioiTinhNV.MinimumWidth = 8;
-            this.GioiTinhNV.Name = "GioiTinhNV";
-            // 
-            // CMND
-            // 
-            this.CMND.DataPropertyName = "CMND";
-            this.CMND.HeaderText = "CMND";
-            this.CMND.MinimumWidth = 8;
-            this.CMND.Name = "CMND";
-            // 
-            // ChucVu
-            // 
-            this.ChucVu.DataPropertyName = "ChucVu";
-            this.ChucVu.HeaderText = "Chức vụ";
-            this.ChucVu.MinimumWidth = 8;
-            this.ChucVu.Name = "ChucVu";
+            this.btn_changeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.btn_changeImage.FlatAppearance.BorderSize = 0;
+            this.btn_changeImage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_changeImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_changeImage.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
+            this.btn_changeImage.IconColor = System.Drawing.Color.DimGray;
+            this.btn_changeImage.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_changeImage.IconSize = 35;
+            this.btn_changeImage.Location = new System.Drawing.Point(1409, 330);
+            this.btn_changeImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_changeImage.Name = "btn_changeImage";
+            this.btn_changeImage.Size = new System.Drawing.Size(174, 52);
+            this.btn_changeImage.TabIndex = 61;
+            this.btn_changeImage.Text = "Thay ảnh";
+            this.btn_changeImage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_changeImage.UseVisualStyleBackColor = false;
+            this.btn_changeImage.Click += new System.EventHandler(this.btn_changeImage_Click);
             // 
             // formQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1642, 1034);
+            this.ClientSize = new System.Drawing.Size(1888, 1050);
+            this.Controls.Add(this.imgNV);
+            this.Controls.Add(this.btn_changeImage);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLamMoi);
@@ -645,6 +684,7 @@ namespace BTL.InterfaceQuanly
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,5 +725,7 @@ namespace BTL.InterfaceQuanly
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinhNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChucVu;
+        private System.Windows.Forms.PictureBox imgNV;
+        private FontAwesome.Sharp.IconButton btn_changeImage;
     }
 }

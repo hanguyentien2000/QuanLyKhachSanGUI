@@ -20,8 +20,8 @@ namespace BTL.BUS
             string sql = "SELECT MaKhachHang, TenKhachHang, SDT, NgaySinhKH, Email, " +
                 "CASE WHEN GioiTinhKH = 0 THEN N'Nam' " +
                 "ELSE N'Nữ' END AS GioiTinhKH, DiaChiKhachHang, CMND, " +
-                "CASE WHEN TrangThai = 0 THEN N'BAD' " +
-                "ELSE 'GOOD' END AS TrangThai FROM KhachHang"; 
+                "CASE WHEN TrangThai = 0 THEN N'Khách hàng xấu' " +
+                "ELSE N'Khách hàng tốt' END AS TrangThai FROM KhachHang"; 
             return data.GetTable(sql);
         }
 

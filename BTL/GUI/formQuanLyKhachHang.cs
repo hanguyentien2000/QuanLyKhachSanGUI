@@ -54,15 +54,21 @@ namespace BTL.GUI
         }
         private void formQuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            cbxTrangThai.Items.Add("Đã từng đặt phòng");
-            cbxTrangThai.Items.Add("Chưa từng đặt phòng");
+            cbxTrangThai.Items.Add("Khách hàng xấu");
+            cbxTrangThai.Items.Add("Khách hàng tốt");
             xoaTrang();
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
+            dgvKhachHang.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvKhachHang.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
+            xoaTrang();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -262,12 +268,14 @@ namespace BTL.GUI
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            cbxTrangThai.Visible = true;
+            lblTrangThai.Visible = true;
             int dong = e.RowIndex;
             try
             {
-                if (dgvKhachHang.Rows.Count == dong + 1)
+                if (dong < 0)
                 {
-                    throw new Exception("Dữ liệu trống");
+                    throw new Exception("Ô này không có dữ liệu");
                 }
                 txtMaKH.Visible = true;
                 lblMaKH.Visible = true;
@@ -291,6 +299,12 @@ namespace BTL.GUI
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
+            dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
+            xoaTrang();
         }
     }
 }
