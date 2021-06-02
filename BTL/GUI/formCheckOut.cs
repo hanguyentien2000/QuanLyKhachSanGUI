@@ -47,7 +47,7 @@ namespace BTL.GUI
         }
         public void loadTableAll()
         {
-            dgvCheckIn.DataSource = datPhongBus.getTTDatPhong();
+            dgvCheckIn.DataSource = datPhongBus.getTTDatPhongCI();
         }
         public void loadTableCIToday()
         {

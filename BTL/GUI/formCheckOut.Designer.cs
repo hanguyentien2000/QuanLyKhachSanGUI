@@ -317,7 +317,7 @@ namespace BTL.GUI
             this.txtKeyWords.Location = new System.Drawing.Point(392, 24);
             this.txtKeyWords.Name = "txtKeyWords";
             this.txtKeyWords.PasswordChar = '\0';
-            this.txtKeyWords.PlaceholderText = "";
+            this.txtKeyWords.PlaceholderText = "Mã đặt phòng,phòng,khách";
             this.txtKeyWords.SelectedText = "";
             this.txtKeyWords.ShadowDecoration.Parent = this.txtKeyWords;
             this.txtKeyWords.Size = new System.Drawing.Size(415, 36);

@@ -110,7 +110,7 @@ namespace BTL.BUS
             else
                 return false;
         }
-        public DataTable getTTDatPhong()
+        public DataTable getTTDatPhongCI()
         {
             string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0";
             return data.GetTable(sql);
@@ -145,12 +145,12 @@ namespace BTL.BUS
             }
             return data.ExecuteQuery(sql);
         }
-        public DataTable locCheckIn(DateTime start,DateTime end)
-        {
-            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND NgayDat >='" + start.ToString("yyyy/MM/dd") +
-                "' AND NgayDat <= '" + end.ToString("yyyy/MM/dd") + "'";
-            return data.ExecuteQuery(sql);
-        }
+        //public DataTable locCheckIn(DateTime start,DateTime end)
+        //{
+        //    String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND NgayDat >='" + start.ToString("yyyy/MM/dd") +
+        //        "' AND NgayDat <= '" + end.ToString("yyyy/MM/dd") + "'";
+        //    return data.ExecuteQuery(sql);
+        //}
         public bool passToCheckout(int maDatPhong)
         {
             string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 1 where MaDatPhong = " + maDatPhong;
@@ -169,8 +169,36 @@ namespace BTL.BUS
         }
         public DataTable timKiemCheckIn(string keywords)
         {
-            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where"+
-               "MaDatPhong =" + keywords + " OR MaKhachHang =" + keywords + " OR MaPhong =" +keywords;
+            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND "+
+               "(MaDatPhong =" + keywords + " OR MaKhachHang =" + keywords + " OR MaPhong =" +keywords+ ")";
+            return data.ExecuteQuery(sql);
+        }
+        // check out
+        public DataTable getTTDatPhongCO()
+        {
+            string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1";
+            return data.GetTable(sql);
+        }
+        public DataTable timKiemCheckOut(string keywords)
+        {
+            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND " +
+               "(MaDatPhong =" + keywords + " OR MaKhachHang =" + keywords + " OR MaPhong =" + keywords + ")";
+            return data.ExecuteQuery(sql);
+        }
+        public bool passToThongKe(int maDatPhong)
+        {
+            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 2 where MaDatPhong = " + maDatPhong;
+            if (data.ExecuteNonQuery(sql))
+                return true;
+            else
+                return false;
+        }
+        public DataTable getCheckOutToday()
+        {
+            String sql = "";
+            String today = DateTime.Now.ToString("yyyy/MM/dd");
+            
+            sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND NgayDi ='" + today + "'";
             return data.ExecuteQuery(sql);
         }
     }

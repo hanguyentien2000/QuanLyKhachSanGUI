@@ -12,9 +12,21 @@ namespace BTL.GUI
 {
     public partial class formCheckIn : Form
     {
+        DatPhongBUS datPhongBus = new DatPhongBUS();
+        int maDatPhong = 0;
+        int rowSelected;
         public formCheckIn()
         {
             InitializeComponent();
+        }
+
+        private void formCheckIn_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void loadAllCheckOut()
+        {
+
         }
     }
 }

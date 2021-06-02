@@ -227,7 +227,7 @@ namespace BTL
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            OpenCurrentForm(new formCheckOut());
+            OpenCurrentForm(new formCheckIn());
         }
 
         private void btnQuanLyMain_Click(object sender, EventArgs e)
