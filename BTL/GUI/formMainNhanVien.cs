@@ -210,5 +210,17 @@ namespace BTL
             lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
             lbDate.Text = DateTime.Now.ToString("dddd MMMM yyy");
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formCheckIn());
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formCheckOut());
+        }
     }
 }

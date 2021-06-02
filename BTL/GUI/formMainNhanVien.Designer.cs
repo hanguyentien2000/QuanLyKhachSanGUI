@@ -33,38 +33,38 @@ namespace BTL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMainNhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.panelHidden = new System.Windows.Forms.Panel();
+            this.lbTimeMain = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.TenNV = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximize = new FontAwesome.Sharp.IconPictureBox();
             this.btnClose = new FontAwesome.Sharp.IconPictureBox();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnDoiMatKhau = new FontAwesome.Sharp.IconButton();
             this.btnChamCong = new FontAwesome.Sharp.IconButton();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.timerCurrent = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbDate = new System.Windows.Forms.Label();
-            this.lbTime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbTimeMain = new System.Windows.Forms.Label();
             this.panelHidden.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
-            this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelDesktop.SuspendLayout();
+            this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +96,28 @@ namespace BTL
             this.panelHidden.Size = new System.Drawing.Size(1540, 133);
             this.panelHidden.TabIndex = 6;
             // 
+            // lbTimeMain
+            // 
+            this.lbTimeMain.AutoSize = true;
+            this.lbTimeMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeMain.ForeColor = System.Drawing.Color.Coral;
+            this.lbTimeMain.Location = new System.Drawing.Point(123, 54);
+            this.lbTimeMain.Name = "lbTimeMain";
+            this.lbTimeMain.Size = new System.Drawing.Size(76, 21);
+            this.lbTimeMain.TabIndex = 9;
+            this.lbTimeMain.Text = "Xin chào";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(19, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 21);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Giờ hiện tại";
+            // 
             // TenNV
             // 
             this.TenNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -119,45 +141,6 @@ namespace BTL
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 6;
             this.label3.Text = "Xin chào";
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.pictureBox3);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 133);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.Controls.Add(this.label5);
-            this.panelDesktop.Controls.Add(this.label4);
-            this.panelDesktop.Controls.Add(this.lbDate);
-            this.panelDesktop.Controls.Add(this.lbTime);
-            this.panelDesktop.Controls.Add(this.label2);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 133);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1540, 928);
-            this.panelDesktop.TabIndex = 7;
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelMenu.Controls.Add(this.iconButton2);
-            this.panelMenu.Controls.Add(this.iconButton1);
-            this.panelMenu.Controls.Add(this.btnDoiMatKhau);
-            this.panelMenu.Controls.Add(this.btnChamCong);
-            this.panelMenu.Controls.Add(this.label1);
-            this.panelMenu.Controls.Add(this.btnDatPhong);
-            this.panelMenu.Controls.Add(this.btnHome);
-            this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 1061);
-            this.panelMenu.TabIndex = 4;
             // 
             // btnDangXuat
             // 
@@ -231,6 +214,113 @@ namespace BTL
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox3);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(200, 133);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Location = new System.Drawing.Point(30, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(125, 128);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.Controls.Add(this.label5);
+            this.panelDesktop.Controls.Add(this.label4);
+            this.panelDesktop.Controls.Add(this.lbDate);
+            this.panelDesktop.Controls.Add(this.lbTime);
+            this.panelDesktop.Controls.Add(this.label2);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(200, 133);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1540, 928);
+            this.panelDesktop.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label5.Location = new System.Drawing.Point(579, 882);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(473, 26);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label4.Location = new System.Drawing.Point(513, 238);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(609, 65);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Welcome to 5* LMG hotel";
+            // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Calibri", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.SlateGray;
+            this.lbDate.Location = new System.Drawing.Point(588, 517);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(164, 66);
+            this.lbDate.TabIndex = 9;
+            this.lbDate.Text = "label5";
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Calibri", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.SlateBlue;
+            this.lbTime.Location = new System.Drawing.Point(619, 363);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(325, 131);
+            this.lbTime.TabIndex = 8;
+            this.lbTime.Text = "label4";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label2.Location = new System.Drawing.Point(314, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1020, 59);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Chào mừng quý khách đến với khách sạn 5*  LMG";
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconButton2);
+            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.btnDoiMatKhau);
+            this.panelMenu.Controls.Add(this.btnChamCong);
+            this.panelMenu.Controls.Add(this.label1);
+            this.panelMenu.Controls.Add(this.btnDatPhong);
+            this.panelMenu.Controls.Add(this.btnHome);
+            this.panelMenu.Controls.Add(this.panelLogo);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(200, 1061);
+            this.panelMenu.TabIndex = 4;
+            // 
             // iconButton2
             // 
             this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -252,6 +342,7 @@ namespace BTL
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton1
             // 
@@ -274,6 +365,7 @@ namespace BTL
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btnDoiMatKhau
             // 
@@ -367,100 +459,10 @@ namespace BTL
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(30, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(125, 128);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // timerCurrent
             // 
             this.timerCurrent.Enabled = true;
             this.timerCurrent.Tick += new System.EventHandler(this.timerCurrent_Tick);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label5.Location = new System.Drawing.Point(579, 882);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(473, 26);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(513, 238);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(609, 65);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Welcome to 5* LMG hotel";
-            // 
-            // lbDate
-            // 
-            this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Calibri", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbDate.Location = new System.Drawing.Point(588, 517);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(164, 66);
-            this.lbDate.TabIndex = 9;
-            this.lbDate.Text = "label5";
-            // 
-            // lbTime
-            // 
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Calibri", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbTime.Location = new System.Drawing.Point(619, 363);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(325, 131);
-            this.lbTime.TabIndex = 8;
-            this.lbTime.Text = "label4";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(314, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1020, 59);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Chào mừng quý khách đến với khách sạn 5*  LMG";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Coral;
-            this.label6.Location = new System.Drawing.Point(19, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 21);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Giờ hiện tại";
-            // 
-            // lbTimeMain
-            // 
-            this.lbTimeMain.AutoSize = true;
-            this.lbTimeMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimeMain.ForeColor = System.Drawing.Color.Coral;
-            this.lbTimeMain.Location = new System.Drawing.Point(123, 54);
-            this.lbTimeMain.Name = "lbTimeMain";
-            this.lbTimeMain.Size = new System.Drawing.Size(76, 21);
-            this.lbTimeMain.TabIndex = 9;
-            this.lbTimeMain.Text = "Xin chào";
             // 
             // formMainNhanVien
             // 
@@ -474,15 +476,15 @@ namespace BTL
             this.Text = "FormMainNhanVien";
             this.panelHidden.ResumeLayout(false);
             this.panelHidden.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

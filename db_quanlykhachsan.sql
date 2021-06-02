@@ -11,6 +11,13 @@ GO
 USE QLKS
 GO
 
+--bảng chức vụ
+create table LoaiChucVu(
+	ChucVu nvarchar(50) primary key not null,
+	LuongCoBan int
+)
+GO
+
 --bảng nhân viên
 create table NhanVien(
 	MaNhanVien INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
@@ -21,14 +28,14 @@ create table NhanVien(
 	GioiTinhNV bit not null, --0: NAM, 1: NỮ
 	CMND char(12) not null,
 	ChucVu nvarchar(50) not null
+	FOREIGN KEY (ChucVu) references LoaiChucVu(ChucVu) ON UPDATE CASCADE ON DELETE CASCADE
 )
 go
 
 --bảng chấm công
 create table ChamCong(
 	MaNhanVien int not null,
-	NgayChamCong date default(getdate()) not null,
-	TrangThai bit not null,	
+	NgayChamCong date not null,
 	constraint PK_Chamcong primary key (MaNhanVien, NgayChamCong),
 	foreign key (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE
 )
@@ -102,19 +109,72 @@ create table HoaDon(
 	NgayLap date default(getdate()),
 	TongTien int not null,
 	foreign key (MaDatPhong) references DatPhong(MaDatPhong) ON UPDATE CASCADE ON DELETE CASCADE
-)	
+)
+go
+
+--bảng dịch vụ
+create table DichVu(
+	MaDichVu INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	TenDichVu nvarchar(50) NOT NULL,
+	DonGia int not null,
+)
+go
+
+--bảng chi tiết dịch vụ
+create table ChiTietDichVu(
+	MaCTDV INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	MaDichVu INT NOT NULL,
+	MaHoaDon INT NOT NULL,
+	SoLuongDung INT NOT NULL,
+	GhiChu int,
+	foreign key (MaDichVu) references DichVu(MaDichVu) ON UPDATE CASCADE ON DELETE CASCADE,
+	foreign key (MaHoaDon) references HoaDon(MaHoaDon) ON UPDATE CASCADE ON DELETE CASCADE,
+)
+GO
+
+--thêm dữ liệu loại chức vụ
+INSERT INTO LoaiChucVu(ChucVu, LuongCoBan) VALUES
+(N'Quản lý', 500000),
+(N'Nhân viên lễ tân', 100000),
+(N'Nhân viên buồng phòng', 250000),
+(N'Nhân viên nhà bếp', 300000),
+(N'Nhân viên phục vụ', 200000),
+(N'Nhân viên đứng cửa', 200000)
+GO
+
+--thêm dữ liệu dịch vụ
+INSERT INTO DichVu(TenDichVu, DonGia) VALUES
+(N'Spa', 500000),
+(N'Giặt,ủi là quần áo', 50000),
+(N'Thuê phòng hội nghị', 1000000),
+(N'Phòng tập Fitness', 50000),
+(N'Bể bơi', 100000),
+(N'Đồ ăn tại phòng', 200000)
 go
 
 --thêm dữ liệu nhân viên
 INSERT INTO NhanVien(TenNhanVien, SoDienThoai, NgaysinhNV, DiaChiNhanVien, GioiTinhNV, CMND, ChucVu) VALUES
-(N'Quách Ngọc Hà', '0389149961', '04/05/2000', N'Hà Nội', 0, '001478910103', N'Admin'),
-(N'Phạm Anh Dương', '0969055609', '05/06/2000', N'Hà Nội', 0,'001382912103', N'Quản lý'),
-(N'Nguyễn Tiến Hà', '0936890916', '04/03/2000', N'Hà Nội', 0,'001578911103', N'Quản lý')
+(N'Quách Ngọc Hà', '0389149961', '04/05/2000', N'Hà Nội', 0, '001478910103', N'Quản lý'),
+(N'Phạm Anh Dương', '0969055609', '05/06/2000', N'Hà Nội', 0,'001382912103', N'Nhân viên lễ tân'),
+(N'Nguyễn Tiến Hà', '0936890916', '04/03/2000', N'Hà Nội', 0,'001578911103', N'Nhân viên buồng phòng'),
+(N'Đỗ Bá Hoàn', '0389149961', '04/05/2000', N'Hà Nội', 0, '001478910103', N'Nhân viên nhà bếp'),
+(N'Phạm Duy Hưng', '0969055609', '05/06/2000', N'Hà Nội', 0,'001382912103', N'Nhân viên phục vụ'),
+(N'Lê Vũ Long', '0936890916', '04/03/2000', N'Hà Nội', 0,'001578911103', N'Nhân viên đứng cửa')
 GO
 
-INSERT INTO ChamCong(MaNhanVien, TrangThai) VALUES
-(2, 1),
-(3, 0)
+INSERT INTO ChamCong(MaNhanVien, NgayChamCong) VALUES
+(2, '04/05/2021'),
+(3, '04/05/2021'),
+(2, '05/05/2021'),
+(3, '05/05/2021'),
+(2, '05/06/2021'),
+(3, '05/06/2021'),
+(2, '05/07/2021'),
+(3, '05/07/2021'),
+(2, '05/08/2021'),
+(3, '05/08/2021'),
+(2, '05/09/2021'),
+(3, '05/09/2021')
 GO
 
 INSERT INTO Taikhoan(Username, Password, LoaiTaiKhoan, TrangThai, MaNhanVien) VALUES
