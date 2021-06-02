@@ -104,7 +104,7 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(204, 873);
+            this.panelMenu.Size = new System.Drawing.Size(204, 749);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubmenu2
@@ -775,7 +775,7 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1566, 873);
+            this.ClientSize = new System.Drawing.Size(1566, 749);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelTitleBar);
@@ -783,6 +783,7 @@ namespace BTL
             this.Name = "formMain";
             this.Text = "formMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.formMain_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelSubmenu2.ResumeLayout(false);

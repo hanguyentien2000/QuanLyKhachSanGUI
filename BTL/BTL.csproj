@@ -104,17 +104,17 @@
     <Compile Include="GUI\formChamCong.Designer.cs">
       <DependentUpon>formChamCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\formCheckIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\formCheckIn.Designer.cs">
-      <DependentUpon>formCheckIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\formCheckOut.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\formCheckOut.Designer.cs">
       <DependentUpon>formCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\formCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\formCheckIn.Designer.cs">
+      <DependentUpon>formCheckIn.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\formChonKhachDat.cs">
       <SubType>Form</SubType>
@@ -213,11 +213,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\formCheckIn.resx">
-      <DependentUpon>formCheckIn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\formCheckOut.resx">
       <DependentUpon>formCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\formCheckIn.resx">
+      <DependentUpon>formCheckIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formChonKhachDat.resx">
       <DependentUpon>formChonKhachDat.cs</DependentUpon>

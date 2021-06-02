@@ -73,7 +73,7 @@ namespace BTL
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 1042);
+            this.label1.Location = new System.Drawing.Point(0, 730);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 19);
             this.label1.TabIndex = 7;
@@ -95,6 +95,7 @@ namespace BTL
             this.panelHidden.Name = "panelHidden";
             this.panelHidden.Size = new System.Drawing.Size(1540, 133);
             this.panelHidden.TabIndex = 6;
+            this.panelHidden.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHidden_Paint);
             // 
             // lbTimeMain
             // 
@@ -245,7 +246,7 @@ namespace BTL
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 133);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1540, 928);
+            this.panelDesktop.Size = new System.Drawing.Size(1540, 616);
             this.panelDesktop.TabIndex = 7;
             // 
             // label5
@@ -254,7 +255,7 @@ namespace BTL
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label5.Location = new System.Drawing.Point(579, 882);
+            this.label5.Location = new System.Drawing.Point(579, 570);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(473, 26);
             this.label5.TabIndex = 11;
@@ -318,7 +319,7 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 1061);
+            this.panelMenu.Size = new System.Drawing.Size(200, 749);
             this.panelMenu.TabIndex = 4;
             // 
             // iconButton2
@@ -468,7 +469,7 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1740, 1061);
+            this.ClientSize = new System.Drawing.Size(1740, 749);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelMenu);

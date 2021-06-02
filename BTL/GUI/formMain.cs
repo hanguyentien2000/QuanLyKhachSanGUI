@@ -227,7 +227,7 @@ namespace BTL
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            OpenCurrentForm(new formCheckIn());
+            OpenCurrentForm(new formCheckOut());
         }
 
         private void btnQuanLyMain_Click(object sender, EventArgs e)
@@ -296,13 +296,13 @@ namespace BTL
         private void btnKhachCu_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
-            OpenCurrentForm(new formDatPhongKC());
+            OpenCurrentForm(new formDatPhongKC(this.f));
         }
 
         private void btnKhachMoi_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color2);
-            OpenCurrentForm(new formDatPhongKM());
+            OpenCurrentForm(new formDatPhongKM(this.f));
         }
 
         private void timeCurrent_Tick(object sender, EventArgs e)
@@ -322,6 +322,11 @@ namespace BTL
         {
             ActiveButton(sender, RGBColors.color1);
             OpenCurrentForm(new formCheckIn());
+        }
+
+        private void formMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

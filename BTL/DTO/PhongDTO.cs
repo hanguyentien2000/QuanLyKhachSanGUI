@@ -14,11 +14,5 @@ namespace BTL.DTO
         public int MaLoaiPhong { get => maLoaiPhong; set => maLoaiPhong = value; }
         public int TrangThai { get => trangThai; set => trangThai = value; }
         public byte[] AnhPhong { get; set; }
-
-        public override bool Equals(object obj)
-        {
-            return obj is PhongDTO dTO &&
-                   MaPhong == dTO.MaPhong;
-        }
     }
 }

@@ -66,5 +66,10 @@ namespace BTL
             else
                 return;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
