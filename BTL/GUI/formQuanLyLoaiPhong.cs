@@ -24,6 +24,11 @@ namespace BTL.InterfaceQuanly
             lbLoaiPhong.Visible = false;
             txtMaLoaiPhong.Visible = false;
             loadData(dsLoaiPhong.GetTableLoaiPhong());
+            dgvQLLP.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvQLLP.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         public void loadData(DataTable dt)
@@ -168,9 +173,9 @@ namespace BTL.InterfaceQuanly
             int dong = e.RowIndex;
             try
             {
-                if (dgvQLLP.Rows.Count == dong + 1)
+                if(dong < 0)
                 {
-                    throw new Exception("Dữ liệu trống");
+                    throw new Exception("Ô này không có dữ liệu");
                 }
                 lbLoaiPhong.Visible = true;
                 txtMaLoaiPhong.Visible = true;

@@ -19,5 +19,6 @@ namespace BTL.DTO
         public string ChucVu { get => chucVu; set => chucVu = value; }
         public string NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public string Cmnd { get => cmnd; set => cmnd = value; }
+        public byte[] anhNV { get; set; }
     }
 }

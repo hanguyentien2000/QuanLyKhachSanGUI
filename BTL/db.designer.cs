@@ -66,7 +66,7 @@ namespace BTL
     #endregion
 		
 		public dbDataContext() : 
-				base(global::BTL.Properties.Settings.Default.QLKSConnectionString2, mappingSource)
+				base(global::BTL.Properties.Settings.Default.QLKSConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
