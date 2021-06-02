@@ -14,13 +14,14 @@ namespace BTL
 {
     public partial class formDatPhongKC : Form
     {
-        public formDatPhongKC()
+        public formLogin f;
+        public formDatPhongKC(formLogin fs)
         {
             InitializeComponent();
+            this.f = fs;
+            //exampleToGetIdThroughForm
+            //TenNV.Text = f.account.NhanVien.TenNhanVien.ToString();
         }
-        List<PhongDTO> dsPhong = new List<PhongDTO>();
-        KhachHangBUS khachHangBUS = new KhachHangBUS();
-        KhachHangDTO khachHangDTO = new KhachHangDTO();
         LoaiPhongBUS loaiPhongBUS = new LoaiPhongBUS();
         DatPhongBUS datPhongBus = new DatPhongBUS();
         KhachHangDTO kh = new KhachHangDTO();
@@ -37,18 +38,6 @@ namespace BTL
             dateCheckout.MinDate = DateTime.Now.AddDays(1);
         }
 
-
-        private void CheckIn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDiaChi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             if(kh.MaKH == 0)
@@ -63,10 +52,9 @@ namespace BTL
             {
                 string checkIn = dateCheckIn.Value.ToString("yyyy/MM/dd");
                 string checkOut = dateCheckout.Value.ToString("yyyy/MM/dd");
-                int maNV = 1;
                 int maKH = kh.MaKH;
                 int maPhong = Convert.ToInt32(cbxPhong.SelectedValue.ToString());
-                if(datPhongBus.datPhong(maNV, maKH, maPhong, checkIn, checkOut, tienCoc))
+                if(datPhongBus.datPhong(this.f.account.NhanVien.MaNhanVien, maKH, maPhong, checkIn, checkOut, tongTien/2))
                 {
                     MessageBox.Show("Đặt phòng thành công");
                 }
@@ -82,13 +70,10 @@ namespace BTL
             
             tienCoc = Convert.ToInt32(txtPrice.Text);
             tongTien = tienCoc * ((dateCheckout.Value - dateCheckIn.Value).Days);
-            lbTienCoc.Text = tienCoc.ToString();
+            lbTienCoc.Text = (tongTien/2).ToString();
             lbTongBill.Text = tongTien.ToString();
         }   
-        private void cbxPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void cbxLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {

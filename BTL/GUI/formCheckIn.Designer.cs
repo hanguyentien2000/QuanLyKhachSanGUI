@@ -32,197 +32,158 @@ namespace BTL.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txtMaPhong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaKhach = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnConfirmOOD = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCheckIn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnListToday = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOutOfDate = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvCheckIn = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienDatCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.btnTatCa = new Guna.UI2.WinForms.Guna2Button();
+            this.txtKeyWords = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2TextBox1
+            // txtMaPhong
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(347, 580);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "ID Phòng";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(274, 36);
-            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox1.TabIndex = 81;
+            this.txtMaPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaPhong.DefaultText = "";
+            this.txtMaPhong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaPhong.DisabledState.Parent = this.txtMaPhong;
+            this.txtMaPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaPhong.Enabled = false;
+            this.txtMaPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaPhong.FocusedState.Parent = this.txtMaPhong;
+            this.txtMaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaPhong.HoverState.Parent = this.txtMaPhong;
+            this.txtMaPhong.Location = new System.Drawing.Point(354, 473);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.PasswordChar = '\0';
+            this.txtMaPhong.PlaceholderText = "ID Phòng";
+            this.txtMaPhong.SelectedText = "";
+            this.txtMaPhong.ShadowDecoration.Parent = this.txtMaPhong;
+            this.txtMaPhong.Size = new System.Drawing.Size(274, 36);
+            this.txtMaPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtMaPhong.TabIndex = 70;
             // 
-            // txtPrice
+            // txtMaKhach
             // 
-            this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPrice.DefaultText = "";
-            this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrice.DisabledState.Parent = this.txtPrice;
-            this.txtPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.FocusedState.Parent = this.txtPrice;
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.HoverState.Parent = this.txtPrice;
-            this.txtPrice.Location = new System.Drawing.Point(29, 580);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.PasswordChar = '\0';
-            this.txtPrice.PlaceholderText = "ID khách";
-            this.txtPrice.SelectedText = "";
-            this.txtPrice.ShadowDecoration.Parent = this.txtPrice;
-            this.txtPrice.Size = new System.Drawing.Size(274, 36);
-            this.txtPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtPrice.TabIndex = 80;
+            this.txtMaKhach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaKhach.DefaultText = "";
+            this.txtMaKhach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaKhach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaKhach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaKhach.DisabledState.Parent = this.txtMaKhach;
+            this.txtMaKhach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaKhach.Enabled = false;
+            this.txtMaKhach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaKhach.FocusedState.Parent = this.txtMaKhach;
+            this.txtMaKhach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaKhach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaKhach.HoverState.Parent = this.txtMaKhach;
+            this.txtMaKhach.Location = new System.Drawing.Point(28, 473);
+            this.txtMaKhach.Name = "txtMaKhach";
+            this.txtMaKhach.PasswordChar = '\0';
+            this.txtMaKhach.PlaceholderText = "ID khách";
+            this.txtMaKhach.SelectedText = "";
+            this.txtMaKhach.ShadowDecoration.Parent = this.txtMaKhach;
+            this.txtMaKhach.Size = new System.Drawing.Size(274, 36);
+            this.txtMaKhach.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtMaKhach.TabIndex = 69;
             // 
-            // guna2Button3
+            // btnConfirmOOD
             // 
-            this.guna2Button3.BorderRadius = 20;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.Red;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(739, 580);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(150, 47);
-            this.guna2Button3.TabIndex = 79;
-            this.guna2Button3.Text = "Quá hạn";
+            this.btnConfirmOOD.BorderRadius = 20;
+            this.btnConfirmOOD.CheckedState.Parent = this.btnConfirmOOD;
+            this.btnConfirmOOD.CustomImages.Parent = this.btnConfirmOOD;
+            this.btnConfirmOOD.DisabledState.Parent = this.btnConfirmOOD;
+            this.btnConfirmOOD.Enabled = false;
+            this.btnConfirmOOD.FillColor = System.Drawing.Color.Red;
+            this.btnConfirmOOD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmOOD.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmOOD.HoverState.Parent = this.btnConfirmOOD;
+            this.btnConfirmOOD.Location = new System.Drawing.Point(666, 462);
+            this.btnConfirmOOD.Name = "btnConfirmOOD";
+            this.btnConfirmOOD.ShadowDecoration.Parent = this.btnConfirmOOD;
+            this.btnConfirmOOD.Size = new System.Drawing.Size(150, 47);
+            this.btnConfirmOOD.TabIndex = 68;
+            this.btnConfirmOOD.Text = "Quá hạn";
+            this.btnConfirmOOD.Click += new System.EventHandler(this.btnConfirmOOD_Click);
             // 
-            // guna2Button2
+            // btnCheckIn
             // 
-            this.guna2Button2.BorderRadius = 20;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Green;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(919, 580);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(150, 47);
-            this.guna2Button2.TabIndex = 78;
-            this.guna2Button2.Text = "Checkin";
+            this.btnCheckIn.BorderRadius = 20;
+            this.btnCheckIn.CheckedState.Parent = this.btnCheckIn;
+            this.btnCheckIn.CustomImages.Parent = this.btnCheckIn;
+            this.btnCheckIn.DisabledState.Parent = this.btnCheckIn;
+            this.btnCheckIn.Enabled = false;
+            this.btnCheckIn.FillColor = System.Drawing.Color.Green;
+            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.HoverState.Parent = this.btnCheckIn;
+            this.btnCheckIn.Location = new System.Drawing.Point(822, 462);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.ShadowDecoration.Parent = this.btnCheckIn;
+            this.btnCheckIn.Size = new System.Drawing.Size(150, 47);
+            this.btnCheckIn.TabIndex = 67;
+            this.btnCheckIn.Text = "Checkin";
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
-            // guna2Button1
+            // btnListToday
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Green;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(918, 82);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(150, 36);
-            this.guna2Button1.TabIndex = 77;
-            this.guna2Button1.Text = "Today checkin";
+            this.btnListToday.CheckedState.Parent = this.btnListToday;
+            this.btnListToday.CustomImages.Parent = this.btnListToday;
+            this.btnListToday.DisabledState.Parent = this.btnListToday;
+            this.btnListToday.FillColor = System.Drawing.Color.Green;
+            this.btnListToday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListToday.ForeColor = System.Drawing.Color.White;
+            this.btnListToday.HoverState.Parent = this.btnListToday;
+            this.btnListToday.Location = new System.Drawing.Point(595, 82);
+            this.btnListToday.Name = "btnListToday";
+            this.btnListToday.ShadowDecoration.Parent = this.btnListToday;
+            this.btnListToday.Size = new System.Drawing.Size(212, 36);
+            this.btnListToday.TabIndex = 66;
+            this.btnListToday.Tag = "";
+            this.btnListToday.Text = "Checkin hôm nay";
+            this.btnListToday.Click += new System.EventHandler(this.btnListToday_Click);
             // 
-            // guna2DateTimePicker2
+            // btnOutOfDate
             // 
-            this.guna2DateTimePicker2.CheckedState.Parent = this.guna2DateTimePicker2;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.HoverState.Parent = this.guna2DateTimePicker2;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(297, 82);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.ShadowDecoration.Parent = this.guna2DateTimePicker2;
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker2.TabIndex = 76;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2021, 5, 23, 1, 2, 33, 791);
+            this.btnOutOfDate.CheckedState.Parent = this.btnOutOfDate;
+            this.btnOutOfDate.CustomImages.Parent = this.btnOutOfDate;
+            this.btnOutOfDate.DisabledState.Parent = this.btnOutOfDate;
+            this.btnOutOfDate.FillColor = System.Drawing.Color.Red;
+            this.btnOutOfDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOutOfDate.ForeColor = System.Drawing.Color.White;
+            this.btnOutOfDate.HoverState.Parent = this.btnOutOfDate;
+            this.btnOutOfDate.Location = new System.Drawing.Point(392, 82);
+            this.btnOutOfDate.Name = "btnOutOfDate";
+            this.btnOutOfDate.ShadowDecoration.Parent = this.btnOutOfDate;
+            this.btnOutOfDate.Size = new System.Drawing.Size(186, 36);
+            this.btnOutOfDate.TabIndex = 61;
+            this.btnOutOfDate.Text = "Quá hạn Checkin";
+            this.btnOutOfDate.Click += new System.EventHandler(this.btnOutOfDate_Click);
             // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(29, 82);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker1.TabIndex = 75;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2021, 5, 23, 1, 2, 33, 791);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(293, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "Đến ngày";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "Từ ngày";
-            // 
-            // btnSua
-            // 
-            this.btnSua.CheckedState.Parent = this.btnSua;
-            this.btnSua.CustomImages.Parent = this.btnSua;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(547, 82);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.ShadowDecoration.Parent = this.btnSua;
-            this.btnSua.Size = new System.Drawing.Size(117, 36);
-            this.btnSua.TabIndex = 72;
-            this.btnSua.Text = "Lọc";
-            // 
-            // guna2DataGridView1
+            // dgvCheckIn
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCheckIn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCheckIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCheckIn.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvCheckIn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCheckIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -230,18 +191,16 @@ namespace BTL.GUI
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 21;
-            this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCheckIn.ColumnHeadersHeight = 21;
+            this.dgvCheckIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDatPhong,
+            this.MaPhong,
             this.MaNhanVien,
-            this.MaKH,
+            this.MaKhachHang,
             this.NgayDat,
-            this.NgayDen,
             this.NgayDi,
-            this.TienDatCoc,
-            this.SoLuong,
-            this.TrangThai});
+            this.TienDatCoc});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -249,128 +208,182 @@ namespace BTL.GUI
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.EnableHeadersVisualStyles = false;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(29, 163);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1039, 381);
-            this.guna2DataGridView1.TabIndex = 71;
-            this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 21;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCheckIn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCheckIn.EnableHeadersVisualStyles = false;
+            this.dgvCheckIn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCheckIn.Location = new System.Drawing.Point(28, 161);
+            this.dgvCheckIn.Name = "dgvCheckIn";
+            this.dgvCheckIn.RowHeadersVisible = false;
+            this.dgvCheckIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCheckIn.Size = new System.Drawing.Size(935, 253);
+            this.dgvCheckIn.TabIndex = 60;
+            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvCheckIn.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCheckIn.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCheckIn.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvCheckIn.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCheckIn.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvCheckIn.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvCheckIn.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCheckIn.ThemeStyle.HeaderStyle.Height = 21;
+            this.dgvCheckIn.ThemeStyle.ReadOnly = false;
+            this.dgvCheckIn.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCheckIn.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCheckIn.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvCheckIn.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCheckIn.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvCheckIn.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCheckIn.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCheckIn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckIn_CellClick);
             // 
             // MaDatPhong
             // 
+            this.MaDatPhong.DataPropertyName = "MaDatPhong";
             this.MaDatPhong.HeaderText = "Mã đặt phòng";
             this.MaDatPhong.Name = "MaDatPhong";
             // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Phòng";
+            this.MaPhong.Name = "MaPhong";
+            // 
             // MaNhanVien
             // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
             this.MaNhanVien.HeaderText = "Mã Nhân Viên";
             this.MaNhanVien.Name = "MaNhanVien";
             // 
-            // MaKH
+            // MaKhachHang
             // 
-            this.MaKH.HeaderText = "Mã khách hàng";
-            this.MaKH.Name = "MaKH";
+            this.MaKhachHang.DataPropertyName = "MaKhachHang";
+            this.MaKhachHang.HeaderText = "Mã khách hàng";
+            this.MaKhachHang.Name = "MaKhachHang";
             // 
             // NgayDat
             // 
+            this.NgayDat.DataPropertyName = "NgayDat";
             this.NgayDat.HeaderText = "Ngày Đặt";
             this.NgayDat.Name = "NgayDat";
             // 
-            // NgayDen
-            // 
-            this.NgayDen.HeaderText = "Ngày đến";
-            this.NgayDen.Name = "NgayDen";
-            // 
             // NgayDi
             // 
+            this.NgayDi.DataPropertyName = "NgayDi";
             this.NgayDi.HeaderText = "Ngày đi";
             this.NgayDi.Name = "NgayDi";
             // 
             // TienDatCoc
             // 
+            this.TienDatCoc.DataPropertyName = "TienDatCoc";
             this.TienDatCoc.HeaderText = "Tiền đặt cọc";
             this.TienDatCoc.Name = "TienDatCoc";
             // 
-            // SoLuong
+            // btnTatCa
             // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
+            this.btnTatCa.CheckedState.Parent = this.btnTatCa;
+            this.btnTatCa.CustomImages.Parent = this.btnTatCa;
+            this.btnTatCa.DisabledState.Parent = this.btnTatCa;
+            this.btnTatCa.FillColor = System.Drawing.SystemColors.Highlight;
+            this.btnTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTatCa.ForeColor = System.Drawing.Color.White;
+            this.btnTatCa.HoverState.Parent = this.btnTatCa;
+            this.btnTatCa.Location = new System.Drawing.Point(822, 82);
+            this.btnTatCa.Name = "btnTatCa";
+            this.btnTatCa.ShadowDecoration.Parent = this.btnTatCa;
+            this.btnTatCa.Size = new System.Drawing.Size(125, 36);
+            this.btnTatCa.TabIndex = 71;
+            this.btnTatCa.Tag = "";
+            this.btnTatCa.Text = "Tất cả";
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
-            // TrangThai
+            // txtKeyWords
             // 
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
+            this.txtKeyWords.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtKeyWords.DefaultText = "";
+            this.txtKeyWords.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtKeyWords.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtKeyWords.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKeyWords.DisabledState.Parent = this.txtKeyWords;
+            this.txtKeyWords.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKeyWords.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKeyWords.FocusedState.Parent = this.txtKeyWords;
+            this.txtKeyWords.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtKeyWords.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKeyWords.HoverState.Parent = this.txtKeyWords;
+            this.txtKeyWords.Location = new System.Drawing.Point(392, 24);
+            this.txtKeyWords.Name = "txtKeyWords";
+            this.txtKeyWords.PasswordChar = '\0';
+            this.txtKeyWords.PlaceholderText = "Mã đặt phòng,phòng,khách";
+            this.txtKeyWords.SelectedText = "";
+            this.txtKeyWords.ShadowDecoration.Parent = this.txtKeyWords;
+            this.txtKeyWords.Size = new System.Drawing.Size(415, 36);
+            this.txtKeyWords.TabIndex = 72;
             // 
-            // formCheckIn
+            // btnTimKiem
+            // 
+            this.btnTimKiem.CheckedState.Parent = this.btnTimKiem;
+            this.btnTimKiem.CustomImages.Parent = this.btnTimKiem;
+            this.btnTimKiem.DisabledState.Parent = this.btnTimKiem;
+            this.btnTimKiem.FillColor = System.Drawing.SystemColors.Highlight;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btnTimKiem.HoverState.Parent = this.btnTimKiem;
+            this.btnTimKiem.Location = new System.Drawing.Point(822, 24);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.ShadowDecoration.Parent = this.btnTimKiem;
+            this.btnTimKiem.Size = new System.Drawing.Size(125, 36);
+            this.btnTimKiem.TabIndex = 73;
+            this.btnTimKiem.Tag = "";
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // formCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 672);
-            this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.guna2DateTimePicker2);
-            this.Controls.Add(this.guna2DateTimePicker1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.guna2DataGridView1);
-            this.Name = "formCheckIn";
-            this.Text = "formCheckIn";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(994, 672);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.txtKeyWords);
+            this.Controls.Add(this.btnTatCa);
+            this.Controls.Add(this.txtMaPhong);
+            this.Controls.Add(this.txtMaKhach);
+            this.Controls.Add(this.btnConfirmOOD);
+            this.Controls.Add(this.btnCheckIn);
+            this.Controls.Add(this.btnListToday);
+            this.Controls.Add(this.btnOutOfDate);
+            this.Controls.Add(this.dgvCheckIn);
+            this.Name = "formCheckOut";
+            this.Text = "formCheckOut";
+            this.Load += new System.EventHandler(this.formCheckOut_Load);
+            this.Click += new System.EventHandler(this.formCheckOut_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtPrice;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnSua;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaPhong;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaKhach;
+        private Guna.UI2.WinForms.Guna2Button btnConfirmOOD;
+        private Guna.UI2.WinForms.Guna2Button btnCheckIn;
+        private Guna.UI2.WinForms.Guna2Button btnListToday;
+        private Guna.UI2.WinForms.Guna2Button btnOutOfDate;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvCheckIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDatPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDen;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TienDatCoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private Guna.UI2.WinForms.Guna2Button btnTatCa;
+        private Guna.UI2.WinForms.Guna2TextBox txtKeyWords;
+        private Guna.UI2.WinForms.Guna2Button btnTimKiem;
     }
 }

@@ -74,8 +74,9 @@ namespace BTL.DAL
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                MessageBox.Show(e.Message);
                 return false;
             }
             finally
