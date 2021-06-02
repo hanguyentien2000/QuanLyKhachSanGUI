@@ -82,7 +82,7 @@ namespace BTL
             
             tienCoc = Convert.ToInt32(txtPrice.Text);
             tongTien = tienCoc * ((dateCheckout.Value - dateCheckIn.Value).Days);
-            lbTienCoc.Text = tienCoc.ToString();
+            lbTienCoc.Text = (tongTien/2).ToString();
             lbTongBill.Text = tongTien.ToString();
         }   
         private void cbxPhong_SelectedIndexChanged(object sender, EventArgs e)
