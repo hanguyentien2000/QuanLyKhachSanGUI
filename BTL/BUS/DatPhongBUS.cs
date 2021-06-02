@@ -153,7 +153,8 @@ namespace BTL.BUS
         //}
         public bool passToCheckout(int maDatPhong)
         {
-            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 1 where MaDatPhong = " + maDatPhong;
+            string today = DateTime.Now.ToString("yyyy/MM/dd");
+            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 1 AND NgayDen = '"+ today + "' where MaDatPhong = " + maDatPhong;
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
@@ -176,12 +177,12 @@ namespace BTL.BUS
         // check out
         public DataTable getTTDatPhongCO()
         {
-            string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1";
+            string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDen,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1";
             return data.GetTable(sql);
         }
         public DataTable timKiemCheckOut(string keywords)
         {
-            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND " +
+            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDen,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND " +
                "(MaDatPhong =" + keywords + " OR MaKhachHang =" + keywords + " OR MaPhong =" + keywords + ")";
             return data.ExecuteQuery(sql);
         }
@@ -198,7 +199,7 @@ namespace BTL.BUS
             String sql = "";
             String today = DateTime.Now.ToString("yyyy/MM/dd");
             
-            sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND NgayDi ='" + today + "'";
+            sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDen,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND NgayDi ='" + today + "'";
             return data.ExecuteQuery(sql);
         }
     }

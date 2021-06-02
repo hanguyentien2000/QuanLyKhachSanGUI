@@ -29,9 +29,9 @@ namespace BTL.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.txtKeyWords = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTatCa = new Guna.UI2.WinForms.Guna2Button();
@@ -39,7 +39,7 @@ namespace BTL.GUI
             this.txtMaKhach = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCheckOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnListToday = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvCheckIn = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvCheckOut = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@ namespace BTL.GUI
             this.NgayDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienDatCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTimKiem
@@ -67,6 +67,7 @@ namespace BTL.GUI
             this.btnTimKiem.TabIndex = 83;
             this.btnTimKiem.Tag = "";
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtKeyWords
             // 
@@ -107,6 +108,7 @@ namespace BTL.GUI
             this.btnTatCa.TabIndex = 81;
             this.btnTatCa.Tag = "";
             this.btnTatCa.Text = "Tất cả";
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // txtMaPhong
             // 
@@ -175,6 +177,7 @@ namespace BTL.GUI
             this.btnCheckOut.Size = new System.Drawing.Size(150, 47);
             this.btnCheckOut.TabIndex = 77;
             this.btnCheckOut.Text = "Checkin";
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // btnListToday
             // 
@@ -192,26 +195,27 @@ namespace BTL.GUI
             this.btnListToday.TabIndex = 76;
             this.btnListToday.Tag = "";
             this.btnListToday.Text = "Checkout hôm nay";
+            this.btnListToday.Click += new System.EventHandler(this.btnListToday_Click);
             // 
-            // dgvCheckIn
+            // dgvCheckOut
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvCheckIn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCheckIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCheckIn.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvCheckIn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCheckIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCheckIn.ColumnHeadersHeight = 21;
-            this.dgvCheckIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.dgvCheckOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvCheckOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCheckOut.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvCheckOut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCheckOut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCheckOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvCheckOut.ColumnHeadersHeight = 21;
+            this.dgvCheckOut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDatPhong,
             this.MaPhong,
             this.MaNhanVien,
@@ -220,43 +224,44 @@ namespace BTL.GUI
             this.NgayDen,
             this.NgayDi,
             this.TienDatCoc});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckIn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvCheckIn.EnableHeadersVisualStyles = false;
-            this.dgvCheckIn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCheckIn.Location = new System.Drawing.Point(21, 168);
-            this.dgvCheckIn.Name = "dgvCheckIn";
-            this.dgvCheckIn.RowHeadersVisible = false;
-            this.dgvCheckIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCheckIn.Size = new System.Drawing.Size(935, 253);
-            this.dgvCheckIn.TabIndex = 74;
-            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvCheckIn.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCheckIn.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCheckIn.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvCheckIn.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCheckIn.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvCheckIn.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvCheckIn.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCheckIn.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgvCheckIn.ThemeStyle.ReadOnly = false;
-            this.dgvCheckIn.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCheckIn.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCheckIn.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvCheckIn.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvCheckIn.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvCheckIn.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCheckIn.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvCheckOut.EnableHeadersVisualStyles = false;
+            this.dgvCheckOut.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCheckOut.Location = new System.Drawing.Point(21, 168);
+            this.dgvCheckOut.Name = "dgvCheckOut";
+            this.dgvCheckOut.RowHeadersVisible = false;
+            this.dgvCheckOut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCheckOut.Size = new System.Drawing.Size(935, 253);
+            this.dgvCheckOut.TabIndex = 74;
+            this.dgvCheckOut.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCheckOut.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvCheckOut.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvCheckOut.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvCheckOut.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvCheckOut.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCheckOut.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCheckOut.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvCheckOut.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCheckOut.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvCheckOut.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvCheckOut.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCheckOut.ThemeStyle.HeaderStyle.Height = 21;
+            this.dgvCheckOut.ThemeStyle.ReadOnly = false;
+            this.dgvCheckOut.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCheckOut.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCheckOut.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvCheckOut.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCheckOut.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvCheckOut.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCheckOut.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCheckOut.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckOut_CellClick);
             // 
             // MaDatPhong
             // 
@@ -316,10 +321,10 @@ namespace BTL.GUI
             this.Controls.Add(this.txtMaKhach);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnListToday);
-            this.Controls.Add(this.dgvCheckIn);
+            this.Controls.Add(this.dgvCheckOut);
             this.Name = "formCheckIn";
             this.Load += new System.EventHandler(this.formCheckIn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,7 +339,7 @@ namespace BTL.GUI
         private Guna.UI2.WinForms.Guna2TextBox txtMaKhach;
         private Guna.UI2.WinForms.Guna2Button btnCheckOut;
         private Guna.UI2.WinForms.Guna2Button btnListToday;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvCheckIn;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvCheckOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDatPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
