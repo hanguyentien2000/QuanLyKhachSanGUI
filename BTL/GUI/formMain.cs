@@ -35,7 +35,7 @@ namespace BTL
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.f = fs;
-            TenNV.Text = f.account.MaNhanVien.ToString();
+            TenNV.Text = f.account.NhanVien.TenNhanVien.ToString();
         }
         private struct RGBColors
         {
@@ -105,12 +105,12 @@ namespace BTL
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
-            RefreshData();
+           
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-    
+            currentChildForm.Close();
+            RefreshData();
         }
         private void RefreshData()
         {
@@ -233,7 +233,7 @@ namespace BTL
         private void btnQuanLyMain_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color4);
-            //OpenCurrentForm(new formQuanLyPhong());
+            //OpenCurrentForm(new formMainNhanVien());
             ShowSubmenu(panelSubmenu);
         }
 
@@ -303,6 +303,19 @@ namespace BTL
         {
             ActiveButton(sender, RGBColors.color2);
             OpenCurrentForm(new formDatPhongKM());
+        }
+
+        private void timeCurrent_Tick(object sender, EventArgs e)
+        {
+            lbTimeMain.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbDate.Text = DateTime.Now.ToString("dddd MMMM yyy");
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formTrangChu());
         }
     }
 }

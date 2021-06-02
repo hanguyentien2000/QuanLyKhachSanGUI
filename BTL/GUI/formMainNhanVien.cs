@@ -15,20 +15,30 @@ using System.Windows.Forms;
 namespace BTL
 {
  
-    public partial class FormMainNhanVien : Form
+    public partial class formMainNhanVien : Form
     {
         //Fields
         private IconButton currentBtn;
+        private Panel leftBorderbtn;
         private Form currentChildForm;
         public formLogin f;
         public formDoiMatKhau fmk;
         public String username;
         
-        public FormMainNhanVien(formLogin fs, String username)
+        public formMainNhanVien(formLogin fs, String username)
         {
             InitializeComponent();
+            leftBorderbtn = new Panel();
+            leftBorderbtn.Size = new Size(7, 60);
+            panelMenu.Controls.Add(leftBorderbtn);
+            //FormTilerBar
+            this.Text = String.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.f = fs;
             this.username = username;
+            TenNV.Text = f.account.NhanVien.TenNhanVien.ToString();
         }
 
         public String getUsername()
@@ -61,12 +71,12 @@ namespace BTL
             currentBtn.ImageAlign = ContentAlignment.MiddleRight;
 
             //LeftBorderbutton
-            //leftBorderbtn.BackColor = color;
-            //leftBorderbtn.Location = new Point(0, currentBtn.Location.Y);
-            //leftBorderbtn.Visible = true;
-            //leftBorderbtn.BringToFront();
+            leftBorderbtn.BackColor = color;
+            leftBorderbtn.Location = new Point(0, currentBtn.Location.Y);
+            leftBorderbtn.Visible = true;
+            leftBorderbtn.BringToFront();
             //IconCurrent
-           
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -110,7 +120,17 @@ namespace BTL
             childForm.Show();
 
         }
+        private void RefreshData()
+        {
+            DisabledButton();
+            leftBorderbtn.Visible = false;
 
+        }
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            currentChildForm.Close();
+            RefreshData();
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show("Bạn có thật sự muốn thoát khỏi ứng dụng???", "Thông báo", MessageBoxButtons.YesNo);
@@ -163,6 +183,7 @@ namespace BTL
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formTrangChu());
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
@@ -181,6 +202,25 @@ namespace BTL
         {
             ActiveButton(sender, RGBColors.color6);
             OpenCurrentForm(new formDoiMatKhau(username));
+        }
+
+        private void timerCurrent_Tick(object sender, EventArgs e)
+        {
+            lbTimeMain.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbDate.Text = DateTime.Now.ToString("dddd MMMM yyy");
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formCheckIn());
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formCheckOut());
         }
     }
 }

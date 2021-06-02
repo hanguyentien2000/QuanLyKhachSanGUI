@@ -127,5 +127,22 @@ namespace BTL.DAL
             }
             return table;
         }
+        public bool ExecuteNonQueryWithImage(String sql, byte[] image)
+        {
+            try
+            {
+                SqlConnection connect = GetDBConnection();
+                connect.Open();
+                SqlCommand cmd = new SqlCommand(sql, connect);
+                cmd.Parameters.Add(new SqlParameter("@image", image));
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return false;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace BTL
 {
-    partial class FormMainNhanVien
+    partial class formMainNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,14 @@ namespace BTL
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainNhanVien));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMainNhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.panelHidden = new System.Windows.Forms.Panel();
+            this.lbTimeMain = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TenNV = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximize = new FontAwesome.Sharp.IconPictureBox();
@@ -39,6 +44,11 @@ namespace BTL
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -46,12 +56,14 @@ namespace BTL
             this.btnChamCong = new FontAwesome.Sharp.IconButton();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.timerCurrent = new System.Windows.Forms.Timer(this.components);
             this.panelHidden.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelDesktop.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +73,7 @@ namespace BTL
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 663);
+            this.label1.Location = new System.Drawing.Point(0, 1042);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 19);
             this.label1.TabIndex = 7;
@@ -70,6 +82,10 @@ namespace BTL
             // panelHidden
             // 
             this.panelHidden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelHidden.Controls.Add(this.lbTimeMain);
+            this.panelHidden.Controls.Add(this.label6);
+            this.panelHidden.Controls.Add(this.TenNV);
+            this.panelHidden.Controls.Add(this.label3);
             this.panelHidden.Controls.Add(this.btnDangXuat);
             this.panelHidden.Controls.Add(this.btnMinimize);
             this.panelHidden.Controls.Add(this.btnMaximize);
@@ -77,8 +93,54 @@ namespace BTL
             this.panelHidden.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHidden.Location = new System.Drawing.Point(200, 0);
             this.panelHidden.Name = "panelHidden";
-            this.panelHidden.Size = new System.Drawing.Size(1083, 100);
+            this.panelHidden.Size = new System.Drawing.Size(1540, 133);
             this.panelHidden.TabIndex = 6;
+            // 
+            // lbTimeMain
+            // 
+            this.lbTimeMain.AutoSize = true;
+            this.lbTimeMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeMain.ForeColor = System.Drawing.Color.Coral;
+            this.lbTimeMain.Location = new System.Drawing.Point(123, 54);
+            this.lbTimeMain.Name = "lbTimeMain";
+            this.lbTimeMain.Size = new System.Drawing.Size(76, 21);
+            this.lbTimeMain.TabIndex = 9;
+            this.lbTimeMain.Text = "Xin chào";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(19, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 21);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Giờ hiện tại";
+            // 
+            // TenNV
+            // 
+            this.TenNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TenNV.AutoSize = true;
+            this.TenNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenNV.ForeColor = System.Drawing.Color.Coral;
+            this.TenNV.Location = new System.Drawing.Point(1401, 54);
+            this.TenNV.Name = "TenNV";
+            this.TenNV.Size = new System.Drawing.Size(26, 21);
+            this.TenNV.TabIndex = 7;
+            this.TenNV.Text = "....";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Coral;
+            this.label3.Location = new System.Drawing.Point(1302, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Xin chào";
             // 
             // btnDangXuat
             // 
@@ -92,7 +154,7 @@ namespace BTL
             this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDangXuat.IconSize = 32;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(976, 60);
+            this.btnDangXuat.Location = new System.Drawing.Point(1434, 96);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(106, 37);
             this.btnDangXuat.TabIndex = 4;
@@ -111,7 +173,7 @@ namespace BTL
             this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 28;
-            this.btnMinimize.Location = new System.Drawing.Point(996, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1453, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(31, 28);
             this.btnMinimize.TabIndex = 2;
@@ -128,7 +190,7 @@ namespace BTL
             this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximize.IconSize = 28;
-            this.btnMaximize.Location = new System.Drawing.Point(1024, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1481, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(31, 28);
             this.btnMaximize.TabIndex = 1;
@@ -145,7 +207,7 @@ namespace BTL
             this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 28;
-            this.btnClose.Location = new System.Drawing.Point(1051, 0);
+            this.btnClose.Location = new System.Drawing.Point(1508, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(31, 28);
             this.btnClose.TabIndex = 0;
@@ -165,19 +227,82 @@ namespace BTL
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Location = new System.Drawing.Point(30, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(125, 128);
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panelDesktop
             // 
+            this.panelDesktop.Controls.Add(this.label5);
+            this.panelDesktop.Controls.Add(this.label4);
+            this.panelDesktop.Controls.Add(this.lbDate);
+            this.panelDesktop.Controls.Add(this.lbTime);
+            this.panelDesktop.Controls.Add(this.label2);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 0);
+            this.panelDesktop.Location = new System.Drawing.Point(200, 133);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1083, 682);
+            this.panelDesktop.Size = new System.Drawing.Size(1540, 928);
             this.panelDesktop.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label5.Location = new System.Drawing.Point(579, 882);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(473, 26);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label4.Location = new System.Drawing.Point(513, 238);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(609, 65);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Welcome to 5* LMG hotel";
+            // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Calibri", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.SlateGray;
+            this.lbDate.Location = new System.Drawing.Point(588, 517);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(164, 66);
+            this.lbDate.TabIndex = 9;
+            this.lbDate.Text = "label5";
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Calibri", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.SlateBlue;
+            this.lbTime.Location = new System.Drawing.Point(619, 363);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(325, 131);
+            this.lbTime.TabIndex = 8;
+            this.lbTime.Text = "label4";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label2.Location = new System.Drawing.Point(314, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1020, 59);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Chào mừng quý khách đến với khách sạn 5*  LMG";
             // 
             // panelMenu
             // 
@@ -193,7 +318,7 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 682);
+            this.panelMenu.Size = new System.Drawing.Size(200, 1061);
             this.panelMenu.TabIndex = 4;
             // 
             // iconButton2
@@ -217,6 +342,7 @@ namespace BTL
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton1
             // 
@@ -239,6 +365,7 @@ namespace BTL
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btnDoiMatKhau
             // 
@@ -332,22 +459,30 @@ namespace BTL
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // FormMainNhanVien
+            // timerCurrent
+            // 
+            this.timerCurrent.Enabled = true;
+            this.timerCurrent.Tick += new System.EventHandler(this.timerCurrent_Tick);
+            // 
+            // formMainNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 682);
-            this.Controls.Add(this.panelHidden);
+            this.ClientSize = new System.Drawing.Size(1740, 1061);
             this.Controls.Add(this.panelDesktop);
+            this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelMenu);
-            this.Name = "FormMainNhanVien";
+            this.Name = "formMainNhanVien";
             this.Text = "FormMainNhanVien";
             this.panelHidden.ResumeLayout(false);
+            this.panelHidden.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelDesktop.ResumeLayout(false);
+            this.panelDesktop.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -372,5 +507,15 @@ namespace BTL
         private FontAwesome.Sharp.IconButton btnDangXuat;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TenNV;
+        private System.Windows.Forms.Timer timerCurrent;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTimeMain;
     }
 }

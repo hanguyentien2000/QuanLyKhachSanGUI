@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace BTL
         PhongBUS phongBUS = new PhongBUS();
         PhongDTO phongDTO = new PhongDTO();
         LoaiPhongBUS loaiPhongBUS = new LoaiPhongBUS();
+        ImageConvert imageConvert = new ImageConvert();
+        bool hasPicture = false;
         public formQuanLyPhong()
         {
             InitializeComponent();
@@ -34,6 +37,7 @@ namespace BTL
         {
             phongDTO.MaLoaiPhong = Int32.Parse(cbbLoaiPhong.SelectedValue.ToString());
             phongDTO.TrangThai = rbdDangSuDung.Checked ? 0 : rbdTrong.Checked ? 1 : 0;
+            phongDTO.AnhPhong = imageConvert.ConvertImageToBytes(imgPhong.Image);
         }
 
         private void formQuanLyPhong_Load(object sender, EventArgs e)
@@ -47,16 +51,26 @@ namespace BTL
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            layThongTinPhong();
-            if (phongBUS.themTTPhong(phongDTO.MaLoaiPhong, phongDTO.TrangThai))
+            try
             {
-                MessageBox.Show("Thêm phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
-                xoaTrang();
-            }
-            else
+                if(!hasPicture)
+                {
+                    throw new Exception("Chưa có ảnh phòng");
+                }
+                layThongTinPhong();
+                if (phongBUS.themTTPhong(phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
+                {
+                    MessageBox.Show("Thêm phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
+                    xoaTrang();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            } catch (Exception ex)
             {
-                MessageBox.Show("Thêm phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -75,7 +89,7 @@ namespace BTL
                     throw new Exception("Vui lòng chọn mã phòng trước khi sửa");
                 }
                 layThongTinPhong();
-                if (phongBUS.thayDoiTTPhong(Int32.Parse(txtMaPhong.Text),phongDTO.MaLoaiPhong, phongDTO.TrangThai))
+                if (phongBUS.thayDoiTTPhong(Int32.Parse(txtMaPhong.Text),phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
                 {
                     MessageBox.Show("Thay đổi thông tin phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
@@ -122,7 +136,24 @@ namespace BTL
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                if (txtTimKiem.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng nhập từ khóa tìm kiếm");
+                }
+                DataTable dt = new DataTable();
+                dt = phongBUS.timKiemTTPhong(txtTimKiem.Text);
+                if (dt.Rows.Count < 1)
+                {
+                    throw new Exception("Không tìm thấy dữ liệu với từ khóa: " + txtTimKiem.Text);
+                }
+                dgvQuanLyPhong.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvQuanLyPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -143,8 +174,9 @@ namespace BTL
                     rbdTrong.Checked = true;
                 else
                     rbdDangSuDung.Checked = true;
+                imgPhong.Image = imageConvert.ConvertByteArrayToImage(phongBUS.layAnhPhong(Int32.Parse(dgvQuanLyPhong.Rows[dong].Cells[0].Value.ToString())).AnhPhong);
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -176,6 +208,25 @@ namespace BTL
         {
             xoaTrang();
             dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
+        }
+
+        private void btn_changeImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png", Multiselect = false })
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        imgPhong.Image = Image.FromFile(ofd.FileName);
+                        hasPicture = true;
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
