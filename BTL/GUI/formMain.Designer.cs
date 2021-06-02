@@ -44,10 +44,11 @@ namespace BTL
             this.btnQuanLyPhong = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyMain = new FontAwesome.Sharp.IconButton();
             this.btnCheckout = new FontAwesome.Sharp.IconButton();
+            this.btnCheckin = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSubmenu3 = new System.Windows.Forms.Panel();
             this.btnKhachMoi = new FontAwesome.Sharp.IconButton();
             this.btnKhachCu = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -70,7 +71,6 @@ namespace BTL
             this.lbTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timeCurrent = new System.Windows.Forms.Timer(this.components);
-            this.btnCheckin = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubmenu2.SuspendLayout();
             this.panelSubmenu.SuspendLayout();
@@ -375,6 +375,41 @@ namespace BTL
             this.btnCheckout.UseVisualStyleBackColor = true;
             this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
+            // btnCheckin
+            // 
+            this.btnCheckin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCheckin.FlatAppearance.BorderSize = 0;
+            this.btnCheckin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckin.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.btnCheckin.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCheckin.IconSize = 32;
+            this.btnCheckin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckin.Location = new System.Drawing.Point(0, 346);
+            this.btnCheckin.Name = "btnCheckin";
+            this.btnCheckin.Size = new System.Drawing.Size(187, 48);
+            this.btnCheckin.TabIndex = 9;
+            this.btnCheckin.Text = "Check In";
+            this.btnCheckin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCheckin.UseVisualStyleBackColor = true;
+            this.btnCheckin.Click += new System.EventHandler(this.btnCheckin_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 886);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Copyright by HAUI 2021, VN";
+            // 
             // panelSubmenu3
             // 
             this.panelSubmenu3.Controls.Add(this.btnKhachMoi);
@@ -434,18 +469,6 @@ namespace BTL
             this.btnKhachCu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhachCu.UseVisualStyleBackColor = false;
             this.btnKhachCu.Click += new System.EventHandler(this.btnKhachCu_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 886);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 19);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Copyright by HAUI 2021, VN";
             // 
             // btnDatPhong
             // 
@@ -747,29 +770,6 @@ namespace BTL
             // 
             this.timeCurrent.Enabled = true;
             this.timeCurrent.Tick += new System.EventHandler(this.timeCurrent_Tick);
-            // 
-            // btnCheckin
-            // 
-            this.btnCheckin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCheckin.FlatAppearance.BorderSize = 0;
-            this.btnCheckin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckin.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCheckin.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
-            this.btnCheckin.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnCheckin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCheckin.IconSize = 32;
-            this.btnCheckin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckin.Location = new System.Drawing.Point(0, 346);
-            this.btnCheckin.Name = "btnCheckin";
-            this.btnCheckin.Size = new System.Drawing.Size(187, 48);
-            this.btnCheckin.TabIndex = 9;
-            this.btnCheckin.Text = "Check In";
-            this.btnCheckin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCheckin.UseVisualStyleBackColor = true;
-            this.btnCheckin.Click += new System.EventHandler(this.btnCheckin_Click);
             // 
             // formMain
             // 
