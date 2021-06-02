@@ -57,6 +57,20 @@ namespace BTL
                 if(datPhongBus.datPhong(this.f.account.NhanVien.MaNhanVien, maKH, maPhong, checkIn, checkOut, tongTien/2))
                 {
                     MessageBox.Show("Đặt phòng thành công");
+                    int n = 0;
+                    if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
+                    {
+                        DataTable dt = datPhongBus.getPhong(dateCheckIn.Value, dateCheckout.Value, cbxLoaiPhong.SelectedValue.ToString());
+                        if (dt.Rows.Count > 0)
+                        {
+                            cbxPhong.DataSource = dt;
+                            cbxPhong.ValueMember = "MaPhong";
+                            cbxPhong.DisplayMember = "MaPhong";
+                            txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
+                            tienPhaiTra();
+                        }
+
+                    }
                 }
                 else
                 {

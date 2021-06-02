@@ -177,6 +177,20 @@ namespace BTL.GUI
                 if (datPhongBus.datPhongKM(khachHangDTO,this.f.account.NhanVien.MaNhanVien, maPhong, checkIn, checkOut, tienCoc / 2))
                 {
                     MessageBox.Show("Đặt phòng thành công");
+                    int n = 0;
+                    if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
+                    {
+                        DataTable dt = datPhongBus.getPhong(dateCheckin.Value, dateCheckout.Value, cbxLoaiPhong.SelectedValue.ToString());
+                        if (dt.Rows.Count > 0)
+                        {
+                            cbxPhong.DataSource = dt;
+                            cbxPhong.ValueMember = "MaPhong";
+                            cbxPhong.DisplayMember = "MaPhong";
+                            txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
+                            tienPhaiTra();
+                        }
+
+                    }
                 }
                 else
                 {
