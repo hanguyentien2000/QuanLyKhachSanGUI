@@ -30,24 +30,24 @@ namespace BTL
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new FontAwesome.Sharp.IconPictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelImage = new System.Windows.Forms.Panel();
+            this.btnClose = new FontAwesome.Sharp.IconPictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,23 +70,6 @@ namespace BTL
             this.panel1.Size = new System.Drawing.Size(345, 530);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 28;
-            this.btnClose.Location = new System.Drawing.Point(314, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(31, 28);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel5
             // 
@@ -133,15 +116,6 @@ namespace BTL
             this.panel4.Size = new System.Drawing.Size(278, 1);
             this.panel4.TabIndex = 8;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::BTL.Properties.Resources.user_50px;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 113);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 54);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -163,21 +137,6 @@ namespace BTL
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Username";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackgroundImage = global::BTL.Properties.Resources.background;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btnLogin.Location = new System.Drawing.Point(82, 402);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(176, 48);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label2
             // 
@@ -213,13 +172,54 @@ namespace BTL
             // 
             // panelImage
             // 
-            this.panelImage.BackgroundImage = global::BTL.Properties.Resources.background;
+            this.panelImage.BackgroundImage = global::BTL.Properties.Resources.rex_hotel_vietnam_home_slideshow_image_01;
             this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImage.Location = new System.Drawing.Point(0, 0);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(605, 530);
             this.panelImage.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 28;
+            this.btnClose.Location = new System.Drawing.Point(314, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(31, 28);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::BTL.Properties.Resources.user_50px;
+            this.pictureBox1.Location = new System.Drawing.Point(35, 113);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 54);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackgroundImage = global::BTL.Properties.Resources.background;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btnLogin.Location = new System.Drawing.Point(82, 402);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(176, 48);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // formLogin
             // 
@@ -235,10 +235,10 @@ namespace BTL
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

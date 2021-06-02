@@ -266,7 +266,7 @@ namespace BTL.InterfaceQuanly
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvQLLP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvQLLP.ColumnHeadersHeight = 21;
+            this.dgvQLLP.ColumnHeadersHeight = 40;
             this.dgvQLLP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaLoaiPhong,
             this.TenLoaiPhong,
@@ -300,7 +300,7 @@ namespace BTL.InterfaceQuanly
             this.dgvQLLP.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dgvQLLP.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvQLLP.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvQLLP.ThemeStyle.HeaderStyle.Height = 21;
+            this.dgvQLLP.ThemeStyle.HeaderStyle.Height = 40;
             this.dgvQLLP.ThemeStyle.ReadOnly = false;
             this.dgvQLLP.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvQLLP.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;

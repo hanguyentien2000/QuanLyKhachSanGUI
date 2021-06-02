@@ -14,6 +14,7 @@ namespace BTL.GUI
     public partial class formCheckOut : Form
     {
         DatPhongBUS datPhongBus = new DatPhongBUS();
+        public DatPhong datPhong;
         int maDatPhong = 0;
         int rowSelected;
         public formCheckOut()

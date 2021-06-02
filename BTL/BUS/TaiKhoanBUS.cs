@@ -51,7 +51,7 @@ namespace BTL.BUS
 
         public bool UpdateTaiKhoan(string TenDangNhap, string MatKhau, int LoaiTaiKhoan, int trangThai)
         {
-            string sql = "Update TAIKHOAN SET Password='" + MatKhau + "', LoaiTaiKhoan =" + LoaiTaiKhoan + ", TrangThai=" + trangThai +  " where Username = '" + TenDangNhap + "'";
+            string sql = "Update TAIKHOAN SET Password='" + MatKhau + "', LoaiTaiKhoan =" + LoaiTaiKhoan + ", TrangThaiTk=" + trangThai +  " where Username = '" + TenDangNhap + "'";
             if (data.ExecuteNonQuery(sql))
                 return true;
             else

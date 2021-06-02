@@ -229,11 +229,13 @@ namespace BTL
             ActiveButton(sender, RGBColors.color3);
             OpenCurrentForm(new formCheckOut());
         }
-
+        public string ma;
+        public formCheckOut checkOut;
         private void btnQuanLyMain_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color4);
             //OpenCurrentForm(new formMainNhanVien());
+            OpenCurrentForm(new formThongTinHoaDon(checkOut,ma));
             ShowSubmenu(panelSubmenu);
         }
 

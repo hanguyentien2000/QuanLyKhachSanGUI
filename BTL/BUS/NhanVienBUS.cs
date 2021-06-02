@@ -38,7 +38,7 @@ namespace BTL.BUS
         public bool thayDoiTTNhanVien(int maNV, string hoTen, string soDT, string ngaySinh, string diaChi, int gioiTinh, string cmnd, string chucVu, byte[] anhNV)
         {
             string sql = "UPDATE NhanVien SET TenNhanVien=N'" + hoTen + "',SoDienThoai='" + soDT + "',NgaySinhNV='" + ngaySinh + "',DiaChiNhanVien=N'" + diaChi + "',GioiTinhNV=" + gioiTinh + ",CMND='" + cmnd + "',ChucVu=N'" + chucVu + "',anhNV=@image WHERE MaNhanVien=" + maNV + "";
-            if (data.ExecuteNonQuery(sql))
+            if (data.ExecuteNonQueryWithImage(sql, anhNV))
                 return true;
             else
                 return false;

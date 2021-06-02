@@ -29,9 +29,9 @@ namespace BTL.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,15 +45,16 @@ namespace BTL.GUI
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.cbxMaNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgvTaiKhoan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.rdAdmin = new System.Windows.Forms.RadioButton();
+            this.rdNhanVien = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThayDoi = new Guna.UI2.WinForms.Guna2Button();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThaiTk = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rdAdmin = new System.Windows.Forms.RadioButton();
-            this.rdNhanVien = new System.Windows.Forms.RadioButton();
-            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnThayDoi = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTaiLai = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,10 +63,9 @@ namespace BTL.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 77);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(51, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 29);
+            this.label1.Size = new System.Drawing.Size(105, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Tên tài khoản";
             // 
@@ -73,10 +73,9 @@ namespace BTL.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 251);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(54, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 29);
+            this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Mật khẩu";
             // 
@@ -84,10 +83,9 @@ namespace BTL.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 405);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(398, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 29);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "Loại tài khoản";
             // 
@@ -95,12 +93,11 @@ namespace BTL.GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(81, 560);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(403, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 29);
+            this.label4.Size = new System.Drawing.Size(103, 20);
             this.label4.TabIndex = 18;
-            this.label4.Text = "Tên nhân viên";
+            this.label4.Text = "Mã nhân viên";
             // 
             // txtTenTK
             // 
@@ -116,14 +113,14 @@ namespace BTL.GUI
             this.txtTenTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenTK.HoverState.Parent = this.txtTenTK;
-            this.txtTenTK.Location = new System.Drawing.Point(87, 142);
-            this.txtTenTK.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTenTK.Location = new System.Drawing.Point(58, 92);
+            this.txtTenTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.PasswordChar = '\0';
             this.txtTenTK.PlaceholderText = "";
             this.txtTenTK.SelectedText = "";
             this.txtTenTK.ShadowDecoration.Parent = this.txtTenTK;
-            this.txtTenTK.Size = new System.Drawing.Size(411, 55);
+            this.txtTenTK.Size = new System.Drawing.Size(274, 36);
             this.txtTenTK.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTenTK.TabIndex = 19;
             // 
@@ -141,14 +138,14 @@ namespace BTL.GUI
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatKhau.HoverState.Parent = this.txtMatKhau;
-            this.txtMatKhau.Location = new System.Drawing.Point(87, 300);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(6);
+            this.txtMatKhau.Location = new System.Drawing.Point(58, 195);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '\0';
             this.txtMatKhau.PlaceholderText = "";
             this.txtMatKhau.SelectedText = "";
             this.txtMatKhau.ShadowDecoration.Parent = this.txtMatKhau;
-            this.txtMatKhau.Size = new System.Drawing.Size(411, 55);
+            this.txtMatKhau.Size = new System.Drawing.Size(274, 36);
             this.txtMatKhau.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtMatKhau.TabIndex = 20;
             // 
@@ -166,14 +163,13 @@ namespace BTL.GUI
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.HoverState.Parent = this.txtTimKiem;
-            this.txtTimKiem.Location = new System.Drawing.Point(832, 77);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTimKiem.Location = new System.Drawing.Point(174, 277);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "";
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.ShadowDecoration.Parent = this.txtTimKiem;
-            this.txtTimKiem.Size = new System.Drawing.Size(448, 55);
+            this.txtTimKiem.Size = new System.Drawing.Size(299, 36);
             this.txtTimKiem.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTimKiem.TabIndex = 34;
             // 
@@ -187,11 +183,10 @@ namespace BTL.GUI
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(82, 777);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThem.Location = new System.Drawing.Point(698, 346);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(176, 71);
+            this.btnThem.Size = new System.Drawing.Size(160, 46);
             this.btnThem.TabIndex = 36;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -205,11 +200,10 @@ namespace BTL.GUI
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(324, 777);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSua.Location = new System.Drawing.Point(698, 473);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
-            this.btnSua.Size = new System.Drawing.Size(230, 71);
+            this.btnSua.Size = new System.Drawing.Size(160, 46);
             this.btnSua.TabIndex = 37;
             this.btnSua.Text = "Reset mật khẩu";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -224,11 +218,10 @@ namespace BTL.GUI
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(600, 777);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoa.Location = new System.Drawing.Point(698, 411);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(240, 71);
+            this.btnXoa.Size = new System.Drawing.Size(160, 46);
             this.btnXoa.TabIndex = 38;
             this.btnXoa.Text = "Thay đổi trạng thái";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -241,11 +234,10 @@ namespace BTL.GUI
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTim.ForeColor = System.Drawing.Color.White;
             this.btnTim.HoverState.Parent = this.btnTim;
-            this.btnTim.Location = new System.Drawing.Point(1306, 77);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTim.Location = new System.Drawing.Point(55, 277);
             this.btnTim.Name = "btnTim";
             this.btnTim.ShadowDecoration.Parent = this.btnTim;
-            this.btnTim.Size = new System.Drawing.Size(134, 55);
+            this.btnTim.Size = new System.Drawing.Size(89, 36);
             this.btnTim.TabIndex = 39;
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
@@ -263,54 +255,53 @@ namespace BTL.GUI
             this.cbxMaNV.HoverState.Parent = this.cbxMaNV;
             this.cbxMaNV.ItemHeight = 30;
             this.cbxMaNV.ItemsAppearance.Parent = this.cbxMaNV;
-            this.cbxMaNV.Location = new System.Drawing.Point(87, 622);
-            this.cbxMaNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxMaNV.Location = new System.Drawing.Point(407, 195);
             this.cbxMaNV.Name = "cbxMaNV";
             this.cbxMaNV.ShadowDecoration.Parent = this.cbxMaNV;
-            this.cbxMaNV.Size = new System.Drawing.Size(409, 36);
+            this.cbxMaNV.Size = new System.Drawing.Size(274, 36);
             this.cbxMaNV.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbxMaNV.TabIndex = 40;
             // 
             // dgvTaiKhoan
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTaiKhoan.BackgroundColor = System.Drawing.Color.White;
             this.dgvTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTaiKhoan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTaiKhoan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTaiKhoan.ColumnHeadersHeight = 15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTaiKhoan.ColumnHeadersHeight = 45;
             this.dgvTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Username,
             this.Password,
             this.LoaiTaiKhoan,
+            this.TrangThaiTk,
             this.MaNhanVien});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTaiKhoan.EnableHeadersVisualStyles = false;
             this.dgvTaiKhoan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(658, 185);
-            this.dgvTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(55, 330);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersVisible = false;
             this.dgvTaiKhoan.RowHeadersWidth = 62;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(963, 551);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(621, 326);
             this.dgvTaiKhoan.TabIndex = 41;
             this.dgvTaiKhoan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTaiKhoan.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -324,7 +315,7 @@ namespace BTL.GUI
             this.dgvTaiKhoan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTaiKhoan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvTaiKhoan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvTaiKhoan.ThemeStyle.HeaderStyle.Height = 15;
+            this.dgvTaiKhoan.ThemeStyle.HeaderStyle.Height = 45;
             this.dgvTaiKhoan.ThemeStyle.ReadOnly = false;
             this.dgvTaiKhoan.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTaiKhoan.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -334,6 +325,57 @@ namespace BTL.GUI
             this.dgvTaiKhoan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTaiKhoan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
+            this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
+            // 
+            // rdAdmin
+            // 
+            this.rdAdmin.AutoSize = true;
+            this.rdAdmin.Location = new System.Drawing.Point(6, 19);
+            this.rdAdmin.Name = "rdAdmin";
+            this.rdAdmin.Size = new System.Drawing.Size(54, 17);
+            this.rdAdmin.TabIndex = 42;
+            this.rdAdmin.TabStop = true;
+            this.rdAdmin.Text = "Admin";
+            this.rdAdmin.UseVisualStyleBackColor = true;
+            // 
+            // rdNhanVien
+            // 
+            this.rdNhanVien.AutoSize = true;
+            this.rdNhanVien.Location = new System.Drawing.Point(105, 19);
+            this.rdNhanVien.Name = "rdNhanVien";
+            this.rdNhanVien.Size = new System.Drawing.Size(75, 17);
+            this.rdNhanVien.TabIndex = 43;
+            this.rdNhanVien.TabStop = true;
+            this.rdNhanVien.Text = "Nhân Viên";
+            this.rdNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdNhanVien);
+            this.groupBox1.Controls.Add(this.rdAdmin);
+            this.groupBox1.Location = new System.Drawing.Point(402, 77);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(206, 51);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnThayDoi
+            // 
+            this.btnThayDoi.BorderRadius = 20;
+            this.btnThayDoi.CheckedState.Parent = this.btnThayDoi;
+            this.btnThayDoi.CustomImages.Parent = this.btnThayDoi;
+            this.btnThayDoi.DisabledState.Parent = this.btnThayDoi;
+            this.btnThayDoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnThayDoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThayDoi.ForeColor = System.Drawing.Color.White;
+            this.btnThayDoi.HoverState.Parent = this.btnThayDoi;
+            this.btnThayDoi.Location = new System.Drawing.Point(698, 537);
+            this.btnThayDoi.Name = "btnThayDoi";
+            this.btnThayDoi.ShadowDecoration.Parent = this.btnThayDoi;
+            this.btnThayDoi.Size = new System.Drawing.Size(160, 46);
+            this.btnThayDoi.TabIndex = 46;
+            this.btnThayDoi.Text = "Thay đổi loại tài khoản";
+            this.btnThayDoi.Click += new System.EventHandler(this.btnThayDoi_Click);
             // 
             // Username
             // 
@@ -356,6 +398,12 @@ namespace BTL.GUI
             this.LoaiTaiKhoan.MinimumWidth = 8;
             this.LoaiTaiKhoan.Name = "LoaiTaiKhoan";
             // 
+            // TrangThaiTk
+            // 
+            this.TrangThaiTk.DataPropertyName = "TrangThaiTk";
+            this.TrangThaiTk.HeaderText = "Trạng Thái";
+            this.TrangThaiTk.Name = "TrangThaiTk";
+            // 
             // MaNhanVien
             // 
             this.MaNhanVien.DataPropertyName = "MaNhanVien";
@@ -363,88 +411,33 @@ namespace BTL.GUI
             this.MaNhanVien.MinimumWidth = 8;
             this.MaNhanVien.Name = "MaNhanVien";
             // 
-            // rdAdmin
+            // btnTaiLai
             // 
-            this.rdAdmin.AutoSize = true;
-            this.rdAdmin.Location = new System.Drawing.Point(9, 29);
-            this.rdAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rdAdmin.Name = "rdAdmin";
-            this.rdAdmin.Size = new System.Drawing.Size(79, 24);
-            this.rdAdmin.TabIndex = 42;
-            this.rdAdmin.TabStop = true;
-            this.rdAdmin.Text = "Admin";
-            this.rdAdmin.UseVisualStyleBackColor = true;
-            // 
-            // rdNhanVien
-            // 
-            this.rdNhanVien.AutoSize = true;
-            this.rdNhanVien.Location = new System.Drawing.Point(158, 29);
-            this.rdNhanVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rdNhanVien.Name = "rdNhanVien";
-            this.rdNhanVien.Size = new System.Drawing.Size(108, 24);
-            this.rdNhanVien.TabIndex = 43;
-            this.rdNhanVien.TabStop = true;
-            this.rdNhanVien.Text = "Nhân Viên";
-            this.rdNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.CheckedState.Parent = this.btnRefresh;
-            this.btnRefresh.CustomImages.Parent = this.btnRefresh;
-            this.btnRefresh.DisabledState.Parent = this.btnRefresh;
-            this.btnRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.HoverState.Parent = this.btnRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(1456, 77);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
-            this.btnRefresh.Size = new System.Drawing.Size(134, 55);
-            this.btnRefresh.TabIndex = 44;
-            this.btnRefresh.Text = "Tải lại";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click_1);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdNhanVien);
-            this.groupBox1.Controls.Add(this.rdAdmin);
-            this.groupBox1.Location = new System.Drawing.Point(82, 458);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(309, 78);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnThayDoi
-            // 
-            this.btnThayDoi.BorderRadius = 20;
-            this.btnThayDoi.CheckedState.Parent = this.btnThayDoi;
-            this.btnThayDoi.CustomImages.Parent = this.btnThayDoi;
-            this.btnThayDoi.DisabledState.Parent = this.btnThayDoi;
-            this.btnThayDoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThayDoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThayDoi.ForeColor = System.Drawing.Color.White;
-            this.btnThayDoi.HoverState.Parent = this.btnThayDoi;
-            this.btnThayDoi.Location = new System.Drawing.Point(313, 912);
-            this.btnThayDoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnThayDoi.Name = "btnThayDoi";
-            this.btnThayDoi.ShadowDecoration.Parent = this.btnThayDoi;
-            this.btnThayDoi.Size = new System.Drawing.Size(230, 71);
-            this.btnThayDoi.TabIndex = 46;
-            this.btnThayDoi.Text = "Thay đổi loại tài khoản";
-            this.btnThayDoi.Click += new System.EventHandler(this.btnThayDoi_Click);
+            this.btnTaiLai.BorderRadius = 20;
+            this.btnTaiLai.CheckedState.Parent = this.btnTaiLai;
+            this.btnTaiLai.CustomImages.Parent = this.btnTaiLai;
+            this.btnTaiLai.DisabledState.Parent = this.btnTaiLai;
+            this.btnTaiLai.FillColor = System.Drawing.Color.DarkTurquoise;
+            this.btnTaiLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiLai.ForeColor = System.Drawing.Color.White;
+            this.btnTaiLai.HoverState.Parent = this.btnTaiLai;
+            this.btnTaiLai.Location = new System.Drawing.Point(698, 278);
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.ShadowDecoration.Parent = this.btnTaiLai;
+            this.btnTaiLai.Size = new System.Drawing.Size(160, 46);
+            this.btnTaiLai.TabIndex = 47;
+            this.btnTaiLai.Text = "Tải lại";
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // formQuanLyTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1731, 1049);
+            this.ClientSize = new System.Drawing.Size(1154, 682);
+            this.Controls.Add(this.btnTaiLai);
             this.Controls.Add(this.btnThayDoi);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvTaiKhoan);
             this.Controls.Add(this.cbxMaNV);
             this.Controls.Add(this.btnTim);
@@ -458,7 +451,6 @@ namespace BTL.GUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formQuanLyTaiKhoan";
             this.Text = "formQuanLyTaiKhoan";
             this.Load += new System.EventHandler(this.formQuanLyTaiKhoan_Load);
@@ -487,12 +479,13 @@ namespace BTL.GUI
         private Guna.UI2.WinForms.Guna2DataGridView dgvTaiKhoan;
         private System.Windows.Forms.RadioButton rdAdmin;
         private System.Windows.Forms.RadioButton rdNhanVien;
-        private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Guna.UI2.WinForms.Guna2Button btnThayDoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiTk;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
-        private Guna.UI2.WinForms.Guna2Button btnThayDoi;
+        private Guna.UI2.WinForms.Guna2Button btnTaiLai;
     }
 }

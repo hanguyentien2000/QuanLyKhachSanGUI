@@ -117,7 +117,7 @@ namespace BTL.GUI
 
         private void btnRefresh_Click_1(object sender, EventArgs e)
         {
-            loadData(dsTaiKhoan.GetTableTaiKhoan());
+            
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -186,10 +186,6 @@ namespace BTL.GUI
                 {
                     throw new Exception("Ô này không có dữ liệu");
                 }
-                if (dgvTaiKhoan.Rows.Count == dong + 1)
-                {
-                    throw new Exception("Dữ liệu trống");
-                }
                 txtTenTK.Visible = true;
                 txtTenTK.Enabled = false;
                 txtTenTK.Text = dgvTaiKhoan.Rows[dong].Cells[0].Value.ToString();
@@ -212,6 +208,17 @@ namespace BTL.GUI
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgvTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            loadData(dsTaiKhoan.GetTableTaiKhoan());
+            txtTimKiem.Text = "";
         }
 
         private void btnThayDoi_Click(object sender, EventArgs e)

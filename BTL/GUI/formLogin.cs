@@ -29,14 +29,14 @@ namespace BTL
                     MessageBox.Show("Password incorrect! Please Try Again!","Thông báo!");
                     return;
                 }
-                if(account.TrangThai == false)
+                if(account.TrangThaiTk == false)
                 {
                     MessageBox.Show("Tài khoản này đã bị vô hiệu hoá! Không thể đăng nhập","Cảnh báo!");
                     return;
                 }
                 else
                 {
-                    if(account.LoaiTaiKhoan == false && account.TrangThai == true)
+                    if(account.LoaiTaiKhoan == false && account.TrangThaiTk == true)
                     {
                         formMain form = new formMain(this);
                         form.Tag = account;
@@ -45,7 +45,7 @@ namespace BTL
                         txtUsername.ResetText();
                         txtPassword.ResetText();
                     }
-                    else if(account.LoaiTaiKhoan == true && account.TrangThai == true)
+                    else if(account.LoaiTaiKhoan == true && account.TrangThaiTk == true)
                     {
                         formMainNhanVien frm = new formMainNhanVien(this, account.Username);
                         frm.Tag = account;
