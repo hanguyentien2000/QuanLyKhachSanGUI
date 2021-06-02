@@ -68,7 +68,7 @@ namespace BTL.GUI
             this.cbxGioiTinh.Controls.Add(this.rdNam);
             this.cbxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cbxGioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbxGioiTinh.Location = new System.Drawing.Point(44, 452);
+            this.cbxGioiTinh.Location = new System.Drawing.Point(43, 422);
             this.cbxGioiTinh.Name = "cbxGioiTinh";
             this.cbxGioiTinh.ShadowDecoration.Parent = this.cbxGioiTinh;
             this.cbxGioiTinh.Size = new System.Drawing.Size(274, 98);
@@ -115,7 +115,7 @@ namespace BTL.GUI
             // 
             this.lbTongBill.BackColor = System.Drawing.Color.Transparent;
             this.lbTongBill.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongBill.Location = new System.Drawing.Point(878, 389);
+            this.lbTongBill.Location = new System.Drawing.Point(877, 359);
             this.lbTongBill.Name = "lbTongBill";
             this.lbTongBill.Size = new System.Drawing.Size(18, 26);
             this.lbTongBill.TabIndex = 65;
@@ -125,7 +125,7 @@ namespace BTL.GUI
             // 
             this.lbTienCoc.BackColor = System.Drawing.Color.Transparent;
             this.lbTienCoc.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTienCoc.Location = new System.Drawing.Point(878, 341);
+            this.lbTienCoc.Location = new System.Drawing.Point(877, 311);
             this.lbTienCoc.Name = "lbTienCoc";
             this.lbTienCoc.Size = new System.Drawing.Size(18, 26);
             this.lbTienCoc.TabIndex = 64;
@@ -140,7 +140,7 @@ namespace BTL.GUI
             this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnDatPhong.HoverState.Parent = this.btnDatPhong;
-            this.btnDatPhong.Location = new System.Drawing.Point(782, 470);
+            this.btnDatPhong.Location = new System.Drawing.Point(781, 440);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.ShadowDecoration.Parent = this.btnDatPhong;
             this.btnDatPhong.Size = new System.Drawing.Size(180, 45);
@@ -163,7 +163,7 @@ namespace BTL.GUI
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.HoverState.Parent = this.txtPrice;
-            this.txtPrice.Location = new System.Drawing.Point(784, 278);
+            this.txtPrice.Location = new System.Drawing.Point(783, 248);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
@@ -177,7 +177,7 @@ namespace BTL.GUI
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(780, 255);
+            this.label12.Location = new System.Drawing.Point(779, 225);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 20);
             this.label12.TabIndex = 59;
@@ -196,7 +196,7 @@ namespace BTL.GUI
             this.cbxPhong.HoverState.Parent = this.cbxPhong;
             this.cbxPhong.ItemHeight = 30;
             this.cbxPhong.ItemsAppearance.Parent = this.cbxPhong;
-            this.cbxPhong.Location = new System.Drawing.Point(784, 186);
+            this.cbxPhong.Location = new System.Drawing.Point(783, 156);
             this.cbxPhong.Name = "cbxPhong";
             this.cbxPhong.ShadowDecoration.Parent = this.cbxPhong;
             this.cbxPhong.Size = new System.Drawing.Size(274, 36);
@@ -207,7 +207,7 @@ namespace BTL.GUI
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(780, 150);
+            this.label11.Location = new System.Drawing.Point(779, 120);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 20);
             this.label11.TabIndex = 57;
@@ -226,7 +226,7 @@ namespace BTL.GUI
             this.cbxLoaiPhong.HoverState.Parent = this.cbxLoaiPhong;
             this.cbxLoaiPhong.ItemHeight = 30;
             this.cbxLoaiPhong.ItemsAppearance.Parent = this.cbxLoaiPhong;
-            this.cbxLoaiPhong.Location = new System.Drawing.Point(784, 85);
+            this.cbxLoaiPhong.Location = new System.Drawing.Point(783, 55);
             this.cbxLoaiPhong.Name = "cbxLoaiPhong";
             this.cbxLoaiPhong.ShadowDecoration.Parent = this.cbxLoaiPhong;
             this.cbxLoaiPhong.Size = new System.Drawing.Size(274, 36);
@@ -238,7 +238,7 @@ namespace BTL.GUI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(775, 45);
+            this.label10.Location = new System.Drawing.Point(774, 15);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 20);
             this.label10.TabIndex = 55;
@@ -248,7 +248,7 @@ namespace BTL.GUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(778, 391);
+            this.label9.Location = new System.Drawing.Point(777, 361);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 24);
             this.label9.TabIndex = 54;
@@ -258,7 +258,7 @@ namespace BTL.GUI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(778, 343);
+            this.label8.Location = new System.Drawing.Point(777, 313);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 24);
             this.label8.TabIndex = 53;
@@ -278,7 +278,7 @@ namespace BTL.GUI
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.HoverState.Parent = this.txtDiaChi;
-            this.txtDiaChi.Location = new System.Drawing.Point(403, 76);
+            this.txtDiaChi.Location = new System.Drawing.Point(402, 46);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "";
@@ -292,7 +292,7 @@ namespace BTL.GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(399, 53);
+            this.label6.Location = new System.Drawing.Point(398, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 20);
             this.label6.TabIndex = 49;
@@ -312,7 +312,7 @@ namespace BTL.GUI
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(44, 394);
+            this.txtEmail.Location = new System.Drawing.Point(43, 364);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
@@ -336,7 +336,7 @@ namespace BTL.GUI
             this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCMND.HoverState.Parent = this.txtCMND;
-            this.txtCMND.Location = new System.Drawing.Point(44, 278);
+            this.txtCMND.Location = new System.Drawing.Point(43, 248);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.PasswordChar = '\0';
             this.txtCMND.PlaceholderText = "";
@@ -360,7 +360,7 @@ namespace BTL.GUI
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.HoverState.Parent = this.txtSDT;
-            this.txtSDT.Location = new System.Drawing.Point(44, 186);
+            this.txtSDT.Location = new System.Drawing.Point(43, 156);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.PlaceholderText = "";
@@ -384,7 +384,7 @@ namespace BTL.GUI
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKH.HoverState.Parent = this.txtTenKH;
-            this.txtTenKH.Location = new System.Drawing.Point(44, 85);
+            this.txtTenKH.Location = new System.Drawing.Point(43, 55);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
             this.txtTenKH.PlaceholderText = "";
@@ -398,7 +398,7 @@ namespace BTL.GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 348);
+            this.label4.Location = new System.Drawing.Point(39, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 42;
@@ -408,7 +408,7 @@ namespace BTL.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 240);
+            this.label3.Location = new System.Drawing.Point(39, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 41;
@@ -418,7 +418,7 @@ namespace BTL.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 150);
+            this.label1.Location = new System.Drawing.Point(39, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 40;
@@ -428,7 +428,7 @@ namespace BTL.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 45);
+            this.label2.Location = new System.Drawing.Point(39, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 20);
             this.label2.TabIndex = 39;
@@ -437,7 +437,7 @@ namespace BTL.GUI
             // dateCheckout
             // 
             this.dateCheckout.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateCheckout.Location = new System.Drawing.Point(403, 384);
+            this.dateCheckout.Location = new System.Drawing.Point(402, 354);
             this.dateCheckout.Name = "dateCheckout";
             this.dateCheckout.Size = new System.Drawing.Size(274, 33);
             this.dateCheckout.TabIndex = 74;
@@ -445,17 +445,17 @@ namespace BTL.GUI
             // 
             // dateNS
             // 
-            this.dateNS.Enabled = false;
             this.dateNS.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateNS.Location = new System.Drawing.Point(403, 186);
+            this.dateNS.Location = new System.Drawing.Point(402, 156);
             this.dateNS.Name = "dateNS";
             this.dateNS.Size = new System.Drawing.Size(274, 33);
             this.dateNS.TabIndex = 73;
+            this.dateNS.ValueChanged += new System.EventHandler(this.dateNS_ValueChanged);
             // 
             // dateCheckin
             // 
             this.dateCheckin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateCheckin.Location = new System.Drawing.Point(403, 281);
+            this.dateCheckin.Location = new System.Drawing.Point(402, 251);
             this.dateCheckin.Name = "dateCheckin";
             this.dateCheckin.Size = new System.Drawing.Size(274, 33);
             this.dateCheckin.TabIndex = 72;
@@ -465,7 +465,7 @@ namespace BTL.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(399, 341);
+            this.label5.Location = new System.Drawing.Point(398, 311);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 71;
@@ -475,7 +475,7 @@ namespace BTL.GUI
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(399, 240);
+            this.label14.Location = new System.Drawing.Point(398, 210);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(70, 20);
             this.label14.TabIndex = 70;
@@ -485,7 +485,7 @@ namespace BTL.GUI
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(399, 150);
+            this.label15.Location = new System.Drawing.Point(398, 120);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 20);
             this.label15.TabIndex = 69;

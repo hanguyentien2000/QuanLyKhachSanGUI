@@ -15,7 +15,7 @@ namespace BTL.DAL
             //unComment để lấy connectionString
             //string connString = @"Data Source=DESKTOP-93RPIAO\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";//Hưng phạm
             //string connString = @"Data Source=DESKTOP-QHPIJ3U\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";//Bá hoàn
-            string connString = @"Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True"; //Tiến hà
+            string connString = @"Data Source=DESKTOP-QHPIJ3U\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True"; //Tiến hà
 
             SqlConnection conn = new SqlConnection(connString);
             return conn;
@@ -75,8 +75,9 @@ namespace BTL.DAL
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                MessageBox.Show(e.Message);
                 return false;
             }
             finally

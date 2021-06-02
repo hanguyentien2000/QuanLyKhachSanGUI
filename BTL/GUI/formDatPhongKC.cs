@@ -52,10 +52,9 @@ namespace BTL
             {
                 string checkIn = dateCheckIn.Value.ToString("yyyy/MM/dd");
                 string checkOut = dateCheckout.Value.ToString("yyyy/MM/dd");
-                int maNV = 1;
                 int maKH = kh.MaKH;
                 int maPhong = Convert.ToInt32(cbxPhong.SelectedValue.ToString());
-                if(datPhongBus.datPhong(maNV, maKH, maPhong, checkIn, checkOut, tienCoc))
+                if(datPhongBus.datPhong(this.f.account.NhanVien.MaNhanVien, maKH, maPhong, checkIn, checkOut, tongTien/2))
                 {
                     MessageBox.Show("Đặt phòng thành công");
                 }

@@ -110,10 +110,34 @@ namespace BTL.BUS
             else
                 return false;
         }
-        public bool datPhongKM(KhachHangDTO khachHangDTO,string maNV,string maPhong, string checkIn, string checkOut, int tienCoc)
+        public Boolean datPhongKM(KhachHangDTO khachHangDTO,int maNV,int maPhong, string checkIn, string checkOut, int tienCoc)
         {
-            return false;
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            string sql = "INSERT INTO KhachHang output INSERTED.MaKhachHang VALUES(@tenKH,@sdt,@ns,@email,@gtinh,@diaChi,@cmnd,@tt)";
+            int modified = 0;
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@tenKH", khachHangDTO.HoTen);
+                cmd.Parameters.AddWithValue("@sdt", khachHangDTO.SoDT);
+                cmd.Parameters.AddWithValue("@ns", khachHangDTO.NgaySinh);
+                cmd.Parameters.AddWithValue("@email", khachHangDTO.Email);
+                cmd.Parameters.AddWithValue("@gtinh", khachHangDTO.GioiTinh);
+                cmd.Parameters.AddWithValue("@diaChi", khachHangDTO.DiaChi);
+                cmd.Parameters.AddWithValue("@cmnd", khachHangDTO.Cmnd);
+                cmd.Parameters.AddWithValue("@tt", 0);
+                modified = (int)cmd.ExecuteScalar();
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+            if (datPhong(maNV, modified, maPhong, checkIn, checkOut, tienCoc))
+            {
+                return true;
+            }
+            else return false;
         }
+        
+        
         public DataTable getTTDatPhongCI()
         {
             string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0";
@@ -158,7 +182,7 @@ namespace BTL.BUS
         public bool passToCheckout(int maDatPhong)
         {
             string today = DateTime.Now.ToString("yyyy/MM/dd");
-            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 1 AND NgayDen = '"+ today + "' where MaDatPhong = " + maDatPhong;
+            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 1, NgayDen = '"+ today + "' where MaDatPhong = " + maDatPhong;
             if (data.ExecuteNonQuery(sql))
                 return true;
             else

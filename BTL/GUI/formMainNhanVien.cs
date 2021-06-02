@@ -189,7 +189,7 @@ namespace BTL
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            OpenCurrentForm(new formDatPhongKC());
+            OpenCurrentForm(new formDatPhongKC(this.f));
         }
 
         private void btnChamCong_Click(object sender, EventArgs e)
@@ -214,13 +214,18 @@ namespace BTL
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
-            OpenCurrentForm(new formCheckIn());
+            OpenCurrentForm(new formCheckOut());
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
-            OpenCurrentForm(new formCheckOut());
+            OpenCurrentForm(new formCheckIn());
+        }
+
+        private void panelHidden_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
