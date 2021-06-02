@@ -22,9 +22,6 @@ namespace BTL
             //exampleToGetIdThroughForm
             //TenNV.Text = f.account.NhanVien.TenNhanVien.ToString();
         }
-        List<PhongDTO> dsPhong = new List<PhongDTO>();
-        KhachHangBUS khachHangBUS = new KhachHangBUS();
-        KhachHangDTO khachHangDTO = new KhachHangDTO();
         LoaiPhongBUS loaiPhongBUS = new LoaiPhongBUS();
         DatPhongBUS datPhongBus = new DatPhongBUS();
         KhachHangDTO kh = new KhachHangDTO();
@@ -40,18 +37,6 @@ namespace BTL
             dateCheckIn.MinDate = DateTime.Now;
             dateCheckout.MinDate = DateTime.Now.AddDays(1);
         }
-
-
-        private void CheckIn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDiaChi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
@@ -89,10 +74,7 @@ namespace BTL
             lbTienCoc.Text = (tongTien/2).ToString();
             lbTongBill.Text = tongTien.ToString();
         }   
-        private void cbxPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void cbxLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
