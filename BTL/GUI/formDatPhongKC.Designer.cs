@@ -238,7 +238,6 @@ namespace BTL
             this.txtDiaChi.Size = new System.Drawing.Size(274, 36);
             this.txtDiaChi.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtDiaChi.TabIndex = 18;
-            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // label6
             // 
@@ -330,7 +329,6 @@ namespace BTL
             this.cbxPhong.Size = new System.Drawing.Size(274, 36);
             this.cbxPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbxPhong.TabIndex = 26;
-            this.cbxPhong.SelectedIndexChanged += new System.EventHandler(this.cbxPhong_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -382,6 +380,7 @@ namespace BTL
             this.btnDatPhong.BorderRadius = 20;
             this.btnDatPhong.CheckedState.Parent = this.btnDatPhong;
             this.btnDatPhong.CustomImages.Parent = this.btnDatPhong;
+            this.btnDatPhong.DisabledState.Parent = this.btnDatPhong;
             this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnDatPhong.HoverState.Parent = this.btnDatPhong;
@@ -501,6 +500,7 @@ namespace BTL
             this.btnTim.BorderRadius = 20;
             this.btnTim.CheckedState.Parent = this.btnTim;
             this.btnTim.CustomImages.Parent = this.btnTim;
+            this.btnTim.DisabledState.Parent = this.btnTim;
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.White;
             this.btnTim.HoverState.Parent = this.btnTim;

@@ -110,6 +110,10 @@ namespace BTL.BUS
             else
                 return false;
         }
+        public bool datPhongKM(KhachHangDTO khachHangDTO,string maNV,string maPhong, string checkIn, string checkOut, int tienCoc)
+        {
+            return false;
+        }
         public DataTable getTTDatPhongCI()
         {
             string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0";
