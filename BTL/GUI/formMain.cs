@@ -317,5 +317,11 @@ namespace BTL
             ActiveButton(sender, RGBColors.color1);
             OpenCurrentForm(new formTrangChu());
         }
+
+        private void btnCheckin_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color1);
+            OpenCurrentForm(new formCheckIn());
+        }
     }
 }

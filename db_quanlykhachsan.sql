@@ -91,10 +91,9 @@ create table DatPhong(
 	MaKhachHang int not null,
 	MaPhong int not null,
 	NgayDat date not null,
-	NgayDen date not null,
+	NgayDen date null,
 	NgayDi date not null,
 	TienDatCoc int not null,
-	SoLuongPhong int not null,
 	TrangThaiDatPhong int not null,
 	foreign key (MaNhanVien) references NhanVien(MaNhanVien) ON UPDATE CASCADE ON DELETE CASCADE,
 	foreign key (MaKhachHang) references KhachHang(MaKhachHang) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -183,6 +182,24 @@ INSERT INTO Taikhoan(Username, Password, LoaiTaiKhoan, TrangThai, MaNhanVien) VA
 ('nv2', 1, 1, 1, 3)
 GO
 
+CREATE TRIGGER passToTK ON DatPhong
+FOR UPDATE
+AS 
+  begin
+    update Phong set TrangThaiPhong = 1 from Phong inner join inserted on Phong.MaPhong = inserted.MaPhong inner join deleted 
+    on deleted.MaDatPhong = inserted.MaDatPhong where inserted.TrangThaiDatPhong = 2 AND deleted.TrangThaiDatPhong = 1
+  end
+
+go
+
+CREATE TRIGGER [dbo].[passToCheckOut] ON [dbo].[DatPhong]
+FOR UPDATE
+AS 
+  begin
+    update Phong set TrangThaiPhong = 0 from Phong inner join inserted on Phong.MaPhong = inserted.MaPhong where inserted.TrangThaiDatPhong = 1
+  end
+go
+
 INSERT INTO LoaiPhong(TenLoaiPhong, SoLuongNguoi, GiaPhong) VALUES
 (N'Hạng nhất', 15, 7000000),
 (N'Hạng thương gia', 10, 5000000),
@@ -209,9 +226,9 @@ INSERT INTO KhachHang(TenKhachHang, SDT, NgaySinhKH, Email, GioiTinhKH, DiaChiKh
 (N'Đào Thu Phương', '0583509498', '12/21/2000', 'thuphuong@gmail.com', 1, N'Hải Dương', '001255510103', 0)
 GO
 
-INSERT INTO DatPhong(MaNhanVien, MaKhachHang, MaPhong, NgayDat, NgayDen, NgayDi, TienDatCoc, SoLuongPhong, TrangThaiDatPhong) VALUES
-(1, 1, 1, '02/03/2021', '04/03/2021', '10/03/2021', 700000, 3, 1),
-(2, 3, 2, '06/05/2021', '08/05/2021', '11/05/2021', 1500000, 2, 1)
+INSERT INTO DatPhong(MaNhanVien, MaKhachHang, MaPhong, NgayDat, NgayDen, NgayDi, TienDatCoc, TrangThaiDatPhong) VALUES
+(1, 1, 1, '02/03/2021', '04/03/2021', '10/03/2021', 700000, 1),
+(2, 3, 2, '06/05/2021', '08/05/2021', '11/05/2021', 1500000, 1)
 GO
 
 INSERT INTO HoaDon(MaDatPhong, TongTien) VALUES

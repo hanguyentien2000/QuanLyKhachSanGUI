@@ -43,7 +43,6 @@ namespace BTL
             this.btnQuanLyLoaiPhong = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyPhong = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyMain = new FontAwesome.Sharp.IconButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCheckout = new FontAwesome.Sharp.IconButton();
             this.panelSubmenu3 = new System.Windows.Forms.Panel();
             this.btnKhachMoi = new FontAwesome.Sharp.IconButton();
@@ -71,6 +70,7 @@ namespace BTL
             this.lbTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timeCurrent = new System.Windows.Forms.Timer(this.components);
+            this.btnCheckin = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubmenu2.SuspendLayout();
             this.panelSubmenu.SuspendLayout();
@@ -94,17 +94,17 @@ namespace BTL
             this.panelMenu.Controls.Add(this.btnThongKe);
             this.panelMenu.Controls.Add(this.panelSubmenu);
             this.panelMenu.Controls.Add(this.btnQuanLyMain);
-            this.panelMenu.Controls.Add(this.flowLayoutPanel1);
             this.panelMenu.Controls.Add(this.btnCheckout);
-            this.panelMenu.Controls.Add(this.panelSubmenu3);
+            this.panelMenu.Controls.Add(this.btnCheckin);
             this.panelMenu.Controls.Add(this.label1);
+            this.panelMenu.Controls.Add(this.panelSubmenu3);
             this.panelMenu.Controls.Add(this.btnDatPhong);
             this.panelMenu.Controls.Add(this.btnHome);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(204, 749);
+            this.panelMenu.Size = new System.Drawing.Size(204, 873);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubmenu2
@@ -112,7 +112,7 @@ namespace BTL
             this.panelSubmenu2.Controls.Add(this.btnThongKeLuong);
             this.panelSubmenu2.Controls.Add(this.btnThongKeHoaDon);
             this.panelSubmenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenu2.Location = new System.Drawing.Point(0, 785);
+            this.panelSubmenu2.Location = new System.Drawing.Point(0, 805);
             this.panelSubmenu2.Name = "panelSubmenu2";
             this.panelSubmenu2.Size = new System.Drawing.Size(187, 100);
             this.panelSubmenu2.TabIndex = 14;
@@ -180,9 +180,9 @@ namespace BTL
             this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThongKe.IconSize = 32;
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 725);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 751);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(187, 60);
+            this.btnThongKe.Size = new System.Drawing.Size(187, 54);
             this.btnThongKe.TabIndex = 10;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,7 +199,7 @@ namespace BTL
             this.panelSubmenu.Controls.Add(this.btnQuanLyLoaiPhong);
             this.panelSubmenu.Controls.Add(this.btnQuanLyPhong);
             this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenu.Location = new System.Drawing.Point(0, 469);
+            this.panelSubmenu.Location = new System.Drawing.Point(0, 495);
             this.panelSubmenu.Name = "panelSubmenu";
             this.panelSubmenu.Size = new System.Drawing.Size(187, 256);
             this.panelSubmenu.TabIndex = 13;
@@ -218,7 +218,7 @@ namespace BTL
             this.btnQuanLyNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQuanLyNhanVien.IconSize = 32;
             this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 204);
+            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 215);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
             this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnQuanLyNhanVien.Size = new System.Drawing.Size(187, 52);
@@ -246,7 +246,7 @@ namespace BTL
             this.btnQuanLyKhachHang.Location = new System.Drawing.Point(0, 153);
             this.btnQuanLyKhachHang.Name = "btnQuanLyKhachHang";
             this.btnQuanLyKhachHang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnQuanLyKhachHang.Size = new System.Drawing.Size(187, 51);
+            this.btnQuanLyKhachHang.Size = new System.Drawing.Size(187, 62);
             this.btnQuanLyKhachHang.TabIndex = 8;
             this.btnQuanLyKhachHang.Text = "Quản lý khách hàng";
             this.btnQuanLyKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,7 +342,7 @@ namespace BTL
             this.btnQuanLyMain.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQuanLyMain.IconSize = 32;
             this.btnQuanLyMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyMain.Location = new System.Drawing.Point(0, 413);
+            this.btnQuanLyMain.Location = new System.Drawing.Point(0, 439);
             this.btnQuanLyMain.Name = "btnQuanLyMain";
             this.btnQuanLyMain.Size = new System.Drawing.Size(187, 56);
             this.btnQuanLyMain.TabIndex = 12;
@@ -351,13 +351,6 @@ namespace BTL
             this.btnQuanLyMain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyMain.UseVisualStyleBackColor = true;
             this.btnQuanLyMain.Click += new System.EventHandler(this.btnQuanLyMain_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(87, 228);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
-            this.flowLayoutPanel1.TabIndex = 9;
             // 
             // btnCheckout
             // 
@@ -372,9 +365,9 @@ namespace BTL
             this.btnCheckout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCheckout.IconSize = 32;
             this.btnCheckout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckout.Location = new System.Drawing.Point(0, 353);
+            this.btnCheckout.Location = new System.Drawing.Point(0, 394);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(187, 60);
+            this.btnCheckout.Size = new System.Drawing.Size(187, 45);
             this.btnCheckout.TabIndex = 3;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,7 +380,7 @@ namespace BTL
             this.panelSubmenu3.Controls.Add(this.btnKhachMoi);
             this.panelSubmenu3.Controls.Add(this.btnKhachCu);
             this.panelSubmenu3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenu3.Location = new System.Drawing.Point(0, 253);
+            this.panelSubmenu3.Location = new System.Drawing.Point(0, 246);
             this.panelSubmenu3.Name = "panelSubmenu3";
             this.panelSubmenu3.Size = new System.Drawing.Size(187, 100);
             this.panelSubmenu3.TabIndex = 8;
@@ -448,7 +441,7 @@ namespace BTL
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 866);
+            this.label1.Location = new System.Drawing.Point(0, 886);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 19);
             this.label1.TabIndex = 7;
@@ -467,9 +460,9 @@ namespace BTL
             this.btnDatPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDatPhong.IconSize = 32;
             this.btnDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatPhong.Location = new System.Drawing.Point(0, 193);
+            this.btnDatPhong.Location = new System.Drawing.Point(0, 192);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(187, 60);
+            this.btnDatPhong.Size = new System.Drawing.Size(187, 54);
             this.btnDatPhong.TabIndex = 2;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -492,7 +485,7 @@ namespace BTL
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 133);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(187, 60);
+            this.btnHome.Size = new System.Drawing.Size(187, 59);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -755,11 +748,34 @@ namespace BTL
             this.timeCurrent.Enabled = true;
             this.timeCurrent.Tick += new System.EventHandler(this.timeCurrent_Tick);
             // 
+            // btnCheckin
+            // 
+            this.btnCheckin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCheckin.FlatAppearance.BorderSize = 0;
+            this.btnCheckin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckin.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.btnCheckin.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCheckin.IconSize = 32;
+            this.btnCheckin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckin.Location = new System.Drawing.Point(0, 346);
+            this.btnCheckin.Name = "btnCheckin";
+            this.btnCheckin.Size = new System.Drawing.Size(187, 48);
+            this.btnCheckin.TabIndex = 9;
+            this.btnCheckin.Text = "Check In";
+            this.btnCheckin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCheckin.UseVisualStyleBackColor = true;
+            this.btnCheckin.Click += new System.EventHandler(this.btnCheckin_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1566, 749);
+            this.ClientSize = new System.Drawing.Size(1566, 873);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelTitleBar);
@@ -817,7 +833,6 @@ namespace BTL
         private FontAwesome.Sharp.IconButton btnThongKeLuong;
         private FontAwesome.Sharp.IconButton btnThongKeHoaDon;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelSubmenu3;
         private FontAwesome.Sharp.IconButton btnKhachMoi;
         private FontAwesome.Sharp.IconButton btnKhachCu;
@@ -830,5 +845,6 @@ namespace BTL
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbTimeMain;
         private System.Windows.Forms.Label label6;
+        private FontAwesome.Sharp.IconButton btnCheckin;
     }
 }

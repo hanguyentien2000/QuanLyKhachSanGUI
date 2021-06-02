@@ -14,9 +14,13 @@ namespace BTL
 {
     public partial class formDatPhongKC : Form
     {
-        public formDatPhongKC()
+        public formLogin f;
+        public formDatPhongKC(formLogin fs)
         {
             InitializeComponent();
+            this.f = fs;
+            //exampleToGetIdThroughForm
+            //TenNV.Text = f.account.NhanVien.TenNhanVien.ToString();
         }
         List<PhongDTO> dsPhong = new List<PhongDTO>();
         KhachHangBUS khachHangBUS = new KhachHangBUS();
