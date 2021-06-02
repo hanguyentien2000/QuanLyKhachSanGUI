@@ -145,6 +145,7 @@ namespace BTL.BUS
         }
         public DataTable getCheckInToday()
         {
+            // checkin hôm nay
             String sql = "";
             String today = DateTime.Now.ToString("yyyy/MM/dd");
             String yesterday = DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd");
@@ -152,7 +153,7 @@ namespace BTL.BUS
             {
                 sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND NgayDat ='" + today + "'";
             }
-            else
+            else if(DateTime.Now.Hour <= 12)
             {
                 sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND (NgayDat ='" + today + "' OR NgayDat ='" + yesterday + "')";
             }
@@ -160,6 +161,7 @@ namespace BTL.BUS
         }
         public DataTable getOutOfDate()
         {
+            // check in quá hạn
             String sql = "";
             String today = DateTime.Now.ToString("yyyy/MM/dd");
             String yesterday = DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd");
