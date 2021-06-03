@@ -40,7 +40,7 @@ namespace BTL.BUS
 
         public void AddLoaiPhong(string tenLoai, int soLuong, int giaPhong)
         {
-            string sql = "Insert into LoaiPhong values('" + tenLoai + "'," + soLuong + "," + giaPhong + ")";
+            string sql = "Insert into LoaiPhong values(N'" + tenLoai + "'," + soLuong + "," + giaPhong + ")";
             data.ExecuteNonQuery(sql);
         }
 

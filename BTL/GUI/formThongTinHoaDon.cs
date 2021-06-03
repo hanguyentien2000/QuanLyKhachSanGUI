@@ -17,9 +17,15 @@ namespace BTL.GUI
         public formThongTinHoaDon(formCheckOut ckout, string Ma)
         {
             InitializeComponent();
-
+            MaDatPhong = Ma;
             this.checkOut = ckout;
-            lbCheckout.Text = checkOut.datPhong.MaDatPhong.ToString();
+            //lbCheckout.Text = checkOut.datPhong.MaDatPhong.ToString();
+        }
+
+        private void formThongTinHoaDon_Load(object sender, EventArgs e)
+        {
+            lbCheckout.Text = MaDatPhong;
+
         }
     }
 }

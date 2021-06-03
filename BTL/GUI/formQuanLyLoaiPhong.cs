@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,8 @@ namespace BTL.InterfaceQuanly
 {
     public partial class formQuanLyLoaiPhong : Form
     {
-        LoaiPhongBUS dsLoaiPhong = new LoaiPhongBUS();
+        //LoaiPhongBUS dsLoaiPhong = new LoaiPhongBUS();
+        private int soLuong, donGia;
         public formQuanLyLoaiPhong()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace BTL.InterfaceQuanly
         {
             lbLoaiPhong.Visible = false;
             txtMaLoaiPhong.Visible = false;
-            loadData(dsLoaiPhong.GetTableLoaiPhong());
+            //loadData(dsLoaiPhong.GetTableLoaiPhong());
+            loadData();
             dgvQLLP.AllowUserToAddRows = false;
             foreach (DataGridViewColumn column in dgvQLLP.Columns)
             {
@@ -31,24 +34,31 @@ namespace BTL.InterfaceQuanly
             }
         }
 
-        public void loadData(DataTable dt)
+        public void loadData()
         {
-            dgvQLLP.Rows.Clear();
-            foreach (DataRow a in dt.Rows)
-            {
-                dgvQLLP.Rows.Add((int)a.ItemArray[0],
-                    (string)a.ItemArray[1],
-                    (int)a.ItemArray[2],
-                    (int)a.ItemArray[3]);
-            }
+            dbDataContext dt = new dbDataContext();
+            var lstPhong = from p in dt.LoaiPhongs select p;
+            dgvQLLP.DataSource = lstPhong;
         }
+
+        //public void loadData(DataTable dt)
+        //{
+        //    dgvQLLP.Rows.Clear();
+        //    foreach (DataRow a in dt.Rows)
+        //    {
+        //        dgvQLLP.Rows.Add((int)a.ItemArray[0],
+        //            (string)a.ItemArray[1],
+        //            (int)a.ItemArray[2],
+        //            (int)a.ItemArray[3]);
+        //    }
+        //}
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-          
+            dbDataContext db = new dbDataContext();
+            var query = db.LoaiPhongs.Where(x => x.TenLoaiPhong.Equals(txtTenLoaiPhong.Text)).SingleOrDefault();
             try
             {
-              
                 if (txtTenLoaiPhong.Text.Equals(""))
                 {
                     txtTenLoaiPhong.Focus();
@@ -64,11 +74,34 @@ namespace BTL.InterfaceQuanly
                     txtDonGia.Focus();
                     throw new Exception("Đơn giá không được bỏ trống");
                 }
+                if (!int.TryParse(txtSoLuong.Text, out soLuong))
+                {
+                    throw new Exception("Số lượng phải là số!");
+                }
+                if (!int.TryParse(txtDonGia.Text, out donGia))
+                {
+                    throw new Exception("Đơn giá phải là số!");
+                }
+                if (query != null)
+                {
+                    MessageBox.Show("Tên loại phòng đã tồn tại", "Thông báo");
+                    return;
+                }
                 else
                 {
-                    dsLoaiPhong.AddLoaiPhong(txtTenLoaiPhong.Text, Convert.ToInt32(txtSoLuong.Text), Convert.ToInt32(txtDonGia.Text));
+                    //SQL
+                    //dsLoaiPhong.AddLoaiPhong(txtTenLoaiPhong.Text, Convert.ToInt32(txtSoLuong.Text), Convert.ToInt32(txtDonGia.Text));
+                    //loadData(dsLoaiPhong.GetTableLoaiPhong());
+                    //LinQ
+                    LoaiPhong lp = new LoaiPhong();
+                    lp.TenLoaiPhong = txtTenLoaiPhong.Text;
+                    lp.SoluongNguoi = Convert.ToInt32(txtSoLuong.Text);
+                    lp.GiaPhong = Convert.ToInt32(txtDonGia.Text);
+                    db.LoaiPhongs.InsertOnSubmit(lp);
+                    db.SubmitChanges();
+                    xoaTrang();
+                    loadData();
                     MessageBox.Show("Thêm mới loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadData(dsLoaiPhong.GetTableLoaiPhong());
                 }
             }
             catch (Exception ex)
@@ -91,9 +124,17 @@ namespace BTL.InterfaceQuanly
                 }
                 else
                 {
-                    dsLoaiPhong.DeleteLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text));
-                    //MessageBox.Show("Xóa thông tin loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadData(dsLoaiPhong.GetTableLoaiPhong());
+                    //dsLoaiPhong.DeleteLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text));
+                    //loadData(dsLoaiPhong.GetTableLoaiPhong());
+                    dbDataContext db = new dbDataContext();
+                    var lstPhong = from s in db.LoaiPhongs where s.MaLoaiPhong == Convert.ToInt32(txtMaLoaiPhong.Text) select s;
+                    foreach (var item in lstPhong)
+                    {
+                        db.LoaiPhongs.DeleteOnSubmit(item);
+                        db.SubmitChanges();
+                    }
+                    MessageBox.Show("Xóa thông tin loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadData();
                 }
             }
             catch (Exception ex)
@@ -109,37 +150,45 @@ namespace BTL.InterfaceQuanly
                 dbDataContext db = new dbDataContext();
                 if (txtTimKiem.Text.Equals(""))
                 {
+                    MessageBox.Show("Bạn chưa nhập loại phòng cần tìm!","Thông báo");
                     return;
                 }
                 else
-                    loadData(dsLoaiPhong.SearchLoaiPhong(txtTimKiem.Text));
-
+                {
+                    var p = from s in db.LoaiPhongs where s.TenLoaiPhong.ToLower().Contains(txtTimKiem.Text)
+                            select new { s.MaLoaiPhong, s.TenLoaiPhong, s.SoluongNguoi, s.GiaPhong };
+                    dgvQLLP.DataSource = p;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi");
             }
         }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void xoaTrang()
         {
             txtMaLoaiPhong.Text = "";
             txtTenLoaiPhong.Text = "";
             txtSoLuong.Text = "";
             txtDonGia.Text = "";
             txtTimKiem.Text = "";
-            loadData(dsLoaiPhong.GetTableLoaiPhong());
+            txtMaLoaiPhong.Visible = false;
+            lbLoaiPhong.Visible = false;
         }
-
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            xoaTrang();
+            loadData();
+            //loadData(dsLoaiPhong.GetTableLoaiPhong());
+        }
+        
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtMaLoaiPhong.Text.Equals(""))
-                {
-                    txtMaLoaiPhong.Focus();
-                    throw new Exception("Mã loại phòng không được bỏ trống");
-                }
+                dbDataContext db = new dbDataContext();
+                var query = db.LoaiPhongs.Where(x => x.TenLoaiPhong.Equals(txtTenLoaiPhong.Text)).SingleOrDefault();
+
                 if (txtTenLoaiPhong.Text.Equals(""))
                 {
                     txtTenLoaiPhong.Focus();
@@ -155,11 +204,30 @@ namespace BTL.InterfaceQuanly
                     txtDonGia.Focus();
                     throw new Exception("Đơn giá không được bỏ trống");
                 }
+                if (!int.TryParse(txtSoLuong.Text, out soLuong))
+                {
+                    throw new Exception("Số lượng phải là số!");
+                }
+                if (!int.TryParse(txtDonGia.Text, out soLuong))
+                {
+                    throw new Exception("Đơn giá phải là số!");
+                }
+                if (query != null)
+                {
+                    MessageBox.Show("Tên loại phòng đã tồn tại", "Thông báo");
+                    return;
+                }
                 else
                 {
-                    dsLoaiPhong.UpdateLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text), txtTenLoaiPhong.Text, Convert.ToInt32(txtSoLuong.Text), Convert.ToInt32(txtDonGia.Text));
-                    //MessageBox.Show("Cập nhật loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadData(dsLoaiPhong.GetTableLoaiPhong());
+                    /* dsLoaiPhong.UpdateLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text), txtTenLoaiPhong.Text, Convert.ToInt32(txtSoLuong.Text), Convert.ToInt32(txtDonGia.Text))*/
+                    //loadData(dsLoaiPhong.GetTableLoaiPhong());
+                    var update = db.LoaiPhongs.Single(x => x.MaLoaiPhong == Convert.ToInt32(txtMaLoaiPhong.Text));
+                    update.TenLoaiPhong = txtTenLoaiPhong.Text;
+                    update.SoluongNguoi = Convert.ToInt32(txtSoLuong.Text);
+                    update.GiaPhong = Convert.ToInt32(txtDonGia.Text);
+                    db.SubmitChanges();
+                    MessageBox.Show("Cập nhật loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadData();
                 }
             }
             catch (Exception ex)

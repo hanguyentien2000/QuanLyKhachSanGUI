@@ -200,6 +200,7 @@ namespace BTL.GUI
             this.Controls.Add(this.lbCheckout);
             this.Name = "formThongTinHoaDon";
             this.Text = "formThongTinHoaDon";
+            this.Load += new System.EventHandler(this.formThongTinHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
