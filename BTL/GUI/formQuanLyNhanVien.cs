@@ -19,7 +19,6 @@ namespace BTL.InterfaceQuanly
         NhanVienBUS nhanVienBLL = new NhanVienBUS();
         NhanVienDTO nhanVienDTO = new NhanVienDTO();
         ImageConvert imageConvert = new ImageConvert();
-        bool hasPicture = false;
         public formQuanLyNhanVien()
         {
             InitializeComponent();
@@ -37,6 +36,7 @@ namespace BTL.InterfaceQuanly
             txtCMND.Text = "";
             rdbNam.Checked = true;
             dtpNS.Value = DateTime.Now;
+            imgNV.Image = null;
         }
 
         private void layThongTinNhanVien()
@@ -120,7 +120,7 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Địa chỉ không được để trống");
                 }
-                if(!hasPicture)
+                if(imgNV.Image == null)
                 {
                     throw new Exception("Vui lòng thêm ảnh nhân viên");
                 }
@@ -206,6 +206,7 @@ namespace BTL.InterfaceQuanly
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvNhanVien.ReadOnly = true;
             int dong = e.RowIndex;
             try
             {
@@ -300,17 +301,28 @@ namespace BTL.InterfaceQuanly
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png", Multiselect = false })
             {
+                ofd.Title = "Chọn ảnh";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
                         imgNV.Image = Image.FromFile(ofd.FileName);
-                        hasPicture = true;
                     }
                     catch (FileNotFoundException ex)
                     {
                         MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+            }
+        }
+
+        private void imgNV_Paint(object sender, PaintEventArgs e)
+        {
+            if(imgNV.Image == null)
+            {
+                using (Font myFont = new Font("Segoe UI", 14))
+                {
+                    e.Graphics.DrawString("Chọn ảnh nhân viên...", myFont, Brushes.Black, new Point(3, 3));
                 }
             }
         }

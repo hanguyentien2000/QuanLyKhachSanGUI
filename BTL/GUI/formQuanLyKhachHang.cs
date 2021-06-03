@@ -268,6 +268,7 @@ namespace BTL.GUI
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvKhachHang.ReadOnly = true;
             cbxTrangThai.Visible = true;
             lblTrangThai.Visible = true;
             int dong = e.RowIndex;
