@@ -100,8 +100,16 @@ namespace BTL.GUI
                 {
                     if (datPhongBus.passToThongKe(maDatPhong))
                     {
+                        int maHD = datPhongBus.getMaHD(maDatPhong);
+                        int tongTienDV = datPhongBus.getTongTienDV(maHD);
+                        int tongTienP = datPhongBus.getTongTienPhong(maHD);
+                        int tongTien = tongTienDV + tongTienP;
+                        if(datPhongBus.updateHDSauKhiCheckOut(maHD,tongTien))
+                        {
+                            formTTHoaDon frmTT = new formTTHoaDon(this);
+                            frmTT.ShowDialog();
+                        }    
                         loadTableCOToday();
-                        MessageBox.Show("Checkout thành công");
                         maDatPhong = 0;
                     }
                 }
@@ -114,7 +122,7 @@ namespace BTL.GUI
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            formThemDichVu frm = new formThemDichVu(this);
+            formDatDichVu frm = new formDatDichVu(this);
             frm.ShowDialog();
         }
     }

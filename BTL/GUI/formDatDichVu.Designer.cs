@@ -1,7 +1,7 @@
 ﻿
 namespace BTL.GUI
 {
-    partial class formThemDichVu
+    partial class formDatDichVu
     {
         /// <summary>
         /// Required designer variable.
@@ -39,12 +39,15 @@ namespace BTL.GUI
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxDichVu = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSL = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.rTxtGC = new System.Windows.Forms.RichTextBox();
+            this.btnNhap = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,11 +85,11 @@ namespace BTL.GUI
             this.dgvDichVu.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDichVu.EnableHeadersVisualStyles = false;
             this.dgvDichVu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDichVu.Location = new System.Drawing.Point(32, 232);
+            this.dgvDichVu.Location = new System.Drawing.Point(38, 312);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersVisible = false;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichVu.Size = new System.Drawing.Size(710, 177);
+            this.dgvDichVu.Size = new System.Drawing.Size(722, 164);
             this.dgvDichVu.TabIndex = 0;
             this.dgvDichVu.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDichVu.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -109,29 +112,35 @@ namespace BTL.GUI
             this.dgvDichVu.ThemeStyle.RowsStyle.Height = 22;
             this.dgvDichVu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDichVu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellClick);
             // 
             // MaDichVu
             // 
+            this.MaDichVu.DataPropertyName = "MaDichVu";
             this.MaDichVu.HeaderText = "Mã dịch vụ";
             this.MaDichVu.Name = "MaDichVu";
             // 
             // TenDichVu
             // 
+            this.TenDichVu.DataPropertyName = "TenDichVu";
             this.TenDichVu.HeaderText = "Tên dịch vụ";
             this.TenDichVu.Name = "TenDichVu";
             // 
             // SoLuongDung
             // 
-            this.SoLuongDung.HeaderText = "Số lượng";
+            this.SoLuongDung.DataPropertyName = "SoLuongDung";
+            this.SoLuongDung.HeaderText = "Số lượng dùng";
             this.SoLuongDung.Name = "SoLuongDung";
             // 
             // DonGia
             // 
-            this.DonGia.HeaderText = "Đơn giá";
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Giá";
             this.DonGia.Name = "DonGia";
             // 
             // GhiChu
             // 
+            this.GhiChu.DataPropertyName = "GhiChu";
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
             // 
@@ -148,21 +157,11 @@ namespace BTL.GUI
             this.cbxDichVu.HoverState.Parent = this.cbxDichVu;
             this.cbxDichVu.ItemHeight = 30;
             this.cbxDichVu.ItemsAppearance.Parent = this.cbxDichVu;
-            this.cbxDichVu.Location = new System.Drawing.Point(32, 70);
+            this.cbxDichVu.Location = new System.Drawing.Point(38, 36);
             this.cbxDichVu.Name = "cbxDichVu";
             this.cbxDichVu.ShadowDecoration.Parent = this.cbxDichVu;
-            this.cbxDichVu.Size = new System.Drawing.Size(325, 36);
+            this.cbxDichVu.Size = new System.Drawing.Size(324, 36);
             this.cbxDichVu.TabIndex = 1;
-            this.cbxDichVu.SelectedIndexChanged += new System.EventHandler(this.cbxDichVu_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Dịch vụ";
             // 
             // btnThem
             // 
@@ -176,32 +175,13 @@ namespace BTL.GUI
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(562, 43);
+            this.btnThem.Location = new System.Drawing.Point(565, 95);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(141, 45);
-            this.btnThem.TabIndex = 3;
+            this.btnThem.Size = new System.Drawing.Size(145, 36);
+            this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.CheckedState.Parent = this.btnXoa;
-            this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.DisabledState.Parent = this.btnXoa;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(562, 165);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(141, 45);
-            this.btnXoa.TabIndex = 4;
-            this.btnXoa.Text = "Xóa";
             // 
             // btnSua
             // 
@@ -215,61 +195,132 @@ namespace BTL.GUI
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(562, 103);
+            this.btnSua.Location = new System.Drawing.Point(565, 151);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
-            this.btnSua.Size = new System.Drawing.Size(141, 45);
-            this.btnSua.TabIndex = 5;
+            this.btnSua.Size = new System.Drawing.Size(145, 36);
+            this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // txtSoLuong
+            // btnXoa
             // 
-            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoLuong.DefaultText = "";
-            this.txtSoLuong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSoLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSoLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoLuong.DisabledState.Parent = this.txtSoLuong;
-            this.txtSoLuong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoLuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.FocusedState.Parent = this.txtSoLuong;
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.HoverState.Parent = this.txtSoLuong;
-            this.txtSoLuong.Location = new System.Drawing.Point(32, 145);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.PasswordChar = '\0';
-            this.txtSoLuong.PlaceholderText = "";
-            this.txtSoLuong.SelectedText = "";
-            this.txtSoLuong.ShadowDecoration.Parent = this.txtSoLuong;
-            this.txtSoLuong.Size = new System.Drawing.Size(325, 36);
-            this.txtSoLuong.TabIndex = 6;
+            this.btnXoa.CheckedState.Parent = this.btnXoa;
+            this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.DisabledState.Parent = this.btnXoa;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.HoverState.Parent = this.btnXoa;
+            this.btnXoa.Location = new System.Drawing.Point(565, 207);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
+            this.btnXoa.Size = new System.Drawing.Size(145, 36);
+            this.btnXoa.TabIndex = 4;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // label2
+            // txtSL
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Số lượng";
+            this.txtSL.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSL.DefaultText = "";
+            this.txtSL.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSL.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSL.DisabledState.Parent = this.txtSL;
+            this.txtSL.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSL.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSL.FocusedState.Parent = this.txtSL;
+            this.txtSL.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSL.HoverState.Parent = this.txtSL;
+            this.txtSL.Location = new System.Drawing.Point(38, 116);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.PasswordChar = '\0';
+            this.txtSL.PlaceholderText = "";
+            this.txtSL.SelectedText = "";
+            this.txtSL.ShadowDecoration.Parent = this.txtSL;
+            this.txtSL.Size = new System.Drawing.Size(324, 36);
+            this.txtSL.TabIndex = 5;
             // 
-            // formThemDichVu
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(38, 13);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(40, 15);
+            this.guna2HtmlLabel1.TabIndex = 7;
+            this.guna2HtmlLabel1.Text = "Dịch vụ";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 95);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(45, 15);
+            this.guna2HtmlLabel2.TabIndex = 8;
+            this.guna2HtmlLabel2.Text = "Số lượng";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(38, 172);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(40, 15);
+            this.guna2HtmlLabel3.TabIndex = 9;
+            this.guna2HtmlLabel3.Text = "Ghi chú";
+            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
+            // 
+            // rTxtGC
+            // 
+            this.rTxtGC.Location = new System.Drawing.Point(38, 193);
+            this.rTxtGC.Name = "rTxtGC";
+            this.rTxtGC.Size = new System.Drawing.Size(324, 96);
+            this.rTxtGC.TabIndex = 11;
+            this.rTxtGC.Text = "";
+            // 
+            // btnNhap
+            // 
+            this.btnNhap.CheckedState.Parent = this.btnNhap;
+            this.btnNhap.CustomImages.Parent = this.btnNhap;
+            this.btnNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNhap.DisabledState.Parent = this.btnNhap;
+            this.btnNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNhap.ForeColor = System.Drawing.Color.White;
+            this.btnNhap.HoverState.Parent = this.btnNhap;
+            this.btnNhap.Location = new System.Drawing.Point(565, 36);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.ShadowDecoration.Parent = this.btnNhap;
+            this.btnNhap.Size = new System.Drawing.Size(145, 36);
+            this.btnNhap.TabIndex = 12;
+            this.btnNhap.Text = "Nhập";
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+            // 
+            // formDatDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSoLuong);
-            this.Controls.Add(this.btnSua);
+            this.ClientSize = new System.Drawing.Size(800, 517);
+            this.Controls.Add(this.btnNhap);
+            this.Controls.Add(this.rTxtGC);
+            this.Controls.Add(this.guna2HtmlLabel3);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.txtSL);
             this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxDichVu);
             this.Controls.Add(this.dgvDichVu);
-            this.Name = "formThemDichVu";
-            this.Text = "formThemDichVu";
-            this.Load += new System.EventHandler(this.formThemDichVu_Load);
+            this.Name = "formDatDichVu";
+            this.Text = "formDatDichVu";
+            this.Load += new System.EventHandler(this.formDatDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -285,11 +336,14 @@ namespace BTL.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private Guna.UI2.WinForms.Guna2ComboBox cbxDichVu;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnSua;
-        private Guna.UI2.WinForms.Guna2TextBox txtSoLuong;
-        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2TextBox txtSL;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private System.Windows.Forms.RichTextBox rTxtGC;
+        private Guna.UI2.WinForms.Guna2Button btnNhap;
     }
 }
