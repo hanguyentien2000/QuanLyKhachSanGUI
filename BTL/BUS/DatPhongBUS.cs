@@ -232,5 +232,13 @@ namespace BTL.BUS
             sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDen,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND NgayDi ='" + today + "'";
             return data.ExecuteQuery(sql);
         }
+        // dịch vu
+        public DataTable getDichVuOneRoom(int maDatPhong)
+        {
+            string sql = "select MaDichVu,TenDichVu,SoLuongDung,DonGia,GhiChu from ChiTietDichVu inner join HoaDon on" +
+                " ChiTietDichVu.MaHoaDon = HoaDon.MaHoaDon inner join on DichVu inner join DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join DatPhong on"
+                + "HoaDon.MaDatPhong = DatPhong.MaDatPhong where MaDatPhong = " + maDatPhong;
+            return data.ExecuteQuery(sql);
+        }
     }
 }

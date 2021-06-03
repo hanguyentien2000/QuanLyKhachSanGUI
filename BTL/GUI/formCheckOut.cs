@@ -15,7 +15,7 @@ namespace BTL.GUI
     {
         DatPhongBUS datPhongBus = new DatPhongBUS();
         public DatPhong datPhong;
-        int maDatPhong = 0;
+        public int maDatPhong = 0;
         int rowSelected;
         public formCheckOut()
         {
@@ -52,7 +52,7 @@ namespace BTL.GUI
                 txtMaKhach.Text = dgvCheckOut.Rows[rowSelected].Cells[3].Value.ToString();
                 txtMaPhong.Text = dgvCheckOut.Rows[rowSelected].Cells[1].Value.ToString();
                 maDatPhong = Convert.ToInt32(dgvCheckOut.Rows[rowSelected].Cells[0].Value.ToString());
-         
+                btnDichVu.Enabled = true;
                 if(DateTime.Parse(dgvCheckOut.Rows[rowSelected].Cells[6].Value.ToString()) <= DateTime.Now)
                 {
                     btnCheckOut.Enabled = true;
@@ -110,6 +110,12 @@ namespace BTL.GUI
             {
                 MessageBox.Show("Chưa chọn đơn cần checkin");
             }
+        }
+
+        private void btnDichVu_Click(object sender, EventArgs e)
+        {
+            formThemDichVu frm = new formThemDichVu(this);
+            frm.ShowDialog();
         }
     }
 }
