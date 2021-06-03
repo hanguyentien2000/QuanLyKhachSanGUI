@@ -126,15 +126,20 @@ namespace BTL.InterfaceQuanly
                 {
                     //dsLoaiPhong.DeleteLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text));
                     //loadData(dsLoaiPhong.GetTableLoaiPhong());
-                    dbDataContext db = new dbDataContext();
-                    var lstPhong = from s in db.LoaiPhongs where s.MaLoaiPhong == Convert.ToInt32(txtMaLoaiPhong.Text) select s;
-                    foreach (var item in lstPhong)
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng " + txtTenLoaiPhong.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(result == DialogResult.Yes)
                     {
-                        db.LoaiPhongs.DeleteOnSubmit(item);
-                        db.SubmitChanges();
+                        dbDataContext db = new dbDataContext();
+                        var lstPhong = from s in db.LoaiPhongs where s.MaLoaiPhong == Convert.ToInt32(txtMaLoaiPhong.Text) select s;
+                        foreach (var item in lstPhong)
+                        {
+                            db.LoaiPhongs.DeleteOnSubmit(item);
+                            db.SubmitChanges();
+                        }
+                        MessageBox.Show("Xóa thông tin loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData();
+                        xoaTrang();
                     }
-                    MessageBox.Show("Xóa thông tin loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadData();
                 }
             }
             catch (Exception ex)
@@ -228,6 +233,7 @@ namespace BTL.InterfaceQuanly
                     db.SubmitChanges();
                     MessageBox.Show("Cập nhật loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loadData();
+                    xoaTrang();
                 }
             }
             catch (Exception ex)
@@ -238,6 +244,7 @@ namespace BTL.InterfaceQuanly
 
         private void dgvQLLP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvQLLP.ReadOnly = true;
             int dong = e.RowIndex;
             try
             {

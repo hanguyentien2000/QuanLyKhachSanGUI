@@ -19,7 +19,7 @@ namespace BTL
         PhongDTO phongDTO = new PhongDTO();
         LoaiPhongBUS loaiPhongBUS = new LoaiPhongBUS();
         ImageConvert imageConvert = new ImageConvert();
-        bool hasPicture = false;
+
         public formQuanLyPhong()
         {
             InitializeComponent();
@@ -31,6 +31,7 @@ namespace BTL
             lblMaPhong.Visible = false;
             cbbLoaiPhong.SelectedIndex = 0;
             rbdTrong.Checked = true;
+            imgPhong.Image = null;
         }
 
         private void layThongTinPhong()
@@ -58,7 +59,7 @@ namespace BTL
         {
             try
             {
-                if(!hasPicture)
+                if(imgPhong.Image == null)
                 {
                     throw new Exception("Vui lòng thêm ảnh phòng");
                 }
@@ -163,6 +164,7 @@ namespace BTL
 
         private void dgvQuanLyPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvQuanLyPhong.ReadOnly = true;
             txtMaPhong.Visible = true;
             lblMaPhong.Visible = true;
             txtMaPhong.Enabled = false;
@@ -219,17 +221,28 @@ namespace BTL
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png", Multiselect = false })
             {
+                ofd.Title = "Chọn ảnh";
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
                         imgPhong.Image = Image.FromFile(ofd.FileName);
-                        hasPicture = true;
                     }
                     catch (FileNotFoundException ex)
                     {
                         MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+            }
+        }
+
+        private void imgPhong_Paint(object sender, PaintEventArgs e)
+        {
+            if (imgPhong.Image == null)
+            {
+                using (Font myFont = new Font("Segoe UI", 16))
+                {
+                    e.Graphics.DrawString("Chọn ảnh phòng...", myFont, Brushes.Black, new Point(3, 3));
                 }
             }
         }
