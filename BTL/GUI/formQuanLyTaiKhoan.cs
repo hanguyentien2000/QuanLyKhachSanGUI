@@ -27,7 +27,6 @@ namespace BTL.GUI
             txtTenTK.Text = "";
             txtMatKhau.Text = "";
             txtTimKiem.Text = "";
-            cbxMaNV.SelectedIndex = 0;
             rdAdmin.Checked = true;
             loadData(dsTaiKhoan.GetTableTaiKhoan());
         }
@@ -71,6 +70,7 @@ namespace BTL.GUI
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            xoaTrang();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -95,10 +95,6 @@ namespace BTL.GUI
                     txtMatKhau.Focus();
                     throw new Exception("Mật khẩu không được bỏ trống");
                 }
-                if (!rdAdmin.Checked && !rdNhanVien.Checked)
-                {
-                    throw new Exception("Chưa chọn loại tài khoản");
-                }
                 else
                 {
                     layThongTinTaiKhoan();
@@ -106,6 +102,7 @@ namespace BTL.GUI
                     {
                         MessageBox.Show("Thêm tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loadData(dsTaiKhoan.GetTableTaiKhoan());
+                        xoaTrang();
                     }
                 }
             }
@@ -168,6 +165,7 @@ namespace BTL.GUI
                     {
                         MessageBox.Show("Thay đổi trạng thái thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loadData(dsTaiKhoan.GetTableTaiKhoan());
+                        xoaTrang();
                     }
                 }
             }
@@ -179,6 +177,7 @@ namespace BTL.GUI
 
         private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvTaiKhoan.ReadOnly = true;
             int dong = e.RowIndex;
             try
             {
@@ -210,15 +209,10 @@ namespace BTL.GUI
             }
         }
 
-        private void dgvTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnTaiLai_Click(object sender, EventArgs e)
         {
             loadData(dsTaiKhoan.GetTableTaiKhoan());
-            txtTimKiem.Text = "";
+            xoaTrang();
         }
 
         private void btnThayDoi_Click(object sender, EventArgs e)
