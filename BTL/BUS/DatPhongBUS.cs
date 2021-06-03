@@ -320,7 +320,7 @@ namespace BTL.BUS
         {
             int tienCoc = 0;
             string sql = "";
-            sql = "SELECT TongTienCoc from DatPhong";
+            sql = "SELECT TienDatCoc from DatPhong where MaDatPhong =" + maDatPhong;
             SqlConnection conn = data.GetDBConnection();
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -359,11 +359,11 @@ namespace BTL.BUS
             }
             return tongTienDV;
         }
-        public int getTongTienPhong(int maHoaDon)
+        public int getTongTienPhong(int maDatPhong)
         {
             int tongTienPhong = 0;
             string sql = "";
-            sql = "SELECT TongTien from HoaDon";
+            sql = "SELECT TienDatCoc from DatPhong where MaDatPhong = " + maDatPhong;
             SqlConnection conn = data.GetDBConnection();
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);

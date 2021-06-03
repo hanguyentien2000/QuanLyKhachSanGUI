@@ -49,6 +49,7 @@ namespace BTL.GUI
             this.lbHD.Size = new System.Drawing.Size(334, 57);
             this.lbHD.TabIndex = 0;
             this.lbHD.Text = "HÓA ĐƠN SỐ";
+            this.lbHD.Click += new System.EventHandler(this.lbHD_Click);
             // 
             // lbMaDP
             // 
@@ -129,7 +130,7 @@ namespace BTL.GUI
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.HoverState.Parent = this.btnIn;
-            this.btnIn.Location = new System.Drawing.Point(164, 519);
+            this.btnIn.Location = new System.Drawing.Point(166, 477);
             this.btnIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIn.Name = "btnIn";
             this.btnIn.ShadowDecoration.Parent = this.btnIn;

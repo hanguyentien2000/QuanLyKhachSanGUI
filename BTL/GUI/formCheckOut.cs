@@ -56,7 +56,11 @@ namespace BTL.GUI
                 if(DateTime.Parse(dgvCheckOut.Rows[rowSelected].Cells[6].Value.ToString()) <= DateTime.Now)
                 {
                     btnCheckOut.Enabled = true;
-                }    
+                }
+                else
+                {
+                    btnCheckOut.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -66,6 +70,7 @@ namespace BTL.GUI
 
         private void btnListToday_Click(object sender, EventArgs e)
         {
+            btnDichVu.Enabled = false;
             btnCheckOut.Enabled = true;
             resetInfor();
             loadTableCOToday();
@@ -73,6 +78,7 @@ namespace BTL.GUI
 
         private void btnTatCa_Click(object sender, EventArgs e)
         {
+            btnDichVu.Enabled = false;
             btnCheckOut.Enabled = false;
             loadAllCheckOut();
             resetInfor();
@@ -86,8 +92,10 @@ namespace BTL.GUI
             }
             else
             {
+                  
                 dgvCheckOut.DataSource = datPhongBus.timKiemCheckOut(txtKeyWords.Text);
                 btnCheckOut.Enabled = false;
+                btnDichVu.Enabled = false;
             }
         }
 
@@ -102,13 +110,14 @@ namespace BTL.GUI
                     {
                         int maHD = datPhongBus.getMaHD(maDatPhong);
                         int tongTienDV = datPhongBus.getTongTienDV(maHD);
-                        int tongTienP = datPhongBus.getTongTienPhong(maHD);
+                        int tongTienP = datPhongBus.getTongTienPhong(maDatPhong);
                         int tongTien = tongTienDV + tongTienP;
                         if(datPhongBus.updateHDSauKhiCheckOut(maHD,tongTien))
                         {
                             formTTHoaDon frmTT = new formTTHoaDon(this);
                             frmTT.ShowDialog();
-                        }    
+                        }
+                      
                         loadTableCOToday();
                         maDatPhong = 0;
                     }
