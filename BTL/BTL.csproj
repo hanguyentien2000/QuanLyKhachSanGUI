@@ -166,6 +166,12 @@
     <Compile Include="GUI\formMainNhanVien.Designer.cs">
       <DependentUpon>formMainNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\formQuanLyDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\formQuanLyDichVu.Designer.cs">
+      <DependentUpon>formQuanLyDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\formQuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formMainNhanVien.resx">
       <DependentUpon>formMainNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\formQuanLyDichVu.resx">
+      <DependentUpon>formQuanLyDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formQuanLyKhachHang.resx">
       <DependentUpon>formQuanLyKhachHang.cs</DependentUpon>

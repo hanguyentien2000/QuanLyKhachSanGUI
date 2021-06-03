@@ -276,9 +276,7 @@ namespace BTL
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color3);
-            //OpenCurrentForm(new formThongKeHoaDon());
-            ShowSubmenu(panelSubmenu2);
+           
         }
 
         private void btnThongKeHoaDon_Click(object sender, EventArgs e)
@@ -329,6 +327,24 @@ namespace BTL
         private void formMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color3);
+            //OpenCurrentForm(new formThongKeHoaDon());
+            ShowSubmenu(panelSubmenu2);
+        }
+
+        private void btnDichVu_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color5);
+            OpenCurrentForm(new formQuanLyDichVu());
         }
     }
 }
