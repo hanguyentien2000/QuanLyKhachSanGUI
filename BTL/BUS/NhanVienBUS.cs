@@ -100,5 +100,11 @@ namespace BTL.BUS
             nv.anhNV = (byte[])data.GetTable(sql).Rows[0].ItemArray[0];
             return nv;
         }
+        public int getLuongCoBanByMaNV(int manv)
+        {
+            string sql = "SELECT LuongCoBan FROM LoaiChucVu " +
+                "inner join NhanVien on LoaiChucVu.ChucVu = NhanVien.ChucVu WHERE MaNhanVien = '" + manv + "'";
+            return Int32.Parse(new DataProvider().ExecuteQuery(sql).Rows[0]["LuongCoBan"].ToString());
+        }
     }
 }

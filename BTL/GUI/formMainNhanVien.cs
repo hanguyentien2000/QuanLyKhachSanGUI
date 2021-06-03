@@ -24,8 +24,9 @@ namespace BTL
         public formLogin f;
         public formDoiMatKhau fmk;
         public String username;
+        public int MaNV;
         
-        public formMainNhanVien(formLogin fs, String username)
+        public formMainNhanVien(formLogin fs, String username, int MaNV)
         {
             InitializeComponent();
             leftBorderbtn = new Panel();
@@ -38,12 +39,8 @@ namespace BTL
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.f = fs;
             this.username = username;
+            this.MaNV = MaNV;
             TenNV.Text = f.account.NhanVien.TenNhanVien.ToString();
-        }
-
-        public String getUsername()
-        {
-            return username;
         }
 
         private struct RGBColors
@@ -195,7 +192,7 @@ namespace BTL
         private void btnChamCong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color5);
-            OpenCurrentForm(new formChamCong());
+            OpenCurrentForm(new formChamCong(MaNV));
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)

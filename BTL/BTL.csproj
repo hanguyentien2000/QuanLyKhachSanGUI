@@ -80,7 +80,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\ChamCongBUS.cs" />
     <Compile Include="BUS\DatPhongBUS.cs" />
+    <Compile Include="BUS\HoaDonBUS.cs" />
     <Compile Include="BUS\ImageConvert.cs" />
     <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="BUS\LoaiPhongBUS.cs" />
@@ -115,6 +117,12 @@
     </Compile>
     <Compile Include="GUI\formCheckIn.Designer.cs">
       <DependentUpon>formCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\formChiTietDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\formChiTietDichVu.Designer.cs">
+      <DependentUpon>formChiTietDichVu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\formChonKhachDat.cs">
       <SubType>Form</SubType>
@@ -219,11 +227,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\formChamCong.resx">
+      <DependentUpon>formChamCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\formCheckOut.resx">
       <DependentUpon>formCheckOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formCheckIn.resx">
       <DependentUpon>formCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\formChiTietDichVu.resx">
+      <DependentUpon>formChiTietDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formChonKhachDat.resx">
       <DependentUpon>formChonKhachDat.cs</DependentUpon>

@@ -32,65 +32,78 @@ namespace BTL.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.btnTinhLuong = new Guna.UI2.WinForms.Guna2Button();
-            this.cbxTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbxMaNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblNgayCong = new System.Windows.Forms.Label();
+            this.lblLuongCB = new System.Windows.Forms.Label();
+            this.lblTongLuong = new System.Windows.Forms.Label();
+            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnRefresh
+            // btnThanhToan
             // 
-            this.btnRefresh.CheckedState.Parent = this.btnRefresh;
-            this.btnRefresh.CustomImages.Parent = this.btnRefresh;
-            this.btnRefresh.FillColor = System.Drawing.Color.Green;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.HoverState.Parent = this.btnRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(886, 105);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
-            this.btnRefresh.Size = new System.Drawing.Size(100, 36);
-            this.btnRefresh.TabIndex = 49;
-            this.btnRefresh.Text = "Tải lại";
+            this.btnThanhToan.CheckedState.Parent = this.btnThanhToan;
+            this.btnThanhToan.CustomImages.Parent = this.btnThanhToan;
+            this.btnThanhToan.DisabledState.Parent = this.btnThanhToan;
+            this.btnThanhToan.FillColor = System.Drawing.Color.Green;
+            this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.HoverState.Parent = this.btnThanhToan;
+            this.btnThanhToan.Location = new System.Drawing.Point(977, 105);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.ShadowDecoration.Parent = this.btnThanhToan;
+            this.btnThanhToan.Size = new System.Drawing.Size(144, 36);
+            this.btnThanhToan.TabIndex = 49;
+            this.btnThanhToan.Text = "Thanh toán hết lương";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnTinhLuong
             // 
             this.btnTinhLuong.CheckedState.Parent = this.btnTinhLuong;
             this.btnTinhLuong.CustomImages.Parent = this.btnTinhLuong;
+            this.btnTinhLuong.DisabledState.Parent = this.btnTinhLuong;
             this.btnTinhLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTinhLuong.ForeColor = System.Drawing.Color.White;
             this.btnTinhLuong.HoverState.Parent = this.btnTinhLuong;
-            this.btnTinhLuong.Location = new System.Drawing.Point(1004, 105);
+            this.btnTinhLuong.Location = new System.Drawing.Point(861, 105);
             this.btnTinhLuong.Name = "btnTinhLuong";
             this.btnTinhLuong.ShadowDecoration.Parent = this.btnTinhLuong;
             this.btnTinhLuong.Size = new System.Drawing.Size(100, 36);
             this.btnTinhLuong.TabIndex = 48;
             this.btnTinhLuong.Text = "Tính Lương";
+            this.btnTinhLuong.Click += new System.EventHandler(this.btnTinhLuong_Click);
             // 
-            // cbxTrangThai
+            // cbxMaNV
             // 
-            this.cbxTrangThai.BackColor = System.Drawing.Color.Transparent;
-            this.cbxTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTrangThai.FocusedState.Parent = this.cbxTrangThai;
-            this.cbxTrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbxTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbxTrangThai.HoverState.Parent = this.cbxTrangThai;
-            this.cbxTrangThai.ItemHeight = 30;
-            this.cbxTrangThai.ItemsAppearance.Parent = this.cbxTrangThai;
-            this.cbxTrangThai.Location = new System.Drawing.Point(575, 105);
-            this.cbxTrangThai.Name = "cbxTrangThai";
-            this.cbxTrangThai.ShadowDecoration.Parent = this.cbxTrangThai;
-            this.cbxTrangThai.Size = new System.Drawing.Size(226, 36);
-            this.cbxTrangThai.TabIndex = 47;
+            this.cbxMaNV.BackColor = System.Drawing.Color.Transparent;
+            this.cbxMaNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMaNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxMaNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxMaNV.FocusedState.Parent = this.cbxMaNV;
+            this.cbxMaNV.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxMaNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxMaNV.HoverState.Parent = this.cbxMaNV;
+            this.cbxMaNV.ItemHeight = 30;
+            this.cbxMaNV.ItemsAppearance.Parent = this.cbxMaNV;
+            this.cbxMaNV.Location = new System.Drawing.Point(575, 105);
+            this.cbxMaNV.Name = "cbxMaNV";
+            this.cbxMaNV.ShadowDecoration.Parent = this.cbxMaNV;
+            this.cbxMaNV.Size = new System.Drawing.Size(226, 36);
+            this.cbxMaNV.TabIndex = 47;
+            this.cbxMaNV.SelectedIndexChanged += new System.EventHandler(this.cbxMaNV_SelectedIndexChanged);
             // 
             // guna2DateTimePicker2
             // 
@@ -144,6 +157,8 @@ namespace BTL.GUI
             // 
             // guna2DataGridView1
             // 
+            this.guna2DataGridView1.AllowUserToAddRows = false;
+            this.guna2DataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -159,7 +174,10 @@ namespace BTL.GUI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
+            this.guna2DataGridView1.ColumnHeadersHeight = 20;
+            this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNhanVien,
+            this.NgayChamCong});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -172,11 +190,11 @@ namespace BTL.GUI
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(12, 186);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
+            this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1092, 376);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(789, 376);
             this.guna2DataGridView1.TabIndex = 42;
-            this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -189,8 +207,8 @@ namespace BTL.GUI
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 20;
+            this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -205,19 +223,99 @@ namespace BTL.GUI
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(571, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 50;
-            this.label3.Text = "Mã Nhân Viên";
+            this.label3.Text = "Nhân Viên";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(857, 280);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 20);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Số ngày công:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(857, 342);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 20);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "Lương cơ bản:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(857, 401);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 20);
+            this.label6.TabIndex = 53;
+            this.label6.Text = "Lương tổng";
+            // 
+            // lblNgayCong
+            // 
+            this.lblNgayCong.AutoSize = true;
+            this.lblNgayCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayCong.Location = new System.Drawing.Point(973, 280);
+            this.lblNgayCong.Name = "lblNgayCong";
+            this.lblNgayCong.Size = new System.Drawing.Size(33, 20);
+            this.lblNgayCong.TabIndex = 54;
+            this.lblNgayCong.Text = "......";
+            // 
+            // lblLuongCB
+            // 
+            this.lblLuongCB.AutoSize = true;
+            this.lblLuongCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLuongCB.Location = new System.Drawing.Point(973, 342);
+            this.lblLuongCB.Name = "lblLuongCB";
+            this.lblLuongCB.Size = new System.Drawing.Size(33, 20);
+            this.lblLuongCB.TabIndex = 55;
+            this.lblLuongCB.Text = "......";
+            // 
+            // lblTongLuong
+            // 
+            this.lblTongLuong.AutoSize = true;
+            this.lblTongLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongLuong.Location = new System.Drawing.Point(973, 401);
+            this.lblTongLuong.Name = "lblTongLuong";
+            this.lblTongLuong.Size = new System.Drawing.Size(33, 20);
+            this.lblTongLuong.TabIndex = 56;
+            this.lblTongLuong.Text = "......";
+            // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã nhân viên";
+            this.MaNhanVien.Name = "MaNhanVien";
+            this.MaNhanVien.ReadOnly = true;
+            // 
+            // NgayChamCong
+            // 
+            this.NgayChamCong.DataPropertyName = "NgayChamCong";
+            this.NgayChamCong.HeaderText = "Ngày chấm công";
+            this.NgayChamCong.Name = "NgayChamCong";
+            this.NgayChamCong.ReadOnly = true;
             // 
             // formThongKeLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 574);
+            this.Controls.Add(this.lblTongLuong);
+            this.Controls.Add(this.lblLuongCB);
+            this.Controls.Add(this.lblNgayCong);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.btnTinhLuong);
-            this.Controls.Add(this.cbxTrangThai);
+            this.Controls.Add(this.cbxMaNV);
             this.Controls.Add(this.guna2DateTimePicker2);
             this.Controls.Add(this.guna2DateTimePicker1);
             this.Controls.Add(this.label2);
@@ -225,6 +323,7 @@ namespace BTL.GUI
             this.Controls.Add(this.guna2DataGridView1);
             this.Name = "formThongKeLuong";
             this.Text = "formThongKeLuong";
+            this.Load += new System.EventHandler(this.formThongKeLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,14 +332,22 @@ namespace BTL.GUI
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private Guna.UI2.WinForms.Guna2Button btnThanhToan;
         private Guna.UI2.WinForms.Guna2Button btnTinhLuong;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxTrangThai;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxMaNV;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNgayCong;
+        private System.Windows.Forms.Label lblLuongCB;
+        private System.Windows.Forms.Label lblTongLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayChamCong;
     }
 }

@@ -47,7 +47,7 @@ namespace BTL
                     }
                     else if(account.LoaiTaiKhoan == true && account.TrangThaiTk == true)
                     {
-                        formMainNhanVien frm = new formMainNhanVien(this, account.Username);
+                        formMainNhanVien frm = new formMainNhanVien(this, account.Username, account.MaNhanVien);
                         frm.Tag = account;
                         this.Hide();
                         frm.ShowDialog();
