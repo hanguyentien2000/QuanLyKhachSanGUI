@@ -1,21 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKS" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True" SettingsObjectName="BTL.Properties.Settings" SettingsPropertyName="QLKSConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-QHPIJ3U\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True" SettingsObjectName="BTL.Properties.Settings" SettingsPropertyName="QLKSConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChamCong" Member="ChamCongs">
     <Type Name="ChamCong">
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NgayChamCong" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="NhanVien_ChamCong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ChiTietDichVu" Member="ChiTietDichVus">
-    <Type Name="ChiTietDichVu">
-      <Column Name="MaCTDV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaDichVu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoLuongDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="GhiChu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DichVu_ChiTietDichVu" Member="DichVu" ThisKey="MaDichVu" OtherKey="MaDichVu" Type="DichVu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="HoaDon_ChiTietDichVu" Member="HoaDon" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DatPhong" Member="DatPhongs">
@@ -33,6 +22,17 @@
       <Association Name="KhachHang_DatPhong" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_DatPhong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Phong_DatPhong" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietDichVu" Member="ChiTietDichVus">
+    <Type Name="ChiTietDichVu">
+      <Column Name="MaCTDV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaDichVu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DichVu_ChiTietDichVu" Member="DichVu" ThisKey="MaDichVu" OtherKey="MaDichVu" Type="DichVu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="HoaDon_ChiTietDichVu" Member="HoaDon" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DichVu" Member="DichVus">
@@ -67,6 +67,13 @@
       <Association Name="KhachHang_DatPhong" Member="DatPhongs" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DatPhong" />
     </Type>
   </Table>
+  <Table Name="dbo.LoaiChucVu" Member="LoaiChucVus">
+    <Type Name="LoaiChucVu">
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LoaiChucVu_NhanVien" Member="NhanViens" ThisKey="ChucVu" OtherKey="ChucVu" Type="NhanVien" />
+    </Type>
+  </Table>
   <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
     <Type Name="LoaiPhong">
       <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -90,6 +97,7 @@
       <Association Name="NhanVien_ChamCong" Member="ChamCongs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="ChamCong" />
       <Association Name="NhanVien_DatPhong" Member="DatPhongs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="DatPhong" />
       <Association Name="NhanVien_Taikhoan" Member="Taikhoans" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="Taikhoan" />
+      <Association Name="LoaiChucVu_NhanVien" Member="LoaiChucVu" ThisKey="ChucVu" OtherKey="ChucVu" Type="LoaiChucVu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Phong" Member="Phongs">
