@@ -17,6 +17,7 @@ namespace BTL.GUI
         string trangThai, tenDangNhap, loaiTK;
         TaiKhoanBUS dsTaiKhoan = new TaiKhoanBUS();
         TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+        NhanVienBUS nhanVienBUS = new NhanVienBUS();
         public formQuanLyTaiKhoan()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace BTL.GUI
         {
             cbxMaNV.ValueMember = "MaNhanVien";
             cbxMaNV.DisplayMember = "MaNhanVien";
-            cbxMaNV.DataSource = dsTaiKhoan.GetTableTaiKhoan();
+            cbxMaNV.DataSource = nhanVienBUS.layTTNhanVien();
         }
 
         public void loadData(DataTable dt)
@@ -228,17 +229,17 @@ namespace BTL.GUI
                 {
                     throw new Exception("Vui lòng chọn tài khoản trước khi đổi loại tài khoản");
                 }
-                DialogResult result = MessageBox.Show("Bạn có muốn đổi loại tài khoản " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Bạn có muốn đổi loại tài khoản của " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     layThongTinTaiKhoan();
                     if (loaiTK.Equals("Admin"))
                     {
-                        taiKhoanDTO.LoaiTaiKhoan = 0;
-                    }
-                    else if (loaiTK.Equals("Quản lý"))
-                    {
                         taiKhoanDTO.LoaiTaiKhoan = 1;
+                    }
+                    else if (loaiTK.Equals("Nhân viên"))
+                    {
+                        taiKhoanDTO.LoaiTaiKhoan = 0;
                     }
                     if (dsTaiKhoan.UpdateTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai))
                     {
