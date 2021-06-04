@@ -59,14 +59,6 @@ namespace BTL.GUI
                 txtMaPhong.Text = dgvCheckOut.Rows[rowSelected].Cells[1].Value.ToString();
                 maDatPhong = Convert.ToInt32(dgvCheckOut.Rows[rowSelected].Cells[0].Value.ToString());
                 btnDichVu.Enabled = true;
-                if(DateTime.Parse(dgvCheckOut.Rows[rowSelected].Cells[6].Value.ToString()) <= DateTime.Now)
-                {
-                    btnCheckOut.Enabled = true;
-                }
-                else
-                {
-                    btnCheckOut.Enabled = false;
-                }
             }
             catch (Exception ex)
             {
@@ -77,7 +69,6 @@ namespace BTL.GUI
         private void btnListToday_Click(object sender, EventArgs e)
         {
             btnDichVu.Enabled = false;
-            btnCheckOut.Enabled = true;
             resetInfor();
             loadTableCOToday();
         }
@@ -85,7 +76,6 @@ namespace BTL.GUI
         private void btnTatCa_Click(object sender, EventArgs e)
         {
             btnDichVu.Enabled = false;
-            btnCheckOut.Enabled = false;
             loadAllCheckOut();
             resetInfor();
         }
@@ -100,7 +90,6 @@ namespace BTL.GUI
             {
                   
                 dgvCheckOut.DataSource = datPhongBus.timKiemCheckOut(txtKeyWords.Text);
-                btnCheckOut.Enabled = false;
                 btnDichVu.Enabled = false;
             }
         }

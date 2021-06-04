@@ -219,7 +219,8 @@ namespace BTL.BUS
         }
         public bool passToThongKe(int maDatPhong)
         {
-            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 2 where MaDatPhong = " + maDatPhong;
+            string today = DateTime.Now.ToString("yyyy/MM/dd");
+            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 2, NgayDi = '"+ today +"' where MaDatPhong = " + maDatPhong;
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
