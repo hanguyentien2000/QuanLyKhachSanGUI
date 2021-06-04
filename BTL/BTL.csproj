@@ -225,12 +225,6 @@
     <Compile Include="GUI\formThongKeLuong.Designer.cs">
       <DependentUpon>formThongKeLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\formThongTinHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\formThongTinHoaDon.Designer.cs">
-      <DependentUpon>formThongTinHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\formTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,9 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formThongKeLuong.resx">
       <DependentUpon>formThongKeLuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\formThongTinHoaDon.resx">
-      <DependentUpon>formThongTinHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formTrangChu.resx">
       <DependentUpon>formTrangChu.cs</DependentUpon>

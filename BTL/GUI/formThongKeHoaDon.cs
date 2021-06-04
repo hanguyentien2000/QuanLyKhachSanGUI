@@ -22,6 +22,11 @@ namespace BTL.GUI
 
         private void formThongKeHoaDon_Load(object sender, EventArgs e)
         {
+            guna2DataGridView1.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhong();
             loadCombo();
         }
@@ -41,7 +46,18 @@ namespace BTL.GUI
 
         private void guna2DataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            guna2DataGridView1.ReadOnly = true;
             dong = e.RowIndex;
+            try
+            {
+                if(dong <0)
+                {
+                    throw new Exception("Ô này không có dữ liệu");
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cbxTrangThai_SelectedIndexChanged(object sender, EventArgs e)
