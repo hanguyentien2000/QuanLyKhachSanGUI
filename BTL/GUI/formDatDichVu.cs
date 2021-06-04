@@ -89,9 +89,7 @@ namespace BTL.GUI
             }
             else
             {
-                btnThem.Enabled = false;
-                cbxDichVu.Enabled = false;
-                cbxDichVu.Text = dgvDichVu.Rows[rowSelected].Cells[0].Value.ToString();
+                cbxDichVu.Text = dgvDichVu.Rows[rowSelected].Cells[1].Value.ToString();
                 txtSL.Text = dgvDichVu.Rows[rowSelected].Cells[2].Value.ToString();
                 rTxtGC.Text = dgvDichVu.Rows[rowSelected].Cells[4].Value.ToString();
             }
@@ -99,8 +97,6 @@ namespace BTL.GUI
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            btnThem.Enabled = true;
-            cbxDichVu.Enabled = true;
             txtSL.Text = "";
             rTxtGC.Text = "";
         }
