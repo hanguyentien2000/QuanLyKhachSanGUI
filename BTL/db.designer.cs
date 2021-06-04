@@ -317,6 +317,8 @@ namespace BTL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private int _MaCTDV;
+		
 		private int _MaDichVu;
 		
 		private int _MaHoaDon;
@@ -333,6 +335,8 @@ namespace BTL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnMaCTDVChanging(int value);
+    partial void OnMaCTDVChanged();
     partial void OnMaDichVuChanging(int value);
     partial void OnMaDichVuChanged();
     partial void OnMaHoaDonChanging(int value);
@@ -350,7 +354,27 @@ namespace BTL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDichVu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCTDV", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaCTDV
+		{
+			get
+			{
+				return this._MaCTDV;
+			}
+			set
+			{
+				if ((this._MaCTDV != value))
+				{
+					this.OnMaCTDVChanging(value);
+					this.SendPropertyChanging();
+					this._MaCTDV = value;
+					this.SendPropertyChanged("MaCTDV");
+					this.OnMaCTDVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDichVu", DbType="Int NOT NULL")]
 		public int MaDichVu
 		{
 			get
@@ -374,7 +398,7 @@ namespace BTL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHoaDon", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHoaDon", DbType="Int NOT NULL")]
 		public int MaHoaDon
 		{
 			get

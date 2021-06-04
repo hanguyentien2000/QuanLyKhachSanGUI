@@ -20,6 +20,11 @@ namespace BTL.GUI
 
         private void formQuanLyDichVu_Load(object sender, EventArgs e)
         {
+            dgvDichVu.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvDichVu.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             lbDichVu.Visible = false;
             txtMaDichVu.Visible = false;
             dgvDichVu.AllowUserToAddRows = false;
@@ -197,6 +202,7 @@ namespace BTL.GUI
 
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvDichVu.ReadOnly = true;
             int dong = e.RowIndex;
             try
             {

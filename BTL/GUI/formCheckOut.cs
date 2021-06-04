@@ -29,6 +29,11 @@ namespace BTL.GUI
         }
         private void formCheckIn_Load(object sender, EventArgs e)
         {
+            dgvCheckOut.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvCheckOut.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             loadAllCheckOut();
         }
         public void loadAllCheckOut()
@@ -42,12 +47,13 @@ namespace BTL.GUI
 
         private void dgvCheckOut_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvCheckOut.ReadOnly = true;
             rowSelected = e.RowIndex;
             try
             {
-                if (dgvCheckOut.Rows.Count == rowSelected + 1)
+                if (rowSelected < 0)
                 {
-                    throw new Exception("Dữ liệu trống");
+                    throw new Exception("Ô này không có dữ liệu");
                 }
                 txtMaKhach.Text = dgvCheckOut.Rows[rowSelected].Cells[3].Value.ToString();
                 txtMaPhong.Text = dgvCheckOut.Rows[rowSelected].Cells[1].Value.ToString();
