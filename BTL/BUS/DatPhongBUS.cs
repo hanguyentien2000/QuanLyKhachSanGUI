@@ -1,5 +1,6 @@
 ﻿using BTL.DAL;
 using BTL.DTO;
+using BTL.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -233,12 +234,184 @@ namespace BTL.BUS
             return data.ExecuteQuery(sql);
         }
         // dịch vu
+        public DataTable getAllDichVu()
+        {
+            string sql = "Select * from DichVu";
+            return data.ExecuteQuery(sql);
+        }
         public DataTable getDichVuOneRoom(int maDatPhong)
         {
-            string sql = "select MaDichVu,TenDichVu,SoLuongDung,DonGia,GhiChu from ChiTietDichVu inner join HoaDon on" +
-                " ChiTietDichVu.MaHoaDon = HoaDon.MaHoaDon inner join on DichVu inner join DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join DatPhong on"
-                + "HoaDon.MaDatPhong = DatPhong.MaDatPhong where MaDatPhong = " + maDatPhong;
+            string sql = "select ChiTietDichVu.MaDichVu,TenDichVu,SoLuongDung,DonGia,GhiChu from ChiTietDichVu inner join HoaDon on" +
+                " ChiTietDichVu.MaHoaDon = HoaDon.MaHoaDon inner join DichVu on DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join DatPhong on "
+                + "HoaDon.MaDatPhong = DatPhong.MaDatPhong where HoaDon.MaDatPhong = " + maDatPhong;
             return data.ExecuteQuery(sql);
+        }
+        public Boolean ktraDichVu(int maHD,int maDichVu)
+        {
+            string sql = "select * from ChiTietDichVu where MaHoaDon =" + maHD + " AND MaDichVu =" + maDichVu;
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return true;
+            }
+            return false;
+        }
+        public int getSoLuongDung(int maHD, int maDichVu)
+        {
+            string sql = "select SoLuongDung from ChiTietDichVu where MaHoaDon =" + maHD + " AND MaDichVu =" + maDichVu;
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            int sldv = 0;
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                sldv = reader.GetInt32(0);
+            }
+            return sldv;
+        }
+        public int getMaHD(int maDatPhong)
+        {
+            string sql = "select MaHoaDon from HoaDon inner join DatPhong on HoaDon.MaDatPhong = DatPhong.MaDatPhong where DatPhong.MaDatPhong =" + maDatPhong;
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            int maHD = 0;
+            if(reader.Read())
+            {
+                maHD = reader.GetInt32(0);
+            }
+            return maHD;
+
+        }
+        public Boolean themDV(int maHoaDon,int maDichVu,int soLuong,string ghiChu)
+        {
+            string sql = "insert into ChiTietDichVu values(" + maDichVu + "," + maHoaDon + "," + soLuong + ",'" + ghiChu + "')";
+            if (data.ExecuteNonQuery(sql))
+            {
+                return true;
+            }
+            else return false;
+        }
+        public Boolean suaDV(int maHoaDon, int maDichVu, int soLuong, string ghiChu)
+        {
+            string sql = "update ChiTietDichVu set SoLuongDung=" + soLuong + ", GhiChu ='" + ghiChu +"' where MaHoaDon=" + maHoaDon + " AND MaDichVu=" + maDichVu;
+            if (data.ExecuteNonQuery(sql))
+            {
+                return true;
+            }
+            else return false;
+        }
+        public Boolean xoaDichVu(int maHoaDon, int maDichVu)
+        {
+            string sql = "Delete ChiTietDichVu where MaHoaDon =" + maHoaDon + " AND MaDichVu =" + maDichVu;
+            if (data.ExecuteNonQuery(sql))
+            {
+                return true;
+            }
+            else return false;
+        }
+        // get HoaDon
+        public int getTienCoc(int maDatPhong)
+        {
+            int tienCoc = 0;
+            string sql = "";
+            sql = "SELECT TienDatCoc from DatPhong where MaDatPhong =" + maDatPhong;
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    if (reader.Read())
+                    {
+                        tienCoc += Convert.ToInt32(reader.GetValue(0));
+                    }
+                }
+            }
+            return tienCoc;
+        }
+        public int getTongTienDV(int maHoaDon)
+        {
+            int tongTienDV = 0;
+            string sql = "";
+            sql = "SELECT DonGia,SoLuongDung from DichVu inner join ChiTietDichVu on DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join" + 
+                " HoaDon on HoaDon.MaHoaDon = ChiTietDichVu.MaHoaDon";
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        tongTienDV += Convert.ToInt32(reader.GetValue(0)) * Convert.ToInt32(reader.GetValue(1));
+                    }
+                }
+            }
+            return tongTienDV;
+        }
+        public int getTongTienPhong(int maDatPhong)
+        {
+            int tongTienPhong = 0;
+            string sql = "";
+            sql = "SELECT TienDatCoc from DatPhong where MaDatPhong = " + maDatPhong;
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    if (reader.Read())
+                    {
+                        tongTienPhong += Convert.ToInt32(reader.GetValue(0)) * 2;
+                    }
+                }
+            }
+            return tongTienPhong;
+        }
+        public HoaDonDTO ttHoaDon(int maHoaDon)
+        {
+            HoaDonDTO hd = new HoaDonDTO();
+            string sql = "";
+            sql = "Select * from HoaDon where MaHoaDon =" + maHoaDon;
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    if (reader.Read())
+                    {
+                        hd.MaHD = Convert.ToInt32(reader.GetValue(0));
+                        hd.MaDatPhong = Convert.ToInt32(reader.GetValue(1));
+                        hd.NgayLap = reader.GetDateTime(2);
+                        hd.TongTien = Convert.ToInt32(reader.GetValue(3));
+                    }
+                }
+            }
+            return hd;
+        }
+        public Boolean updateHDSauKhiCheckOut(int maHD,int tongTien)
+        {
+            string sql = "update HoaDon set TongTien =" + tongTien + ", NgayLap ='" + DateTime.Now.ToString("yyyy/MM/dd") + "' where MaHoaDon =" + maHD;
+            if (data.ExecuteNonQuery(sql))
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }
