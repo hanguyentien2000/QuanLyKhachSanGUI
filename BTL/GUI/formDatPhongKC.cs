@@ -103,6 +103,15 @@ namespace BTL
                     txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
                     tienPhaiTra();
                 }
+                else
+                {
+                    cbxPhong.DataSource = dt;
+                    cbxPhong.ValueMember = "MaPhong";
+                    cbxPhong.DisplayMember = "MaPhong";
+                    txtPrice.Text = "";
+                    lbTienCoc.Text = "";
+                    lbTongBill.Text = "";
+                }
                 
             }
         }
@@ -113,6 +122,7 @@ namespace BTL
              kh = datPhongBus.getKhachHang(txtTuKhoa.Text);
             if(kh.MaKH != 0)
             {
+                txtTuKhoa.Enabled = false;
                 txtTenKH.Text = kh.HoTen;
                 txtSDT.Text = kh.SoDT;
                 txtCMND.Text = kh.Cmnd;
@@ -188,6 +198,19 @@ namespace BTL
                 }
                
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtTuKhoa.Enabled = true;
+            txtTuKhoa.Text = "";
+            txtTenKH.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
+            txtDiaChi.Text = "";
+            txtCMND.Text = "";
+            rdNam.Checked = true;
+            dateNS.Value = DateTime.Now;
         }
     }
 }

@@ -29,9 +29,9 @@ namespace BTL.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtMaPhong = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaKhach = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnConfirmOOD = new Guna.UI2.WinForms.Guna2Button();
@@ -67,7 +67,7 @@ namespace BTL.GUI
             this.txtMaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaPhong.HoverState.Parent = this.txtMaPhong;
-            this.txtMaPhong.Location = new System.Drawing.Point(354, 473);
+            this.txtMaPhong.Location = new System.Drawing.Point(346, 428);
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.PasswordChar = '\0';
             this.txtMaPhong.PlaceholderText = "ID Phòng";
@@ -92,7 +92,7 @@ namespace BTL.GUI
             this.txtMaKhach.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaKhach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaKhach.HoverState.Parent = this.txtMaKhach;
-            this.txtMaKhach.Location = new System.Drawing.Point(28, 473);
+            this.txtMaKhach.Location = new System.Drawing.Point(32, 428);
             this.txtMaKhach.Name = "txtMaKhach";
             this.txtMaKhach.PasswordChar = '\0';
             this.txtMaKhach.PlaceholderText = "ID khách";
@@ -110,13 +110,13 @@ namespace BTL.GUI
             this.btnConfirmOOD.DisabledState.Parent = this.btnConfirmOOD;
             this.btnConfirmOOD.Enabled = false;
             this.btnConfirmOOD.FillColor = System.Drawing.Color.Red;
-            this.btnConfirmOOD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmOOD.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmOOD.ForeColor = System.Drawing.Color.White;
             this.btnConfirmOOD.HoverState.Parent = this.btnConfirmOOD;
-            this.btnConfirmOOD.Location = new System.Drawing.Point(666, 462);
+            this.btnConfirmOOD.Location = new System.Drawing.Point(632, 417);
             this.btnConfirmOOD.Name = "btnConfirmOOD";
             this.btnConfirmOOD.ShadowDecoration.Parent = this.btnConfirmOOD;
-            this.btnConfirmOOD.Size = new System.Drawing.Size(150, 47);
+            this.btnConfirmOOD.Size = new System.Drawing.Size(139, 47);
             this.btnConfirmOOD.TabIndex = 68;
             this.btnConfirmOOD.Text = "Quá hạn";
             this.btnConfirmOOD.Click += new System.EventHandler(this.btnConfirmOOD_Click);
@@ -129,13 +129,13 @@ namespace BTL.GUI
             this.btnCheckIn.DisabledState.Parent = this.btnCheckIn;
             this.btnCheckIn.Enabled = false;
             this.btnCheckIn.FillColor = System.Drawing.Color.Green;
-            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.ForeColor = System.Drawing.Color.White;
             this.btnCheckIn.HoverState.Parent = this.btnCheckIn;
-            this.btnCheckIn.Location = new System.Drawing.Point(822, 462);
+            this.btnCheckIn.Location = new System.Drawing.Point(781, 417);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.ShadowDecoration.Parent = this.btnCheckIn;
-            this.btnCheckIn.Size = new System.Drawing.Size(150, 47);
+            this.btnCheckIn.Size = new System.Drawing.Size(132, 47);
             this.btnCheckIn.TabIndex = 67;
             this.btnCheckIn.Text = "Checkin";
             this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
@@ -146,13 +146,13 @@ namespace BTL.GUI
             this.btnListToday.CustomImages.Parent = this.btnListToday;
             this.btnListToday.DisabledState.Parent = this.btnListToday;
             this.btnListToday.FillColor = System.Drawing.Color.Green;
-            this.btnListToday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListToday.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListToday.ForeColor = System.Drawing.Color.White;
             this.btnListToday.HoverState.Parent = this.btnListToday;
-            this.btnListToday.Location = new System.Drawing.Point(595, 82);
+            this.btnListToday.Location = new System.Drawing.Point(565, 98);
             this.btnListToday.Name = "btnListToday";
             this.btnListToday.ShadowDecoration.Parent = this.btnListToday;
-            this.btnListToday.Size = new System.Drawing.Size(212, 36);
+            this.btnListToday.Size = new System.Drawing.Size(196, 36);
             this.btnListToday.TabIndex = 66;
             this.btnListToday.Tag = "";
             this.btnListToday.Text = "Checkin hôm nay";
@@ -164,10 +164,10 @@ namespace BTL.GUI
             this.btnOutOfDate.CustomImages.Parent = this.btnOutOfDate;
             this.btnOutOfDate.DisabledState.Parent = this.btnOutOfDate;
             this.btnOutOfDate.FillColor = System.Drawing.Color.Red;
-            this.btnOutOfDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOutOfDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOutOfDate.ForeColor = System.Drawing.Color.White;
             this.btnOutOfDate.HoverState.Parent = this.btnOutOfDate;
-            this.btnOutOfDate.Location = new System.Drawing.Point(392, 82);
+            this.btnOutOfDate.Location = new System.Drawing.Point(356, 98);
             this.btnOutOfDate.Name = "btnOutOfDate";
             this.btnOutOfDate.ShadowDecoration.Parent = this.btnOutOfDate;
             this.btnOutOfDate.Size = new System.Drawing.Size(186, 36);
@@ -177,21 +177,21 @@ namespace BTL.GUI
             // 
             // dgvCheckIn
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvCheckIn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvCheckIn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCheckIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCheckIn.BackgroundColor = System.Drawing.Color.White;
             this.dgvCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCheckIn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCheckIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCheckIn.ColumnHeadersHeight = 21;
             this.dgvCheckIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDatPhong,
@@ -201,21 +201,21 @@ namespace BTL.GUI
             this.NgayDat,
             this.NgayDi,
             this.TienDatCoc});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckIn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckIn.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCheckIn.EnableHeadersVisualStyles = false;
             this.dgvCheckIn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCheckIn.Location = new System.Drawing.Point(28, 161);
+            this.dgvCheckIn.Location = new System.Drawing.Point(31, 158);
             this.dgvCheckIn.Name = "dgvCheckIn";
             this.dgvCheckIn.RowHeadersVisible = false;
             this.dgvCheckIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCheckIn.Size = new System.Drawing.Size(935, 253);
+            this.dgvCheckIn.Size = new System.Drawing.Size(882, 253);
             this.dgvCheckIn.TabIndex = 60;
             this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCheckIn.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -288,10 +288,10 @@ namespace BTL.GUI
             this.btnTatCa.CustomImages.Parent = this.btnTatCa;
             this.btnTatCa.DisabledState.Parent = this.btnTatCa;
             this.btnTatCa.FillColor = System.Drawing.SystemColors.Highlight;
-            this.btnTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTatCa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTatCa.ForeColor = System.Drawing.Color.White;
             this.btnTatCa.HoverState.Parent = this.btnTatCa;
-            this.btnTatCa.Location = new System.Drawing.Point(822, 82);
+            this.btnTatCa.Location = new System.Drawing.Point(786, 98);
             this.btnTatCa.Name = "btnTatCa";
             this.btnTatCa.ShadowDecoration.Parent = this.btnTatCa;
             this.btnTatCa.Size = new System.Drawing.Size(125, 36);
@@ -314,7 +314,7 @@ namespace BTL.GUI
             this.txtKeyWords.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtKeyWords.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKeyWords.HoverState.Parent = this.txtKeyWords;
-            this.txtKeyWords.Location = new System.Drawing.Point(392, 24);
+            this.txtKeyWords.Location = new System.Drawing.Point(356, 40);
             this.txtKeyWords.Name = "txtKeyWords";
             this.txtKeyWords.PasswordChar = '\0';
             this.txtKeyWords.PlaceholderText = "Mã đặt phòng,phòng,khách";
@@ -329,10 +329,10 @@ namespace BTL.GUI
             this.btnTimKiem.CustomImages.Parent = this.btnTimKiem;
             this.btnTimKiem.DisabledState.Parent = this.btnTimKiem;
             this.btnTimKiem.FillColor = System.Drawing.SystemColors.Highlight;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.Parent = this.btnTimKiem;
-            this.btnTimKiem.Location = new System.Drawing.Point(822, 24);
+            this.btnTimKiem.Location = new System.Drawing.Point(786, 40);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.ShadowDecoration.Parent = this.btnTimKiem;
             this.btnTimKiem.Size = new System.Drawing.Size(125, 36);
@@ -341,12 +341,12 @@ namespace BTL.GUI
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // formCheckOut
+            // formCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(994, 672);
+            this.ClientSize = new System.Drawing.Size(1035, 672);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtKeyWords);
             this.Controls.Add(this.btnTatCa);
@@ -357,7 +357,7 @@ namespace BTL.GUI
             this.Controls.Add(this.btnListToday);
             this.Controls.Add(this.btnOutOfDate);
             this.Controls.Add(this.dgvCheckIn);
-            this.Name = "formCheckOut";
+            this.Name = "formCheckIn";
             this.Text = "formCheckOut";
             this.Load += new System.EventHandler(this.formCheckOut_Load);
             this.Click += new System.EventHandler(this.formCheckOut_Click);

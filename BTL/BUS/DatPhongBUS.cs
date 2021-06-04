@@ -18,7 +18,11 @@ namespace BTL.BUS
         
         public DataTable getPhong(DateTime checkIn,DateTime checkOut,String maLoaiPhong)
         {
-            String sql = "select * from Phong where MaLoaiPhong = "+ Convert.ToInt32(maLoaiPhong) + " AND MaPhong not in (Select MaPhong from DatPhong where (NgayDat<='" + checkIn.ToString("yyyy/MM/dd") +"' AND NgayDi>='" + checkIn.ToString("yyyy/MM/dd") + "') OR " + "(NgayDat <= '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi>= '" + checkOut.ToString("yyyy/MM/dd") + "'))";
+            String sql = "select * from Phong where MaLoaiPhong = "+ Convert.ToInt32(maLoaiPhong) 
+                + " AND MaPhong not in (Select MaPhong from DatPhong where (NgayDat<='" + checkIn.ToString("yyyy/MM/dd") 
+                +"' AND NgayDi>'" + checkIn.ToString("yyyy/MM/dd") + "') OR "
+                + "(NgayDat <= '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi>= '" + checkOut.ToString("yyyy/MM/dd") 
+                + "'))";
             return data.ExecuteQuery(sql);
         }
         public KhachHangDTO getKhachHang(string tuKhoa)
@@ -138,12 +142,13 @@ namespace BTL.BUS
             else return false;
         }
         
-        
+        // get tất cả checkin
         public DataTable getTTDatPhongCI()
         {
             string sql = "SELECT MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0";
             return data.GetTable(sql);
         }
+       
         public DataTable getCheckInToday()
         {
             // checkin hôm nay
@@ -193,7 +198,8 @@ namespace BTL.BUS
         }
         public bool quaHanCheckIn(int maDatPhong)
         {
-            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 2 where MaDatPhong = " + maDatPhong;
+            string today = DateTime.Now.ToString("yyyy/MM/dd");
+            string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 2 AND NgayDi ='" + today + "' where MaDatPhong = " + maDatPhong;
             if (data.ExecuteNonQuery(sql))
                 return true;
             else
