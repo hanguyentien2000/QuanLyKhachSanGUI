@@ -229,13 +229,10 @@ namespace BTL
             ActiveButton(sender, RGBColors.color3);
             OpenCurrentForm(new formCheckOut());
         }
-        public string ma;
-        public formCheckOut checkOut;
+
         private void btnQuanLyMain_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color4);
-            //OpenCurrentForm(new formMainNhanVien());
-            OpenCurrentForm(new formThongTinHoaDon(checkOut,ma));
             ShowSubmenu(panelSubmenu);
         }
 
@@ -272,11 +269,6 @@ namespace BTL
             ActiveButton(sender, RGBColors.color2);
             OpenCurrentForm(new formQuanLyNhanVien());
             //HideSubmenu();
-        }
-
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void btnThongKeHoaDon_Click(object sender, EventArgs e)
@@ -337,7 +329,6 @@ namespace BTL
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            //OpenCurrentForm(new formThongKeHoaDon());
             ShowSubmenu(panelSubmenu2);
         }
 
