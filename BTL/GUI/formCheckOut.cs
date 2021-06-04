@@ -98,7 +98,7 @@ namespace BTL.GUI
         {
             if (maDatPhong > 0)
             {
-                DialogResult result = MessageBox.Show("Checkin cho mã đặt phòng " + maDatPhong, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Checkout cho mã đặt phòng " + maDatPhong, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (datPhongBus.passToThongKe(maDatPhong))
@@ -120,7 +120,7 @@ namespace BTL.GUI
             }
             else
             {
-                MessageBox.Show("Chưa chọn đơn cần checkin");
+                MessageBox.Show("Chưa chọn đơn cần checkout");
             }
         }
 

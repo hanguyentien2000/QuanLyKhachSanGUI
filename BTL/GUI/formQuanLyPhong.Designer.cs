@@ -385,7 +385,7 @@ namespace BTL
             // 
             this.imgPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.imgPhong.Location = new System.Drawing.Point(35, 53);
-            this.imgPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgPhong.Margin = new System.Windows.Forms.Padding(2);
             this.imgPhong.Name = "imgPhong";
             this.imgPhong.Size = new System.Drawing.Size(421, 265);
             this.imgPhong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -397,6 +397,7 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1446, 643);
             this.Controls.Add(this.imgPhong);

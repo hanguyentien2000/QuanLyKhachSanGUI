@@ -15,13 +15,18 @@ namespace BTL.GUI
     {
         public formCheckOut f;
         DatPhongBUS datPhongBUS = new DatPhongBUS();
-        int rowSelected;
+        int rowSelected = -1;
         public formDatDichVu(formCheckOut fs)
         {
             this.f = fs;
             InitializeComponent();
         }
-
+        public void xoaTrang()
+        {
+            txtSL.Text = "";
+            rTxtGC.Text = "";
+            cbxDichVu.SelectedIndex = 0;
+        }
         private void formDatDichVu_Load(object sender, EventArgs e)
         {
             dgvDichVu.AllowUserToAddRows = false;
@@ -103,36 +108,64 @@ namespace BTL.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int value;
-            if (int.TryParse(txtSL.Text, out value))
+            if(rowSelected < 0)
             {
-                if (datPhongBUS.suaDV(datPhongBUS.getMaHD(f.maDatPhong), Convert.ToInt32(cbxDichVu.SelectedValue.ToString()), Convert.ToInt32(txtSL.Text), rTxtGC.Text))
-                {
-                    MessageBox.Show("Sửa thành công");
-                    dgvDichVu.DataSource = datPhongBUS.getDichVuOneRoom(f.maDatPhong);
-                }
-                else
-                {
-                    MessageBox.Show("Sửa dịch vụ thất bại !!");
-                }
+                MessageBox.Show("Chưa chọn dịch vụ muốn sửa");
             }
             else
             {
-                MessageBox.Show("Số lượng không hợp lệ");
+                int value;
+                if (int.TryParse(txtSL.Text, out value))
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa dịch vụ ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        if (datPhongBUS.suaDV(datPhongBUS.getMaHD(f.maDatPhong), Convert.ToInt32(cbxDichVu.SelectedValue.ToString()), Convert.ToInt32(txtSL.Text), rTxtGC.Text))
+                        {
+                            MessageBox.Show("Sửa thành công");
+                            dgvDichVu.DataSource = datPhongBUS.getDichVuOneRoom(f.maDatPhong);
+                            rowSelected = -1;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sửa dịch vụ thất bại !!");
+                        }
+                    }    
+                       
+                }
+                else
+                {
+                    MessageBox.Show("Số lượng không hợp lệ");
+                }
             }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (datPhongBUS.xoaDichVu(datPhongBUS.getMaHD(f.maDatPhong), Convert.ToInt32(cbxDichVu.SelectedValue.ToString())))
+            if(rowSelected < 0)
             {
-                MessageBox.Show("Xóa thành công");
-                dgvDichVu.DataSource = datPhongBUS.getDichVuOneRoom(f.maDatPhong);
+                MessageBox.Show("Bạn chưa chọn dịch vụ muốn xóa");
             }
             else
             {
-                MessageBox.Show("Xóa dịch vụ thất bại !!");
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa dịch vụ ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (datPhongBUS.xoaDichVu(datPhongBUS.getMaHD(f.maDatPhong), Convert.ToInt32(cbxDichVu.SelectedValue.ToString())))
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        dgvDichVu.DataSource = datPhongBUS.getDichVuOneRoom(f.maDatPhong);
+                        rowSelected = -1;
+                        xoaTrang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dịch vụ thất bại !!");
+                    }
+                }
             }
+               
         }
     }
 }

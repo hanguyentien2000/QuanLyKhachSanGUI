@@ -36,6 +36,7 @@ namespace BTL.GUI
             dateCheckin.MinDate = DateTime.Now;
             dateCheckout.MinDate = DateTime.Now.AddDays(1);
             dateNS.MaxDate = DateTime.Now.AddYears(-18);
+            rdNam.Checked = true;
         }
         private void tienPhaiTra()
         {
@@ -71,6 +72,15 @@ namespace BTL.GUI
                     cbxPhong.DisplayMember = "MaPhong";
                     txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
                     tienPhaiTra();
+                }
+                else
+                {
+                    cbxPhong.DataSource = dt;
+                    cbxPhong.ValueMember = "MaPhong";
+                    cbxPhong.DisplayMember = "MaPhong";
+                    txtPrice.Text = "";
+                    lbTienCoc.Text = "";
+                    lbTongBill.Text = "";
                 }
 
             }

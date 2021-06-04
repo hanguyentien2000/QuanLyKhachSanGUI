@@ -29,9 +29,9 @@ namespace BTL.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.txtKeyWords = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTatCa = new Guna.UI2.WinForms.Guna2Button();
@@ -58,7 +58,7 @@ namespace BTL.GUI
             this.btnTimKiem.CustomImages.Parent = this.btnTimKiem;
             this.btnTimKiem.DisabledState.Parent = this.btnTimKiem;
             this.btnTimKiem.FillColor = System.Drawing.SystemColors.Highlight;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.Parent = this.btnTimKiem;
             this.btnTimKiem.Location = new System.Drawing.Point(831, 31);
@@ -99,7 +99,7 @@ namespace BTL.GUI
             this.btnTatCa.CustomImages.Parent = this.btnTatCa;
             this.btnTatCa.DisabledState.Parent = this.btnTatCa;
             this.btnTatCa.FillColor = System.Drawing.SystemColors.Highlight;
-            this.btnTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTatCa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTatCa.ForeColor = System.Drawing.Color.White;
             this.btnTatCa.HoverState.Parent = this.btnTatCa;
             this.btnTatCa.Location = new System.Drawing.Point(831, 89);
@@ -126,7 +126,7 @@ namespace BTL.GUI
             this.txtMaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaPhong.HoverState.Parent = this.txtMaPhong;
-            this.txtMaPhong.Location = new System.Drawing.Point(347, 480);
+            this.txtMaPhong.Location = new System.Drawing.Point(347, 451);
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.PasswordChar = '\0';
             this.txtMaPhong.PlaceholderText = "ID Phòng";
@@ -151,7 +151,7 @@ namespace BTL.GUI
             this.txtMaKhach.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaKhach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaKhach.HoverState.Parent = this.txtMaKhach;
-            this.txtMaKhach.Location = new System.Drawing.Point(21, 480);
+            this.txtMaKhach.Location = new System.Drawing.Point(21, 451);
             this.txtMaKhach.Name = "txtMaKhach";
             this.txtMaKhach.PasswordChar = '\0';
             this.txtMaKhach.PlaceholderText = "ID khách";
@@ -168,10 +168,10 @@ namespace BTL.GUI
             this.btnCheckOut.CustomImages.Parent = this.btnCheckOut;
             this.btnCheckOut.DisabledState.Parent = this.btnCheckOut;
             this.btnCheckOut.FillColor = System.Drawing.Color.Green;
-            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
             this.btnCheckOut.HoverState.Parent = this.btnCheckOut;
-            this.btnCheckOut.Location = new System.Drawing.Point(806, 469);
+            this.btnCheckOut.Location = new System.Drawing.Point(806, 440);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.ShadowDecoration.Parent = this.btnCheckOut;
             this.btnCheckOut.Size = new System.Drawing.Size(150, 47);
@@ -185,7 +185,7 @@ namespace BTL.GUI
             this.btnListToday.CustomImages.Parent = this.btnListToday;
             this.btnListToday.DisabledState.Parent = this.btnListToday;
             this.btnListToday.FillColor = System.Drawing.Color.Green;
-            this.btnListToday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListToday.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListToday.ForeColor = System.Drawing.Color.White;
             this.btnListToday.HoverState.Parent = this.btnListToday;
             this.btnListToday.Location = new System.Drawing.Point(613, 89);
@@ -199,21 +199,21 @@ namespace BTL.GUI
             // 
             // dgvCheckOut
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvCheckOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvCheckOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCheckOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCheckOut.BackgroundColor = System.Drawing.Color.White;
             this.dgvCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCheckOut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCheckOut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCheckOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCheckOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCheckOut.ColumnHeadersHeight = 21;
             this.dgvCheckOut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDatPhong,
@@ -224,14 +224,14 @@ namespace BTL.GUI
             this.NgayDen,
             this.NgayDi,
             this.TienDatCoc});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCheckOut.EnableHeadersVisualStyles = false;
             this.dgvCheckOut.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCheckOut.Location = new System.Drawing.Point(21, 168);
@@ -319,10 +319,10 @@ namespace BTL.GUI
             this.btnDichVu.DisabledState.Parent = this.btnDichVu;
             this.btnDichVu.Enabled = false;
             this.btnDichVu.FillColor = System.Drawing.Color.DarkSlateGray;
-            this.btnDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDichVu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDichVu.ForeColor = System.Drawing.Color.White;
             this.btnDichVu.HoverState.Parent = this.btnDichVu;
-            this.btnDichVu.Location = new System.Drawing.Point(650, 469);
+            this.btnDichVu.Location = new System.Drawing.Point(650, 440);
             this.btnDichVu.Name = "btnDichVu";
             this.btnDichVu.ShadowDecoration.Parent = this.btnDichVu;
             this.btnDichVu.Size = new System.Drawing.Size(150, 47);
@@ -332,6 +332,7 @@ namespace BTL.GUI
             // 
             // formCheckOut
             // 
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(994, 672);
             this.Controls.Add(this.btnDichVu);
             this.Controls.Add(this.btnTimKiem);
