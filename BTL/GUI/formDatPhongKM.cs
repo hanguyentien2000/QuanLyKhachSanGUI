@@ -199,6 +199,14 @@ namespace BTL.GUI
                             txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
                             tienPhaiTra();
                         }
+                        else{
+                            cbxPhong.DataSource = dt;
+                            cbxPhong.ValueMember = "MaPhong";
+                            cbxPhong.DisplayMember = "MaPhong";
+                            txtPrice.Text = "";
+                            lbTienCoc.Text = "";
+                            lbTongBill.Text = "";
+                        }
 
                     }
                 }

@@ -69,6 +69,14 @@ namespace BTL
                             txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
                             tienPhaiTra();
                         }
+                        else{
+                            cbxPhong.DataSource = dt;
+                            cbxPhong.ValueMember = "MaPhong";
+                            cbxPhong.DisplayMember = "MaPhong";
+                            txtPrice.Text = "";
+                            lbTienCoc.Text = "";
+                            lbTongBill.Text = "";
+                        }
 
                     }
                 }
@@ -202,6 +210,7 @@ namespace BTL
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            kh = new KhachHangDTO();
             txtTuKhoa.Enabled = true;
             txtTuKhoa.Text = "";
             txtTenKH.Text = "";
