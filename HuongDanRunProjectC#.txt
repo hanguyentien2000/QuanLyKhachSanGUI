@@ -1,0 +1,10 @@
+Hướng dẫn chạy bài sau khi đã clone code thành công!
+
+1: Execute Query SQL, tạo 1 data connection thông qua LinQToSQLClasses 
+=> đặt tên là db.dbmbl (vì ở trong project lưu tên là dbDatacontext), sau đó add các tables.
+
+2: Chuột phải vào References trong project, chọn ManageNugetPackages
+=> Search GUNA2.UI2.Winform, FontAwesome.Sharp, linq2db (Cần phải có internet để cài đặt)
+=> Install 3 package trên.
+
+3. Run project và sử dụng.

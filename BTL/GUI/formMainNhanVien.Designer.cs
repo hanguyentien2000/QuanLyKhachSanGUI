@@ -57,6 +57,9 @@ namespace BTL
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.timerCurrent = new System.Windows.Forms.Timer(this.components);
+            this.Instagram = new FontAwesome.Sharp.IconPictureBox();
+            this.FacebookButton = new FontAwesome.Sharp.IconPictureBox();
+            this.TwitterButton = new FontAwesome.Sharp.IconPictureBox();
             this.panelHidden.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
@@ -65,6 +68,9 @@ namespace BTL
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelDesktop.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Instagram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FacebookButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwitterButton)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +88,9 @@ namespace BTL
             // panelHidden
             // 
             this.panelHidden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelHidden.Controls.Add(this.Instagram);
+            this.panelHidden.Controls.Add(this.FacebookButton);
+            this.panelHidden.Controls.Add(this.TwitterButton);
             this.panelHidden.Controls.Add(this.lbTimeMain);
             this.panelHidden.Controls.Add(this.label6);
             this.panelHidden.Controls.Add(this.TenNV);
@@ -465,6 +474,51 @@ namespace BTL
             this.timerCurrent.Enabled = true;
             this.timerCurrent.Tick += new System.EventHandler(this.timerCurrent_Tick);
             // 
+            // Instagram
+            // 
+            this.Instagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.Instagram.BackgroundImage = global::BTL.Properties.Resources.instagram_48px;
+            this.Instagram.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Instagram.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Instagram.IconColor = System.Drawing.SystemColors.ControlText;
+            this.Instagram.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Instagram.IconSize = 44;
+            this.Instagram.Location = new System.Drawing.Point(404, 45);
+            this.Instagram.Name = "Instagram";
+            this.Instagram.Size = new System.Drawing.Size(46, 44);
+            this.Instagram.TabIndex = 13;
+            this.Instagram.TabStop = false;
+            // 
+            // FacebookButton
+            // 
+            this.FacebookButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.FacebookButton.BackgroundImage = global::BTL.Properties.Resources.facebook_48px;
+            this.FacebookButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FacebookButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.FacebookButton.IconColor = System.Drawing.SystemColors.ControlText;
+            this.FacebookButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.FacebookButton.IconSize = 44;
+            this.FacebookButton.Location = new System.Drawing.Point(324, 45);
+            this.FacebookButton.Name = "FacebookButton";
+            this.FacebookButton.Size = new System.Drawing.Size(46, 44);
+            this.FacebookButton.TabIndex = 12;
+            this.FacebookButton.TabStop = false;
+            // 
+            // TwitterButton
+            // 
+            this.TwitterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.TwitterButton.BackgroundImage = global::BTL.Properties.Resources.twitter_48px;
+            this.TwitterButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TwitterButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.TwitterButton.IconColor = System.Drawing.SystemColors.ControlText;
+            this.TwitterButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.TwitterButton.IconSize = 44;
+            this.TwitterButton.Location = new System.Drawing.Point(243, 45);
+            this.TwitterButton.Name = "TwitterButton";
+            this.TwitterButton.Size = new System.Drawing.Size(46, 44);
+            this.TwitterButton.TabIndex = 11;
+            this.TwitterButton.TabStop = false;
+            // 
             // formMainNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +540,9 @@ namespace BTL
             this.panelDesktop.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Instagram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FacebookButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwitterButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,5 +575,8 @@ namespace BTL
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbTimeMain;
+        private FontAwesome.Sharp.IconPictureBox Instagram;
+        private FontAwesome.Sharp.IconPictureBox FacebookButton;
+        private FontAwesome.Sharp.IconPictureBox TwitterButton;
     }
 }
