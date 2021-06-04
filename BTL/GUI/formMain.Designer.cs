@@ -35,7 +35,9 @@ namespace BTL
             this.panelSubmenu2 = new System.Windows.Forms.Panel();
             this.btnThongKeLuong = new FontAwesome.Sharp.IconButton();
             this.btnThongKeHoaDon = new FontAwesome.Sharp.IconButton();
+            this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.panelSubmenu = new System.Windows.Forms.Panel();
+            this.btnDichVu = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyNhanVien = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyKhachHang = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyTaiKhoan = new FontAwesome.Sharp.IconButton();
@@ -44,10 +46,10 @@ namespace BTL
             this.btnQuanLyMain = new FontAwesome.Sharp.IconButton();
             this.btnCheckout = new FontAwesome.Sharp.IconButton();
             this.btnCheckin = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelSubmenu3 = new System.Windows.Forms.Panel();
             this.btnKhachMoi = new FontAwesome.Sharp.IconButton();
             this.btnKhachCu = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -70,8 +72,6 @@ namespace BTL
             this.lbTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timeCurrent = new System.Windows.Forms.Timer(this.components);
-            this.btnDichVu = new FontAwesome.Sharp.IconButton();
-            this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubmenu2.SuspendLayout();
             this.panelSubmenu.SuspendLayout();
@@ -169,6 +169,29 @@ namespace BTL
             this.btnThongKeHoaDon.UseVisualStyleBackColor = false;
             this.btnThongKeHoaDon.Click += new System.EventHandler(this.btnThongKeHoaDon_Click);
             // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKe.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.btnThongKe.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThongKe.IconSize = 32;
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 879);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(187, 66);
+            this.btnThongKe.TabIndex = 14;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // panelSubmenu
             // 
             this.panelSubmenu.BackColor = System.Drawing.Color.DarkSlateBlue;
@@ -183,6 +206,31 @@ namespace BTL
             this.panelSubmenu.Name = "panelSubmenu";
             this.panelSubmenu.Size = new System.Drawing.Size(187, 309);
             this.panelSubmenu.TabIndex = 13;
+            // 
+            // btnDichVu
+            // 
+            this.btnDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDichVu.FlatAppearance.BorderSize = 0;
+            this.btnDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDichVu.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDichVu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDichVu.IconChar = FontAwesome.Sharp.IconChar.CcPaypal;
+            this.btnDichVu.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDichVu.IconSize = 32;
+            this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDichVu.Location = new System.Drawing.Point(0, 259);
+            this.btnDichVu.Name = "btnDichVu";
+            this.btnDichVu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDichVu.Size = new System.Drawing.Size(187, 54);
+            this.btnDichVu.TabIndex = 10;
+            this.btnDichVu.Text = "Quản lý dịch vụ";
+            this.btnDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDichVu.UseVisualStyleBackColor = false;
+            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
             // 
             // btnQuanLyNhanVien
             // 
@@ -378,18 +426,6 @@ namespace BTL
             this.btnCheckin.UseVisualStyleBackColor = true;
             this.btnCheckin.Click += new System.EventHandler(this.btnCheckin_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 1026);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 19);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Copyright by HAUI 2021, VN";
-            // 
             // panelSubmenu3
             // 
             this.panelSubmenu3.Controls.Add(this.btnKhachMoi);
@@ -449,6 +485,18 @@ namespace BTL
             this.btnKhachCu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhachCu.UseVisualStyleBackColor = false;
             this.btnKhachCu.Click += new System.EventHandler(this.btnKhachCu_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 1026);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Copyright by HAUI 2021, VN";
             // 
             // btnDatPhong
             // 
@@ -750,54 +798,6 @@ namespace BTL
             // 
             this.timeCurrent.Enabled = true;
             this.timeCurrent.Tick += new System.EventHandler(this.timeCurrent_Tick);
-            // 
-            // btnDichVu
-            // 
-            this.btnDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDichVu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDichVu.FlatAppearance.BorderSize = 0;
-            this.btnDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDichVu.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDichVu.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDichVu.IconChar = FontAwesome.Sharp.IconChar.CcPaypal;
-            this.btnDichVu.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDichVu.IconSize = 32;
-            this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.Location = new System.Drawing.Point(0, 259);
-            this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDichVu.Size = new System.Drawing.Size(187, 54);
-            this.btnDichVu.TabIndex = 10;
-            this.btnDichVu.Text = "Quản lý dịch vụ";
-            this.btnDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDichVu.UseVisualStyleBackColor = false;
-            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnThongKe.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            this.btnThongKe.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThongKe.IconSize = 32;
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 879);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(187, 66);
-            this.btnThongKe.TabIndex = 14;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            this.btnThongKe.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // formMain
             // 
