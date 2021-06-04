@@ -24,6 +24,11 @@ namespace BTL.GUI
 
         private void formThongTinHoaDon_Load(object sender, EventArgs e)
         {
+            guna2DataGridView1.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             lbCheckout.Text = MaDatPhong;
 
         }
