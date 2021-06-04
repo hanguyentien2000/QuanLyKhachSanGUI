@@ -67,7 +67,6 @@ namespace BTL.GUI
                     txtDonGia.Focus();
                     throw new Exception("Đơn giá không được bỏ trống");
                 }
-               
                 if (!int.TryParse(txtDonGia.Text, out donGia))
                 {
                     throw new Exception("Đơn giá phải là số!");
@@ -84,9 +83,9 @@ namespace BTL.GUI
                     dv.DonGia = Convert.ToInt32(txtDonGia.Text);
                     db.DichVus.InsertOnSubmit(dv);
                     db.SubmitChanges();
+                    MessageBox.Show("Thêm mới dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     xoaTrang();
                     loadData();
-                    MessageBox.Show("Thêm mới dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -130,13 +129,12 @@ namespace BTL.GUI
                 }
                 else
                 {
-                    /* dsLoaiPhong.UpdateLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text), txtTenLoaiPhong.Text, Convert.ToInt32(txtSoLuong.Text), Convert.ToInt32(txtDonGia.Text))*/
-                    //loadData(dsLoaiPhong.GetTableLoaiPhong());
                     var update = db.DichVus.Single(x => x.MaDichVu == Convert.ToInt32(txtMaDichVu.Text));
                     update.TenDichVu = txtTenDichVu.Text;
                     update.DonGia = Convert.ToInt32(txtDonGia.Text);
                     db.SubmitChanges();
                     MessageBox.Show("Cập nhật dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    xoaTrang();
                     loadData();
                 }
             }
