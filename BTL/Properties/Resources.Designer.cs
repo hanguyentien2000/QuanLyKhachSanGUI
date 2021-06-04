@@ -83,9 +83,29 @@ namespace BTL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap facebook_48px {
+            get {
+                object obj = ResourceManager.GetObject("facebook_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Haui {
             get {
                 object obj = ResourceManager.GetObject("Haui", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap instagram_48px {
+            get {
+                object obj = ResourceManager.GetObject("instagram_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

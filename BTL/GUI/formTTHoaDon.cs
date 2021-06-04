@@ -22,6 +22,10 @@ namespace BTL.GUI
         {
             this.f = fs;
             InitializeComponent();
+            this.Text = String.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void formTTHoaDon_Load(object sender, EventArgs e)

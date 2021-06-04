@@ -42,11 +42,11 @@ namespace BTL.GUI
             // lbHD
             // 
             this.lbHD.BackColor = System.Drawing.Color.Transparent;
-            this.lbHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHD.Location = new System.Drawing.Point(87, 49);
+            this.lbHD.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHD.Location = new System.Drawing.Point(118, 30);
             this.lbHD.Margin = new System.Windows.Forms.Padding(4);
             this.lbHD.Name = "lbHD";
-            this.lbHD.Size = new System.Drawing.Size(223, 41);
+            this.lbHD.Size = new System.Drawing.Size(214, 42);
             this.lbHD.TabIndex = 0;
             this.lbHD.Text = "HÓA ĐƠN SỐ";
             this.lbHD.Click += new System.EventHandler(this.lbHD_Click);
@@ -54,44 +54,44 @@ namespace BTL.GUI
             // lbMaDP
             // 
             this.lbMaDP.BackColor = System.Drawing.Color.Transparent;
-            this.lbMaDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaDP.Location = new System.Drawing.Point(84, 144);
+            this.lbMaDP.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaDP.Location = new System.Drawing.Point(34, 103);
             this.lbMaDP.Margin = new System.Windows.Forms.Padding(4);
             this.lbMaDP.Name = "lbMaDP";
-            this.lbMaDP.Size = new System.Drawing.Size(93, 20);
+            this.lbMaDP.Size = new System.Drawing.Size(85, 19);
             this.lbMaDP.TabIndex = 1;
             this.lbMaDP.Text = "Mã đặt phòng";
             // 
             // lbNgayLap
             // 
             this.lbNgayLap.BackColor = System.Drawing.Color.Transparent;
-            this.lbNgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgayLap.Location = new System.Drawing.Point(83, 202);
+            this.lbNgayLap.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgayLap.Location = new System.Drawing.Point(34, 162);
             this.lbNgayLap.Margin = new System.Windows.Forms.Padding(4);
             this.lbNgayLap.Name = "lbNgayLap";
-            this.lbNgayLap.Size = new System.Drawing.Size(118, 20);
+            this.lbNgayLap.Size = new System.Drawing.Size(108, 19);
             this.lbNgayLap.TabIndex = 2;
             this.lbNgayLap.Text = "Ngày lập hóa đơn";
             // 
             // lbTTP
             // 
             this.lbTTP.BackColor = System.Drawing.Color.Transparent;
-            this.lbTTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTTP.Location = new System.Drawing.Point(84, 261);
+            this.lbTTP.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTTP.Location = new System.Drawing.Point(34, 226);
             this.lbTTP.Margin = new System.Windows.Forms.Padding(4);
             this.lbTTP.Name = "lbTTP";
-            this.lbTTP.Size = new System.Drawing.Size(109, 20);
+            this.lbTTP.Size = new System.Drawing.Size(97, 19);
             this.lbTTP.TabIndex = 3;
             this.lbTTP.Text = "Tổng tiền phòng";
             // 
             // lbTTDV
             // 
             this.lbTTDV.BackColor = System.Drawing.Color.Transparent;
-            this.lbTTDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTTDV.Location = new System.Drawing.Point(84, 318);
+            this.lbTTDV.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTTDV.Location = new System.Drawing.Point(34, 286);
             this.lbTTDV.Margin = new System.Windows.Forms.Padding(4);
             this.lbTTDV.Name = "lbTTDV";
-            this.lbTTDV.Size = new System.Drawing.Size(114, 20);
+            this.lbTTDV.Size = new System.Drawing.Size(104, 19);
             this.lbTTDV.TabIndex = 4;
             this.lbTTDV.Text = "Tổng tiền dịch vụ";
             this.lbTTDV.Click += new System.EventHandler(this.lbTTDV_Click);
@@ -99,22 +99,22 @@ namespace BTL.GUI
             // lbTT
             // 
             this.lbTT.BackColor = System.Drawing.Color.Transparent;
-            this.lbTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTT.Location = new System.Drawing.Point(84, 436);
+            this.lbTT.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTT.Location = new System.Drawing.Point(34, 407);
             this.lbTT.Margin = new System.Windows.Forms.Padding(4);
             this.lbTT.Name = "lbTT";
-            this.lbTT.Size = new System.Drawing.Size(71, 20);
+            this.lbTT.Size = new System.Drawing.Size(65, 19);
             this.lbTT.TabIndex = 5;
             this.lbTT.Text = "Thành tiền";
             // 
             // lbTienCoc
             // 
             this.lbTienCoc.BackColor = System.Drawing.Color.Transparent;
-            this.lbTienCoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTienCoc.Location = new System.Drawing.Point(84, 378);
+            this.lbTienCoc.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTienCoc.Location = new System.Drawing.Point(34, 346);
             this.lbTienCoc.Margin = new System.Windows.Forms.Padding(4);
             this.lbTienCoc.Name = "lbTienCoc";
-            this.lbTienCoc.Size = new System.Drawing.Size(80, 20);
+            this.lbTienCoc.Size = new System.Drawing.Size(73, 19);
             this.lbTienCoc.TabIndex = 6;
             this.lbTienCoc.Text = "Tiền đã cọc";
             // 
@@ -130,20 +130,20 @@ namespace BTL.GUI
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.HoverState.Parent = this.btnIn;
-            this.btnIn.Location = new System.Drawing.Point(158, 525);
+            this.btnIn.Location = new System.Drawing.Point(118, 481);
             this.btnIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnIn.Name = "btnIn";
             this.btnIn.ShadowDecoration.Parent = this.btnIn;
-            this.btnIn.Size = new System.Drawing.Size(270, 62);
+            this.btnIn.Size = new System.Drawing.Size(209, 48);
             this.btnIn.TabIndex = 7;
-            this.btnIn.Text = "In";
+            this.btnIn.Text = "Xác nhận thông tin hoá đơn";
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // formTTHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 600);
+            this.ClientSize = new System.Drawing.Size(466, 542);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.lbTienCoc);
             this.Controls.Add(this.lbTT);
