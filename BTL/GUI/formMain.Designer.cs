@@ -341,7 +341,7 @@ namespace BTL
             this.btnQuanLyPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuanLyPhong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLyPhong.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnQuanLyPhong.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnQuanLyPhong.IconChar = FontAwesome.Sharp.IconChar.Registered;
             this.btnQuanLyPhong.IconColor = System.Drawing.Color.Gainsboro;
             this.btnQuanLyPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQuanLyPhong.IconSize = 32;
@@ -445,7 +445,7 @@ namespace BTL
             this.btnKhachMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachMoi.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachMoi.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnKhachMoi.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.btnKhachMoi.IconChar = FontAwesome.Sharp.IconChar.Portrait;
             this.btnKhachMoi.IconColor = System.Drawing.Color.Gainsboro;
             this.btnKhachMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnKhachMoi.IconSize = 32;
@@ -470,7 +470,7 @@ namespace BTL
             this.btnKhachCu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachCu.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachCu.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnKhachCu.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.btnKhachCu.IconChar = FontAwesome.Sharp.IconChar.Odnoklassniki;
             this.btnKhachCu.IconColor = System.Drawing.Color.Gainsboro;
             this.btnKhachCu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnKhachCu.IconSize = 32;
