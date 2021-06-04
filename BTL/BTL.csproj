@@ -124,12 +124,6 @@
     <Compile Include="GUI\formChiTietDichVu.Designer.cs">
       <DependentUpon>formChiTietDichVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\formChonKhachDat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\formChonKhachDat.Designer.cs">
-      <DependentUpon>formChonKhachDat.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\formDatDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formChiTietDichVu.resx">
       <DependentUpon>formChiTietDichVu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\formChonKhachDat.resx">
-      <DependentUpon>formChonKhachDat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formDatDichVu.resx">
       <DependentUpon>formDatDichVu.cs</DependentUpon>
