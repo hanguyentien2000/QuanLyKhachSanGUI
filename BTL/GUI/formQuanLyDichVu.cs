@@ -23,6 +23,7 @@ namespace BTL.GUI
             lbDichVu.Visible = false;
             txtMaDichVu.Visible = false;
             dgvDichVu.AllowUserToAddRows = false;
+            dgvDichVu.ReadOnly = true;
             foreach (DataGridViewColumn column in dgvDichVu.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
