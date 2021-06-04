@@ -226,7 +226,7 @@ namespace BTL.InterfaceQuanly
             this.txtTimKiem.Location = new System.Drawing.Point(502, 39);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
-            this.txtTimKiem.PlaceholderText = "Keywords";
+            this.txtTimKiem.PlaceholderText = "Nhập tên loại phòng...";
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.ShadowDecoration.Parent = this.txtTimKiem;
             this.txtTimKiem.Size = new System.Drawing.Size(414, 36);
