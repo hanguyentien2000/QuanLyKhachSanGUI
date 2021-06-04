@@ -68,7 +68,7 @@ namespace BTL.InterfaceNhanVien
                 }
                 if (taiKhoanBUS.UpdateMatKhau(TenDangNhap, txtNewPassword.Text))
                 {
-                    MessageBox.Show("Thay đổi mật khẩu thành công thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thay đổi mật khẩu thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     xoaTrang();
                 }
             } catch (Exception ex)

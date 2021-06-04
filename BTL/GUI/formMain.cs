@@ -172,9 +172,7 @@ namespace BTL
                 Application.Exit();
             }
             else
-            {
                 return;
-            }
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)

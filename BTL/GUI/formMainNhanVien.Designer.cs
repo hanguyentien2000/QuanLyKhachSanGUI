@@ -33,6 +33,9 @@ namespace BTL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMainNhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.panelHidden = new System.Windows.Forms.Panel();
+            this.Instagram = new FontAwesome.Sharp.IconPictureBox();
+            this.FacebookButton = new FontAwesome.Sharp.IconPictureBox();
+            this.TwitterButton = new FontAwesome.Sharp.IconPictureBox();
             this.lbTimeMain = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.TenNV = new System.Windows.Forms.Label();
@@ -50,17 +53,20 @@ namespace BTL
             this.lbTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnDoiMatKhau = new FontAwesome.Sharp.IconButton();
-            this.btnChamCong = new FontAwesome.Sharp.IconButton();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.btnCheckOut = new FontAwesome.Sharp.IconButton();
+            this.btnCheckIn = new FontAwesome.Sharp.IconButton();
+            this.panelSubmenu = new System.Windows.Forms.Panel();
+            this.btnKhachMoi = new FontAwesome.Sharp.IconButton();
+            this.btnKhachCu = new FontAwesome.Sharp.IconButton();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.timerCurrent = new System.Windows.Forms.Timer(this.components);
-            this.Instagram = new FontAwesome.Sharp.IconPictureBox();
-            this.FacebookButton = new FontAwesome.Sharp.IconPictureBox();
-            this.TwitterButton = new FontAwesome.Sharp.IconPictureBox();
             this.panelHidden.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Instagram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FacebookButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwitterButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -68,9 +74,7 @@ namespace BTL
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelDesktop.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Instagram)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FacebookButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TwitterButton)).BeginInit();
+            this.panelSubmenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +83,7 @@ namespace BTL
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 730);
+            this.label1.Location = new System.Drawing.Point(0, 1042);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 19);
             this.label1.TabIndex = 7;
@@ -105,6 +109,51 @@ namespace BTL
             this.panelHidden.Size = new System.Drawing.Size(1540, 133);
             this.panelHidden.TabIndex = 6;
             this.panelHidden.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHidden_Paint);
+            // 
+            // Instagram
+            // 
+            this.Instagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.Instagram.BackgroundImage = global::BTL.Properties.Resources.instagram_48px;
+            this.Instagram.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Instagram.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Instagram.IconColor = System.Drawing.SystemColors.ControlText;
+            this.Instagram.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Instagram.IconSize = 44;
+            this.Instagram.Location = new System.Drawing.Point(404, 45);
+            this.Instagram.Name = "Instagram";
+            this.Instagram.Size = new System.Drawing.Size(46, 44);
+            this.Instagram.TabIndex = 13;
+            this.Instagram.TabStop = false;
+            // 
+            // FacebookButton
+            // 
+            this.FacebookButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.FacebookButton.BackgroundImage = global::BTL.Properties.Resources.facebook_48px;
+            this.FacebookButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FacebookButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.FacebookButton.IconColor = System.Drawing.SystemColors.ControlText;
+            this.FacebookButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.FacebookButton.IconSize = 44;
+            this.FacebookButton.Location = new System.Drawing.Point(324, 45);
+            this.FacebookButton.Name = "FacebookButton";
+            this.FacebookButton.Size = new System.Drawing.Size(46, 44);
+            this.FacebookButton.TabIndex = 12;
+            this.FacebookButton.TabStop = false;
+            // 
+            // TwitterButton
+            // 
+            this.TwitterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.TwitterButton.BackgroundImage = global::BTL.Properties.Resources.twitter_48px;
+            this.TwitterButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TwitterButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.TwitterButton.IconColor = System.Drawing.SystemColors.ControlText;
+            this.TwitterButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.TwitterButton.IconSize = 44;
+            this.TwitterButton.Location = new System.Drawing.Point(243, 45);
+            this.TwitterButton.Name = "TwitterButton";
+            this.TwitterButton.Size = new System.Drawing.Size(46, 44);
+            this.TwitterButton.TabIndex = 11;
+            this.TwitterButton.TabStop = false;
             // 
             // lbTimeMain
             // 
@@ -255,7 +304,7 @@ namespace BTL
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 133);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1540, 616);
+            this.panelDesktop.Size = new System.Drawing.Size(1540, 928);
             this.panelDesktop.TabIndex = 7;
             // 
             // label5
@@ -264,7 +313,7 @@ namespace BTL
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label5.Location = new System.Drawing.Point(579, 570);
+            this.label5.Location = new System.Drawing.Point(559, 893);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(473, 26);
             this.label5.TabIndex = 11;
@@ -286,7 +335,7 @@ namespace BTL
             this.lbDate.AutoSize = true;
             this.lbDate.Font = new System.Drawing.Font("Calibri", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbDate.Location = new System.Drawing.Point(588, 517);
+            this.lbDate.Location = new System.Drawing.Point(609, 506);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(164, 66);
             this.lbDate.TabIndex = 9;
@@ -317,10 +366,11 @@ namespace BTL
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelMenu.Controls.Add(this.iconButton2);
-            this.panelMenu.Controls.Add(this.iconButton1);
-            this.panelMenu.Controls.Add(this.btnDoiMatKhau);
-            this.panelMenu.Controls.Add(this.btnChamCong);
+            this.panelMenu.Controls.Add(this.iconButton6);
+            this.panelMenu.Controls.Add(this.iconButton5);
+            this.panelMenu.Controls.Add(this.btnCheckOut);
+            this.panelMenu.Controls.Add(this.btnCheckIn);
+            this.panelMenu.Controls.Add(this.panelSubmenu);
             this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.btnDatPhong);
             this.panelMenu.Controls.Add(this.btnHome);
@@ -328,100 +378,160 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 749);
+            this.panelMenu.Size = new System.Drawing.Size(200, 1061);
             this.panelMenu.TabIndex = 4;
             // 
-            // iconButton2
+            // iconButton6
             // 
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 32;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 464);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(200, 72);
-            this.iconButton2.TabIndex = 11;
-            this.iconButton2.Text = "Check out";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.ShareAlt;
+            this.iconButton6.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 32;
+            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton6.Location = new System.Drawing.Point(0, 538);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(200, 57);
+            this.iconButton6.TabIndex = 12;
+            this.iconButton6.Text = "Đổi mật khẩu";
+            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
-            // iconButton1
+            // iconButton5
             // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 32;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 398);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(200, 66);
-            this.iconButton1.TabIndex = 10;
-            this.iconButton1.Text = "Check In";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButton5.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 32;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(0, 476);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(200, 62);
+            this.iconButton5.TabIndex = 11;
+            this.iconButton5.Text = "Chấm công";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
-            // btnDoiMatKhau
+            // btnCheckOut
             // 
-            this.btnDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDoiMatKhau.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
-            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDoiMatKhau.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.btnDoiMatKhau.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnDoiMatKhau.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDoiMatKhau.IconSize = 32;
-            this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(0, 330);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(200, 68);
-            this.btnDoiMatKhau.TabIndex = 9;
-            this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
-            this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
-            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
+            this.btnCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCheckOut.FlatAppearance.BorderSize = 0;
+            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckOut.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnCheckOut.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCheckOut.IconSize = 32;
+            this.btnCheckOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckOut.Location = new System.Drawing.Point(0, 419);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(200, 57);
+            this.btnCheckOut.TabIndex = 10;
+            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // btnChamCong
+            // btnCheckIn
             // 
-            this.btnChamCong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChamCong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChamCong.FlatAppearance.BorderSize = 0;
-            this.btnChamCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChamCong.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChamCong.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnChamCong.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.btnChamCong.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnChamCong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChamCong.IconSize = 32;
-            this.btnChamCong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChamCong.Location = new System.Drawing.Point(0, 257);
-            this.btnChamCong.Name = "btnChamCong";
-            this.btnChamCong.Size = new System.Drawing.Size(200, 73);
-            this.btnChamCong.TabIndex = 8;
-            this.btnChamCong.Text = "Chấm Công";
-            this.btnChamCong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChamCong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChamCong.UseVisualStyleBackColor = true;
-            this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
+            this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckIn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCheckIn.FlatAppearance.BorderSize = 0;
+            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckIn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckIn.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.btnCheckIn.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCheckIn.IconSize = 32;
+            this.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckIn.Location = new System.Drawing.Point(0, 357);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(200, 62);
+            this.btnCheckIn.TabIndex = 9;
+            this.btnCheckIn.Text = "Check In";
+            this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCheckIn.UseVisualStyleBackColor = true;
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
+            // 
+            // panelSubmenu
+            // 
+            this.panelSubmenu.Controls.Add(this.btnKhachMoi);
+            this.panelSubmenu.Controls.Add(this.btnKhachCu);
+            this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubmenu.Location = new System.Drawing.Point(0, 257);
+            this.panelSubmenu.Name = "panelSubmenu";
+            this.panelSubmenu.Size = new System.Drawing.Size(200, 100);
+            this.panelSubmenu.TabIndex = 8;
+            // 
+            // btnKhachMoi
+            // 
+            this.btnKhachMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnKhachMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKhachMoi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhachMoi.FlatAppearance.BorderSize = 0;
+            this.btnKhachMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachMoi.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachMoi.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKhachMoi.IconChar = FontAwesome.Sharp.IconChar.Portrait;
+            this.btnKhachMoi.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnKhachMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnKhachMoi.IconSize = 32;
+            this.btnKhachMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachMoi.Location = new System.Drawing.Point(0, 49);
+            this.btnKhachMoi.Name = "btnKhachMoi";
+            this.btnKhachMoi.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnKhachMoi.Size = new System.Drawing.Size(200, 51);
+            this.btnKhachMoi.TabIndex = 7;
+            this.btnKhachMoi.Text = "Khách mới";
+            this.btnKhachMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKhachMoi.UseVisualStyleBackColor = false;
+            this.btnKhachMoi.Click += new System.EventHandler(this.btnKhachMoi_Click);
+            // 
+            // btnKhachCu
+            // 
+            this.btnKhachCu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnKhachCu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKhachCu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhachCu.FlatAppearance.BorderSize = 0;
+            this.btnKhachCu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachCu.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachCu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKhachCu.IconChar = FontAwesome.Sharp.IconChar.Odnoklassniki;
+            this.btnKhachCu.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnKhachCu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnKhachCu.IconSize = 32;
+            this.btnKhachCu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachCu.Location = new System.Drawing.Point(0, 0);
+            this.btnKhachCu.Name = "btnKhachCu";
+            this.btnKhachCu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnKhachCu.Size = new System.Drawing.Size(200, 49);
+            this.btnKhachCu.TabIndex = 6;
+            this.btnKhachCu.Text = "Khách cũ";
+            this.btnKhachCu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachCu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKhachCu.UseVisualStyleBackColor = false;
+            this.btnKhachCu.Click += new System.EventHandler(this.btnKhachCu_Click);
             // 
             // btnDatPhong
             // 
@@ -474,56 +584,11 @@ namespace BTL
             this.timerCurrent.Enabled = true;
             this.timerCurrent.Tick += new System.EventHandler(this.timerCurrent_Tick);
             // 
-            // Instagram
-            // 
-            this.Instagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.Instagram.BackgroundImage = global::BTL.Properties.Resources.instagram_48px;
-            this.Instagram.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Instagram.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Instagram.IconColor = System.Drawing.SystemColors.ControlText;
-            this.Instagram.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Instagram.IconSize = 44;
-            this.Instagram.Location = new System.Drawing.Point(404, 45);
-            this.Instagram.Name = "Instagram";
-            this.Instagram.Size = new System.Drawing.Size(46, 44);
-            this.Instagram.TabIndex = 13;
-            this.Instagram.TabStop = false;
-            // 
-            // FacebookButton
-            // 
-            this.FacebookButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.FacebookButton.BackgroundImage = global::BTL.Properties.Resources.facebook_48px;
-            this.FacebookButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FacebookButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.FacebookButton.IconColor = System.Drawing.SystemColors.ControlText;
-            this.FacebookButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.FacebookButton.IconSize = 44;
-            this.FacebookButton.Location = new System.Drawing.Point(324, 45);
-            this.FacebookButton.Name = "FacebookButton";
-            this.FacebookButton.Size = new System.Drawing.Size(46, 44);
-            this.FacebookButton.TabIndex = 12;
-            this.FacebookButton.TabStop = false;
-            // 
-            // TwitterButton
-            // 
-            this.TwitterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.TwitterButton.BackgroundImage = global::BTL.Properties.Resources.twitter_48px;
-            this.TwitterButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TwitterButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.TwitterButton.IconColor = System.Drawing.SystemColors.ControlText;
-            this.TwitterButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.TwitterButton.IconSize = 44;
-            this.TwitterButton.Location = new System.Drawing.Point(243, 45);
-            this.TwitterButton.Name = "TwitterButton";
-            this.TwitterButton.Size = new System.Drawing.Size(46, 44);
-            this.TwitterButton.TabIndex = 11;
-            this.TwitterButton.TabStop = false;
-            // 
             // formMainNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1740, 749);
+            this.ClientSize = new System.Drawing.Size(1740, 1061);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelMenu);
@@ -531,6 +596,9 @@ namespace BTL
             this.Text = "FormMainNhanVien";
             this.panelHidden.ResumeLayout(false);
             this.panelHidden.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Instagram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FacebookButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwitterButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -540,9 +608,7 @@ namespace BTL
             this.panelDesktop.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Instagram)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FacebookButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TwitterButton)).EndInit();
+            this.panelSubmenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -551,7 +617,6 @@ namespace BTL
 
         private System.Windows.Forms.PictureBox pictureBox3;
         private FontAwesome.Sharp.IconPictureBox btnClose;
-        private FontAwesome.Sharp.IconButton btnChamCong;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnDatPhong;
         private FontAwesome.Sharp.IconPictureBox btnMinimize;
@@ -561,10 +626,7 @@ namespace BTL
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton btnDoiMatKhau;
         private FontAwesome.Sharp.IconButton btnDangXuat;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label TenNV;
         private System.Windows.Forms.Timer timerCurrent;
@@ -578,5 +640,12 @@ namespace BTL
         private FontAwesome.Sharp.IconPictureBox Instagram;
         private FontAwesome.Sharp.IconPictureBox FacebookButton;
         private FontAwesome.Sharp.IconPictureBox TwitterButton;
+        private System.Windows.Forms.Panel panelSubmenu;
+        private FontAwesome.Sharp.IconButton btnKhachCu;
+        private FontAwesome.Sharp.IconButton btnKhachMoi;
+        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton btnCheckOut;
+        private FontAwesome.Sharp.IconButton btnCheckIn;
     }
 }

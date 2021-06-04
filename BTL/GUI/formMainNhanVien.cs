@@ -32,6 +32,7 @@ namespace BTL
             leftBorderbtn = new Panel();
             leftBorderbtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderbtn);
+            panelSubmenu.Visible = false;
             //FormTilerBar
             this.Text = String.Empty;
             this.ControlBox = false;
@@ -86,6 +87,23 @@ namespace BTL
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void HideSubmenu()
+        {
+            if (panelSubmenu.Visible == true)
+            {
+                panelSubmenu.Visible = false;
+            }
+        }
+        private void ShowSubmenu(Panel Submenu)
+        {
+            if (Submenu.Visible == false)
+            {
+                HideSubmenu();
+                Submenu.Visible = true;
+            }
+            else
+                Submenu.Visible = false;
+        }
         private void DisabledButton()
         {
             if (currentBtn != null)
@@ -181,24 +199,14 @@ namespace BTL
         {
             ActiveButton(sender, RGBColors.color1);
             OpenCurrentForm(new formTrangChu());
+  
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
             OpenCurrentForm(new formDatPhongKC(this.f));
-        }
-
-        private void btnChamCong_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color5);
-            OpenCurrentForm(new formChamCong(MaNV));
-        }
-
-        private void btnDoiMatKhau_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.color6);
-            OpenCurrentForm(new formDoiMatKhau(username));
+            ShowSubmenu(panelSubmenu);
         }
 
         private void timerCurrent_Tick(object sender, EventArgs e)
@@ -208,21 +216,48 @@ namespace BTL
             lbDate.Text = DateTime.Now.ToString("dddd MMMM yyy");
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+       
+
+       
+        private void panelHidden_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color6);
+            OpenCurrentForm(new formDoiMatKhau(username));
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color5);
+            OpenCurrentForm(new formChamCong(MaNV));
+        }
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
             OpenCurrentForm(new formCheckOut());
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void btnCheckOut_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
             OpenCurrentForm(new formCheckIn());
         }
 
-        private void panelHidden_Paint(object sender, PaintEventArgs e)
+        private void btnKhachCu_Click(object sender, EventArgs e)
         {
+            ActiveButton(sender, RGBColors.color3);
+            OpenCurrentForm(new formDatPhongKC(this.f));
+        }
 
+        private void btnKhachMoi_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color2);
+            OpenCurrentForm(new formDatPhongKM(this.f));
         }
     }
 }
