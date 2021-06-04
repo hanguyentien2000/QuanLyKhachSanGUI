@@ -53,45 +53,7 @@ namespace BTL.GUI
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            dbDataContext db = new dbDataContext();
-            var query = db.DichVus.Where(x => x.TenDichVu.Equals(txtTenDichVu.Text)).SingleOrDefault();
-            try
-            {
-                if (txtTenDichVu.Text.Equals(""))
-                {
-                    txtTenDichVu.Focus();
-                    throw new Exception("Tên loại phòng không được bỏ trống");
-                }
-                if (txtDonGia.Text.Equals(""))
-                {
-                    txtDonGia.Focus();
-                    throw new Exception("Đơn giá không được bỏ trống");
-                }
-                if (!int.TryParse(txtDonGia.Text, out donGia))
-                {
-                    throw new Exception("Đơn giá phải là số!");
-                }
-                if (query != null)
-                {
-                    MessageBox.Show("Tên dịch vụ đã tồn tại", "Thông báo");
-                    return;
-                }
-                else
-                {
-                    DichVu dv = new DichVu();
-                    dv.TenDichVu = txtTenDichVu.Text;
-                    dv.DonGia = Convert.ToInt32(txtDonGia.Text);
-                    db.DichVus.InsertOnSubmit(dv);
-                    db.SubmitChanges();
-                    MessageBox.Show("Thêm mới dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    xoaTrang();
-                    loadData();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
+            
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -102,77 +64,12 @@ namespace BTL.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            try
-            {
-                dbDataContext db = new dbDataContext();
-                var query = db.DichVus.Where(x => x.TenDichVu.Equals(txtTenDichVu.Text)).SingleOrDefault();
-
-                if (txtTenDichVu.Text.Equals(""))
-                {
-                    txtTenDichVu.Focus();
-                    throw new Exception("Tên loại phòng không được bỏ trống");
-                }
-                if (txtDonGia.Text.Equals(""))
-                {
-                    txtDonGia.Focus();
-                    throw new Exception("Đơn giá không được bỏ trống");
-                }
-
-                if (!int.TryParse(txtDonGia.Text, out donGia))
-                {
-                    throw new Exception("Đơn giá phải là số!");
-                }
-                if (query != null)
-                {
-                    MessageBox.Show("Tên dịch vụ đã tồn tại", "Thông báo");
-                    return;
-                }
-                else
-                {
-                    var update = db.DichVus.Single(x => x.MaDichVu == Convert.ToInt32(txtMaDichVu.Text));
-                    update.TenDichVu = txtTenDichVu.Text;
-                    update.DonGia = Convert.ToInt32(txtDonGia.Text);
-                    db.SubmitChanges();
-                    MessageBox.Show("Cập nhật dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    xoaTrang();
-                    loadData();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvDichVu.Rows.Count < 1)
-                {
-                    throw new Exception("Vui lòng thêm loại phòng trước khi xóa");
-                }
-                if (txtMaDichVu.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng chọn loại phòng trước khi xóa");
-                }
-                else
-                {
-                    dbDataContext db = new dbDataContext();
-                    var lstDichVu = from s in db.DichVus where s.MaDichVu == Convert.ToInt32(txtMaDichVu.Text) select s;
-                    foreach (var item in lstDichVu)
-                    {
-                        db.DichVus.DeleteOnSubmit(item);
-                        db.SubmitChanges();
-                    }
-                    MessageBox.Show("Xóa thông tin dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadData();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
+            
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -219,6 +116,124 @@ namespace BTL.GUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            dbDataContext db = new dbDataContext();
+            var query = db.DichVus.Where(x => x.TenDichVu.Equals(txtTenDichVu.Text)).SingleOrDefault();
+            try
+            {
+                if (txtTenDichVu.Text.Equals(""))
+                {
+                    txtTenDichVu.Focus();
+                    throw new Exception("Tên loại phòng không được bỏ trống");
+                }
+                if (txtDonGia.Text.Equals(""))
+                {
+                    txtDonGia.Focus();
+                    throw new Exception("Đơn giá không được bỏ trống");
+                }
+                if (!int.TryParse(txtDonGia.Text, out donGia))
+                {
+                    throw new Exception("Đơn giá phải là số!");
+                }
+                if (query != null)
+                {
+                    MessageBox.Show("Tên dịch vụ đã tồn tại", "Thông báo");
+                    return;
+                }
+                else
+                {
+                    DichVu dv = new DichVu();
+                    dv.TenDichVu = txtTenDichVu.Text;
+                    dv.DonGia = Convert.ToInt32(txtDonGia.Text);
+                    db.DichVus.InsertOnSubmit(dv);
+                    db.SubmitChanges();
+                    MessageBox.Show("Thêm mới dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    xoaTrang();
+                    loadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dbDataContext db = new dbDataContext();
+                var query = db.DichVus.Where(x => x.TenDichVu.Equals(txtTenDichVu.Text)).SingleOrDefault();
+
+                if (txtTenDichVu.Text.Equals(""))
+                {
+                    txtTenDichVu.Focus();
+                    throw new Exception("Tên loại phòng không được bỏ trống");
+                }
+                if (txtDonGia.Text.Equals(""))
+                {
+                    txtDonGia.Focus();
+                    throw new Exception("Đơn giá không được bỏ trống");
+                }
+
+                if (!int.TryParse(txtDonGia.Text, out donGia))
+                {
+                    throw new Exception("Đơn giá phải là số!");
+                }
+                if (query != null)
+                {
+                    MessageBox.Show("Tên dịch vụ đã tồn tại", "Thông báo");
+                    return;
+                }
+                else
+                {
+                    var update = db.DichVus.Single(x => x.MaDichVu == Convert.ToInt32(txtMaDichVu.Text));
+                    update.TenDichVu = txtTenDichVu.Text;
+                    update.DonGia = Convert.ToInt32(txtDonGia.Text);
+                    db.SubmitChanges();
+                    MessageBox.Show("Cập nhật dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    xoaTrang();
+                    loadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvDichVu.Rows.Count < 1)
+                {
+                    throw new Exception("Vui lòng thêm loại phòng trước khi xóa");
+                }
+                if (txtMaDichVu.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng chọn loại phòng trước khi xóa");
+                }
+                else
+                {
+                    dbDataContext db = new dbDataContext();
+                    var lstDichVu = from s in db.DichVus where s.MaDichVu == Convert.ToInt32(txtMaDichVu.Text) select s;
+                    foreach (var item in lstDichVu)
+                    {
+                        db.DichVus.DeleteOnSubmit(item);
+                        db.SubmitChanges();
+                    }
+                    MessageBox.Show("Xóa thông tin dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
             }
         }
     }

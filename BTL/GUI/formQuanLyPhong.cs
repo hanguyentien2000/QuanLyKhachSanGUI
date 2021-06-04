@@ -57,87 +57,17 @@ namespace BTL
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if(imgPhong.Image == null)
-                {
-                    throw new Exception("Vui lòng thêm ảnh phòng");
-                }
-                layThongTinPhong();
-                if (phongBUS.themTTPhong(phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
-                {
-                    MessageBox.Show("Thêm phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
-                    xoaTrang();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            txtMaPhong.Visible = true;
-            lblMaPhong.Visible = true;
-            try
-            {
-                if(dgvQuanLyPhong.Rows.Count < 1)
-                {
-                    throw new Exception("Vui lòng thêm dữ liệu phòng trước khi sửa");
-                }
-                if (txtMaPhong.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng chọn mã phòng trước khi sửa");
-                }
-                layThongTinPhong();
-                if (phongBUS.thayDoiTTPhong(Int32.Parse(txtMaPhong.Text),phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
-                {
-                    MessageBox.Show("Thay đổi thông tin phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
-                    xoaTrang();
-                }
-                else
-                {
-                    MessageBox.Show("Thay đổi thông tin phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            txtMaPhong.Visible = true;
-            lblMaPhong.Visible = true;
-            try { 
-                if (dgvQuanLyPhong.Rows.Count < 1)
-                {
-                    throw new Exception("Vui lòng thêm dữ liệu phòng trước khi xóa");
-                }
-                if (txtMaPhong.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng chọn mã phòng trước khi xóa");
-                }
-                if (phongBUS.xoaTTPhong(Int32.Parse(txtMaPhong.Text)))
-                {
-                    MessageBox.Show("Xóa thông tin phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
-                    xoaTrang();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thông tin phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            } catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -191,30 +121,12 @@ namespace BTL
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtTimKiem.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng nhập từ khóa tìm kiếm");
-                }
-                DataTable dt = new DataTable();
-                dt = phongBUS.timKiemTTPhong(txtTimKiem.Text);
-                if (dt.Rows.Count < 1)
-                {
-                    throw new Exception("Không tìm thấy dữ liệu với từ khóa: " + txtTimKiem.Text);
-                }
-                dgvQuanLyPhong.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            xoaTrang();
-            dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
+           
         }
 
         private void btn_changeImage_Click(object sender, EventArgs e)
@@ -244,6 +156,123 @@ namespace BTL
                 {
                     e.Graphics.DrawString("Chọn ảnh phòng...", myFont, Brushes.Black, new Point(3, 3));
                 }
+            }
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTimKiem.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng nhập từ khóa tìm kiếm");
+                }
+                DataTable dt = new DataTable();
+                dt = phongBUS.timKiemTTPhong(txtTimKiem.Text);
+                if (dt.Rows.Count < 1)
+                {
+                    throw new Exception("Không tìm thấy dữ liệu với từ khóa: " + txtTimKiem.Text);
+                }
+                dgvQuanLyPhong.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            xoaTrang();
+            dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (imgPhong.Image == null)
+                {
+                    throw new Exception("Vui lòng thêm ảnh phòng");
+                }
+                layThongTinPhong();
+                if (phongBUS.themTTPhong(phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
+                {
+                    MessageBox.Show("Thêm phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
+                    xoaTrang();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtMaPhong.Visible = true;
+            lblMaPhong.Visible = true;
+            try
+            {
+                if (dgvQuanLyPhong.Rows.Count < 1)
+                {
+                    throw new Exception("Vui lòng thêm dữ liệu phòng trước khi sửa");
+                }
+                if (txtMaPhong.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng chọn mã phòng trước khi sửa");
+                }
+                layThongTinPhong();
+                if (phongBUS.thayDoiTTPhong(Int32.Parse(txtMaPhong.Text), phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
+                {
+                    MessageBox.Show("Thay đổi thông tin phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
+                    xoaTrang();
+                }
+                else
+                {
+                    MessageBox.Show("Thay đổi thông tin phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            txtMaPhong.Visible = true;
+            lblMaPhong.Visible = true;
+            try
+            {
+                if (dgvQuanLyPhong.Rows.Count < 1)
+                {
+                    throw new Exception("Vui lòng thêm dữ liệu phòng trước khi xóa");
+                }
+                if (txtMaPhong.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng chọn mã phòng trước khi xóa");
+                }
+                if (phongBUS.xoaTTPhong(Int32.Parse(txtMaPhong.Text)))
+                {
+                    MessageBox.Show("Xóa thông tin phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
+                    xoaTrang();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thông tin phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

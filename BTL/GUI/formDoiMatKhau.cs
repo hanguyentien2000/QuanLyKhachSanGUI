@@ -40,41 +40,7 @@ namespace BTL.InterfaceNhanVien
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if(txtOldPassword.Text.Trim().Equals(""))
-                {
-                    throw new Exception("Mật khẩu cũ không được để trống");
-                }
-                if(!txtOldPassword.Text.Equals(taiKhoanBUS.kiemTraMatKhau(TenDangNhap)))
-                {
-                    throw new Exception("Mật khẩu cũ không chính xác");
-                }
-                if(txtNewPassword.Text.Trim().Equals(""))
-                {
-                    throw new Exception("Mật khẩu mới không được để trống");
-                }
-                if(txtNewPassword.Text.Equals(txtOldPassword.Text))
-                {
-                    throw new Exception("Mật khẩu mới không được trùng với mật khẩu cũ");
-                }
-                if(txtConfirmPassword.Text.Trim().Equals(""))
-                {
-                    throw new Exception("Xác nhận mật khẩu không được để trống");
-                }
-                if(!txtConfirmPassword.Text.Equals(txtNewPassword.Text))
-                {
-                    throw new Exception("Mật khẩu nhập lại không chính xác");
-                }
-                if (taiKhoanBUS.UpdateMatKhau(TenDangNhap, txtNewPassword.Text))
-                {
-                    MessageBox.Show("Thay đổi mật khẩu thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    xoaTrang();
-                }
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void cbHienThi_CheckedChanged(object sender, EventArgs e)
@@ -89,6 +55,46 @@ namespace BTL.InterfaceNhanVien
                 txtOldPassword.UseSystemPasswordChar = false;
                 txtNewPassword.UseSystemPasswordChar = false;
                 txtConfirmPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtOldPassword.Text.Trim().Equals(""))
+                {
+                    throw new Exception("Mật khẩu cũ không được để trống");
+                }
+                if (!txtOldPassword.Text.Equals(taiKhoanBUS.kiemTraMatKhau(TenDangNhap)))
+                {
+                    throw new Exception("Mật khẩu cũ không chính xác");
+                }
+                if (txtNewPassword.Text.Trim().Equals(""))
+                {
+                    throw new Exception("Mật khẩu mới không được để trống");
+                }
+                if (txtNewPassword.Text.Equals(txtOldPassword.Text))
+                {
+                    throw new Exception("Mật khẩu mới không được trùng với mật khẩu cũ");
+                }
+                if (txtConfirmPassword.Text.Trim().Equals(""))
+                {
+                    throw new Exception("Xác nhận mật khẩu không được để trống");
+                }
+                if (!txtConfirmPassword.Text.Equals(txtNewPassword.Text))
+                {
+                    throw new Exception("Mật khẩu nhập lại không chính xác");
+                }
+                if (taiKhoanBUS.UpdateMatKhau(TenDangNhap, txtNewPassword.Text))
+                {
+                    MessageBox.Show("Thay đổi mật khẩu thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    xoaTrang();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -75,42 +75,7 @@ namespace BTL.GUI
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtTenTK.Enabled = true;
-            try
-            {
-                if (dsTaiKhoan.kiemTraNhanVienCoTK(Int32.Parse(cbxMaNV.SelectedValue.ToString())) == 0)
-                {
-                    throw new Exception("Nhân viên này đã có tài khoản");
-                }
-                if (txtTenTK.Text.Equals(tenDangNhap))
-                {
-                    throw new Exception("Tên đăng nhập đã tồn tại");
-                }
-                if (txtTenTK.Text.Equals(""))
-                {
-                    txtTenTK.Focus();
-                    throw new Exception("Tên đăng nhập không được bỏ trống");
-                }
-                if (txtMatKhau.Text.Equals(""))
-                {
-                    txtMatKhau.Focus();
-                    throw new Exception("Mật khẩu không được bỏ trống");
-                }
-                else
-                {
-                    layThongTinTaiKhoan();
-                    if (dsTaiKhoan.AddTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai, taiKhoanDTO.MaNhanVien))
-                    {
-                        MessageBox.Show("Thêm tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadData(dsTaiKhoan.GetTableTaiKhoan());
-                        xoaTrang();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void btnRefresh_Click_1(object sender, EventArgs e)
@@ -139,41 +104,7 @@ namespace BTL.GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            txtTenTK.Visible = true;
-            try
-            {
-                if (dgvTaiKhoan.Rows.Count < 1)
-                {
-                    throw new Exception("Vui lòng thêm tài khoản trước khi đổi trạng thái");
-                }
-                if (txtTenTK.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng chọn tài khoản trước khi đổi trạng thái");
-                }
-                DialogResult result = MessageBox.Show("Bạn có muốn đổi trạng thái " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    layThongTinTaiKhoan();
-                    if (trangThai.Equals("Hoạt động"))
-                    {
-                        taiKhoanDTO.TrangThai = 0;
-                    }
-                    else if (trangThai.Equals("Vô hiệu hóa"))
-                    {
-                        taiKhoanDTO.TrangThai = 1;
-                    }
-                    if (dsTaiKhoan.UpdateTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai))
-                    {
-                        MessageBox.Show("Thay đổi trạng thái thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadData(dsTaiKhoan.GetTableTaiKhoan());
-                        xoaTrang();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -212,11 +143,126 @@ namespace BTL.GUI
 
         private void btnTaiLai_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
             loadData(dsTaiKhoan.GetTableTaiKhoan());
             xoaTrang();
         }
 
-        private void btnThayDoi_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtTenTK.Enabled = true;
+            try
+            {
+                if (dsTaiKhoan.kiemTraNhanVienCoTK(Int32.Parse(cbxMaNV.SelectedValue.ToString())) == 0)
+                {
+                    throw new Exception("Nhân viên này đã có tài khoản");
+                }
+                if (txtTenTK.Text.Equals(tenDangNhap))
+                {
+                    throw new Exception("Tên đăng nhập đã tồn tại");
+                }
+                if (txtTenTK.Text.Equals(""))
+                {
+                    txtTenTK.Focus();
+                    throw new Exception("Tên đăng nhập không được bỏ trống");
+                }
+                if (txtMatKhau.Text.Equals(""))
+                {
+                    txtMatKhau.Focus();
+                    throw new Exception("Mật khẩu không được bỏ trống");
+                }
+                else
+                {
+                    layThongTinTaiKhoan();
+                    if (dsTaiKhoan.AddTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai, taiKhoanDTO.MaNhanVien))
+                    {
+                        MessageBox.Show("Thêm tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData(dsTaiKhoan.GetTableTaiKhoan());
+                        xoaTrang();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnChangedStatus_Click(object sender, EventArgs e)
+        {
+            txtTenTK.Visible = true;
+            try
+            {
+                if (dgvTaiKhoan.Rows.Count < 1)
+                {
+                    throw new Exception("Vui lòng thêm tài khoản trước khi đổi trạng thái");
+                }
+                if (txtTenTK.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng chọn tài khoản trước khi đổi trạng thái");
+                }
+                DialogResult result = MessageBox.Show("Bạn có muốn đổi trạng thái " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    layThongTinTaiKhoan();
+                    if (trangThai.Equals("Hoạt động"))
+                    {
+                        taiKhoanDTO.TrangThai = 0;
+                    }
+                    else if (trangThai.Equals("Vô hiệu hóa"))
+                    {
+                        taiKhoanDTO.TrangThai = 1;
+                    }
+                    if (dsTaiKhoan.UpdateTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai))
+                    {
+                        MessageBox.Show("Thay đổi trạng thái thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData(dsTaiKhoan.GetTableTaiKhoan());
+                        xoaTrang();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnResetpassword_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTaiKhoan.Rows.Count < 1)
+                {
+                    throw new Exception("Vui lòng thêm tài khoản trước khi đặt lại mật khẩu");
+                }
+                if (txtTenTK.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng chọn tài khoản trước khi đặt lại mật khẩu");
+                }
+                DialogResult result = MessageBox.Show("Bạn có muốn đặt lại mật khẩu của " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    layThongTinTaiKhoan();
+                    taiKhoanDTO.Password = "1";
+                    taiKhoanDTO.TrangThai = trangThai == "Vô hiệu hóa" ? 0 : 1;
+                    if (dsTaiKhoan.UpdateTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai))
+                    {
+                        MessageBox.Show("Reset password thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData(dsTaiKhoan.GetTableTaiKhoan());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
+        }
+
+        private void btnChangedTypeAccount_Click(object sender, EventArgs e)
         {
             txtTenTK.Visible = true;
             try
@@ -254,35 +300,14 @@ namespace BTL.GUI
             }
         }
 
+        private void btnThayDoi_Click(object sender, EventArgs e)
+        {
+           
+        }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvTaiKhoan.Rows.Count < 1)
-                {
-                    throw new Exception("Vui lòng thêm tài khoản trước khi đặt lại mật khẩu");
-                }
-                if (txtTenTK.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng chọn tài khoản trước khi đặt lại mật khẩu");
-                }
-                DialogResult result = MessageBox.Show("Bạn có muốn đặt lại mật khẩu của " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    layThongTinTaiKhoan();
-                    taiKhoanDTO.Password = "1";
-                    taiKhoanDTO.TrangThai = trangThai == "Vô hiệu hóa" ? 0 : 1;
-                    if (dsTaiKhoan.UpdateTaiKhoan(taiKhoanDTO.Username, taiKhoanDTO.Password, taiKhoanDTO.LoaiTaiKhoan, taiKhoanDTO.TrangThai))
-                    {
-                        MessageBox.Show("Reset password thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadData(dsTaiKhoan.GetTableTaiKhoan());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
+            
         }
     }
 }

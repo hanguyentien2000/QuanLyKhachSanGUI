@@ -38,9 +38,6 @@ namespace BTL.InterfaceQuanly
             this.label3 = new System.Windows.Forms.Label();
             this.txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.dgvQLLP = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -51,6 +48,9 @@ namespace BTL.InterfaceQuanly
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.txtMaLoaiPhong = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbLoaiPhong = new System.Windows.Forms.Label();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLLP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,23 +68,23 @@ namespace BTL.InterfaceQuanly
             this.txtTenLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenLoaiPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenLoaiPhong.HoverState.Parent = this.txtTenLoaiPhong;
-            this.txtTenLoaiPhong.Location = new System.Drawing.Point(54, 162);
+            this.txtTenLoaiPhong.Location = new System.Drawing.Point(16, 167);
             this.txtTenLoaiPhong.Name = "txtTenLoaiPhong";
             this.txtTenLoaiPhong.PasswordChar = '\0';
             this.txtTenLoaiPhong.PlaceholderText = "";
             this.txtTenLoaiPhong.SelectedText = "";
             this.txtTenLoaiPhong.ShadowDecoration.Parent = this.txtTenLoaiPhong;
-            this.txtTenLoaiPhong.Size = new System.Drawing.Size(274, 36);
+            this.txtTenLoaiPhong.Size = new System.Drawing.Size(188, 25);
             this.txtTenLoaiPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTenLoaiPhong.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 130);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 16;
             this.label2.Text = "Tên loại phòng";
             // 
@@ -102,23 +102,23 @@ namespace BTL.InterfaceQuanly
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoLuong.HoverState.Parent = this.txtSoLuong;
-            this.txtSoLuong.Location = new System.Drawing.Point(54, 250);
+            this.txtSoLuong.Location = new System.Drawing.Point(16, 255);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.PasswordChar = '\0';
             this.txtSoLuong.PlaceholderText = "";
             this.txtSoLuong.SelectedText = "";
             this.txtSoLuong.ShadowDecoration.Parent = this.txtSoLuong;
-            this.txtSoLuong.Size = new System.Drawing.Size(274, 36);
+            this.txtSoLuong.Size = new System.Drawing.Size(188, 25);
             this.txtSoLuong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSoLuong.TabIndex = 19;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(50, 216);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 221);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 20);
+            this.label3.Size = new System.Drawing.Size(97, 16);
             this.label3.TabIndex = 18;
             this.label3.Text = "Số lượng người";
             // 
@@ -136,78 +136,25 @@ namespace BTL.InterfaceQuanly
             this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDonGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDonGia.HoverState.Parent = this.txtDonGia;
-            this.txtDonGia.Location = new System.Drawing.Point(54, 333);
+            this.txtDonGia.Location = new System.Drawing.Point(16, 338);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.PasswordChar = '\0';
             this.txtDonGia.PlaceholderText = "";
             this.txtDonGia.SelectedText = "";
             this.txtDonGia.ShadowDecoration.Parent = this.txtDonGia;
-            this.txtDonGia.Size = new System.Drawing.Size(274, 36);
+            this.txtDonGia.Size = new System.Drawing.Size(188, 25);
             this.txtDonGia.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtDonGia.TabIndex = 21;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(50, 299);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 304);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 20);
+            this.label4.Size = new System.Drawing.Size(29, 16);
             this.label4.TabIndex = 20;
             this.label4.Text = "Giá";
-            // 
-            // btnThem
-            // 
-            this.btnThem.BorderRadius = 20;
-            this.btnThem.CheckedState.Parent = this.btnThem;
-            this.btnThem.CustomImages.Parent = this.btnThem;
-            this.btnThem.DisabledState.Parent = this.btnThem;
-            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(54, 427);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(117, 46);
-            this.btnThem.TabIndex = 29;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BorderRadius = 20;
-            this.btnSua.CheckedState.Parent = this.btnSua;
-            this.btnSua.CustomImages.Parent = this.btnSua;
-            this.btnSua.DisabledState.Parent = this.btnSua;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(202, 427);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.ShadowDecoration.Parent = this.btnSua;
-            this.btnSua.Size = new System.Drawing.Size(117, 46);
-            this.btnSua.TabIndex = 30;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BorderRadius = 20;
-            this.btnXoa.CheckedState.Parent = this.btnXoa;
-            this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.DisabledState.Parent = this.btnXoa;
-            this.btnXoa.FillColor = System.Drawing.Color.Red;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(342, 427);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(117, 46);
-            this.btnXoa.TabIndex = 31;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtTimKiem
             // 
@@ -223,13 +170,13 @@ namespace BTL.InterfaceQuanly
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.HoverState.Parent = this.txtTimKiem;
-            this.txtTimKiem.Location = new System.Drawing.Point(502, 39);
+            this.txtTimKiem.Location = new System.Drawing.Point(452, 13);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "Nhập tên loại phòng...";
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.ShadowDecoration.Parent = this.txtTimKiem;
-            this.txtTimKiem.Size = new System.Drawing.Size(414, 36);
+            this.txtTimKiem.Size = new System.Drawing.Size(275, 25);
             this.txtTimKiem.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTimKiem.TabIndex = 33;
             // 
@@ -238,10 +185,11 @@ namespace BTL.InterfaceQuanly
             this.btnTim.CheckedState.Parent = this.btnTim;
             this.btnTim.CustomImages.Parent = this.btnTim;
             this.btnTim.DisabledState.Parent = this.btnTim;
+            this.btnTim.FillColor = System.Drawing.Color.DarkSlateBlue;
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTim.ForeColor = System.Drawing.Color.White;
             this.btnTim.HoverState.Parent = this.btnTim;
-            this.btnTim.Location = new System.Drawing.Point(932, 39);
+            this.btnTim.Location = new System.Drawing.Point(743, 13);
             this.btnTim.Name = "btnTim";
             this.btnTim.ShadowDecoration.Parent = this.btnTim;
             this.btnTim.Size = new System.Drawing.Size(99, 36);
@@ -282,11 +230,11 @@ namespace BTL.InterfaceQuanly
             this.dgvQLLP.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvQLLP.EnableHeadersVisualStyles = false;
             this.dgvQLLP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvQLLP.Location = new System.Drawing.Point(502, 92);
+            this.dgvQLLP.Location = new System.Drawing.Point(236, 44);
             this.dgvQLLP.Name = "dgvQLLP";
             this.dgvQLLP.RowHeadersVisible = false;
             this.dgvQLLP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQLLP.Size = new System.Drawing.Size(629, 381);
+            this.dgvQLLP.Size = new System.Drawing.Size(491, 319);
             this.dgvQLLP.TabIndex = 61;
             this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvQLLP.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -340,14 +288,14 @@ namespace BTL.InterfaceQuanly
             this.btnRefresh.CheckedState.Parent = this.btnRefresh;
             this.btnRefresh.CustomImages.Parent = this.btnRefresh;
             this.btnRefresh.DisabledState.Parent = this.btnRefresh;
-            this.btnRefresh.FillColor = System.Drawing.Color.Green;
+            this.btnRefresh.FillColor = System.Drawing.Color.DarkCyan;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.HoverState.Parent = this.btnRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(1037, 39);
+            this.btnRefresh.Location = new System.Drawing.Point(743, 66);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
-            this.btnRefresh.Size = new System.Drawing.Size(94, 36);
+            this.btnRefresh.Size = new System.Drawing.Size(99, 36);
             this.btnRefresh.TabIndex = 62;
             this.btnRefresh.Text = "Tải lại";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -366,39 +314,89 @@ namespace BTL.InterfaceQuanly
             this.txtMaLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaLoaiPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaLoaiPhong.HoverState.Parent = this.txtMaLoaiPhong;
-            this.txtMaLoaiPhong.Location = new System.Drawing.Point(54, 72);
+            this.txtMaLoaiPhong.Location = new System.Drawing.Point(16, 77);
             this.txtMaLoaiPhong.Name = "txtMaLoaiPhong";
             this.txtMaLoaiPhong.PasswordChar = '\0';
             this.txtMaLoaiPhong.PlaceholderText = "";
             this.txtMaLoaiPhong.SelectedText = "";
             this.txtMaLoaiPhong.ShadowDecoration.Parent = this.txtMaLoaiPhong;
-            this.txtMaLoaiPhong.Size = new System.Drawing.Size(274, 36);
+            this.txtMaLoaiPhong.Size = new System.Drawing.Size(188, 25);
             this.txtMaLoaiPhong.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtMaLoaiPhong.TabIndex = 15;
             // 
             // lbLoaiPhong
             // 
             this.lbLoaiPhong.AutoSize = true;
-            this.lbLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiPhong.Location = new System.Drawing.Point(50, 39);
+            this.lbLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoaiPhong.Location = new System.Drawing.Point(12, 44);
             this.lbLoaiPhong.Name = "lbLoaiPhong";
-            this.lbLoaiPhong.Size = new System.Drawing.Size(108, 20);
+            this.lbLoaiPhong.Size = new System.Drawing.Size(93, 16);
             this.lbLoaiPhong.TabIndex = 14;
             this.lbLoaiPhong.Text = "Mã loại phòng";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.CheckedState.Parent = this.btnDelete;
+            this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.DisabledState.Parent = this.btnDelete;
+            this.btnDelete.FillColor = System.Drawing.Color.Red;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverState.Parent = this.btnDelete;
+            this.btnDelete.Location = new System.Drawing.Point(743, 233);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
+            this.btnDelete.Size = new System.Drawing.Size(99, 36);
+            this.btnDelete.TabIndex = 87;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.CheckedState.Parent = this.btnEdit;
+            this.btnEdit.CustomImages.Parent = this.btnEdit;
+            this.btnEdit.DisabledState.Parent = this.btnEdit;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.HoverState.Parent = this.btnEdit;
+            this.btnEdit.Location = new System.Drawing.Point(743, 177);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
+            this.btnEdit.Size = new System.Drawing.Size(99, 36);
+            this.btnEdit.TabIndex = 86;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.DisabledState.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.Green;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(743, 124);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(99, 36);
+            this.btnAdd.TabIndex = 85;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // formQuanLyLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1237, 672);
+            this.ClientSize = new System.Drawing.Size(857, 397);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvQLLP);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSoLuong);
@@ -423,9 +421,6 @@ namespace BTL.InterfaceQuanly
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtDonGia;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2Button btnSua;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2Button btnTim;
         private Guna.UI2.WinForms.Guna2DataGridView dgvQLLP;
@@ -436,5 +431,8 @@ namespace BTL.InterfaceQuanly
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2TextBox txtMaLoaiPhong;
         private System.Windows.Forms.Label lbLoaiPhong;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
     }
 }

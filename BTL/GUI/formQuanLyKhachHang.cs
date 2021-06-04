@@ -67,11 +67,72 @@ namespace BTL.GUI
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvKhachHang.ReadOnly = true;
+            cbxTrangThai.Visible = true;
+            lblTrangThai.Visible = true;
+            int dong = e.RowIndex;
+            try
+            {
+                if (dong < 0)
+                {
+                    throw new Exception("Ô này không có dữ liệu");
+                }
+                txtMaKH.Visible = true;
+                lblMaKH.Visible = true;
+                txtMaKH.Enabled = false;
+                txtMaKH.Text = dgvKhachHang.Rows[dong].Cells[0].Value.ToString();
+                txtTenKH.Text = dgvKhachHang.Rows[dong].Cells[1].Value.ToString();
+                txtSdt.Text = dgvKhachHang.Rows[dong].Cells[2].Value.ToString();
+                string[] ngaySinh = dgvKhachHang.Rows[dong].Cells[3].Value.ToString().Split('/');
+                string nam = ngaySinh[2].Substring(0, 4);
+                dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
+                txtEmail.Text = dgvKhachHang.Rows[dong].Cells[4].Value.ToString();
+                if (dgvKhachHang.Rows[dong].Cells[5].Value.ToString() == "Nam")
+                    rdbNam.Checked = true;
+                else
+                    rdbNu.Checked = true;
+                txtDiachi.Text = dgvKhachHang.Rows[dong].Cells[6].Value.ToString();
+                txtCMND.Text = dgvKhachHang.Rows[dong].Cells[7].Value.ToString();
+                cbxTrangThai.Text = dgvKhachHang.Rows[dong].Cells[8].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
             xoaTrang();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             txtMaKH.Visible = false;
             lblMaKH.Visible = false;
@@ -87,7 +148,8 @@ namespace BTL.GUI
                 if (txtSdt.Text.Trim().Equals(""))
                 {
                     throw new Exception("Số điện thoại không được để trống");
-                } else if (!Regex.IsMatch(txtSdt.Text, regPhone))
+                }
+                else if (!Regex.IsMatch(txtSdt.Text, regPhone))
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
@@ -98,7 +160,8 @@ namespace BTL.GUI
                 if (txtEmail.TextLength == 0)
                 {
                     throw new Exception("Email không được để trống");
-                } else if (!Regex.IsMatch(txtEmail.Text, regEmail))
+                }
+                else if (!Regex.IsMatch(txtEmail.Text, regEmail))
                 {
                     throw new Exception("Email không đúng định dạng");
                 }
@@ -109,10 +172,12 @@ namespace BTL.GUI
                 if (txtCMND.TextLength == 0)
                 {
                     throw new Exception("Chứng minh nhân dân không được để trống");
-                } else if (!Regex.IsMatch(txtCMND.Text, regCMND))
+                }
+                else if (!Regex.IsMatch(txtCMND.Text, regCMND))
                 {
                     throw new Exception("Chứng minh nhân dân không đúng định dạng");
-                } else if (khachHangBUS.kiemTraCMND(txtCMND.Text) == 0)
+                }
+                else if (khachHangBUS.kiemTraCMND(txtCMND.Text) == 0)
                 {
                     throw new Exception("Đã có thông tin của khách hàng này");
                 }
@@ -127,13 +192,14 @@ namespace BTL.GUI
                 {
                     MessageBox.Show("Thêm mới khách hàng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             txtMaKH.Visible = true;
             lblMaKH.Visible = true;
@@ -205,7 +271,7 @@ namespace BTL.GUI
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             txtMaKH.Visible = true;
             txtMaKH.Visible = true;
@@ -244,7 +310,7 @@ namespace BTL.GUI
             }
         }
 
-        private void btnTim_Click(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
         {
             try
             {
@@ -266,43 +332,7 @@ namespace BTL.GUI
             }
         }
 
-        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvKhachHang.ReadOnly = true;
-            cbxTrangThai.Visible = true;
-            lblTrangThai.Visible = true;
-            int dong = e.RowIndex;
-            try
-            {
-                if (dong < 0)
-                {
-                    throw new Exception("Ô này không có dữ liệu");
-                }
-                txtMaKH.Visible = true;
-                lblMaKH.Visible = true;
-                txtMaKH.Enabled = false;
-                txtMaKH.Text = dgvKhachHang.Rows[dong].Cells[0].Value.ToString();
-                txtTenKH.Text = dgvKhachHang.Rows[dong].Cells[1].Value.ToString();
-                txtSdt.Text = dgvKhachHang.Rows[dong].Cells[2].Value.ToString();
-                string[] ngaySinh = dgvKhachHang.Rows[dong].Cells[3].Value.ToString().Split('/');
-                string nam = ngaySinh[2].Substring(0, 4);
-                dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
-                txtEmail.Text = dgvKhachHang.Rows[dong].Cells[4].Value.ToString();
-                if (dgvKhachHang.Rows[dong].Cells[5].Value.ToString() == "Nam")
-                    rdbNam.Checked = true;
-                else
-                    rdbNu.Checked = true;
-                txtDiachi.Text = dgvKhachHang.Rows[dong].Cells[6].Value.ToString();
-                txtCMND.Text = dgvKhachHang.Rows[dong].Cells[7].Value.ToString();
-                cbxTrangThai.Text = dgvKhachHang.Rows[dong].Cells[8].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnReLoad_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
             xoaTrang();

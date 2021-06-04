@@ -70,10 +70,11 @@ namespace BTL
             this.btnClose = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.timeCurrent = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelSubmenu2.SuspendLayout();
@@ -111,7 +112,7 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(204, 1061);
+            this.panelMenu.Size = new System.Drawing.Size(204, 729);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -609,7 +610,7 @@ namespace BTL
             this.panelHidden.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHidden.Location = new System.Drawing.Point(204, 0);
             this.panelHidden.Name = "panelHidden";
-            this.panelHidden.Size = new System.Drawing.Size(1362, 133);
+            this.panelHidden.Size = new System.Drawing.Size(1146, 133);
             this.panelHidden.TabIndex = 2;
             this.panelHidden.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHidden_Paint);
             // 
@@ -686,7 +687,7 @@ namespace BTL
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(1143, 57);
+            this.label3.Location = new System.Drawing.Point(927, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 5;
@@ -698,7 +699,7 @@ namespace BTL
             this.TenNV.AutoSize = true;
             this.TenNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenNV.ForeColor = System.Drawing.Color.Coral;
-            this.TenNV.Location = new System.Drawing.Point(1225, 57);
+            this.TenNV.Location = new System.Drawing.Point(1009, 57);
             this.TenNV.Name = "TenNV";
             this.TenNV.Size = new System.Drawing.Size(26, 21);
             this.TenNV.TabIndex = 4;
@@ -716,7 +717,7 @@ namespace BTL
             this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDangXuat.IconSize = 32;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1256, 96);
+            this.btnDangXuat.Location = new System.Drawing.Point(1040, 96);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(106, 37);
             this.btnDangXuat.TabIndex = 3;
@@ -735,7 +736,7 @@ namespace BTL
             this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 28;
-            this.btnMinimize.Location = new System.Drawing.Point(1276, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1060, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(31, 28);
             this.btnMinimize.TabIndex = 2;
@@ -752,7 +753,7 @@ namespace BTL
             this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximize.IconSize = 28;
-            this.btnMaximize.Location = new System.Drawing.Point(1304, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1088, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(31, 28);
             this.btnMaximize.TabIndex = 1;
@@ -769,7 +770,7 @@ namespace BTL
             this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 28;
-            this.btnClose.Location = new System.Drawing.Point(1331, 0);
+            this.btnClose.Location = new System.Drawing.Point(1115, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(31, 28);
             this.btnClose.TabIndex = 0;
@@ -781,72 +782,84 @@ namespace BTL
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.White;
             this.panelDesktop.Controls.Add(this.label5);
+            this.panelDesktop.Controls.Add(this.label2);
             this.panelDesktop.Controls.Add(this.label4);
             this.panelDesktop.Controls.Add(this.lbDate);
             this.panelDesktop.Controls.Add(this.lbTime);
-            this.panelDesktop.Controls.Add(this.label2);
+            this.panelDesktop.Controls.Add(this.label7);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDesktop.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelDesktop.Location = new System.Drawing.Point(204, 133);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1362, 886);
+            this.panelDesktop.Size = new System.Drawing.Size(1146, 886);
             this.panelDesktop.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label5.Location = new System.Drawing.Point(612, 856);
+            this.label5.Location = new System.Drawing.Point(390, 571);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(473, 26);
-            this.label5.TabIndex = 6;
+            this.label5.Size = new System.Drawing.Size(368, 19);
+            this.label5.TabIndex = 17;
             this.label5.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label2.Location = new System.Drawing.Point(240, 861);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(368, 19);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(514, 195);
+            this.label4.Location = new System.Drawing.Point(360, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(609, 65);
-            this.label4.TabIndex = 5;
+            this.label4.Size = new System.Drawing.Size(445, 47);
+            this.label4.TabIndex = 15;
             this.label4.Text = "Welcome to 5* LMG hotel";
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Calibri", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Font = new System.Drawing.Font("Calibri", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbDate.Location = new System.Drawing.Point(621, 470);
+            this.lbDate.Location = new System.Drawing.Point(399, 405);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(164, 66);
-            this.lbDate.TabIndex = 4;
+            this.lbDate.Size = new System.Drawing.Size(123, 49);
+            this.lbDate.TabIndex = 14;
             this.lbDate.Text = "label5";
             // 
             // lbTime
             // 
             this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Calibri", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Font = new System.Drawing.Font("Calibri", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbTime.Location = new System.Drawing.Point(620, 320);
+            this.lbTime.Location = new System.Drawing.Point(414, 270);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(325, 131);
-            this.lbTime.TabIndex = 3;
+            this.lbTime.Size = new System.Drawing.Size(246, 97);
+            this.lbTime.TabIndex = 13;
             this.lbTime.Text = "label4";
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(315, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1020, 59);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Chào mừng quý khách đến với khách sạn 5*  LMG";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label7.Location = new System.Drawing.Point(263, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(622, 36);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Chào mừng quý khách đến với khách sạn 5*  LMG";
             // 
             // timeCurrent
             // 
@@ -857,14 +870,14 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1566, 1061);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "formMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formMain";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formMain_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
@@ -917,17 +930,12 @@ namespace BTL
         private System.Windows.Forms.Panel panelSubmenu2;
         private FontAwesome.Sharp.IconButton btnThongKeLuong;
         private FontAwesome.Sharp.IconButton btnThongKeHoaDon;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelSubmenu3;
         private FontAwesome.Sharp.IconButton btnKhachMoi;
         private FontAwesome.Sharp.IconButton btnKhachCu;
         private System.Windows.Forms.Label TenNV;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbTime;
-        private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Timer timeCurrent;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbTimeMain;
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btnCheckin;
@@ -936,5 +944,11 @@ namespace BTL
         private FontAwesome.Sharp.IconPictureBox TwitterButton;
         private FontAwesome.Sharp.IconPictureBox FacebookButton;
         private FontAwesome.Sharp.IconPictureBox Instagram;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
     }
 }

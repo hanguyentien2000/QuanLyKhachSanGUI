@@ -32,7 +32,7 @@ namespace BTL
             //FormTilerBar
             this.Text = String.Empty;
             this.ControlBox = false;
-            this.DoubleBuffered = true;
+            //this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.f = fs;
             TenNV.Text = f.account.NhanVien.TenNhanVien.ToString();

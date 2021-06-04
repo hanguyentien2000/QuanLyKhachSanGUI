@@ -239,13 +239,13 @@ namespace BTL
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
-            OpenCurrentForm(new formCheckOut());
+            OpenCurrentForm(new formCheckIn());
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
-            OpenCurrentForm(new formCheckIn());
+            OpenCurrentForm(new formCheckOut());
         }
 
         private void btnKhachCu_Click(object sender, EventArgs e)

@@ -83,7 +83,7 @@ namespace BTL
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 1042);
+            this.label1.Location = new System.Drawing.Point(0, 710);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 19);
             this.label1.TabIndex = 7;
@@ -106,7 +106,7 @@ namespace BTL
             this.panelHidden.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHidden.Location = new System.Drawing.Point(200, 0);
             this.panelHidden.Name = "panelHidden";
-            this.panelHidden.Size = new System.Drawing.Size(1540, 133);
+            this.panelHidden.Size = new System.Drawing.Size(1150, 133);
             this.panelHidden.TabIndex = 6;
             this.panelHidden.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHidden_Paint);
             // 
@@ -183,7 +183,7 @@ namespace BTL
             this.TenNV.AutoSize = true;
             this.TenNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenNV.ForeColor = System.Drawing.Color.Coral;
-            this.TenNV.Location = new System.Drawing.Point(1401, 54);
+            this.TenNV.Location = new System.Drawing.Point(998, 54);
             this.TenNV.Name = "TenNV";
             this.TenNV.Size = new System.Drawing.Size(26, 21);
             this.TenNV.TabIndex = 7;
@@ -195,7 +195,7 @@ namespace BTL
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(1302, 54);
+            this.label3.Location = new System.Drawing.Point(916, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 6;
@@ -213,7 +213,7 @@ namespace BTL
             this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDangXuat.IconSize = 32;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1434, 96);
+            this.btnDangXuat.Location = new System.Drawing.Point(1044, 96);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(106, 37);
             this.btnDangXuat.TabIndex = 4;
@@ -232,7 +232,7 @@ namespace BTL
             this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 28;
-            this.btnMinimize.Location = new System.Drawing.Point(1453, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1063, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(31, 28);
             this.btnMinimize.TabIndex = 2;
@@ -249,7 +249,7 @@ namespace BTL
             this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximize.IconSize = 28;
-            this.btnMaximize.Location = new System.Drawing.Point(1481, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1091, 3);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(31, 28);
             this.btnMaximize.TabIndex = 1;
@@ -266,7 +266,7 @@ namespace BTL
             this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 28;
-            this.btnClose.Location = new System.Drawing.Point(1508, 0);
+            this.btnClose.Location = new System.Drawing.Point(1118, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(31, 28);
             this.btnClose.TabIndex = 0;
@@ -296,6 +296,7 @@ namespace BTL
             // 
             // panelDesktop
             // 
+            this.panelDesktop.AutoScroll = true;
             this.panelDesktop.Controls.Add(this.label5);
             this.panelDesktop.Controls.Add(this.label4);
             this.panelDesktop.Controls.Add(this.lbDate);
@@ -304,62 +305,62 @@ namespace BTL
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 133);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1540, 928);
+            this.panelDesktop.Size = new System.Drawing.Size(1150, 596);
             this.panelDesktop.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label5.Location = new System.Drawing.Point(559, 893);
+            this.label5.Location = new System.Drawing.Point(400, 568);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(473, 26);
+            this.label5.Size = new System.Drawing.Size(368, 19);
             this.label5.TabIndex = 11;
             this.label5.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(513, 238);
+            this.label4.Location = new System.Drawing.Point(372, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(609, 65);
+            this.label4.Size = new System.Drawing.Size(445, 47);
             this.label4.TabIndex = 10;
             this.label4.Text = "Welcome to 5* LMG hotel";
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Calibri", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Font = new System.Drawing.Font("Calibri", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbDate.Location = new System.Drawing.Point(609, 506);
+            this.lbDate.Location = new System.Drawing.Point(411, 413);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(164, 66);
+            this.lbDate.Size = new System.Drawing.Size(123, 49);
             this.lbDate.TabIndex = 9;
             this.lbDate.Text = "label5";
             // 
             // lbTime
             // 
             this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Calibri", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Font = new System.Drawing.Font("Calibri", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbTime.Location = new System.Drawing.Point(619, 363);
+            this.lbTime.Location = new System.Drawing.Point(426, 278);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(325, 131);
+            this.lbTime.Size = new System.Drawing.Size(246, 97);
             this.lbTime.TabIndex = 8;
             this.lbTime.Text = "label4";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(314, 138);
+            this.label2.Location = new System.Drawing.Point(275, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1020, 59);
+            this.label2.Size = new System.Drawing.Size(622, 36);
             this.label2.TabIndex = 7;
             this.label2.Text = "Chào mừng quý khách đến với khách sạn 5*  LMG";
             // 
@@ -378,7 +379,7 @@ namespace BTL
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 1061);
+            this.panelMenu.Size = new System.Drawing.Size(200, 729);
             this.panelMenu.TabIndex = 4;
             // 
             // iconButton6
@@ -588,7 +589,7 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1740, 1061);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelMenu);

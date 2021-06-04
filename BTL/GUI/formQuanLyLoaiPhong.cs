@@ -53,7 +53,52 @@ namespace BTL.InterfaceQuanly
         //    }
         //}
 
-        private void btnThem_Click(object sender, EventArgs e)
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dbDataContext db = new dbDataContext();
+                if (txtTimKiem.Text.Equals(""))
+                {
+                    MessageBox.Show("Bạn chưa nhập loại phòng cần tìm!","Thông báo");
+                    return;
+                }
+                else
+                {
+                    var p = from s in db.LoaiPhongs where s.TenLoaiPhong.ToLower().Contains(txtTimKiem.Text)
+                            select new { s.MaLoaiPhong, s.TenLoaiPhong, s.SoluongNguoi, s.GiaPhong };
+                    dgvQLLP.DataSource = p;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi");
+            }
+        }
+        private void xoaTrang()
+        {
+            txtMaLoaiPhong.Text = "";
+            txtTenLoaiPhong.Text = "";
+            txtSoLuong.Text = "";
+            txtDonGia.Text = "";
+            txtTimKiem.Text = "";
+            txtMaLoaiPhong.Visible = false;
+            lbLoaiPhong.Visible = false;
+        }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            xoaTrang();
+            loadData();
+            //loadData(dsLoaiPhong.GetTableLoaiPhong());
+        }
+        
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             dbDataContext db = new dbDataContext();
             var query = db.LoaiPhongs.Where(x => x.TenLoaiPhong.Equals(txtTenLoaiPhong.Text)).SingleOrDefault();
@@ -109,85 +154,8 @@ namespace BTL.InterfaceQuanly
                 MessageBox.Show(ex.Message, "Thông báo");
             }
         }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            txtMaLoaiPhong.Visible = true;
-            try
-            {
-                if (dgvQLLP.Rows.Count < 1)
-                {
-                    throw new Exception("Vui lòng thêm loại phòng trước khi xóa");
-                }
-                if (txtMaLoaiPhong.TextLength == 0)
-                {
-                    throw new Exception("Vui lòng chọn loại phòng trước khi xóa");
-                }
-                else
-                {
-                    //dsLoaiPhong.DeleteLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text));
-                    //loadData(dsLoaiPhong.GetTableLoaiPhong());
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng " + txtTenLoaiPhong.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if(result == DialogResult.Yes)
-                    {
-                        dbDataContext db = new dbDataContext();
-                        var lstPhong = from s in db.LoaiPhongs where s.MaLoaiPhong == Convert.ToInt32(txtMaLoaiPhong.Text) select s;
-                        foreach (var item in lstPhong)
-                        {
-                            db.LoaiPhongs.DeleteOnSubmit(item);
-                            db.SubmitChanges();
-                        }
-                        MessageBox.Show("Xóa thông tin loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadData();
-                        xoaTrang();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
-        }
 
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dbDataContext db = new dbDataContext();
-                if (txtTimKiem.Text.Equals(""))
-                {
-                    MessageBox.Show("Bạn chưa nhập loại phòng cần tìm!","Thông báo");
-                    return;
-                }
-                else
-                {
-                    var p = from s in db.LoaiPhongs where s.TenLoaiPhong.ToLower().Contains(txtTimKiem.Text)
-                            select new { s.MaLoaiPhong, s.TenLoaiPhong, s.SoluongNguoi, s.GiaPhong };
-                    dgvQLLP.DataSource = p;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi");
-            }
-        }
-        private void xoaTrang()
-        {
-            txtMaLoaiPhong.Text = "";
-            txtTenLoaiPhong.Text = "";
-            txtSoLuong.Text = "";
-            txtDonGia.Text = "";
-            txtTimKiem.Text = "";
-            txtMaLoaiPhong.Visible = false;
-            lbLoaiPhong.Visible = false;
-        }
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            xoaTrang();
-            loadData();
-            //loadData(dsLoaiPhong.GetTableLoaiPhong());
-        }
-        
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -234,6 +202,45 @@ namespace BTL.InterfaceQuanly
                     MessageBox.Show("Cập nhật loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loadData();
                     xoaTrang();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            txtMaLoaiPhong.Visible = true;
+            try
+            {
+                if (dgvQLLP.Rows.Count < 1)
+                {
+                    throw new Exception("Vui lòng thêm loại phòng trước khi xóa");
+                }
+                if (txtMaLoaiPhong.TextLength == 0)
+                {
+                    throw new Exception("Vui lòng chọn loại phòng trước khi xóa");
+                }
+                else
+                {
+                    //dsLoaiPhong.DeleteLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text));
+                    //loadData(dsLoaiPhong.GetTableLoaiPhong());
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng " + txtTenLoaiPhong.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        dbDataContext db = new dbDataContext();
+                        var lstPhong = from s in db.LoaiPhongs where s.MaLoaiPhong == Convert.ToInt32(txtMaLoaiPhong.Text) select s;
+                        foreach (var item in lstPhong)
+                        {
+                            db.LoaiPhongs.DeleteOnSubmit(item);
+                            db.SubmitChanges();
+                        }
+                        MessageBox.Show("Xóa thông tin loại phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData();
+                        xoaTrang();
+                    }
                 }
             }
             catch (Exception ex)
