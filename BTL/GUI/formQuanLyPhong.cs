@@ -165,9 +165,6 @@ namespace BTL
         private void dgvQuanLyPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvQuanLyPhong.ReadOnly = true;
-            txtMaPhong.Visible = true;
-            lblMaPhong.Visible = true;
-            txtMaPhong.Enabled = false;
             int dong = e.RowIndex;
             try
             {
@@ -175,6 +172,9 @@ namespace BTL
                 {
                     throw new Exception("Ô này không có dữ liệu");
                 }
+                txtMaPhong.Visible = true;
+                lblMaPhong.Visible = true;
+                txtMaPhong.Enabled = false;
                 txtMaPhong.Text = dgvQuanLyPhong.Rows[dong].Cells[0].Value.ToString();
                 cbbLoaiPhong.Text = dgvQuanLyPhong.Rows[dong].Cells[1].Value.ToString();
                 if (dgvQuanLyPhong.Rows[dong].Cells[2].Value.ToString() == "Trống")

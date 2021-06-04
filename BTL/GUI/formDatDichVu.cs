@@ -24,6 +24,11 @@ namespace BTL.GUI
 
         private void formDatDichVu_Load(object sender, EventArgs e)
         {
+            dgvDichVu.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvDichVu.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             dgvDichVu.DataSource = datPhongBUS.getDichVuOneRoom(f.maDatPhong);
             cbxDichVu.DataSource = datPhongBUS.getAllDichVu();
             cbxDichVu.DisplayMember = "TenDichVu";
@@ -76,10 +81,11 @@ namespace BTL.GUI
     
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvDichVu.ReadOnly = true;
             rowSelected = e.RowIndex;
             if(rowSelected < 0)
             {
-                MessageBox.Show("Không có dữ liệu");
+                MessageBox.Show("Ô này không có dữ liệu");
             }
             else
             {

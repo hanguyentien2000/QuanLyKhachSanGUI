@@ -9,8 +9,9 @@
   </Table>
   <Table Name="dbo.ChiTietDichVu" Member="ChiTietDichVus">
     <Type Name="ChiTietDichVu">
-      <Column Name="MaDichVu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaCTDV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaDichVu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="SoLuongDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Association Name="DichVu_ChiTietDichVu" Member="DichVu" ThisKey="MaDichVu" OtherKey="MaDichVu" Type="DichVu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
