@@ -40,6 +40,8 @@ namespace BTL.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@ namespace BTL.GUI
             this.lblNgayCong = new System.Windows.Forms.Label();
             this.lblLuongCB = new System.Windows.Forms.Label();
             this.lblTongLuong = new System.Windows.Forms.Label();
-            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@ namespace BTL.GUI
             this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.HoverState.Parent = this.btnThanhToan;
-            this.btnThanhToan.Location = new System.Drawing.Point(977, 105);
+            this.btnThanhToan.Location = new System.Drawing.Point(948, 105);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.ShadowDecoration.Parent = this.btnThanhToan;
             this.btnThanhToan.Size = new System.Drawing.Size(144, 36);
@@ -77,7 +77,7 @@ namespace BTL.GUI
             this.btnTinhLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTinhLuong.ForeColor = System.Drawing.Color.White;
             this.btnTinhLuong.HoverState.Parent = this.btnTinhLuong;
-            this.btnTinhLuong.Location = new System.Drawing.Point(861, 105);
+            this.btnTinhLuong.Location = new System.Drawing.Point(831, 105);
             this.btnTinhLuong.Name = "btnTinhLuong";
             this.btnTinhLuong.ShadowDecoration.Parent = this.btnTinhLuong;
             this.btnTinhLuong.Size = new System.Drawing.Size(100, 36);
@@ -217,6 +217,20 @@ namespace BTL.GUI
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã nhân viên";
+            this.MaNhanVien.Name = "MaNhanVien";
+            this.MaNhanVien.ReadOnly = true;
+            // 
+            // NgayChamCong
+            // 
+            this.NgayChamCong.DataPropertyName = "NgayChamCong";
+            this.NgayChamCong.HeaderText = "Ngày chấm công";
+            this.NgayChamCong.Name = "NgayChamCong";
+            this.NgayChamCong.ReadOnly = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -286,20 +300,6 @@ namespace BTL.GUI
             this.lblTongLuong.Size = new System.Drawing.Size(33, 20);
             this.lblTongLuong.TabIndex = 56;
             this.lblTongLuong.Text = "......";
-            // 
-            // MaNhanVien
-            // 
-            this.MaNhanVien.DataPropertyName = "MaNhanVien";
-            this.MaNhanVien.HeaderText = "Mã nhân viên";
-            this.MaNhanVien.Name = "MaNhanVien";
-            this.MaNhanVien.ReadOnly = true;
-            // 
-            // NgayChamCong
-            // 
-            this.NgayChamCong.DataPropertyName = "NgayChamCong";
-            this.NgayChamCong.HeaderText = "Ngày chấm công";
-            this.NgayChamCong.Name = "NgayChamCong";
-            this.NgayChamCong.ReadOnly = true;
             // 
             // formThongKeLuong
             // 

@@ -33,10 +33,10 @@ namespace BTL.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.btnChamCong = new Guna.UI2.WinForms.Guna2Button();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnChamCong = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +102,20 @@ namespace BTL.GUI
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã nhân viên";
+            this.MaNhanVien.Name = "MaNhanVien";
+            this.MaNhanVien.ReadOnly = true;
+            // 
+            // NgayChamCong
+            // 
+            this.NgayChamCong.DataPropertyName = "NgayChamCong";
+            this.NgayChamCong.HeaderText = "Ngày chấm công";
+            this.NgayChamCong.Name = "NgayChamCong";
+            this.NgayChamCong.ReadOnly = true;
+            // 
             // guna2DateTimePicker2
             // 
             this.guna2DateTimePicker2.CheckedState.Parent = this.guna2DateTimePicker2;
@@ -120,6 +134,7 @@ namespace BTL.GUI
             // btnChamCong
             // 
             this.btnChamCong.CheckedState.Parent = this.btnChamCong;
+            this.btnChamCong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChamCong.CustomImages.Parent = this.btnChamCong;
             this.btnChamCong.DisabledState.Parent = this.btnChamCong;
             this.btnChamCong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,20 +147,6 @@ namespace BTL.GUI
             this.btnChamCong.TabIndex = 56;
             this.btnChamCong.Text = "Chấm công";
             this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
-            // 
-            // MaNhanVien
-            // 
-            this.MaNhanVien.DataPropertyName = "MaNhanVien";
-            this.MaNhanVien.HeaderText = "Mã nhân viên";
-            this.MaNhanVien.Name = "MaNhanVien";
-            this.MaNhanVien.ReadOnly = true;
-            // 
-            // NgayChamCong
-            // 
-            this.NgayChamCong.DataPropertyName = "NgayChamCong";
-            this.NgayChamCong.HeaderText = "Ngày chấm công";
-            this.NgayChamCong.Name = "NgayChamCong";
-            this.NgayChamCong.ReadOnly = true;
             // 
             // formChamCong
             // 

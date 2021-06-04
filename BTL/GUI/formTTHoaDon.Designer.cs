@@ -130,7 +130,7 @@ namespace BTL.GUI
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.HoverState.Parent = this.btnIn;
-            this.btnIn.Location = new System.Drawing.Point(118, 481);
+            this.btnIn.Location = new System.Drawing.Point(123, 481);
             this.btnIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnIn.Name = "btnIn";
             this.btnIn.ShadowDecoration.Parent = this.btnIn;

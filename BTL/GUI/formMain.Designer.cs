@@ -459,7 +459,7 @@ namespace BTL
             this.btnKhachMoi.Location = new System.Drawing.Point(0, 49);
             this.btnKhachMoi.Name = "btnKhachMoi";
             this.btnKhachMoi.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnKhachMoi.Size = new System.Drawing.Size(187, 48);
+            this.btnKhachMoi.Size = new System.Drawing.Size(187, 51);
             this.btnKhachMoi.TabIndex = 6;
             this.btnKhachMoi.Text = "Khách mới";
             this.btnKhachMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

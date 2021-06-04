@@ -61,7 +61,7 @@ namespace BTL.GUI
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.Parent = this.btnTimKiem;
-            this.btnTimKiem.Location = new System.Drawing.Point(815, 31);
+            this.btnTimKiem.Location = new System.Drawing.Point(831, 31);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.ShadowDecoration.Parent = this.btnTimKiem;
             this.btnTimKiem.Size = new System.Drawing.Size(125, 36);
@@ -84,7 +84,7 @@ namespace BTL.GUI
             this.txtKeyWords.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtKeyWords.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKeyWords.HoverState.Parent = this.txtKeyWords;
-            this.txtKeyWords.Location = new System.Drawing.Point(385, 31);
+            this.txtKeyWords.Location = new System.Drawing.Point(410, 31);
             this.txtKeyWords.Name = "txtKeyWords";
             this.txtKeyWords.PasswordChar = '\0';
             this.txtKeyWords.PlaceholderText = "Mã đặt phòng,phòng,khách";
@@ -102,7 +102,7 @@ namespace BTL.GUI
             this.btnTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTatCa.ForeColor = System.Drawing.Color.White;
             this.btnTatCa.HoverState.Parent = this.btnTatCa;
-            this.btnTatCa.Location = new System.Drawing.Point(815, 89);
+            this.btnTatCa.Location = new System.Drawing.Point(831, 89);
             this.btnTatCa.Name = "btnTatCa";
             this.btnTatCa.ShadowDecoration.Parent = this.btnTatCa;
             this.btnTatCa.Size = new System.Drawing.Size(125, 36);
@@ -171,7 +171,7 @@ namespace BTL.GUI
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
             this.btnCheckOut.HoverState.Parent = this.btnCheckOut;
-            this.btnCheckOut.Location = new System.Drawing.Point(815, 469);
+            this.btnCheckOut.Location = new System.Drawing.Point(806, 469);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.ShadowDecoration.Parent = this.btnCheckOut;
             this.btnCheckOut.Size = new System.Drawing.Size(150, 47);
@@ -188,7 +188,7 @@ namespace BTL.GUI
             this.btnListToday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListToday.ForeColor = System.Drawing.Color.White;
             this.btnListToday.HoverState.Parent = this.btnListToday;
-            this.btnListToday.Location = new System.Drawing.Point(588, 89);
+            this.btnListToday.Location = new System.Drawing.Point(613, 89);
             this.btnListToday.Name = "btnListToday";
             this.btnListToday.ShadowDecoration.Parent = this.btnListToday;
             this.btnListToday.Size = new System.Drawing.Size(212, 36);
