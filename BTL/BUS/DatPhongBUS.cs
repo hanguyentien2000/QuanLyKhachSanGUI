@@ -22,7 +22,7 @@ namespace BTL.BUS
                 + " AND MaPhong not in (Select MaPhong from DatPhong where (NgayDat<='" + checkIn.ToString("yyyy/MM/dd") 
                 +"' AND NgayDi>'" + checkIn.ToString("yyyy/MM/dd") + "') OR "
                 + "(NgayDat < '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi>= '" + checkOut.ToString("yyyy/MM/dd") 
-                + "'))";
+                + "') OR (NgayDat >'" +checkIn.ToString("yyyy/MM/dd") +"' AND NgayDi <'"+ checkOut.ToString("yyyy/MM/dd")+"'))";
             return data.ExecuteQuery(sql);
         }
         public KhachHangDTO getKhachHang(string tuKhoa)
@@ -161,7 +161,8 @@ namespace BTL.BUS
             }
             else if(DateTime.Now.Hour <= 12)
             {
-                sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND (NgayDat ='" + today + "' OR NgayDat ='" + yesterday + "')";
+                sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND (NgayDat ='" 
+                    + today + "' OR NgayDat ='" + yesterday + "')";
             }
             return data.ExecuteQuery(sql);
         }
@@ -223,7 +224,7 @@ namespace BTL.BUS
                 "(MaDatPhong ='" + keywords + "' OR MaKhachHang ='" + keywords + "' OR MaPhong ='" + keywords + "')";
             return data.ExecuteQuery(sql);
         }
-        public bool passToThongKe(int maDatPhong)
+        public bool checkout(int maDatPhong)
         {
             string today = DateTime.Now.ToString("yyyy/MM/dd");
             string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 2, NgayDi = '"+ today +"' where MaDatPhong = " + maDatPhong;
@@ -348,8 +349,8 @@ namespace BTL.BUS
         {
             int tongTienDV = 0;
             string sql = "";
-            sql = "SELECT DonGia,SoLuongDung from DichVu inner join ChiTietDichVu on DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join" + 
-                " HoaDon on HoaDon.MaHoaDon = ChiTietDichVu.MaHoaDon";
+            sql = "SELECT DonGia,SoLuongDung from DichVu inner join ChiTietDichVu on DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join" +
+                " HoaDon on HoaDon.MaHoaDon = ChiTietDichVu.MaHoaDon where ChiTietDichVu.MaHoaDon =" + maHoaDon;
             SqlConnection conn = data.GetDBConnection();
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);

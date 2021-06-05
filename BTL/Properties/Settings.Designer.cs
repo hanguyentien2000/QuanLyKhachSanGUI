@@ -48,7 +48,7 @@ namespace BTL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-A5S98G0\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=T" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QHPIJ3U\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=T" +
             "rue")]
         public string QLKSConnectionString2 {
             get {
