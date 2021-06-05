@@ -27,6 +27,7 @@ namespace BTL.GUI
         KhachHangDTO kh = new KhachHangDTO();
         int tienCoc = 0;
         int tongTien = 0;
+        int lanVao = 0;
         private void formDatPhongKM_Load(object sender, EventArgs e)
         {
             DataTable dt = loaiPhongBUS.GetTableLoaiPhong();
@@ -38,11 +39,10 @@ namespace BTL.GUI
             dateNS.MaxDate = DateTime.Now.AddYears(-18);
             rdNam.Checked = true;
         }
-        private void tienPhaiTra()
+        private void tienPhaiTra(DateTime d1,DateTime d2)
         {
-
             tienCoc = Convert.ToInt32(txtPrice.Text);
-            tongTien = tienCoc * ((dateCheckout.Value - dateCheckin.Value).Days);
+            tongTien = tienCoc * (d2 - d1).Days;
             lbTienCoc.Text = (tongTien / 2).ToString();
             lbTongBill.Text = tongTien.ToString();
         }
@@ -71,7 +71,7 @@ namespace BTL.GUI
                     cbxPhong.ValueMember = "MaPhong";
                     cbxPhong.DisplayMember = "MaPhong";
                     txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
-                    tienPhaiTra();
+                    tienPhaiTra(dateCheckin.Value, dateCheckout.Value);
                 }
                 else
                 {
@@ -88,6 +88,10 @@ namespace BTL.GUI
 
         private void dateCheckin_ValueChanged(object sender, EventArgs e)
         {
+            if(lanVao > 0)
+            {
+                dateCheckout.Enabled = true;
+            }
             if (dateCheckin.Value.Date > dateCheckout.Value.Date)
             {
                 dateCheckout.Value = dateCheckin.Value;
@@ -97,6 +101,7 @@ namespace BTL.GUI
             {
                 dateCheckout.MinDate = dateCheckin.Value.AddDays(1);
             }
+            
             int n = 0;
             if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
             {
@@ -107,25 +112,21 @@ namespace BTL.GUI
                     cbxPhong.ValueMember = "MaPhong";
                     cbxPhong.DisplayMember = "MaPhong";
                     txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
-                    tienPhaiTra();
+                    tienPhaiTra(dateCheckin.Value, dateCheckout.Value);
                 }
                 else
                 {
                     cbxPhong.DataSource = null;
                     txtPrice.Text = "0";
-                    tienPhaiTra();
+                    tienPhaiTra(dateCheckin.Value, dateCheckout.Value);
                 }
 
             }
+            lanVao++;
         }
 
         private void dateCheckout_ValueChanged(object sender, EventArgs e)
         {
-            if (dateCheckin.Value.Date > dateCheckout.Value.Date)
-            {
-                MessageBox.Show("Ngày check out phải lớn hơn ngày check in");
-                dateCheckin.Value = dateCheckout.Value.AddDays(-1);
-            }
             int n = 0;
             if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
             {
@@ -136,7 +137,13 @@ namespace BTL.GUI
                     cbxPhong.ValueMember = "MaPhong";
                     cbxPhong.DisplayMember = "MaPhong";
                     txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
-                    tienPhaiTra();
+                    tienPhaiTra(dateCheckin.Value,dateCheckout.Value);
+                }
+                else
+                {
+                    cbxPhong.DataSource = null;
+                    txtPrice.Text = "0";
+                    tienPhaiTra(dateCheckin.Value, dateCheckout.Value);
                 }
 
             }
@@ -197,7 +204,7 @@ namespace BTL.GUI
                             cbxPhong.ValueMember = "MaPhong";
                             cbxPhong.DisplayMember = "MaPhong";
                             txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
-                            tienPhaiTra();
+                            tienPhaiTra(dateCheckin.Value, dateCheckout.Value);
                         }
                         else{
                             cbxPhong.DataSource = dt;
@@ -220,5 +227,7 @@ namespace BTL.GUI
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+      
     }
 }

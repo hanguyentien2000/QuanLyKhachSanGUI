@@ -60,8 +60,8 @@ namespace BTL
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.dateCheckIn = new System.Windows.Forms.DateTimePicker();
             this.dateNS = new System.Windows.Forms.DateTimePicker();
-            this.dateCheckout = new System.Windows.Forms.DateTimePicker();
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
+            this.dateCheckout = new System.Windows.Forms.DateTimePicker();
             this.rdoGT.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -563,16 +563,6 @@ namespace BTL
             this.dateNS.Size = new System.Drawing.Size(274, 33);
             this.dateNS.TabIndex = 41;
             // 
-            // dateCheckout
-            // 
-            this.dateCheckout.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateCheckout.Location = new System.Drawing.Point(369, 430);
-            this.dateCheckout.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.dateCheckout.Name = "dateCheckout";
-            this.dateCheckout.Size = new System.Drawing.Size(274, 33);
-            this.dateCheckout.TabIndex = 42;
-            this.dateCheckout.ValueChanged += new System.EventHandler(this.dateCheckout_ValueChanged);
-            // 
             // btnReset
             // 
             this.btnReset.BorderRadius = 20;
@@ -591,14 +581,24 @@ namespace BTL
             this.btnReset.Text = "Reset";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // dateCheckout
+            // 
+            this.dateCheckout.Enabled = false;
+            this.dateCheckout.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateCheckout.Location = new System.Drawing.Point(369, 430);
+            this.dateCheckout.Name = "dateCheckout";
+            this.dateCheckout.Size = new System.Drawing.Size(274, 33);
+            this.dateCheckout.TabIndex = 75;
+            this.dateCheckout.ValueChanged += new System.EventHandler(this.dateCheckout_ValueChanged_1);
+            // 
             // formDatPhongKC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1168, 672);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dateCheckout);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dateNS);
             this.Controls.Add(this.dateCheckIn);
             this.Controls.Add(this.btnTim);
@@ -672,7 +672,7 @@ namespace BTL
         private Guna.UI2.WinForms.Guna2Button btnTim;
         private System.Windows.Forms.DateTimePicker dateCheckIn;
         private System.Windows.Forms.DateTimePicker dateNS;
-        private System.Windows.Forms.DateTimePicker dateCheckout;
         private Guna.UI2.WinForms.Guna2Button btnReset;
+        private System.Windows.Forms.DateTimePicker dateCheckout;
     }
 }

@@ -436,6 +436,7 @@ namespace BTL.GUI
             // 
             // dateCheckout
             // 
+            this.dateCheckout.Enabled = false;
             this.dateCheckout.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateCheckout.Location = new System.Drawing.Point(352, 318);
             this.dateCheckout.Name = "dateCheckout";
@@ -561,9 +562,9 @@ namespace BTL.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateCheckout;
         private System.Windows.Forms.DateTimePicker dateNS;
-        private System.Windows.Forms.DateTimePicker dateCheckin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dateCheckin;
     }
 }

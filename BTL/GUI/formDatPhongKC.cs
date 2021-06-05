@@ -28,6 +28,7 @@ namespace BTL
         int tienCoc = 0;
         int tongTien = 0;
         string maNV;
+        int lanVao = 0;
         private void formDatPhong_Load(object sender, EventArgs e)
         {
             DataTable dt = loaiPhongBUS.GetTableLoaiPhong();
@@ -154,6 +155,10 @@ namespace BTL
 
         private void dateCheckIn_ValueChanged(object sender, EventArgs e)
         {
+            if(lanVao > 0)
+            {
+                dateCheckout.Enabled = true;
+            }    
             if (dateCheckIn.Value.Date > dateCheckout.Value.Date)
             {
                 dateCheckout.Value = dateCheckIn.Value;
@@ -183,9 +188,26 @@ namespace BTL
                 }
                 
             }
+            lanVao++;
         }
 
-        private void dateCheckout_ValueChanged(object sender, EventArgs e)
+
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            kh = new KhachHangDTO();
+            txtTuKhoa.Enabled = true;
+            txtTuKhoa.Text = "";
+            txtTenKH.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
+            txtDiaChi.Text = "";
+            txtCMND.Text = "";
+            rdNam.Checked = true;
+            dateNS.Value = DateTime.Now;
+        }
+
+        private void dateCheckout_ValueChanged_1(object sender, EventArgs e)
         {
             if (dateCheckIn.Value.Date > dateCheckout.Value.Date)
             {
@@ -204,22 +226,14 @@ namespace BTL
                     txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
                     tienPhaiTra();
                 }
-               
-            }
-        }
+                else
+                {
+                    cbxPhong.DataSource = null;
+                    txtPrice.Text = "0";
+                    tienPhaiTra();
+                }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            kh = new KhachHangDTO();
-            txtTuKhoa.Enabled = true;
-            txtTuKhoa.Text = "";
-            txtTenKH.Text = "";
-            txtSDT.Text = "";
-            txtEmail.Text = "";
-            txtDiaChi.Text = "";
-            txtCMND.Text = "";
-            rdNam.Checked = true;
-            dateNS.Value = DateTime.Now;
+            }
         }
     }
 }
