@@ -22,7 +22,7 @@ namespace BTL.BUS
                 + " AND MaPhong not in (Select MaPhong from DatPhong where (NgayDat<='" + checkIn.ToString("yyyy/MM/dd") 
                 +"' AND NgayDi>'" + checkIn.ToString("yyyy/MM/dd") + "') OR "
                 + "(NgayDat < '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi>= '" + checkOut.ToString("yyyy/MM/dd") 
-                + "'))";
+                + "') OR (NgayDat >'" +checkIn.ToString("yyyy/MM/dd") +"' AND NgayDi <'"+ checkOut.ToString("yyyy/MM/dd")+"'))";
             return data.ExecuteQuery(sql);
         }
         public KhachHangDTO getKhachHang(string tuKhoa)

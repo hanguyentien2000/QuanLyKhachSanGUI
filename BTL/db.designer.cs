@@ -36,12 +36,12 @@ namespace BTL
     partial void InsertChiTietDichVu(ChiTietDichVu instance);
     partial void UpdateChiTietDichVu(ChiTietDichVu instance);
     partial void DeleteChiTietDichVu(ChiTietDichVu instance);
-    partial void InsertDichVu(DichVu instance);
-    partial void UpdateDichVu(DichVu instance);
-    partial void DeleteDichVu(DichVu instance);
     partial void InsertDatPhong(DatPhong instance);
     partial void UpdateDatPhong(DatPhong instance);
     partial void DeleteDatPhong(DatPhong instance);
+    partial void InsertDichVu(DichVu instance);
+    partial void UpdateDichVu(DichVu instance);
+    partial void DeleteDichVu(DichVu instance);
     partial void InsertHoaDon(HoaDon instance);
     partial void UpdateHoaDon(HoaDon instance);
     partial void DeleteHoaDon(HoaDon instance);
@@ -111,19 +111,19 @@ namespace BTL
 			}
 		}
 		
-		public System.Data.Linq.Table<DichVu> DichVus
-		{
-			get
-			{
-				return this.GetTable<DichVu>();
-			}
-		}
-		
 		public System.Data.Linq.Table<DatPhong> DatPhongs
 		{
 			get
 			{
 				return this.GetTable<DatPhong>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DichVu> DichVus
+		{
+			get
+			{
+				return this.GetTable<DichVu>();
 			}
 		}
 		
@@ -524,144 +524,6 @@ namespace BTL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DichVu")]
-	public partial class DichVu : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaDichVu;
-		
-		private string _TenDichVu;
-		
-		private int _DonGia;
-		
-		private EntitySet<ChiTietDichVu> _ChiTietDichVus;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDichVuChanging(int value);
-    partial void OnMaDichVuChanged();
-    partial void OnTenDichVuChanging(string value);
-    partial void OnTenDichVuChanged();
-    partial void OnDonGiaChanging(int value);
-    partial void OnDonGiaChanged();
-    #endregion
-		
-		public DichVu()
-		{
-			this._ChiTietDichVus = new EntitySet<ChiTietDichVu>(new Action<ChiTietDichVu>(this.attach_ChiTietDichVus), new Action<ChiTietDichVu>(this.detach_ChiTietDichVus));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDichVu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaDichVu
-		{
-			get
-			{
-				return this._MaDichVu;
-			}
-			set
-			{
-				if ((this._MaDichVu != value))
-				{
-					this.OnMaDichVuChanging(value);
-					this.SendPropertyChanging();
-					this._MaDichVu = value;
-					this.SendPropertyChanged("MaDichVu");
-					this.OnMaDichVuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDichVu", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenDichVu
-		{
-			get
-			{
-				return this._TenDichVu;
-			}
-			set
-			{
-				if ((this._TenDichVu != value))
-				{
-					this.OnTenDichVuChanging(value);
-					this.SendPropertyChanging();
-					this._TenDichVu = value;
-					this.SendPropertyChanged("TenDichVu");
-					this.OnTenDichVuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Int NOT NULL")]
-		public int DonGia
-		{
-			get
-			{
-				return this._DonGia;
-			}
-			set
-			{
-				if ((this._DonGia != value))
-				{
-					this.OnDonGiaChanging(value);
-					this.SendPropertyChanging();
-					this._DonGia = value;
-					this.SendPropertyChanged("DonGia");
-					this.OnDonGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_ChiTietDichVu", Storage="_ChiTietDichVus", ThisKey="MaDichVu", OtherKey="MaDichVu")]
-		public EntitySet<ChiTietDichVu> ChiTietDichVus
-		{
-			get
-			{
-				return this._ChiTietDichVus;
-			}
-			set
-			{
-				this._ChiTietDichVus.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_ChiTietDichVus(ChiTietDichVu entity)
-		{
-			this.SendPropertyChanging();
-			entity.DichVu = this;
-		}
-		
-		private void detach_ChiTietDichVus(ChiTietDichVu entity)
-		{
-			this.SendPropertyChanging();
-			entity.DichVu = null;
 		}
 	}
 	
@@ -1067,6 +929,144 @@ namespace BTL
 		{
 			this.SendPropertyChanging();
 			entity.DatPhong = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DichVu")]
+	public partial class DichVu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaDichVu;
+		
+		private string _TenDichVu;
+		
+		private int _DonGia;
+		
+		private EntitySet<ChiTietDichVu> _ChiTietDichVus;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDichVuChanging(int value);
+    partial void OnMaDichVuChanged();
+    partial void OnTenDichVuChanging(string value);
+    partial void OnTenDichVuChanged();
+    partial void OnDonGiaChanging(int value);
+    partial void OnDonGiaChanged();
+    #endregion
+		
+		public DichVu()
+		{
+			this._ChiTietDichVus = new EntitySet<ChiTietDichVu>(new Action<ChiTietDichVu>(this.attach_ChiTietDichVus), new Action<ChiTietDichVu>(this.detach_ChiTietDichVus));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDichVu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaDichVu
+		{
+			get
+			{
+				return this._MaDichVu;
+			}
+			set
+			{
+				if ((this._MaDichVu != value))
+				{
+					this.OnMaDichVuChanging(value);
+					this.SendPropertyChanging();
+					this._MaDichVu = value;
+					this.SendPropertyChanged("MaDichVu");
+					this.OnMaDichVuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDichVu", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenDichVu
+		{
+			get
+			{
+				return this._TenDichVu;
+			}
+			set
+			{
+				if ((this._TenDichVu != value))
+				{
+					this.OnTenDichVuChanging(value);
+					this.SendPropertyChanging();
+					this._TenDichVu = value;
+					this.SendPropertyChanged("TenDichVu");
+					this.OnTenDichVuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Int NOT NULL")]
+		public int DonGia
+		{
+			get
+			{
+				return this._DonGia;
+			}
+			set
+			{
+				if ((this._DonGia != value))
+				{
+					this.OnDonGiaChanging(value);
+					this.SendPropertyChanging();
+					this._DonGia = value;
+					this.SendPropertyChanged("DonGia");
+					this.OnDonGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_ChiTietDichVu", Storage="_ChiTietDichVus", ThisKey="MaDichVu", OtherKey="MaDichVu")]
+		public EntitySet<ChiTietDichVu> ChiTietDichVus
+		{
+			get
+			{
+				return this._ChiTietDichVus;
+			}
+			set
+			{
+				this._ChiTietDichVus.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ChiTietDichVus(ChiTietDichVu entity)
+		{
+			this.SendPropertyChanging();
+			entity.DichVu = this;
+		}
+		
+		private void detach_ChiTietDichVus(ChiTietDichVu entity)
+		{
+			this.SendPropertyChanging();
+			entity.DichVu = null;
 		}
 	}
 	

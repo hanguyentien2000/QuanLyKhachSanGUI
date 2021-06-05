@@ -17,14 +17,6 @@
       <Association Name="HoaDon_ChiTietDichVu" Member="HoaDon" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DichVu" Member="DichVus">
-    <Type Name="DichVu">
-      <Column Name="MaDichVu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDichVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DonGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="DichVu_ChiTietDichVu" Member="ChiTietDichVus" ThisKey="MaDichVu" OtherKey="MaDichVu" Type="ChiTietDichVu" />
-    </Type>
-  </Table>
   <Table Name="dbo.DatPhong" Member="DatPhongs">
     <Type Name="DatPhong">
       <Column Name="MaDatPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -40,6 +32,14 @@
       <Association Name="KhachHang_DatPhong" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_DatPhong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Phong_DatPhong" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DichVu" Member="DichVus">
+    <Type Name="DichVu">
+      <Column Name="MaDichVu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDichVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DichVu_ChiTietDichVu" Member="ChiTietDichVus" ThisKey="MaDichVu" OtherKey="MaDichVu" Type="ChiTietDichVu" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDon" Member="HoaDons">
