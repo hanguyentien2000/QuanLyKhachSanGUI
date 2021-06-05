@@ -26,6 +26,7 @@ namespace BTL.GUI
             maDatPhong = 0;
             txtMaKhach.Text = "";
             txtMaPhong.Text = "";
+            txtKeyWords.Text = "";
         }
         private void formCheckIn_Load(object sender, EventArgs e)
         {
@@ -82,15 +83,20 @@ namespace BTL.GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            int value;
             if (txtKeyWords.Text.Length == 0)
             {
                 MessageBox.Show("Chưa nhập keywords");
             }
-            else
+            else if(int.TryParse(txtKeyWords.Text,out value))
             {
-                  
                 dgvCheckOut.DataSource = datPhongBus.timKiemCheckOut(txtKeyWords.Text);
                 btnDichVu.Enabled = false;
+            }    
+            else
+            {
+                MessageBox.Show("Keywords nhập sai định dạng");
+                
             }
         }
 

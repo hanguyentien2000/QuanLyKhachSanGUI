@@ -42,6 +42,7 @@ namespace BTL.GUI
             maDatPhong = 0;
             txtMaKhach.Text = "";
             txtMaPhong.Text = "";
+            txtKeyWords.Text = "";
         }
         private void btnListToday_Click(object sender, EventArgs e)
         {
@@ -49,6 +50,7 @@ namespace BTL.GUI
             btnConfirmOOD.Enabled = false;
             resetInfor();
             loadTableCIToday();
+            
         }
         public void loadTableAll()
         {
@@ -156,16 +158,21 @@ namespace BTL.GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            int value;
             
-            if(txtKeyWords.Text.Length == 0)
+                if (txtKeyWords.Text.Length == 0)
             {
                 MessageBox.Show("Chưa nhập keywords");
             }
-            else
+            else if (int.TryParse(txtKeyWords.Text, out value))
             {
                 dgvCheckIn.DataSource = datPhongBus.timKiemCheckIn(txtKeyWords.Text);
                 btnCheckIn.Enabled = false;
                 btnConfirmOOD.Enabled = false;
+            }    
+            else
+            {
+                MessageBox.Show("Keywords sai định dạng");
             }
         }
     }
