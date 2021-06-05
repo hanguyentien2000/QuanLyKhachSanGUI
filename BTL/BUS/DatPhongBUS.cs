@@ -348,8 +348,8 @@ namespace BTL.BUS
         {
             int tongTienDV = 0;
             string sql = "";
-            sql = "SELECT DonGia,SoLuongDung from DichVu inner join ChiTietDichVu on DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join" + 
-                " HoaDon on HoaDon.MaHoaDon = ChiTietDichVu.MaHoaDon";
+            sql = "SELECT DonGia,SoLuongDung from DichVu inner join ChiTietDichVu on DichVu.MaDichVu = ChiTietDichVu.MaDichVu inner join" +
+                " HoaDon on HoaDon.MaHoaDon = ChiTietDichVu.MaHoaDon where ChiTietDichVu.MaHoaDon =" + maHoaDon;
             SqlConnection conn = data.GetDBConnection();
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);

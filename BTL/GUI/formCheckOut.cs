@@ -122,7 +122,7 @@ namespace BTL.GUI
                             frmTT.ShowDialog();
                         }
                       
-                        loadTableCOToday();
+                        loadAllCheckOut();
                         maDatPhong = 0;
                     }
                 }
