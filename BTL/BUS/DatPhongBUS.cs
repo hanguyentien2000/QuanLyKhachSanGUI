@@ -219,8 +219,9 @@ namespace BTL.BUS
         }
         public DataTable timKiemCheckOut(string keywords)
         {
-            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDen,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 1 AND " +
-               "(MaDatPhong =" + keywords + " OR MaKhachHang =" + keywords + " OR MaPhong =" + keywords + ")";
+            String sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDen,NgayDi,TienDatCoc from DatPhong inner join KhachHang" 
+                + " on DatPhong.MaKhachHang = KhachHang.MaKhachHang where TrangThaiDatPhong = 1 AND " +
+               "(MaDatPhong =" + keywords + " OR MaKhachHang =" + keywords + " OR MaPhong =" + keywords + " OR TenKhachHang like N'%"+ keywords + "%' OR SDT='"+ keywords +"')";
             return data.ExecuteQuery(sql);
         }
         public bool passToThongKe(int maDatPhong)
