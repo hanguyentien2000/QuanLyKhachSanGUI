@@ -55,8 +55,8 @@ namespace BTL.GUI
                 string nam1 = ngay1[2].Substring(0, 4);
                 string nam2 = ngay2[2].Substring(0, 4);
 
-                String NgayCC1 = ngay1[1] + "/" + ngay1[0] + "/" + nam1;
-                String NgayCC2 = ngay2[1] + "/" + ngay2[0] + "/" + nam2;
+                String NgayCC1 = nam1 + "/" + ngay1[1] + "/" + ngay1[0];
+                String NgayCC2 = nam2 + "/" + ngay2[1] + "/" + ngay2[0];
 
                 guna2DataGridView1.DataSource = cc.getChamCongByMaNVAndDate(manv, NgayCC1, NgayCC2);
 

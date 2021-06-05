@@ -45,7 +45,7 @@ namespace BTL.GUI
             DateTime date = dtpNS.Value;
             string[] ngaySinh = date.ToShortDateString().Split('/');
             string nam = ngaySinh[2].Substring(0, 4);
-            khachHangDTO.NgaySinh = ngaySinh[1] + "/" + ngaySinh[0] + "/" + nam;
+            khachHangDTO.NgaySinh = nam + "/" + ngaySinh[1] + "/" + ngaySinh[0];
             khachHangDTO.Email = txtEmail.Text;
             khachHangDTO.GioiTinh = rdbNam.Checked ? 0 : rdbNu.Checked ? 1 : 0;
             khachHangDTO.DiaChi = txtDiachi.Text;

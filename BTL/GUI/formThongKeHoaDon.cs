@@ -91,8 +91,8 @@ namespace BTL.GUI
                 string nam1 = ngay1[2].Substring(0, 4);
                 string nam2 = ngay2[2].Substring(0, 4);
 
-                String NgayHD1 = ngay1[1] + "/" + ngay1[0] + "/" + nam1;
-                String NgayHD2 = ngay2[1] + "/" + ngay2[0] + "/" + nam2;
+                String NgayHD1 = nam1 + "/" + ngay1[1] + "/" + ngay1[0];
+                String NgayHD2 = nam2 + "/" + ngay2[1] + "/" + ngay2[0];
                 clearLabel();
                 if (cbxTrangThai.Text == "Tất cả")
                 {
