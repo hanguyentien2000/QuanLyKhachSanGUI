@@ -49,7 +49,6 @@ namespace BTL.GUI
                 DateTime Ngay1 = guna2DateTimePicker1.Value;
                 DateTime Ngay2 = guna2DateTimePicker2.Value;
 
-
                 guna2DataGridView1.DataSource = cc.getChamCongByMaNVAndDate(manv, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
 
                 int ngaycong = cc.getCountChamCongByMaNVAndDate(manv, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));

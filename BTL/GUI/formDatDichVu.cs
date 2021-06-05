@@ -26,6 +26,7 @@ namespace BTL.GUI
             txtSL.Text = "";
             rTxtGC.Text = "";
             cbxDichVu.SelectedIndex = 0;
+            rowSelected = -1;
         }
         private void formDatDichVu_Load(object sender, EventArgs e)
         {
@@ -102,8 +103,7 @@ namespace BTL.GUI
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            txtSL.Text = "";
-            rTxtGC.Text = "";
+            xoaTrang();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace BTL.GUI
             }
             else
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa dịch vụ ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xoá dịch vụ ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (datPhongBUS.xoaDichVu(datPhongBUS.getMaHD(f.maDatPhong), Convert.ToInt32(cbxDichVu.SelectedValue.ToString())))
