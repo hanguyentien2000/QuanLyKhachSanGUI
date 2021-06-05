@@ -49,7 +49,7 @@ namespace BTL.InterfaceQuanly
             DateTime date = dtpNS.Value;
             string[] ngaySinh = date.ToShortDateString().Split('/');
             string nam = ngaySinh[2].Substring(0, 4);
-            nhanVienDTO.NgaySinh = ngaySinh[1] + "/" + ngaySinh[0] + "/" + nam;
+            nhanVienDTO.NgaySinh = nam + "/" + ngaySinh[1] + "/" + ngaySinh[0];
             nhanVienDTO.Cmnd = txtCMND.Text;
             nhanVienDTO.anhNV = imageConvert.ConvertImageToBytes(imgNV.Image);
         }
@@ -71,6 +71,7 @@ namespace BTL.InterfaceQuanly
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            dgvNhanVien.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -104,9 +105,10 @@ namespace BTL.InterfaceQuanly
                 txtMaNV.Text = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
                 txtTenNV.Text = dgvNhanVien.Rows[dong].Cells[1].Value.ToString();
                 txtSDT.Text = dgvNhanVien.Rows[dong].Cells[2].Value.ToString();
-                string[] ngaySinh = dgvNhanVien.Rows[dong].Cells[3].Value.ToString().Split('/');
-                string nam = ngaySinh[2].Substring(0, 4);
-                dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
+                //string[] ngaySinh = dgvNhanVien.Rows[dong].Cells[3].Value.ToString().Split('/');
+                //string nam = ngaySinh[2].Substring(0, 4);
+                //dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
+                dtpNS.Value = DateTime.Parse(dgvNhanVien.Rows[dong].Cells[3].Value.ToString());
                 txtDiaChi.Text = dgvNhanVien.Rows[dong].Cells[4].Value.ToString();
                 if (dgvNhanVien.Rows[dong].Cells[5].Value.ToString() == "Nam")
                     rdbNam.Checked = true;

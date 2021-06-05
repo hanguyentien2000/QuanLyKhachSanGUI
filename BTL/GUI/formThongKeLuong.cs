@@ -49,18 +49,10 @@ namespace BTL.GUI
                 DateTime Ngay1 = guna2DateTimePicker1.Value;
                 DateTime Ngay2 = guna2DateTimePicker2.Value;
 
-                string[] ngay1 = Ngay1.ToShortDateString().Split('/');
-                string[] ngay2 = Ngay2.ToShortDateString().Split('/');
 
-                string nam1 = ngay1[2].Substring(0, 4);
-                string nam2 = ngay2[2].Substring(0, 4);
+                guna2DataGridView1.DataSource = cc.getChamCongByMaNVAndDate(manv, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
 
-                String NgayCC1 = ngay1[1] + "/" + ngay1[0] + "/" + nam1;
-                String NgayCC2 = ngay2[1] + "/" + ngay2[0] + "/" + nam2;
-
-                guna2DataGridView1.DataSource = cc.getChamCongByMaNVAndDate(manv, NgayCC1, NgayCC2);
-
-                int ngaycong = cc.getCountChamCongByMaNVAndDate(manv, NgayCC1, NgayCC2);
+                int ngaycong = cc.getCountChamCongByMaNVAndDate(manv, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
                 lblNgayCong.Text = ngaycong.ToString();
 
                 int luongtong = ngaycong * luongcb;
