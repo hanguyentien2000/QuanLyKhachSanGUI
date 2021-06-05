@@ -103,7 +103,7 @@ namespace BTL.GUI
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(12, 195);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(15, 115);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
@@ -221,7 +221,7 @@ namespace BTL.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 111);
+            this.label1.Location = new System.Drawing.Point(15, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 24;
@@ -231,7 +231,7 @@ namespace BTL.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(207, 111);
+            this.label2.Location = new System.Drawing.Point(210, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 25;
@@ -243,7 +243,7 @@ namespace BTL.GUI
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(15, 130);
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(18, 50);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -258,7 +258,7 @@ namespace BTL.GUI
             this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.guna2DateTimePicker2.HoverState.Parent = this.guna2DateTimePicker2;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(210, 130);
+            this.guna2DateTimePicker2.Location = new System.Drawing.Point(213, 50);
             this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
@@ -280,7 +280,7 @@ namespace BTL.GUI
             this.cbxTrangThai.HoverState.Parent = this.cbxTrangThai;
             this.cbxTrangThai.ItemHeight = 30;
             this.cbxTrangThai.ItemsAppearance.Parent = this.cbxTrangThai;
-            this.cbxTrangThai.Location = new System.Drawing.Point(461, 130);
+            this.cbxTrangThai.Location = new System.Drawing.Point(464, 50);
             this.cbxTrangThai.Name = "cbxTrangThai";
             this.cbxTrangThai.ShadowDecoration.Parent = this.cbxTrangThai;
             this.cbxTrangThai.Size = new System.Drawing.Size(174, 36);
@@ -295,7 +295,7 @@ namespace BTL.GUI
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.HoverState.Parent = this.btnThongKe;
-            this.btnThongKe.Location = new System.Drawing.Point(822, 130);
+            this.btnThongKe.Location = new System.Drawing.Point(825, 50);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.ShadowDecoration.Parent = this.btnThongKe;
             this.btnThongKe.Size = new System.Drawing.Size(84, 36);
@@ -312,7 +312,7 @@ namespace BTL.GUI
             this.btnXemCTDV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXemCTDV.ForeColor = System.Drawing.Color.White;
             this.btnXemCTDV.HoverState.Parent = this.btnXemCTDV;
-            this.btnXemCTDV.Location = new System.Drawing.Point(713, 130);
+            this.btnXemCTDV.Location = new System.Drawing.Point(716, 50);
             this.btnXemCTDV.Name = "btnXemCTDV";
             this.btnXemCTDV.ShadowDecoration.Parent = this.btnXemCTDV;
             this.btnXemCTDV.Size = new System.Drawing.Size(93, 36);
@@ -324,7 +324,7 @@ namespace BTL.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(458, 111);
+            this.label3.Location = new System.Drawing.Point(461, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 45;
@@ -334,7 +334,7 @@ namespace BTL.GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 515);
+            this.label4.Location = new System.Drawing.Point(15, 435);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 16);
             this.label4.TabIndex = 46;
@@ -344,7 +344,7 @@ namespace BTL.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 551);
+            this.label5.Location = new System.Drawing.Point(15, 471);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 16);
             this.label5.TabIndex = 47;
@@ -354,7 +354,7 @@ namespace BTL.GUI
             // 
             this.lblSoHD.AutoSize = true;
             this.lblSoHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoHD.Location = new System.Drawing.Point(138, 515);
+            this.lblSoHD.Location = new System.Drawing.Point(141, 435);
             this.lblSoHD.Name = "lblSoHD";
             this.lblSoHD.Size = new System.Drawing.Size(26, 16);
             this.lblSoHD.TabIndex = 48;
@@ -364,7 +364,7 @@ namespace BTL.GUI
             // 
             this.lblTien.AutoSize = true;
             this.lblTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTien.Location = new System.Drawing.Point(138, 551);
+            this.lblTien.Location = new System.Drawing.Point(141, 471);
             this.lblTien.Name = "lblTien";
             this.lblTien.Size = new System.Drawing.Size(26, 16);
             this.lblTien.TabIndex = 49;
