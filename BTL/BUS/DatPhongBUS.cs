@@ -161,7 +161,8 @@ namespace BTL.BUS
             }
             else if(DateTime.Now.Hour <= 12)
             {
-                sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND (NgayDat ='" + today + "' OR NgayDat ='" + yesterday + "')";
+                sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND (NgayDat ='" 
+                    + today + "' OR NgayDat ='" + yesterday + "')";
             }
             return data.ExecuteQuery(sql);
         }
@@ -223,7 +224,7 @@ namespace BTL.BUS
                 "(MaDatPhong ='" + keywords + "' OR MaKhachHang ='" + keywords + "' OR MaPhong ='" + keywords + "')";
             return data.ExecuteQuery(sql);
         }
-        public bool passToThongKe(int maDatPhong)
+        public bool checkout(int maDatPhong)
         {
             string today = DateTime.Now.ToString("yyyy/MM/dd");
             string sql = "UPDATE DatPhong SET TrangThaiDatPhong = 2, NgayDi = '"+ today +"' where MaDatPhong = " + maDatPhong;

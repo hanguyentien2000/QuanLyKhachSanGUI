@@ -35,10 +35,6 @@ namespace BTL.GUI
             dgvCheckIn.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
-        private void formCheckOut_Click(object sender, EventArgs e)
-        {
-
-        }
         public void resetInfor()
         {
             maDatPhong = 0;
@@ -129,7 +125,7 @@ namespace BTL.GUI
         {
             if (maDatPhong > 0)
             {
-                DialogResult result = MessageBox.Show("Checkin cho mã đặt phòng " + maDatPhong, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Hủy phòng cho mã đặt phòng " + maDatPhong, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
                     if (datPhongBus.quaHanCheckIn(maDatPhong))
@@ -140,13 +136,13 @@ namespace BTL.GUI
                     }
                     else
                     {
-                        MessageBox.Show("Checkin thất bại");
+                        MessageBox.Show("Hủy phòng thất bại");
                     }
                 }    
             }
             else
             {
-                MessageBox.Show("Chưa chọn đơn quá hạn");
+                MessageBox.Show("Chưa chọn phòng quá hạn");
             }
         }
 

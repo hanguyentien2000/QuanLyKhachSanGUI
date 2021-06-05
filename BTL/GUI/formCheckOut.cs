@@ -110,7 +110,7 @@ namespace BTL.GUI
                 DialogResult result = MessageBox.Show("Checkout cho mã đặt phòng " + maDatPhong, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (datPhongBus.passToThongKe(maDatPhong))
+                    if (datPhongBus.checkout(maDatPhong))
                     {
                         int maHD = datPhongBus.getMaHD(maDatPhong);
                         int tongTienDV = datPhongBus.getTongTienDV(maHD);
