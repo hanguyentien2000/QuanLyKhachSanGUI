@@ -85,35 +85,28 @@ namespace BTL.GUI
                 DateTime Ngay1 = guna2DateTimePicker1.Value;
                 DateTime Ngay2 = guna2DateTimePicker2.Value;
 
-                string[] ngay1 = Ngay1.ToShortDateString().Split('/');
-                string[] ngay2 = Ngay2.ToShortDateString().Split('/');
-
-                string nam1 = ngay1[2].Substring(0, 4);
-                string nam2 = ngay2[2].Substring(0, 4);
-
-                String NgayHD1 = nam1 + "/" + ngay1[1] + "/" + ngay1[0];
-                String NgayHD2 = nam2 + "/" + ngay2[1] + "/" + ngay2[0];
+              
                 clearLabel();
                 if (cbxTrangThai.Text == "Tất cả")
                 {
-                    guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhongByDate(NgayHD1, NgayHD2);
+                    guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhongByDate(Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
                     if (guna2DataGridView1.RowCount == 0)
                     {
                         throw new Exception("Không có hóa đơn nào trong khoảng thời gian này");
                     }
-                    lblSoHD.Text = hd.getCountHoaDonAndDatPhongByDate(NgayHD1, NgayHD2).ToString();
-                    lblTien.Text = hd.getSumTongTienByDate(NgayHD1, NgayHD2).ToString();
+                    lblSoHD.Text = hd.getCountHoaDonAndDatPhongByDate(Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd")).ToString();
+                    lblTien.Text = hd.getSumTongTienByDate(Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd")).ToString();
                 }
                 else
                 {
                     int trangthai = Int32.Parse(cbxTrangThai.Text);
-                    guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhongByDateAndTrangThai(trangthai, NgayHD1, NgayHD2);
+                    guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhongByDateAndTrangThai(trangthai, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
                     if (guna2DataGridView1.RowCount == 0)
                     {
                         throw new Exception("Không có hóa đơn nào trong khoảng thời gian này");
                     }
-                    lblSoHD.Text = hd.getCountHoaDonAndDatPhongByDateAndTrangThai(trangthai, NgayHD1, NgayHD2).ToString();
-                    lblTien.Text = hd.getSumTongTienByDateAndTrangThai(trangthai, NgayHD1, NgayHD2).ToString();
+                    lblSoHD.Text = hd.getCountHoaDonAndDatPhongByDateAndTrangThai(trangthai, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd")).ToString();
+                    lblTien.Text = hd.getSumTongTienByDateAndTrangThai(trangthai, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd")).ToString();
                 }
             }
             catch(Exception ex)

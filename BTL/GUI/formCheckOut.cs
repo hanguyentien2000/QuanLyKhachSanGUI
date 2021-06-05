@@ -35,6 +35,9 @@ namespace BTL.GUI
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             loadAllCheckOut();
+            dgvCheckOut.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvCheckOut.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvCheckOut.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
         public void loadAllCheckOut()
         {

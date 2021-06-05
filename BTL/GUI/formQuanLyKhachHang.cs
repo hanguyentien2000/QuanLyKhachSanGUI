@@ -63,31 +63,7 @@ namespace BTL.GUI
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-        }
-
-        private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-           
+            dgvKhachHang.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -108,9 +84,10 @@ namespace BTL.GUI
                 txtMaKH.Text = dgvKhachHang.Rows[dong].Cells[0].Value.ToString();
                 txtTenKH.Text = dgvKhachHang.Rows[dong].Cells[1].Value.ToString();
                 txtSdt.Text = dgvKhachHang.Rows[dong].Cells[2].Value.ToString();
-                string[] ngaySinh = dgvKhachHang.Rows[dong].Cells[3].Value.ToString().Split('/');
-                string nam = ngaySinh[2].Substring(0, 4);
-                dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
+                //string[] ngaySinh = dgvKhachHang.Rows[dong].Cells[3].Value.ToString().Split('/');
+                //string nam = ngaySinh[2].Substring(0, 4);
+                //dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
+                dtpNS.Value = DateTime.Parse(dgvKhachHang.Rows[dong].Cells[3].Value.ToString());
                 txtEmail.Text = dgvKhachHang.Rows[dong].Cells[4].Value.ToString();
                 if (dgvKhachHang.Rows[dong].Cells[5].Value.ToString() == "Nam")
                     rdbNam.Checked = true;
