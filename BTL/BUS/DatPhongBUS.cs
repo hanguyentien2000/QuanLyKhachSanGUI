@@ -21,7 +21,7 @@ namespace BTL.BUS
             String sql = "select * from Phong where MaLoaiPhong = "+ Convert.ToInt32(maLoaiPhong) 
                 + " AND MaPhong not in (Select MaPhong from DatPhong where (NgayDat<='" + checkIn.ToString("yyyy/MM/dd") 
                 +"' AND NgayDi>'" + checkIn.ToString("yyyy/MM/dd") + "') OR "
-                + "(NgayDat <= '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi>= '" + checkOut.ToString("yyyy/MM/dd") 
+                + "(NgayDat < '" + checkOut.ToString("yyyy/MM/dd") +"' AND NgayDi>= '" + checkOut.ToString("yyyy/MM/dd") 
                 + "'))";
             return data.ExecuteQuery(sql);
         }
