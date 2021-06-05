@@ -49,7 +49,7 @@ namespace BTL.InterfaceQuanly
             DateTime date = dtpNS.Value;
             string[] ngaySinh = date.ToShortDateString().Split('/');
             string nam = ngaySinh[2].Substring(0, 4);
-            nhanVienDTO.NgaySinh = ngaySinh[1] + "/" + ngaySinh[0] + "/" + nam;
+            nhanVienDTO.NgaySinh = nam + "/" + ngaySinh[1] + "/" + ngaySinh[0];
             nhanVienDTO.Cmnd = txtCMND.Text;
             nhanVienDTO.anhNV = imageConvert.ConvertImageToBytes(imgNV.Image);
         }
