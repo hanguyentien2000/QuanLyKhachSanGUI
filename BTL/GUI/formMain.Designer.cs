@@ -70,7 +70,6 @@ namespace BTL
             this.btnClose = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
@@ -563,6 +562,7 @@ namespace BTL
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Location = new System.Drawing.Point(33, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 121);
@@ -782,7 +782,6 @@ namespace BTL
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.White;
             this.panelDesktop.Controls.Add(this.label5);
-            this.panelDesktop.Controls.Add(this.label2);
             this.panelDesktop.Controls.Add(this.label4);
             this.panelDesktop.Controls.Add(this.lbDate);
             this.panelDesktop.Controls.Add(this.lbTime);
@@ -806,23 +805,12 @@ namespace BTL
             this.label5.TabIndex = 17;
             this.label5.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(240, 861);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(368, 19);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Copyright © The LMG Hotel 2021 All Rights Reserved";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(360, 157);
+            this.label4.Location = new System.Drawing.Point(389, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(445, 47);
             this.label4.TabIndex = 15;
@@ -833,7 +821,7 @@ namespace BTL
             this.lbDate.AutoSize = true;
             this.lbDate.Font = new System.Drawing.Font("Calibri", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbDate.Location = new System.Drawing.Point(399, 405);
+            this.lbDate.Location = new System.Drawing.Point(428, 396);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(123, 49);
             this.lbDate.TabIndex = 14;
@@ -844,7 +832,7 @@ namespace BTL
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Calibri", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbTime.Location = new System.Drawing.Point(414, 270);
+            this.lbTime.Location = new System.Drawing.Point(443, 261);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(246, 97);
             this.lbTime.TabIndex = 13;
@@ -855,7 +843,7 @@ namespace BTL
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label7.Location = new System.Drawing.Point(263, 80);
+            this.label7.Location = new System.Drawing.Point(292, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(622, 36);
             this.label7.TabIndex = 12;
@@ -944,7 +932,6 @@ namespace BTL
         private FontAwesome.Sharp.IconPictureBox TwitterButton;
         private FontAwesome.Sharp.IconPictureBox FacebookButton;
         private FontAwesome.Sharp.IconPictureBox Instagram;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Label lbTime;

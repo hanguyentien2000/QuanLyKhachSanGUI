@@ -183,7 +183,7 @@ namespace BTL
             this.TenNV.AutoSize = true;
             this.TenNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenNV.ForeColor = System.Drawing.Color.Coral;
-            this.TenNV.Location = new System.Drawing.Point(998, 54);
+            this.TenNV.Location = new System.Drawing.Point(1023, 54);
             this.TenNV.Name = "TenNV";
             this.TenNV.Size = new System.Drawing.Size(26, 21);
             this.TenNV.TabIndex = 7;
@@ -195,7 +195,7 @@ namespace BTL
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(916, 54);
+            this.label3.Location = new System.Drawing.Point(941, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 6;
