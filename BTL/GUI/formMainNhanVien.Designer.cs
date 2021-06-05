@@ -594,6 +594,7 @@ namespace BTL
             this.Controls.Add(this.panelHidden);
             this.Controls.Add(this.panelMenu);
             this.Name = "formMainNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMainNhanVien";
             this.panelHidden.ResumeLayout(false);
             this.panelHidden.PerformLayout();
