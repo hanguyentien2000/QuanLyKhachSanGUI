@@ -470,7 +470,7 @@ namespace BTL
             this.rdoNu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rdoNu.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdoNu.CheckedState.InnerOffset = -4;
-            this.rdoNu.Location = new System.Drawing.Point(156, 60);
+            this.rdoNu.Location = new System.Drawing.Point(176, 60);
             this.rdoNu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(41, 19);
@@ -489,7 +489,7 @@ namespace BTL
             this.rdNam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rdNam.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdNam.CheckedState.InnerOffset = -4;
-            this.rdNam.Location = new System.Drawing.Point(34, 60);
+            this.rdNam.Location = new System.Drawing.Point(58, 60);
             this.rdNam.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(51, 19);
@@ -586,7 +586,7 @@ namespace BTL
             this.btnReset.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.ShadowDecoration.Parent = this.btnReset;
-            this.btnReset.Size = new System.Drawing.Size(152, 45);
+            this.btnReset.Size = new System.Drawing.Size(127, 45);
             this.btnReset.TabIndex = 43;
             this.btnReset.Text = "Reset";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -629,7 +629,7 @@ namespace BTL
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "formDatPhongKC";
             this.Text = "formDatPhong";
             this.Load += new System.EventHandler(this.formDatPhong_Load);

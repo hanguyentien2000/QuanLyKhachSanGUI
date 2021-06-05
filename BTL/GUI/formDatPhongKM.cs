@@ -220,10 +220,5 @@ namespace BTL.GUI
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void dateNS_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

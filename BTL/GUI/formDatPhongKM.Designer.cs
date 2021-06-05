@@ -281,7 +281,7 @@ namespace BTL.GUI
             this.txtDiaChi.Location = new System.Drawing.Point(351, 66);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
-            this.txtDiaChi.PlaceholderText = "";
+            this.txtDiaChi.PlaceholderText = "Không được bỏ trống";
             this.txtDiaChi.SelectedText = "";
             this.txtDiaChi.ShadowDecoration.Parent = this.txtDiaChi;
             this.txtDiaChi.Size = new System.Drawing.Size(275, 25);
@@ -315,7 +315,7 @@ namespace BTL.GUI
             this.txtEmail.Location = new System.Drawing.Point(42, 326);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.PlaceholderText = "Không được bỏ trống";
             this.txtEmail.SelectedText = "";
             this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
             this.txtEmail.Size = new System.Drawing.Size(275, 25);
@@ -339,7 +339,7 @@ namespace BTL.GUI
             this.txtCMND.Location = new System.Drawing.Point(43, 239);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.PasswordChar = '\0';
-            this.txtCMND.PlaceholderText = "";
+            this.txtCMND.PlaceholderText = "Không được bỏ trống";
             this.txtCMND.SelectedText = "";
             this.txtCMND.ShadowDecoration.Parent = this.txtCMND;
             this.txtCMND.Size = new System.Drawing.Size(275, 25);
@@ -363,7 +363,7 @@ namespace BTL.GUI
             this.txtSDT.Location = new System.Drawing.Point(41, 164);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
-            this.txtSDT.PlaceholderText = "";
+            this.txtSDT.PlaceholderText = "Đầu 03 hoặc 09, 10 số";
             this.txtSDT.SelectedText = "";
             this.txtSDT.ShadowDecoration.Parent = this.txtSDT;
             this.txtSDT.Size = new System.Drawing.Size(275, 25);
@@ -387,7 +387,7 @@ namespace BTL.GUI
             this.txtTenKH.Location = new System.Drawing.Point(38, 66);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
-            this.txtTenKH.PlaceholderText = "";
+            this.txtTenKH.PlaceholderText = "Không được bỏ trống";
             this.txtTenKH.SelectedText = "";
             this.txtTenKH.ShadowDecoration.Parent = this.txtTenKH;
             this.txtTenKH.Size = new System.Drawing.Size(275, 25);
@@ -450,7 +450,6 @@ namespace BTL.GUI
             this.dateNS.Name = "dateNS";
             this.dateNS.Size = new System.Drawing.Size(274, 33);
             this.dateNS.TabIndex = 73;
-            this.dateNS.ValueChanged += new System.EventHandler(this.dateNS_ValueChanged);
             // 
             // dateCheckin
             // 
