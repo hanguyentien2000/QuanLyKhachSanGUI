@@ -59,8 +59,8 @@ namespace BTL.GUI
                 {
                     throw new Exception("Ô này không có dữ liệu");
                 }
-                txtMaKhach.Text = dgvCheckOut.Rows[rowSelected].Cells[3].Value.ToString();
-                txtMaPhong.Text = dgvCheckOut.Rows[rowSelected].Cells[1].Value.ToString();
+                txtMaKhach.Text = dgvCheckOut.Rows[rowSelected].Cells[2].Value.ToString();
+                txtMaPhong.Text = dgvCheckOut.Rows[rowSelected].Cells[3].Value.ToString();
                 maDatPhong = Convert.ToInt32(dgvCheckOut.Rows[rowSelected].Cells[0].Value.ToString());
                 btnDichVu.Enabled = true;
             }

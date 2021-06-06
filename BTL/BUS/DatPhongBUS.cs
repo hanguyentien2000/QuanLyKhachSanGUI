@@ -421,5 +421,20 @@ namespace BTL.BUS
             }
             else return false;
         }
+        //check khach
+        public Boolean checkKhach(string cmnd)
+        {
+            string sql = "select * from KhachHang where CMND ='" + cmnd + "' AND TrangThai = 0";
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
