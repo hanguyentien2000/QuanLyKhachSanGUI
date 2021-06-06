@@ -55,5 +55,16 @@ namespace BTL.Properties {
                 return ((string)(this["QLKSConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-A5S98G0\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=T" +
+            "rue")]
+        public string QLKSConnectionString3 {
+            get {
+                return ((string)(this["QLKSConnectionString3"]));
+            }
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace BTL
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.groupStatus = new Guna.UI2.WinForms.Guna2GroupBox();
             this.rbdDangSuDung = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbdTrong = new Guna.UI2.WinForms.Guna2RadioButton();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,7 +52,7 @@ namespace BTL
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanLyPhong)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
+            this.groupStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPhong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,18 +203,18 @@ namespace BTL
             this.TrangThaiPhong.MinimumWidth = 8;
             this.TrangThaiPhong.Name = "TrangThaiPhong";
             // 
-            // guna2GroupBox1
+            // groupStatus
             // 
-            this.guna2GroupBox1.Controls.Add(this.rbdDangSuDung);
-            this.guna2GroupBox1.Controls.Add(this.rbdTrong);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(696, 19);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(270, 98);
-            this.guna2GroupBox1.TabIndex = 35;
-            this.guna2GroupBox1.Text = "Trạng thái";
+            this.groupStatus.Controls.Add(this.rbdDangSuDung);
+            this.groupStatus.Controls.Add(this.rbdTrong);
+            this.groupStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.groupStatus.Location = new System.Drawing.Point(696, 19);
+            this.groupStatus.Name = "groupStatus";
+            this.groupStatus.ShadowDecoration.Parent = this.groupStatus;
+            this.groupStatus.Size = new System.Drawing.Size(270, 98);
+            this.groupStatus.TabIndex = 35;
+            this.groupStatus.Text = "Trạng thái";
             // 
             // rbdDangSuDung
             // 
@@ -286,7 +286,7 @@ namespace BTL
             this.btn_changeImage.IconColor = System.Drawing.Color.DimGray;
             this.btn_changeImage.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_changeImage.IconSize = 35;
-            this.btn_changeImage.Location = new System.Drawing.Point(166, 189);
+            this.btn_changeImage.Location = new System.Drawing.Point(155, 191);
             this.btn_changeImage.Name = "btn_changeImage";
             this.btn_changeImage.Size = new System.Drawing.Size(116, 34);
             this.btn_changeImage.TabIndex = 48;
@@ -397,7 +397,7 @@ namespace BTL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1046, 548);
+            this.ClientSize = new System.Drawing.Size(1020, 548);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.btnDelete);
@@ -406,7 +406,7 @@ namespace BTL
             this.Controls.Add(this.imgPhong);
             this.Controls.Add(this.btn_changeImage);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.groupStatus);
             this.Controls.Add(this.dgvQuanLyPhong);
             this.Controls.Add(this.cbbLoaiPhong);
             this.Controls.Add(this.label2);
@@ -416,8 +416,8 @@ namespace BTL
             this.Text = "formQuanLyPhong";
             this.Load += new System.EventHandler(this.formQuanLyPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanLyPhong)).EndInit();
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
+            this.groupStatus.ResumeLayout(false);
+            this.groupStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPhong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -431,7 +431,7 @@ namespace BTL
         private System.Windows.Forms.Label lblMaPhong;
         private Guna.UI2.WinForms.Guna2ComboBox cbbLoaiPhong;
         private Guna.UI2.WinForms.Guna2DataGridView dgvQuanLyPhong;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox groupStatus;
         private Guna.UI2.WinForms.Guna2RadioButton rbdDangSuDung;
         private Guna.UI2.WinForms.Guna2RadioButton rbdTrong;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;

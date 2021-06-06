@@ -36,7 +36,7 @@ namespace BTL.BUS
 
         public bool thayDoiTTPhong(int maPhong, int maLoaiPhong, int trangThai, byte[] anhPhong)
         {
-            string sql = "UPDATE Phong SET MaLoaiPhong=" + maLoaiPhong + ",TrangThaiPhong=" + trangThai + ", anhPhong=@image WHERE MaPhong=" + maPhong;
+            string sql = "UPDATE Phong SET MaLoaiPhong=" + maLoaiPhong + ",TrangThaiPhong=1" + trangThai + ", anhPhong=@image WHERE MaPhong=" + maPhong;
             if (data.ExecuteNonQueryWithImage(sql, anhPhong))
             {
                 return true;

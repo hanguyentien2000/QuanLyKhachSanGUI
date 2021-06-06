@@ -32,6 +32,7 @@ namespace BTL
             cbbLoaiPhong.SelectedIndex = 0;
             rbdTrong.Checked = true;
             imgPhong.Image = null;
+            groupStatus.Visible = false;
         }
 
         private void layThongTinPhong()
@@ -53,21 +54,6 @@ namespace BTL
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -119,15 +105,7 @@ namespace BTL
             }
         }
 
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-           
-        }
+       
 
         private void btn_changeImage_Click(object sender, EventArgs e)
         {
@@ -195,6 +173,7 @@ namespace BTL
                 {
                     throw new Exception("Vui lòng thêm ảnh phòng");
                 }
+                rbdTrong.Checked = true;
                 layThongTinPhong();
                 if (phongBUS.themTTPhong(phongDTO.MaLoaiPhong, phongDTO.TrangThai, phongDTO.AnhPhong))
                 {

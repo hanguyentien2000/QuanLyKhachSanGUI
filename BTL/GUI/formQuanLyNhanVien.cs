@@ -74,20 +74,7 @@ namespace BTL.InterfaceQuanly
             dgvNhanVien.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
-        private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -123,15 +110,7 @@ namespace BTL.InterfaceQuanly
             }
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void btn_changeImage_Click(object sender, EventArgs e)
         {
@@ -169,7 +148,7 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = false;
             try
             {
-                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regPhone = "^([0]+(3|5|7|8|9))+([0-9]{8})$";
                 string regCMND = "^\\d{12}$";
                 if (txtTenNV.Text.Trim().Equals(""))
                 {
@@ -232,7 +211,7 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = true;
             try
             {
-                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regPhone = "^([0]+(3|5|7|8|9))+([0-9]{8})$";
                 string regCMND = "^\\d{12}$";
                 if (dgvNhanVien.Rows.Count < 1)
                 {

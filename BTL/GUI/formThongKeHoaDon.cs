@@ -22,19 +22,19 @@ namespace BTL.GUI
 
         private void formThongKeHoaDon_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.AllowUserToAddRows = false;
-            foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
+            dgvHoaDon.AllowUserToAddRows = false;
+            foreach (DataGridViewColumn column in dgvHoaDon.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhong();
+            dgvHoaDon.DataSource = hd.getAllHoaDonAndDatPhong();
             loadCombo();
         }
         public void loadCombo()
         {
-            cbxTrangThai.Items.Add("0");
-            cbxTrangThai.Items.Add("1");
-            cbxTrangThai.Items.Add("2");
+            cbxTrangThai.Items.Add("Đã check in");
+            cbxTrangThai.Items.Add("Đã check out");
+            cbxTrangThai.Items.Add("Huỷ phòng");
             cbxTrangThai.Items.Add("Tất cả");
             cbxTrangThai.SelectedIndex = 3;
         }
@@ -46,7 +46,7 @@ namespace BTL.GUI
 
         private void guna2DataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            guna2DataGridView1.ReadOnly = true;
+            dgvHoaDon.ReadOnly = true;
             dong = e.RowIndex;
             try
             {
@@ -65,12 +65,12 @@ namespace BTL.GUI
             clearLabel();
             if (cbxTrangThai.Text == "Tất cả")
             {
-                guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhong();
+                dgvHoaDon.DataSource = hd.getAllHoaDonAndDatPhong();
             }
             else
             {
-                int trangthai = Int32.Parse(cbxTrangThai.Text);
-                guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhongByTrangThai(trangthai);
+                int trangthai = Convert.ToInt32(cbxTrangThai.Text);
+                dgvHoaDon.DataSource = hd.getAllHoaDonAndDatPhongByTrangThai(trangthai);
             }
         }
 
@@ -89,8 +89,8 @@ namespace BTL.GUI
                 clearLabel();
                 if (cbxTrangThai.Text == "Tất cả")
                 {
-                    guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhongByDate(Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
-                    if (guna2DataGridView1.RowCount == 0)
+                    dgvHoaDon.DataSource = hd.getAllHoaDonAndDatPhongByDate(Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
+                    if (dgvHoaDon.RowCount == 0)
                     {
                         throw new Exception("Không có hóa đơn nào trong khoảng thời gian này");
                     }
@@ -100,8 +100,8 @@ namespace BTL.GUI
                 else
                 {
                     int trangthai = Int32.Parse(cbxTrangThai.Text);
-                    guna2DataGridView1.DataSource = hd.getAllHoaDonAndDatPhongByDateAndTrangThai(trangthai, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
-                    if (guna2DataGridView1.RowCount == 0)
+                    dgvHoaDon.DataSource = hd.getAllHoaDonAndDatPhongByDateAndTrangThai(trangthai, Ngay1.ToString("yyyy/MM/dd"), Ngay2.ToString("yyyy/MM/dd"));
+                    if (dgvHoaDon.RowCount == 0)
                     {
                         throw new Exception("Không có hóa đơn nào trong khoảng thời gian này");
                     }
@@ -119,9 +119,9 @@ namespace BTL.GUI
         {
             try
             {
-                if (guna2DataGridView1.Rows.Count == 0)
+                if (dgvHoaDon.Rows.Count == 0)
                     throw new Exception("Không có hóa đơn nào để xem");
-                int mahd = Int32.Parse(guna2DataGridView1.Rows[dong].Cells[0].Value.ToString());
+                int mahd = Int32.Parse(dgvHoaDon.Rows[dong].Cells[0].Value.ToString());
                 if (hd.checkChiTietDichVuByMaHD(mahd) == false)
                     throw new Exception("Hóa đơn " + mahd + " không có dịch vụ nào");
                 else
