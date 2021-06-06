@@ -204,37 +204,46 @@ namespace BTL.GUI
                 layThongTin();
                 string checkIn = dateCheckin.Value.ToString("yyyy/MM/dd");
                 string checkOut = dateCheckout.Value.ToString("yyyy/MM/dd");
-                int maPhong = Convert.ToInt32(cbxPhong.SelectedValue.ToString());
-                if (datPhongBus.datPhongKM(khachHangDTO,this.f.account.NhanVien.MaNhanVien, maPhong, checkIn, checkOut, tienCoc / 2))
+               if (cbxPhong.SelectedValue == null)
                 {
-                    MessageBox.Show("Đặt phòng thành công");
-                    int n = 0;
-                    if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
+                    MessageBox.Show("Phòng trống");
+                }    
+               else
+                {
+                    int maPhong = Convert.ToInt32(cbxPhong.SelectedValue.ToString());
+                    if (datPhongBus.datPhongKM(khachHangDTO, this.f.account.NhanVien.MaNhanVien, maPhong, checkIn, checkOut, tienCoc / 2))
                     {
-                        DataTable dt = datPhongBus.getPhong(dateCheckin.Value, dateCheckout.Value, cbxLoaiPhong.SelectedValue.ToString());
-                        if (dt.Rows.Count > 0)
+                        MessageBox.Show("Đặt phòng thành công");
+                        int n = 0;
+                        if (int.TryParse(cbxLoaiPhong.SelectedValue.ToString(), out n))
                         {
-                            cbxPhong.DataSource = dt;
-                            cbxPhong.ValueMember = "MaPhong";
-                            cbxPhong.DisplayMember = "MaPhong";
-                            txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
-                            tienPhaiTra(dateCheckin.Value, dateCheckout.Value);
-                        }
-                        else{
-                            cbxPhong.DataSource = dt;
-                            cbxPhong.ValueMember = "MaPhong";
-                            cbxPhong.DisplayMember = "MaPhong";
-                            txtPrice.Text = "";
-                            lbTienCoc.Text = "";
-                            lbTongBill.Text = "";
-                        }
+                            DataTable dt = datPhongBus.getPhong(dateCheckin.Value, dateCheckout.Value, cbxLoaiPhong.SelectedValue.ToString());
+                            if (dt.Rows.Count > 0)
+                            {
+                                cbxPhong.DataSource = dt;
+                                cbxPhong.ValueMember = "MaPhong";
+                                cbxPhong.DisplayMember = "MaPhong";
+                                txtPrice.Text = datPhongBus.getGia(cbxLoaiPhong.SelectedValue.ToString()).ToString();
+                                tienPhaiTra(dateCheckin.Value, dateCheckout.Value);
+                            }
+                            else
+                            {
+                                cbxPhong.DataSource = dt;
+                                cbxPhong.ValueMember = "MaPhong";
+                                cbxPhong.DisplayMember = "MaPhong";
+                                txtPrice.Text = "";
+                                lbTienCoc.Text = "";
+                                lbTongBill.Text = "";
+                            }
 
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đặt phòng thất bại");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Đặt phòng thất bại");
-                }
+                
             }
             catch(Exception ex)
             {

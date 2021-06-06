@@ -51,12 +51,12 @@ namespace BTL
     partial void InsertLoaiChucVu(LoaiChucVu instance);
     partial void UpdateLoaiChucVu(LoaiChucVu instance);
     partial void DeleteLoaiChucVu(LoaiChucVu instance);
-    partial void InsertLoaiPhong(LoaiPhong instance);
-    partial void UpdateLoaiPhong(LoaiPhong instance);
-    partial void DeleteLoaiPhong(LoaiPhong instance);
     partial void InsertNhanVien(NhanVien instance);
     partial void UpdateNhanVien(NhanVien instance);
     partial void DeleteNhanVien(NhanVien instance);
+    partial void InsertLoaiPhong(LoaiPhong instance);
+    partial void UpdateLoaiPhong(LoaiPhong instance);
+    partial void DeleteLoaiPhong(LoaiPhong instance);
     partial void InsertPhong(Phong instance);
     partial void UpdatePhong(Phong instance);
     partial void DeletePhong(Phong instance);
@@ -66,7 +66,7 @@ namespace BTL
     #endregion
 		
 		public dbDataContext() : 
-				base(global::BTL.Properties.Settings.Default.QLKSConnectionString3, mappingSource)
+				base(global::BTL.Properties.Settings.Default.QLKSConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -151,19 +151,19 @@ namespace BTL
 			}
 		}
 		
-		public System.Data.Linq.Table<LoaiPhong> LoaiPhongs
-		{
-			get
-			{
-				return this.GetTable<LoaiPhong>();
-			}
-		}
-		
 		public System.Data.Linq.Table<NhanVien> NhanViens
 		{
 			get
 			{
 				return this.GetTable<NhanVien>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LoaiPhong> LoaiPhongs
+		{
+			get
+			{
+				return this.GetTable<LoaiPhong>();
 			}
 		}
 		
@@ -1669,168 +1669,6 @@ namespace BTL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiPhong")]
-	public partial class LoaiPhong : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaLoaiPhong;
-		
-		private string _TenLoaiPhong;
-		
-		private int _SoluongNguoi;
-		
-		private int _GiaPhong;
-		
-		private EntitySet<Phong> _Phongs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaLoaiPhongChanging(int value);
-    partial void OnMaLoaiPhongChanged();
-    partial void OnTenLoaiPhongChanging(string value);
-    partial void OnTenLoaiPhongChanged();
-    partial void OnSoluongNguoiChanging(int value);
-    partial void OnSoluongNguoiChanged();
-    partial void OnGiaPhongChanging(int value);
-    partial void OnGiaPhongChanged();
-    #endregion
-		
-		public LoaiPhong()
-		{
-			this._Phongs = new EntitySet<Phong>(new Action<Phong>(this.attach_Phongs), new Action<Phong>(this.detach_Phongs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiPhong", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaLoaiPhong
-		{
-			get
-			{
-				return this._MaLoaiPhong;
-			}
-			set
-			{
-				if ((this._MaLoaiPhong != value))
-				{
-					this.OnMaLoaiPhongChanging(value);
-					this.SendPropertyChanging();
-					this._MaLoaiPhong = value;
-					this.SendPropertyChanged("MaLoaiPhong");
-					this.OnMaLoaiPhongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiPhong", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenLoaiPhong
-		{
-			get
-			{
-				return this._TenLoaiPhong;
-			}
-			set
-			{
-				if ((this._TenLoaiPhong != value))
-				{
-					this.OnTenLoaiPhongChanging(value);
-					this.SendPropertyChanging();
-					this._TenLoaiPhong = value;
-					this.SendPropertyChanged("TenLoaiPhong");
-					this.OnTenLoaiPhongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoluongNguoi", DbType="Int NOT NULL")]
-		public int SoluongNguoi
-		{
-			get
-			{
-				return this._SoluongNguoi;
-			}
-			set
-			{
-				if ((this._SoluongNguoi != value))
-				{
-					this.OnSoluongNguoiChanging(value);
-					this.SendPropertyChanging();
-					this._SoluongNguoi = value;
-					this.SendPropertyChanged("SoluongNguoi");
-					this.OnSoluongNguoiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaPhong", DbType="Int NOT NULL")]
-		public int GiaPhong
-		{
-			get
-			{
-				return this._GiaPhong;
-			}
-			set
-			{
-				if ((this._GiaPhong != value))
-				{
-					this.OnGiaPhongChanging(value);
-					this.SendPropertyChanging();
-					this._GiaPhong = value;
-					this.SendPropertyChanged("GiaPhong");
-					this.OnGiaPhongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiPhong_Phong", Storage="_Phongs", ThisKey="MaLoaiPhong", OtherKey="MaLoaiPhong")]
-		public EntitySet<Phong> Phongs
-		{
-			get
-			{
-				return this._Phongs;
-			}
-			set
-			{
-				this._Phongs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Phongs(Phong entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiPhong = this;
-		}
-		
-		private void detach_Phongs(Phong entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiPhong = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhanVien")]
 	public partial class NhanVien : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2207,6 +2045,168 @@ namespace BTL
 		{
 			this.SendPropertyChanging();
 			entity.NhanVien = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiPhong")]
+	public partial class LoaiPhong : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaLoaiPhong;
+		
+		private string _TenLoaiPhong;
+		
+		private int _SoluongNguoi;
+		
+		private int _GiaPhong;
+		
+		private EntitySet<Phong> _Phongs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaLoaiPhongChanging(int value);
+    partial void OnMaLoaiPhongChanged();
+    partial void OnTenLoaiPhongChanging(string value);
+    partial void OnTenLoaiPhongChanged();
+    partial void OnSoluongNguoiChanging(int value);
+    partial void OnSoluongNguoiChanged();
+    partial void OnGiaPhongChanging(int value);
+    partial void OnGiaPhongChanged();
+    #endregion
+		
+		public LoaiPhong()
+		{
+			this._Phongs = new EntitySet<Phong>(new Action<Phong>(this.attach_Phongs), new Action<Phong>(this.detach_Phongs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiPhong", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaLoaiPhong
+		{
+			get
+			{
+				return this._MaLoaiPhong;
+			}
+			set
+			{
+				if ((this._MaLoaiPhong != value))
+				{
+					this.OnMaLoaiPhongChanging(value);
+					this.SendPropertyChanging();
+					this._MaLoaiPhong = value;
+					this.SendPropertyChanged("MaLoaiPhong");
+					this.OnMaLoaiPhongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiPhong", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenLoaiPhong
+		{
+			get
+			{
+				return this._TenLoaiPhong;
+			}
+			set
+			{
+				if ((this._TenLoaiPhong != value))
+				{
+					this.OnTenLoaiPhongChanging(value);
+					this.SendPropertyChanging();
+					this._TenLoaiPhong = value;
+					this.SendPropertyChanged("TenLoaiPhong");
+					this.OnTenLoaiPhongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoluongNguoi", DbType="Int NOT NULL")]
+		public int SoluongNguoi
+		{
+			get
+			{
+				return this._SoluongNguoi;
+			}
+			set
+			{
+				if ((this._SoluongNguoi != value))
+				{
+					this.OnSoluongNguoiChanging(value);
+					this.SendPropertyChanging();
+					this._SoluongNguoi = value;
+					this.SendPropertyChanged("SoluongNguoi");
+					this.OnSoluongNguoiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaPhong", DbType="Int NOT NULL")]
+		public int GiaPhong
+		{
+			get
+			{
+				return this._GiaPhong;
+			}
+			set
+			{
+				if ((this._GiaPhong != value))
+				{
+					this.OnGiaPhongChanging(value);
+					this.SendPropertyChanging();
+					this._GiaPhong = value;
+					this.SendPropertyChanged("GiaPhong");
+					this.OnGiaPhongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiPhong_Phong", Storage="_Phongs", ThisKey="MaLoaiPhong", OtherKey="MaLoaiPhong")]
+		public EntitySet<Phong> Phongs
+		{
+			get
+			{
+				return this._Phongs;
+			}
+			set
+			{
+				this._Phongs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Phongs(Phong entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiPhong = this;
+		}
+		
+		private void detach_Phongs(Phong entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiPhong = null;
 		}
 	}
 	

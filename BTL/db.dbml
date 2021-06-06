@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKS" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-A5S98G0\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True" SettingsObjectName="BTL.Properties.Settings" SettingsPropertyName="QLKSConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-QHPIJ3U\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True" SettingsObjectName="BTL.Properties.Settings" SettingsPropertyName="QLKSConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChamCong" Member="ChamCongs">
     <Type Name="ChamCong">
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -73,15 +73,6 @@
       <Association Name="LoaiChucVu_NhanVien" Member="NhanViens" ThisKey="ChucVu" OtherKey="ChucVu" Type="NhanVien" />
     </Type>
   </Table>
-  <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
-    <Type Name="LoaiPhong">
-      <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenLoaiPhong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SoluongNguoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="GiaPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="Phong" />
-    </Type>
-  </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
     <Type Name="NhanVien">
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -97,6 +88,15 @@
       <Association Name="NhanVien_DatPhong" Member="DatPhongs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="DatPhong" />
       <Association Name="NhanVien_Taikhoan" Member="Taikhoans" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="Taikhoan" />
       <Association Name="LoaiChucVu_NhanVien" Member="LoaiChucVu" ThisKey="ChucVu" OtherKey="ChucVu" Type="LoaiChucVu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
+    <Type Name="LoaiPhong">
+      <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenLoaiPhong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SoluongNguoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="Phong" />
     </Type>
   </Table>
   <Table Name="dbo.Phong" Member="Phongs">
