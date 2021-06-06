@@ -152,7 +152,8 @@ namespace BTL.GUI
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             string regEmail = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
-            string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+            string regPhone = "^([0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$";
+            string regCMND = "^\\d{12}$";
             try
             {
                 if (txtTenKH.Text.Trim().Length == 0)
@@ -163,7 +164,7 @@ namespace BTL.GUI
                 {
                     throw new Exception("Số điện thoại không Được bỏ trống");
                 }
-                if (!Regex.IsMatch(txtSDT.Text, regPhone))
+                if (!Regex.IsMatch(txtSDT.Text.Trim(), regPhone))
                 {
                     throw new Exception("Số điện thoại không hợp lệ");
                 }
@@ -179,6 +180,10 @@ namespace BTL.GUI
                 {
                     throw new Exception("Chứng minh nhân dân không được để trống");
                 }
+                if (!Regex.IsMatch(txtCMND.Text, regCMND))
+                {
+                    throw new Exception("CMND không hợp lệ");
+                }
                 if (txtDiaChi.Text.Trim().Length == 0)
                 {
                     throw new Exception("Địa chỉ không được để trống");
@@ -187,6 +192,10 @@ namespace BTL.GUI
                 {
                     throw new Exception("Khách hàng phải trên 18 tuổi");
                 }
+                if(datPhongBus.checkKhach(txtCMND.Text.Trim()))
+                {
+                    throw new Exception("Khách hàng xấu");
+                }    
                 layThongTin();
                 string checkIn = dateCheckin.Value.ToString("yyyy/MM/dd");
                 string checkOut = dateCheckout.Value.ToString("yyyy/MM/dd");

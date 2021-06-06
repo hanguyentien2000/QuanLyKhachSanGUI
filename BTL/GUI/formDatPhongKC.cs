@@ -131,23 +131,41 @@ namespace BTL
              kh = datPhongBus.getKhachHang(txtTuKhoa.Text);
             if(kh.MaKH != 0)
             {
-                txtTuKhoa.Enabled = false;
-                txtTenKH.Text = kh.HoTen;
-                txtSDT.Text = kh.SoDT;
-                txtCMND.Text = kh.Cmnd;
-                txtEmail.Text = kh.Email;
-                txtDiaChi.Text = kh.DiaChi;
-                if (kh.GioiTinh == 0)
+                if(datPhongBus.checkKhach(kh.Cmnd))
                 {
+                    MessageBox.Show("Khách xấu");
+                    kh = new KhachHangDTO();
+                    txtTuKhoa.Text = "";
+                    txtTenKH.Text = "";
+                    txtSDT.Text = "";
+                    txtEmail.Text = "";
+                    txtDiaChi.Text = "";
+                    txtCMND.Text = "";
                     rdNam.Checked = true;
+                    dateNS.Value = DateTime.Now;
+
                 }
                 else
                 {
-                    rdoNu.Checked = true;
+                    txtTuKhoa.Enabled = false;
+                    txtTenKH.Text = kh.HoTen;
+                    txtSDT.Text = kh.SoDT;
+                    txtCMND.Text = kh.Cmnd;
+                    txtEmail.Text = kh.Email;
+                    txtDiaChi.Text = kh.DiaChi;
+                    if (kh.GioiTinh == 0)
+                    {
+                        rdNam.Checked = true;
+                    }
+                    else
+                    {
+                        rdoNu.Checked = true;
+                    }
+                    txtCMND.Text = kh.Cmnd;
+                    DateTime date = DateTime.Parse(kh.NgaySinh);
+                    dateNS.Value = date;
                 }
-                txtCMND.Text = kh.Cmnd;
-                DateTime date = DateTime.Parse(kh.NgaySinh);
-                dateNS.Value = date;
+                
             }
             //dateNS.
         }

@@ -66,6 +66,13 @@
       <Association Name="KhachHang_DatPhong" Member="DatPhongs" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DatPhong" />
     </Type>
   </Table>
+  <Table Name="dbo.LoaiChucVu" Member="LoaiChucVus">
+    <Type Name="LoaiChucVu">
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LoaiChucVu_NhanVien" Member="NhanViens" ThisKey="ChucVu" OtherKey="ChucVu" Type="NhanVien" />
+    </Type>
+  </Table>
   <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
     <Type Name="LoaiPhong">
       <Column Name="MaLoaiPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -73,13 +80,6 @@
       <Column Name="SoluongNguoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="GiaPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="Phong" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LoaiChucVu" Member="LoaiChucVus">
-    <Type Name="LoaiChucVu">
-      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="LoaiChucVu_NhanVien" Member="NhanViens" ThisKey="ChucVu" OtherKey="ChucVu" Type="NhanVien" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
