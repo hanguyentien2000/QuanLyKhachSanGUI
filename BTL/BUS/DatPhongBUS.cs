@@ -436,5 +436,18 @@ namespace BTL.BUS
             return false;
         }
 
+        public Boolean checkDichVu(int Ma)
+        {
+            string sql = "select * from ChiTietDichVu where MaDichVu ='" + Ma + "'";
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

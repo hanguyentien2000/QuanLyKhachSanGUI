@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BTL.DTO;
+using System.Data.SqlClient;
 
 namespace BTL.BUS
 {
@@ -55,5 +56,21 @@ namespace BTL.BUS
             string sql = "Delete from LoaiPhong where MaLoaiPhong ='" + maLoai + "'";
             data.ExecuteNonQuery(sql);
         }
+
+        public Boolean checkPhong(int Ma)
+        {
+            string sql = "Select * from Phong where MaLoaiPhong =" + Ma + "";
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        
     }
 }

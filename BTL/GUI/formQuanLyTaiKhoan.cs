@@ -73,16 +73,7 @@ namespace BTL.GUI
             }
             xoaTrang();
         }
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnRefresh_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void btnTim_Click(object sender, EventArgs e)
         {
             try
@@ -102,11 +93,6 @@ namespace BTL.GUI
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvTaiKhoan.ReadOnly = true;
@@ -122,10 +108,23 @@ namespace BTL.GUI
                 txtTenTK.Text = dgvTaiKhoan.Rows[dong].Cells[0].Value.ToString();
                 tenDangNhap = dgvTaiKhoan.Rows[dong].Cells[0].Value.ToString();
                 txtMatKhau.Text = dgvTaiKhoan.Rows[dong].Cells[1].Value.ToString();
+                groupTypeAccount.Enabled = false;
+                if (dgvTaiKhoan.Rows[dong].Cells[0].Value.ToString() == "admin")
+                {
+                    btnChangedStatus.Visible = false;
+                    btnChangedTypeAccount.Visible = false;
+                    
+                }
+                else
+                {
+                    btnChangedStatus.Visible = true;
+                    btnChangedTypeAccount.Visible = true;
+                }
                 if (dgvTaiKhoan.Rows[dong].Cells[2].Value.ToString() == "Admin")
                 {
                     rdAdmin.Checked = true;
                     loaiTK = "Admin";
+              
                 }
                 else
                 {
@@ -139,11 +138,6 @@ namespace BTL.GUI
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnTaiLai_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void btnReload_Click(object sender, EventArgs e)
@@ -275,6 +269,7 @@ namespace BTL.GUI
                 {
                     throw new Exception("Vui lòng chọn tài khoản trước khi đổi loại tài khoản");
                 }
+                
                 DialogResult result = MessageBox.Show("Bạn có muốn đổi loại tài khoản của " + txtTenTK.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
@@ -300,14 +295,6 @@ namespace BTL.GUI
             }
         }
 
-        private void btnThayDoi_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
     }
 }

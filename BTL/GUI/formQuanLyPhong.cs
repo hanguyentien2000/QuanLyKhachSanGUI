@@ -32,7 +32,6 @@ namespace BTL
             cbbLoaiPhong.SelectedIndex = 0;
             rbdTrong.Checked = true;
             imgPhong.Image = null;
-            groupStatus.Visible = false;
         }
 
         private void layThongTinPhong()
@@ -80,6 +79,7 @@ namespace BTL
 
         private void dgvQuanLyPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            groupStatus.Enabled = false;
             dgvQuanLyPhong.ReadOnly = true;
             int dong = e.RowIndex;
             try
@@ -238,12 +238,18 @@ namespace BTL
                 {
                     throw new Exception("Vui lòng chọn mã phòng trước khi xóa");
                 }
+                if (phongBUS.checkPhong(Convert.ToInt32(txtMaPhong.Text)))
+                {
+                    throw new Exception("Phòng đã được sử dụng không thể xoá!");
+                }
+
                 if (phongBUS.xoaTTPhong(Int32.Parse(txtMaPhong.Text)))
                 {
                     MessageBox.Show("Xóa thông tin phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvQuanLyPhong.DataSource = phongBUS.layTTPhong();
                     xoaTrang();
                 }
+                
                 else
                 {
                     MessageBox.Show("Xóa thông tin phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

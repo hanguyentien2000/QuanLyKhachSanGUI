@@ -14,7 +14,8 @@ namespace BTL.InterfaceQuanly
 {
     public partial class formQuanLyLoaiPhong : Form
     {
-        //LoaiPhongBUS dsLoaiPhong = new LoaiPhongBUS();
+        LoaiPhongBUS dsLoaiPhong = new LoaiPhongBUS();
+
         private int soLuong, donGia;
         public formQuanLyLoaiPhong()
         {
@@ -93,10 +94,7 @@ namespace BTL.InterfaceQuanly
             //loadData(dsLoaiPhong.GetTableLoaiPhong());
         }
         
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
+     
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -215,6 +213,8 @@ namespace BTL.InterfaceQuanly
             txtMaLoaiPhong.Visible = true;
             try
             {
+                dbDataContext db = new dbDataContext();
+
                 if (dgvQLLP.Rows.Count < 1)
                 {
                     throw new Exception("Vui lòng thêm loại phòng trước khi xóa");
@@ -223,6 +223,14 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Vui lòng chọn loại phòng trước khi xóa");
                 }
+                if (dsLoaiPhong.checkPhong(Convert.ToInt32(txtMaLoaiPhong.Text)))
+                {
+                    throw new Exception("Loại phòng này đang có phòng sử dụng, không thể xoá");
+                }
+                //if (query != null)
+                //{
+                //    throw new Exception("Loại phòng này đang có phòng sử dụng, không thể xoá");
+                //}
                 else
                 {
                     //dsLoaiPhong.DeleteLoaiPhong(Convert.ToInt32(txtMaLoaiPhong.Text));
@@ -230,7 +238,7 @@ namespace BTL.InterfaceQuanly
                     DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng " + txtTenLoaiPhong.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        dbDataContext db = new dbDataContext();
+                        
                         var lstPhong = from s in db.LoaiPhongs where s.MaLoaiPhong == Convert.ToInt32(txtMaLoaiPhong.Text) select s;
                         foreach (var item in lstPhong)
                         {

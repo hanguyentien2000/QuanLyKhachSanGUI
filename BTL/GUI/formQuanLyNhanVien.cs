@@ -16,6 +16,7 @@ namespace BTL.InterfaceQuanly
 {
     public partial class formQuanLyNhanVien : Form
     {
+        string cmnd;
         NhanVienBUS nhanVienBLL = new NhanVienBUS();
         NhanVienDTO nhanVienDTO = new NhanVienDTO();
         ImageConvert imageConvert = new ImageConvert();
@@ -35,7 +36,7 @@ namespace BTL.InterfaceQuanly
             txtTimKiem.Text = "";
             txtCMND.Text = "";
             rdbNam.Checked = true;
-            dtpNS.Value = DateTime.Now;
+            datePickerNgaySinh.Value = DateTime.Now;
             imgNV.Image = null;
         }
 
@@ -46,10 +47,9 @@ namespace BTL.InterfaceQuanly
             nhanVienDTO.GioiTinh = rdbNam.Checked ? 0 : rdbNu.Checked ? 1 : 0;
             nhanVienDTO.DiaChi = txtDiaChi.Text;
             nhanVienDTO.ChucVu = cbbChucVu.Text;
-            DateTime date = dtpNS.Value;
-            string[] ngaySinh = date.ToShortDateString().Split('/');
-            string nam = ngaySinh[2].Substring(0, 4);
-            nhanVienDTO.NgaySinh = nam + "/" + ngaySinh[1] + "/" + ngaySinh[0];
+            DateTime dt = datePickerNgaySinh.Value; 
+            string s = dt.ToString("yyyy/MM/dd");
+            nhanVienDTO.NgaySinh = s;
             nhanVienDTO.Cmnd = txtCMND.Text;
             nhanVienDTO.anhNV = imageConvert.ConvertImageToBytes(imgNV.Image);
         }
@@ -74,8 +74,6 @@ namespace BTL.InterfaceQuanly
             dgvNhanVien.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
-        
-
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvNhanVien.ReadOnly = true;
@@ -92,16 +90,15 @@ namespace BTL.InterfaceQuanly
                 txtMaNV.Text = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
                 txtTenNV.Text = dgvNhanVien.Rows[dong].Cells[1].Value.ToString();
                 txtSDT.Text = dgvNhanVien.Rows[dong].Cells[2].Value.ToString();
-                //string[] ngaySinh = dgvNhanVien.Rows[dong].Cells[3].Value.ToString().Split('/');
-                //string nam = ngaySinh[2].Substring(0, 4);
-                //dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
-                dtpNS.Value = DateTime.Parse(dgvNhanVien.Rows[dong].Cells[3].Value.ToString());
+               
+                datePickerNgaySinh.Value = DateTime.Parse(dgvNhanVien.Rows[dong].Cells[3].Value.ToString());
                 txtDiaChi.Text = dgvNhanVien.Rows[dong].Cells[4].Value.ToString();
                 if (dgvNhanVien.Rows[dong].Cells[5].Value.ToString() == "Nam")
                     rdbNam.Checked = true;
                 else
                     rdbNu.Checked = true;
                 txtCMND.Text = dgvNhanVien.Rows[dong].Cells[6].Value.ToString();
+                cmnd = dgvNhanVien.Rows[dong].Cells[6].Value.ToString();
                 cbbChucVu.Text = dgvNhanVien.Rows[dong].Cells[7].Value.ToString();
                 imgNV.Image = imageConvert.ConvertByteArrayToImage(nhanVienBLL.layAnhNV(Int32.Parse(dgvNhanVien.Rows[dong].Cells[0].Value.ToString())).anhNV);
             } catch (Exception ex)
@@ -109,8 +106,6 @@ namespace BTL.InterfaceQuanly
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-      
 
         private void btn_changeImage_Click(object sender, EventArgs e)
         {
@@ -148,7 +143,7 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = false;
             try
             {
-                string regPhone = "^([0]+(3|5|7|8|9))+([0-9]{8})$";
+                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
                 string regCMND = "^\\d{12}$";
                 if (txtTenNV.Text.Trim().Equals(""))
                 {
@@ -172,10 +167,10 @@ namespace BTL.InterfaceQuanly
                 }
                 else if (nhanVienBLL.kiemTraCMND(txtCMND.Text) == 0)
                 {
-                    xoaTrang();
+                    txtCMND.Text = "";
                     throw new Exception("Nhân viên đã tồn tại");
                 }
-                if (dtpNS.Value > DateTime.Now.AddYears(-18))
+                if (datePickerNgaySinh.Value > DateTime.Now.AddYears(-18))
                 {
                     throw new Exception("Nhân viên phải trên 18 tuổi");
                 }
@@ -211,7 +206,7 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = true;
             try
             {
-                string regPhone = "^([0]+(3|5|7|8|9))+([0-9]{8})$";
+                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
                 string regCMND = "^\\d{12}$";
                 if (dgvNhanVien.Rows.Count < 1)
                 {
@@ -241,7 +236,11 @@ namespace BTL.InterfaceQuanly
                 {
                     throw new Exception("Chứng minh nhân dân không đúng định dạng");
                 }
-                if (dtpNS.Value > DateTime.Now.AddYears(-18))
+                else if (cmnd != txtCMND.Text && nhanVienBLL.kiemTraCMND(cmnd) == 0)
+                {
+                    throw new Exception("Chứng minh nhân dân đã tồn tại!");
+                }
+                if (datePickerNgaySinh.Value > DateTime.Now.AddYears(-18))
                 {
                     throw new Exception("Nhân viên phải trên 18 tuổi");
                 }

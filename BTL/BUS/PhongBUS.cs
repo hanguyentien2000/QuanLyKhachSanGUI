@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using BTL.DAL;
 using BTL.DTO;
 using System.Data;
+using static LinqToDB.DataProvider.SqlServer.SqlServerProviderAdapter;
+using System.Data.SqlClient;
+using SqlConnection = System.Data.SqlClient.SqlConnection;
 
 namespace BTL.BUS
 {
@@ -96,6 +99,19 @@ namespace BTL.BUS
             PhongDTO phong = new PhongDTO();
             phong.AnhPhong = (byte[])data.GetTable(sql).Rows[0].ItemArray[0];
             return phong;
+        }
+        public Boolean checkPhong(int Ma)
+        {
+            string sql = "select * from DatPhong where MaPhong =" + Ma + "";
+            SqlConnection conn = data.GetDBConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

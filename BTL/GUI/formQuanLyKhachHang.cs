@@ -15,6 +15,7 @@ namespace BTL.GUI
 {
     public partial class formQuanLyKhachHang : Form
     {
+        string cmnd;
         KhachHangBUS khachHangBUS = new KhachHangBUS();
         KhachHangDTO khachHangDTO = new KhachHangDTO();
         public formQuanLyKhachHang()
@@ -33,7 +34,7 @@ namespace BTL.GUI
             txtTimKiem.Text = "";
             txtCMND.Text = "";
             rdbNam.Checked = true;
-            dtpNS.Value = DateTime.Now;
+            datePickerNgaySinh.Value = DateTime.Now;
             cbxTrangThai.Visible = false;
             lblTrangThai.Visible = false;
         }
@@ -42,10 +43,13 @@ namespace BTL.GUI
         {
             khachHangDTO.HoTen = txtTenKH.Text;
             khachHangDTO.SoDT = txtSdt.Text;
-            DateTime date = dtpNS.Value;
-            string[] ngaySinh = date.ToShortDateString().Split('/');
-            string nam = ngaySinh[2].Substring(0, 4);
-            khachHangDTO.NgaySinh = nam + "/" + ngaySinh[1] + "/" + ngaySinh[0];
+            //DateTime date = datePickerNgaySinh.Value;
+            //string[] ngaySinh = date.ToShortDateString().Split('/');
+            //string nam = ngaySinh[2].Substring(0, 4);
+            //khachHangDTO.NgaySinh = nam + "/" + ngaySinh[1] + "/" + ngaySinh[0];
+            DateTime dt = datePickerNgaySinh.Value;  
+            string s = dt.ToString("yyyy/MM/dd");
+            khachHangDTO.NgaySinh = s;
             khachHangDTO.Email = txtEmail.Text;
             khachHangDTO.GioiTinh = rdbNam.Checked ? 0 : rdbNu.Checked ? 1 : 0;
             khachHangDTO.DiaChi = txtDiachi.Text;
@@ -84,10 +88,7 @@ namespace BTL.GUI
                 txtMaKH.Text = dgvKhachHang.Rows[dong].Cells[0].Value.ToString();
                 txtTenKH.Text = dgvKhachHang.Rows[dong].Cells[1].Value.ToString();
                 txtSdt.Text = dgvKhachHang.Rows[dong].Cells[2].Value.ToString();
-                //string[] ngaySinh = dgvKhachHang.Rows[dong].Cells[3].Value.ToString().Split('/');
-                //string nam = ngaySinh[2].Substring(0, 4);
-                //dtpNS.Value = new DateTime(Int32.Parse(nam), Int32.Parse(ngaySinh[1]), Int32.Parse(ngaySinh[0]));
-                dtpNS.Value = DateTime.Parse(dgvKhachHang.Rows[dong].Cells[3].Value.ToString());
+                datePickerNgaySinh.Value = DateTime.Parse(dgvKhachHang.Rows[dong].Cells[3].Value.ToString());
                 txtEmail.Text = dgvKhachHang.Rows[dong].Cells[4].Value.ToString();
                 if (dgvKhachHang.Rows[dong].Cells[5].Value.ToString() == "Nam")
                     rdbNam.Checked = true;
@@ -95,6 +96,7 @@ namespace BTL.GUI
                     rdbNu.Checked = true;
                 txtDiachi.Text = dgvKhachHang.Rows[dong].Cells[6].Value.ToString();
                 txtCMND.Text = dgvKhachHang.Rows[dong].Cells[7].Value.ToString();
+                cmnd = dgvKhachHang.Rows[dong].Cells[7].Value.ToString();
                 cbxTrangThai.Text = dgvKhachHang.Rows[dong].Cells[8].Value.ToString();
             }
             catch (Exception ex)
@@ -130,7 +132,7 @@ namespace BTL.GUI
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
-                if (dtpNS.Value > DateTime.Now.AddYears(-18))
+                if (datePickerNgaySinh.Value > DateTime.Now.AddYears(-18))
                 {
                     throw new Exception("Khách hàng phải trên 18 tuổi");
                 }
@@ -154,8 +156,10 @@ namespace BTL.GUI
                 {
                     throw new Exception("Chứng minh nhân dân không đúng định dạng");
                 }
+               
                 else if (khachHangBUS.kiemTraCMND(txtCMND.Text) == 0)
                 {
+                    txtCMND.Text = "";
                     throw new Exception("Đã có thông tin của khách hàng này");
                 }
                 layThongTinKhachHang();
@@ -181,13 +185,13 @@ namespace BTL.GUI
             txtMaKH.Visible = true;
             lblMaKH.Visible = true;
             string regEmail = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
-            string regPhone = "^([\\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$";
+            string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
             string regCMND = "^\\d{12}$";
             try
             {
                 if (dgvKhachHang.Rows.Count < 1)
                 {
-                    throw new Exception("Vui lòng thêm nhân viên trước khi sửa");
+                    throw new Exception("Vui lòng thêm khách hàng trước khi sửa");
                 }
                 if (txtMaKH.TextLength == 0)
                 {
@@ -205,9 +209,9 @@ namespace BTL.GUI
                 {
                     throw new Exception("Số điện thoại không đúng định dạng");
                 }
-                if (dtpNS.Value > DateTime.Now.AddYears(-18))
+                if (datePickerNgaySinh.Value > DateTime.Now.AddYears(-18))
                 {
-                    throw new Exception("Nhân viên phải trên 18 tuổi");
+                    throw new Exception("khách hàng phải trên 18 tuổi");
                 }
                 if (txtEmail.TextLength == 0)
                 {
@@ -228,6 +232,10 @@ namespace BTL.GUI
                 else if (!Regex.IsMatch(txtCMND.Text, regCMND))
                 {
                     throw new Exception("Chứng minh nhân dân không đúng định dạng");
+                }
+                else if (cmnd != txtCMND.Text && khachHangBUS.kiemTraCMND(cmnd) == 0)
+                {
+                    throw new Exception("Chứng minh nhân dân đã tồn tại!");
                 }
                 layThongTinKhachHang();
                 khachHangDTO.TrangThai = cbxTrangThai.SelectedIndex == 1 ? 1 : 0;
@@ -256,15 +264,15 @@ namespace BTL.GUI
             {
                 if (dgvKhachHang.Rows.Count < 1)
                 {
-                    throw new Exception("Vui lòng thêm nhân viên trước khi xóa");
+                    throw new Exception("Vui lòng thêm khách hàng trước khi xóa");
                 }
                 if (txtMaKH.TextLength == 0)
                 {
-                    throw new Exception("Vui lòng chọn nhân viên trước khi xóa");
+                    throw new Exception("Vui lòng chọn khách hàng trước khi xóa");
                 }
                 if (khachHangBUS.kiemTraKhachHangDatPhong(Int32.Parse(txtMaKH.Text)) == 0)
                 {
-                    throw new Exception("Nhân viên đang đặt phòng");
+                    throw new Exception("khách hàng đang đặt phòng");
                 }
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng " + txtTenKH.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -313,11 +321,6 @@ namespace BTL.GUI
         {
             dgvKhachHang.DataSource = khachHangBUS.layTTKhachHang();
             xoaTrang();
-        }
-
-        private void txtSdt_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

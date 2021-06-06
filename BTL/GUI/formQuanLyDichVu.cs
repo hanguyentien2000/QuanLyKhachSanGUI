@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace BTL.GUI
 {
     public partial class formQuanLyDichVu : Form
     {
+        DatPhongBUS dsDatphong = new DatPhongBUS();
         private int donGia;
         public formQuanLyDichVu()
         {
@@ -217,6 +219,9 @@ namespace BTL.GUI
                 if (txtMaDichVu.TextLength == 0)
                 {
                     throw new Exception("Vui lòng chọn loại phòng trước khi xóa");
+                }
+                if (dsDatphong.checkDichVu(Convert.ToInt32(txtMaDichVu.Text))){
+                    throw new Exception("Dịch vụ đang được sử dụng, không thể xoá!");
                 }
                 else
                 {

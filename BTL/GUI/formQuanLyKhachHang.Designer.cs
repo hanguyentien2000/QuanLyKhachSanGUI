@@ -29,9 +29,9 @@ namespace BTL.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSdt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,7 +49,6 @@ namespace BTL.GUI
             this.GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChiKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtpNS = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -66,6 +65,7 @@ namespace BTL.GUI
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnFind = new Guna.UI2.WinForms.Guna2Button();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.datePickerNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -127,7 +127,6 @@ namespace BTL.GUI
             this.txtSdt.Size = new System.Drawing.Size(171, 25);
             this.txtSdt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSdt.TabIndex = 41;
-            this.txtSdt.TextChanged += new System.EventHandler(this.txtSdt_TextChanged);
             // 
             // label3
             // 
@@ -209,21 +208,21 @@ namespace BTL.GUI
             // 
             // dgvKhachHang
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.BackgroundColor = System.Drawing.Color.White;
             this.dgvKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvKhachHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvKhachHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvKhachHang.ColumnHeadersHeight = 40;
             this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKhachHang,
@@ -234,14 +233,14 @@ namespace BTL.GUI
             this.GioiTinhKH,
             this.DiaChiKhachHang,
             this.CMND});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKhachHang.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKhachHang.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvKhachHang.EnableHeadersVisualStyles = false;
             this.dgvKhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvKhachHang.Location = new System.Drawing.Point(26, 265);
@@ -329,21 +328,6 @@ namespace BTL.GUI
             this.CMND.HeaderText = "CMND";
             this.CMND.MinimumWidth = 8;
             this.CMND.Name = "CMND";
-            // 
-            // dtpNS
-            // 
-            this.dtpNS.CheckedState.Parent = this.dtpNS;
-            this.dtpNS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNS.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNS.HoverState.Parent = this.dtpNS;
-            this.dtpNS.Location = new System.Drawing.Point(246, 28);
-            this.dtpNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNS.Name = "dtpNS";
-            this.dtpNS.ShadowDecoration.Parent = this.dtpNS;
-            this.dtpNS.Size = new System.Drawing.Size(176, 25);
-            this.dtpNS.TabIndex = 49;
-            this.dtpNS.Value = new System.DateTime(2021, 5, 20, 16, 24, 1, 227);
             // 
             // label5
             // 
@@ -609,6 +593,22 @@ namespace BTL.GUI
             this.btnRefresh.Text = "Tải lại";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // datePickerNgaySinh
+            // 
+            this.datePickerNgaySinh.CheckedState.Parent = this.datePickerNgaySinh;
+            this.datePickerNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.datePickerNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.datePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerNgaySinh.HoverState.Parent = this.datePickerNgaySinh;
+            this.datePickerNgaySinh.Location = new System.Drawing.Point(246, 28);
+            this.datePickerNgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.datePickerNgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.datePickerNgaySinh.Name = "datePickerNgaySinh";
+            this.datePickerNgaySinh.ShadowDecoration.Parent = this.datePickerNgaySinh;
+            this.datePickerNgaySinh.Size = new System.Drawing.Size(173, 26);
+            this.datePickerNgaySinh.TabIndex = 85;
+            this.datePickerNgaySinh.Value = new System.DateTime(2021, 5, 23, 1, 2, 33, 791);
+            // 
             // formQuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,6 +616,7 @@ namespace BTL.GUI
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1048, 583);
+            this.Controls.Add(this.datePickerNgaySinh);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.btnDelete);
@@ -630,7 +631,6 @@ namespace BTL.GUI
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dtpNS);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSdt);
@@ -661,7 +661,6 @@ namespace BTL.GUI
         private Guna.UI2.WinForms.Guna2TextBox txtMaKH;
         private System.Windows.Forms.Label lblMaKH;
         private Guna.UI2.WinForms.Guna2DataGridView dgvKhachHang;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNS;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
@@ -686,5 +685,6 @@ namespace BTL.GUI
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnFind;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private Guna.UI2.WinForms.Guna2DateTimePicker datePickerNgaySinh;
     }
 }
