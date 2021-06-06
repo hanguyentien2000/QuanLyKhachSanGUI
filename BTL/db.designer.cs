@@ -1369,7 +1369,7 @@ namespace BTL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NChar(12)")]
 		public string SDT
 		{
 			get
@@ -1936,7 +1936,7 @@ namespace BTL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="Char(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="NChar(12)")]
 		public string SoDienThoai
 		{
 			get

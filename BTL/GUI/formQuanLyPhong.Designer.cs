@@ -207,6 +207,7 @@ namespace BTL
             // 
             this.guna2GroupBox1.Controls.Add(this.rbdDangSuDung);
             this.guna2GroupBox1.Controls.Add(this.rbdTrong);
+            this.guna2GroupBox1.Enabled = false;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(696, 19);

@@ -24,6 +24,7 @@ namespace BTL.GUI
         KhachHangDTO khachHangDTO = new KhachHangDTO();
         LoaiPhongBUS loaiPhongBUS = new LoaiPhongBUS();
         DatPhongBUS datPhongBus = new DatPhongBUS();
+        KhachHangBUS khachHangBUS = new KhachHangBUS(); 
         KhachHangDTO kh = new KhachHangDTO();
         int tienCoc = 0;
         int tongTien = 0;
@@ -195,7 +196,11 @@ namespace BTL.GUI
                 if(datPhongBus.checkKhach(txtCMND.Text.Trim()))
                 {
                     throw new Exception("Khách hàng xấu");
-                }    
+                }
+                if (khachHangBUS.kiemTraCMND(txtCMND.Text.Trim()) == 0)
+                {
+                    throw new Exception("Đã có thông tin của khách hàng này");
+                }
                 layThongTin();
                 string checkIn = dateCheckin.Value.ToString("yyyy/MM/dd");
                 string checkOut = dateCheckout.Value.ToString("yyyy/MM/dd");
