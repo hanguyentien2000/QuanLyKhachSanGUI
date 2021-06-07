@@ -185,7 +185,7 @@ namespace BTL.GUI
             txtMaKH.Visible = true;
             lblMaKH.Visible = true;
             string regEmail = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
-            string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+            string regPhone = "^([0]+(3|5|7|8|9))+([0-9]{8})$";
             string regCMND = "^\\d{12}$";
             try
             {

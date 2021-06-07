@@ -143,7 +143,7 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = false;
             try
             {
-                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regPhone = "^([0]+(3|5|7|8|9))+([0-9]{8})$";
                 string regCMND = "^\\d{12}$";
                 if (txtTenNV.Text.Trim().Equals(""))
                 {
@@ -206,7 +206,7 @@ namespace BTL.InterfaceQuanly
             lblMaNV.Visible = true;
             try
             {
-                string regPhone = "(84|0[3|5|7|8|9])+([0-9]{8})";
+                string regPhone = "^([0]+(3|5|7|8|9))+([0-9]{8})$";
                 string regCMND = "^\\d{12}$";
                 if (dgvNhanVien.Rows.Count < 1)
                 {
