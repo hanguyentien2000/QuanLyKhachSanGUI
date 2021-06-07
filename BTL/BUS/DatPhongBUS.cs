@@ -159,7 +159,7 @@ namespace BTL.BUS
             {
                 sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND NgayDat ='" + today + "'";
             }
-            else if(DateTime.Now.Hour <= 12)
+            else if(DateTime.Now.Hour < 12)
             {
                 sql = "Select MaDatPhong,MaNhanVien,MaKhachHang,MaPhong,NgayDat,NgayDi,TienDatCoc from DatPhong where TrangThaiDatPhong = 0 AND (NgayDat ='" 
                     + today + "' OR NgayDat ='" + yesterday + "')";
