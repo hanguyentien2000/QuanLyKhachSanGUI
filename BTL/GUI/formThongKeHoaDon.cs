@@ -32,9 +32,9 @@ namespace BTL.GUI
         }
         public void loadCombo()
         {
-            cbxTrangThai.Items.Add("Đã check in");
-            cbxTrangThai.Items.Add("Đã check out");
-            cbxTrangThai.Items.Add("Huỷ phòng");
+            cbxTrangThai.Items.Add("0");
+            cbxTrangThai.Items.Add("1");
+            cbxTrangThai.Items.Add("2");
             cbxTrangThai.Items.Add("Tất cả");
             cbxTrangThai.SelectedIndex = 3;
         }
